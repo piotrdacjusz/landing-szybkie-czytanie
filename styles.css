@@ -16,6 +16,7 @@ html{overflow-x:clip}
 body{font-family:'Lato',system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--grafit);background:var(--krem);-webkit-font-smoothing:antialiased;overflow-x:clip}
 h1,h2,h3{line-height:1.15}
 img,svg{display:block;max-width:100%}
+img{height:auto}
 a{color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 :focus-visible{outline:3px solid var(--cegla2);outline-offset:3px;border-radius:4px}
