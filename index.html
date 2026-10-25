@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!--
+  SZYBKIE CZYTANIE ONLINE — landing w estetyce strony Radio Bielany
+  (~/Documents/04 Radio Bielany/Radio Bielany/02_strona/index_v9_uklad-blog-wspolpraca.html).
+  Paleta, krój Lato, przyciski-pigułki, karty, naprzemienne pasy i sygnet ze słupków — przeniesione 1:1.
+  Treść: dokument „Landing SC jesień 25” (Drive 5plusowe@, kopia landingu z Leadpages, jesień 2025) — słowo w słowo.
+  Wdrożenie w WordPressie: skopiuj wszystko od <style> do końca </script> do bloku „Własny HTML”
+  na pustej stronie z szablonem „pełna szerokość”.
+  Piksel Meta i Clarity ładują się DOPIERO po zgodzie z banera cookies — wpisz ID w PIXEL_ID na dole.
+  TODO (nie zmienione, bo treść ma być dokładna): cena 500 → 147 zł i „600 pakietów” pochodzą z jesieni 2025;
+  od 13.10.2026 obowiązuje zasada „ceny bez przekreśleń, obniżki tylko kodem” (02 …/CLAUDE.md, log decyzji).
+-->
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Szybkie Czytanie Online — 40% ludzi przeczyta w życiu mniej książek, niż widzisz poniżej</title>
+<meta name="description" content="Kurs dla zajętych ludzi, którzy chcą czytać więcej. W 15 minut ze mną przyspieszysz dwukrotnie. Za miesiąc będziesz czytać tak szybko jak ja. Fundacja Pięć Plus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<style>
+  /* ====== RADIO BIELANY — style (przeniesione) ====== */
+  :root{
+    --las:#123526; --las2:#16402E; --mech:#2F6B4C;
+    --krem:#F4EAD5; --cegla:#C7512D; --zloto:#E8A33D; --grafit:#191917;
+  }
+  .pb-site{font-family:'Lato',system-ui,sans-serif;color:var(--grafit);background:var(--krem);margin:0;line-height:1.6}
+  .pb-site *{box-sizing:border-box}
+  .pb-site h1,.pb-site h2,.pb-site h3{line-height:1.15;margin:0 0 .5em}
+  .pb-site p{margin:0 0 1em}
+  .pb-site img{max-width:100%;height:auto;display:block}
+  .pb-wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .pb-sec{padding:72px 0}
+  .pb-kicker{display:block;letter-spacing:.35em;font-weight:700;font-size:.8rem;text-transform:uppercase;color:var(--cegla);margin-bottom:10px}
+  .pb-h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;color:var(--las)}
+  .pb-h3{font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:900;color:var(--las)}
+  .pb-lead{font-size:clamp(1.05rem,2.2vw,1.25rem);max-width:720px}
+  .pb-btn{display:inline-block;background:var(--cegla);color:var(--krem)!important;font-weight:900;text-decoration:none;padding:14px 28px;border-radius:999px;border:0;font-size:1rem;cursor:pointer;text-align:center}
+  .pb-btn:hover{background:#a83f20}
+  .pb-btn--ghost{background:transparent;border:2px solid var(--krem);color:var(--krem)!important}
+  .pb-btn--ghost:hover{background:rgba(244,234,213,.12)}
+  .pb-btn--las{background:var(--las)}
+  .pb-btn--las:hover{background:var(--mech)}
+  .pb-btn--big{font-size:1.15rem;padding:18px 36px}
+
+  /* nav */
+  .pb-nav{position:sticky;top:0;z-index:50;background:var(--las);padding:12px 0}
+  .pb-nav .pb-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+  .pb-nav a{color:var(--krem);text-decoration:none;font-weight:700;font-size:.92rem}
+  .pb-nav a:hover{color:var(--zloto)}
+  .pb-nav .pb-logo{font-weight:900;letter-spacing:.05em;font-size:1.05rem;margin-right:auto}
+  .pb-nav .pb-logo span{color:var(--zloto)}
+  .pb-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .pb-nav .pb-btn{padding:9px 18px;font-size:.9rem}
+  .pb-nav .pb-btn:hover{color:var(--krem)}
+  .pb-nav-toggle{display:none}
+  .pb-burger{display:none;cursor:pointer;width:30px;height:24px;position:relative;flex:0 0 auto}
+  .pb-burger span{position:absolute;left:0;width:100%;height:3px;background:var(--krem);border-radius:2px;transition:transform .25s,opacity .2s}
+  .pb-burger span:nth-child(1){top:1px}
+  .pb-burger span:nth-child(2){top:10px}
+  .pb-burger span:nth-child(3){top:19px}
+  @media(max-width:1000px){
+    .pb-burger{display:block}
+    .pb-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding-top:12px}
+    .pb-links a{padding:13px 4px;border-top:1px solid rgba(244,234,213,.16);font-size:1rem}
+    .pb-links .pb-btn{margin-top:12px;border-top:0}
+    .pb-nav-toggle:checked ~ .pb-links{display:flex}
+    .pb-nav-toggle:checked + .pb-burger span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+    .pb-nav-toggle:checked + .pb-burger span:nth-child(2){opacity:0}
+    .pb-nav-toggle:checked + .pb-burger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+  }
+
+  /* hero */
+  .pb-hero{background:var(--las);color:var(--krem);text-align:center;padding:72px 0 72px;position:relative;overflow:hidden}
+  .pb-hero::before{content:"";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:1100px;height:1100px;border-radius:50%;background:var(--las2)}
+  .pb-hero>*{position:relative}
+  .pb-hero .pb-pre{letter-spacing:.6em;font-weight:700;color:var(--zloto);font-size:clamp(.9rem,2vw,1.2rem)}
+  .pb-hero h1{font-weight:900;font-size:clamp(1.9rem,5.2vw,3.6rem);letter-spacing:.01em;color:var(--krem);text-transform:uppercase;max-width:900px;margin:14px auto 28px}
+  .pb-hero p{font-size:clamp(1.05rem,2.2vw,1.35rem);max-width:720px;margin:0 auto 18px}
+  .pb-hero .pb-stos{max-width:860px;margin:0 auto 32px;border-radius:24px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .pb-hero .pb-obietnica{font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.15rem,2.6vw,1.6rem);color:var(--zloto)}
+  .pb-hero .pb-podtytul{font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(.85rem,1.6vw,1rem)}
+  .pb-wave{margin:8px auto 28px;display:block}
+  .pb-hero .pb-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .pb-hero .pb-grid{text-align:left;margin:40px 0 36px}
+  .pb-hero .pb-card{background:var(--las);box-shadow:none;border:1px solid rgba(244,234,213,.14)}
+  .pb-hero .pb-card h3{color:var(--krem)}
+  .pb-hero .pb-card p{color:#cfc8b8;font-size:1rem;margin:0}
+
+  /* karty */
+  .pb-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .pb-card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 10px rgba(18,53,38,.08)}
+  .pb-card h3{color:var(--las);font-size:1.25rem;font-weight:900}
+  .pb-card p:last-child{margin-bottom:0}
+  .pb-card .pb-num{font-size:2.2rem;font-weight:900;color:var(--zloto);display:block;line-height:1.1;margin-bottom:6px}
+  .pb-card .pb-num small{font-size:1rem;color:var(--mech);font-weight:700;letter-spacing:.05em}
+  .pb-dark .pb-card{background:var(--las2);box-shadow:none}
+  .pb-dark .pb-card h3{color:var(--krem)}
+  .pb-dark .pb-card p{color:#e4dcc8}
+  .pb-dark .pb-card .pb-num{color:var(--zloto)}
+
+  /* ikony — słupki w stylu sygnetu */
+  .pb-ico{display:flex;align-items:flex-end;gap:5px;height:40px;margin-bottom:16px}
+  .pb-ico i{display:block;width:9px;border-radius:9px;background:var(--mech)}
+  .pb-ico i:nth-child(2){background:var(--las)}
+  .pb-ico i:nth-child(3){background:var(--zloto)}
+  .pb-ico i:nth-child(4){background:var(--cegla)}
+  .pb-dark .pb-ico i:nth-child(2){background:var(--krem)}
+
+  /* pasy ciemne / jaśniejsze */
+  .pb-dark{background:var(--las);color:var(--krem)}
+  .pb-dark .pb-h2,.pb-dark .pb-h3{color:var(--krem)}
+  .pb-dark a{color:var(--zloto)}
+  .pb-dark .pb-btn{color:var(--krem)}
+  .pb-light{background:#EFE4CC}
+
+  /* wideo */
+  .pb-video{position:relative;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(18,53,38,.14);max-width:860px;margin:28px auto}
+  .pb-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* opinie */
+  .pb-opinie{columns:3;column-gap:24px}
+  .pb-opinie figure{margin:0 0 24px;break-inside:avoid;background:#fff;border-radius:16px;padding:14px;box-shadow:0 2px 10px rgba(18,53,38,.08)}
+  .pb-opinie img{border-radius:8px}
+  @media(max-width:900px){.pb-opinie{columns:2}}
+  @media(max-width:600px){.pb-opinie{columns:1}}
+
+  /* rachunek */
+  .pb-rachunek{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:28px 0}
+
+  /* obiekcje */
+  .pb-obiekcja h3{display:flex;gap:12px;align-items:flex-start}
+  .pb-obiekcja h3 b{color:var(--cegla);font-size:1.3em;line-height:1}
+  .pb-tak{color:var(--zloto);font-weight:900}
+
+  /* cena */
+  .pb-cena{background:#fff;border-radius:24px;padding:40px 32px;box-shadow:0 2px 14px rgba(18,53,38,.10);max-width:620px;margin:32px auto 0;text-align:center;border-top:10px solid var(--cegla)}
+  .pb-cena ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px;text-align:left}
+  .pb-cena li{padding-left:28px;position:relative}
+  .pb-cena li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--mech)}
+  .pb-cena .pb-stara{font-size:1.15rem;color:#6b6b63}
+  .pb-cena .pb-stara s{text-decoration-color:var(--cegla);text-decoration-thickness:3px}
+  .pb-cena .pb-kwota{font-size:clamp(3.6rem,10vw,5.5rem);font-weight:900;color:var(--las);line-height:1;margin:6px 0 10px}
+  .pb-cena .pb-kwota small{font-size:.35em;color:var(--cegla);font-weight:900;vertical-align:top}
+  .pb-cena .pb-pilne{color:var(--cegla);font-weight:700}
+  .pb-cena .pb-drobne{font-size:.9rem;color:#6b6b63}
+
+  /* o mnie */
+  .pb-omnie{display:grid;gap:40px;grid-template-columns:minmax(240px,1fr) 2fr;align-items:start}
+  .pb-omnie img{border-radius:16px;box-shadow:0 2px 14px rgba(18,53,38,.14)}
+  @media(max-width:760px){.pb-omnie{grid-template-columns:1fr}}
+
+  /* FAQ */
+  .pb-faq{display:grid;gap:14px;max-width:820px}
+  .pb-faq details{background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(18,53,38,.08);padding:0 24px}
+  .pb-faq summary{cursor:pointer;font-weight:900;color:var(--las);padding:20px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:1.08rem}
+  .pb-faq summary::-webkit-details-marker{display:none}
+  .pb-faq summary::after{content:"+";color:var(--cegla);font-size:1.6rem;font-weight:900;line-height:1;flex:0 0 auto}
+  .pb-faq details[open] summary::after{content:"–"}
+  .pb-faq details p{padding:0 0 20px;margin:0}
+
+  /* stopka */
+  .pb-foot{background:var(--grafit);color:#cfc8b8;padding:40px 0;font-size:.9rem}
+  .pb-foot a{color:var(--zloto);text-decoration:none}
+  .pb-foot button{background:none;border:0;color:var(--zloto);font:inherit;cursor:pointer;padding:0}
+  .pb-foot .pb-wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  /* cookies — jeden baner, dwie równorzędne decyzje */
+  .pb-cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:560px;margin:0 auto;background:#fff;color:var(--grafit);border-radius:16px;box-shadow:0 8px 30px rgba(18,53,38,.25);padding:18px 20px;font-size:.95rem;line-height:1.45;font-family:'Lato',system-ui,sans-serif}
+  .pb-cookies p{margin:0 0 14px}
+  .pb-cookies a{color:var(--las);font-weight:700}
+  .pb-cookies .pb-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .pb-cookies button{flex:1 1 160px;font:700 .95rem 'Lato',system-ui,sans-serif;padding:11px 14px;border-radius:999px;cursor:pointer;border:2px solid var(--las);background:#fff;color:var(--las)}
+  .pb-cookies button.pb-yes{background:var(--las);color:var(--krem)}
+  .pb-cookies[hidden]{display:none}
+
+  .pb-center{text-align:center}
+  .pb-mt{margin-top:28px}
+  @media(max-width:640px){.pb-sec{padding:52px 0}.pb-hero{padding:56px 0}}
+</style>
+
+<div class="pb-site">
+
+  <!-- ===== NAWIGACJA ===== -->
+  <nav class="pb-nav">
+    <div class="pb-wrap">
+      <a class="pb-logo" href="#start">SZYBKIE CZYTANIE <span>ONLINE</span></a>
+      <input type="checkbox" id="pb-nav-toggle" class="pb-nav-toggle" aria-hidden="true">
+      <label for="pb-nav-toggle" class="pb-burger" aria-label="Otwórz menu"><span></span><span></span><span></span></label>
+      <div class="pb-links">
+        <a href="#czytanie">Twoje czytanie</a>
+        <a href="#test">Test tempa</a>
+        <a href="#jak-dziala">Jak działa</a>
+        <a href="#droga">Twoja droga</a>
+        <a href="#cena">Cena</a>
+        <a href="#o-mnie">O mnie</a>
+        <a href="#faq">Pytania</a>
+        <a class="pb-btn" data-cta="nav" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="pb-hero" id="start">
+    <div class="pb-wrap">
+      <div class="pb-pre">SZYBKIE CZYTANIE ONLINE</div>
+      <h1>40% ludzi przeczyta w życiu mniej książek, niż widzisz poniżej</h1>
+      <div class="pb-stos">
+        <img src="assets/stos-ksiazek.webp" width="1315" height="880" alt="Piotr Starzyński za trzema stosami książek — 60 książek" fetchpriority="high">
+      </div>
+      <p class="pb-obietnica">Po kursie Szybkie Czytanie Online możesz przeczytać je wszystkie w tydzień</p>
+      <p class="pb-podtytul">Zaraz Ci udowodnię, że potrafisz tak czytać</p>
+
+      <!-- sygnet: fala tempa czytania (słupki jak w znaku Radia Bielany) -->
+      <svg class="pb-wave" width="320" height="120" viewBox="0 0 340 130" role="img" aria-label="Wykres tempa czytania: od 126 do 800 słów na minutę">
+        <g>
+          <rect x="0"   y="104" width="18" height="26"  rx="9" fill="#2F6B4C"/>
+          <rect x="26"  y="98"  width="18" height="32"  rx="9" fill="#2F6B4C"/>
+          <rect x="52"  y="88"  width="18" height="42"  rx="9" fill="#2F6B4C"/>
+          <rect x="78"  y="74"  width="18" height="56"  rx="9" fill="#F4EAD5"/>
+          <rect x="104" y="80"  width="18" height="50"  rx="9" fill="#F4EAD5"/>
+          <rect x="130" y="60"  width="18" height="70"  rx="9" fill="#F4EAD5"/>
+          <rect x="156" y="46"  width="18" height="84"  rx="9" fill="#F4EAD5"/>
+          <rect x="182" y="52"  width="18" height="78"  rx="9" fill="#E8A33D"/>
+          <rect x="208" y="30"  width="18" height="100" rx="9" fill="#E8A33D"/>
+          <rect x="234" y="17"  width="18" height="113" rx="9" fill="#E8A33D"/>
+          <rect x="260" y="1"   width="18" height="129" rx="9" fill="#C7512D"/>
+          <rect x="286" y="8"   width="18" height="122" rx="9" fill="#C7512D"/>
+          <circle cx="40" cy="60" r="15" fill="#E8A33D"/>
+        </g>
+      </svg>
+
+      <div class="pb-grid">
+        <div class="pb-card"><div class="pb-ico"><i style="height:14px"></i><i style="height:22px"></i><i style="height:30px"></i><i style="height:40px"></i></div><h3>Kurs dla zajętych ludzi, którzy chcą czytać więcej</h3></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:18px"></i><i style="height:18px"></i><i style="height:36px"></i><i style="height:36px"></i></div><h3>W 15 minut ze mną przyspieszysz dwukrotnie</h3></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:40px"></i><i style="height:40px"></i><i style="height:40px"></i><i style="height:40px"></i></div><h3>Za miesiąc będziesz czytać tak szybko jak ja</h3></div>
+      </div>
+
+      <div class="pb-cta">
+        <a class="pb-btn pb-btn--big" data-cta="hero" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Wiem wszystko, kupuję kurs!</a>
+        <a class="pb-btn pb-btn--ghost pb-btn--big" href="#czytanie">Najpierw mi to udowodnij</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== POWALCZMY O TWOJE CZYTANIE ===== -->
+  <section class="pb-sec" id="czytanie">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Powalczmy o Twoje czytanie</span>
+      <h2 class="pb-h2">Chcesz czytać, ale nie masz na to przestrzeni.</h2>
+      <div class="pb-grid pb-mt">
+        <div class="pb-card">
+          <h3>Czytanie = czas + skupienie</h3>
+          <p>Świat bombarduje Cię lawiną powiadomień, mailingów, wiadomości. Informacji jest coraz więcej a czasu coraz mniej i to się nie zmieni.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Szkolne czytanie to za mało.</h3>
+          <p>To, w jaki sposób teraz czytasz wystarczyło wprawdzie na wymęczenie lektur ale zupełnie nie przystaje do współczesnego świata.</p>
+        </div>
+      </div>
+
+      <h3 class="pb-h3" style="margin-top:56px">Chcesz naprawdę czytać więcej?</h3>
+      <div class="pb-grid">
+        <div class="pb-card"><div class="pb-ico"><i style="height:30px"></i><i style="height:40px"></i><i style="height:30px"></i><i style="height:40px"></i></div><h3>Naucz się skupienia</h3><p>Naucz się skupienia, żeby nie miało znaczenia, czy czytasz w fotelu, czy zatłoczonym autobusie.</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:40px"></i><i style="height:16px"></i><i style="height:40px"></i><i style="height:16px"></i></div><h3>Naucz się filtrować</h3><p>Naucz się wychwytywać kluczowe słowa i filtrować informacje, żeby od razu wiedzieć, który tekst warto przeczytać.</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:12px"></i><i style="height:20px"></i><i style="height:30px"></i><i style="height:40px"></i></div><h3>Naucz się czytać szybko i ze zrozumieniem</h3><p>Po kwadransie kursu przyspieszysz swoje czytanie dwukrotnie. Poźniej zamiast jednej książki będziesz czytać pięć.</p></div>
+      </div>
+      <p class="pb-lead pb-center" style="margin:40px auto 0;font-weight:900;color:var(--las)">Nauczysz się tego w moim kursie<br><span style="letter-spacing:.2em;text-transform:uppercase;color:var(--cegla)">Szybkie Czytanie Online</span></p>
+    </div>
+  </section>
+
+  <!-- ===== WIEM, CZEMU TU JESTEŚ ===== -->
+  <section class="pb-sec pb-dark" id="dlaczego">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Kto do Ciebie mówi</span>
+      <p class="pb-lead">Nazywam się Piotr Starzyński, nauczyłem już 67 500 osób, jak czytać regularnie, szybko i w skupieniu. Zajmuję się tym tematem od 12 lat i jestem przewodniczącym polskiego WABA League (Światowej Ligi Sportów Umysłowych) oraz złotym medalistą na międzynarodowych zawodach w czytaniu.</p>
+      <h2 class="pb-h2" style="margin-top:28px">Dlatego wiem, czemu tu jesteś.</h2>
+      <p class="pb-lead" style="font-weight:700">Chcesz czytać więcej, szybciej.<br>I w pełnym skupieniu.</p>
+      <div class="pb-grid pb-mt">
+        <div class="pb-card"><span class="pb-num">1</span><p>Zacznijmy od tego, że czytasz wolno tylko dlatego, że tak Cię nauczono i przyzwyczajono w szkole.</p></div>
+        <div class="pb-card"><span class="pb-num">2</span><p>Drugi powód jest taki, że „szybkie czytanie” do tej pory niewiele Ci mówiło i brzmiało jak magia albo oszustwo.</p></div>
+        <div class="pb-card"><span class="pb-num">∴</span><p>Dlatego u mnie wszystko opiera się na faktach i ćwiczeniach, które działają już po pierwszych 15 minutach kursu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEST TEMPA ===== -->
+  <section class="pb-sec pb-light" id="test">
+    <div class="pb-wrap pb-center">
+      <span class="pb-kicker">Pamiętasz stos książek na początku strony?</span>
+      <h2 class="pb-h2">Sprawdźmy, czy miałem rację.</h2>
+      <p class="pb-lead" style="margin:0 auto">Odtwórz filmik i sprawdź swoje tempo.<br>To niezbędne do późniejszych obliczeń.</p>
+      <div class="pb-video">
+        <iframe src="https://www.youtube-nocookie.com/embed/99AWIqzCS84?rel=0&modestbranding=1&playsinline=1" title="Szybkie Czytanie Online — test tempa czytania" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="pb-grid" style="text-align:left;max-width:860px;margin:0 auto">
+        <div class="pb-card"><span class="pb-num">126 <small>słów / min</small></span><p>Średnia czytania to 126 słów na minutę.</p><p><strong>Wiem, że Twoje tempo było wyższe.</strong></p></div>
+        <div class="pb-card"><h3>🎉 GRATULACJE 🎉</h3><p>Udało Ci się przyspieszyć tempo.<br>Udało Ci się zrozumieć, co czytasz.</p><p><strong>A jak to się ma do stosu książek?</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 60 KSIĄŻEK W TYDZIEŃ ===== -->
+  <section class="pb-sec" id="rachunek">
+    <div class="pb-wrap">
+      <span class="pb-kicker">czyli jak to obliczyłem</span>
+      <h2 class="pb-h2">60 książek w tydzień</h2>
+      <p class="pb-lead">Na wstępie powiem, że z wykształcenia jestem statystykiem i wiem, co robię :)</p>
+      <p class="pb-lead">Na podstawie badań czytelnictwa (Pew Research Center, Gallup, Eurostat) wyznaczyłem 4 decyl, z którego wynika, że 40% ludzi na świecie przeczyta w życiu 60 książek lub mniej.</p>
+      <h3 class="pb-h3" style="margin-top:36px">Ile zajmuje ten stos po kursie?</h3>
+      <p>Zakładam, że książka ma średnio 9 słów w wersie, 39 wersów oraz 250 stron. Przy tych założeniach 60 książek to 5 265 000 słów.</p>
+      <div class="pb-rachunek">
+        <div class="pb-card"><span class="pb-num">5 265 000</span><p>słów w 60 książkach</p></div>
+        <div class="pb-card"><span class="pb-num">800 <small>sł/min</small></span><p>Przy prędkości 800 sł/min będziesz potrzebować 109 godzin, żeby przeczytać 60 książek.</p></div>
+        <div class="pb-card"><span class="pb-num">168 <small>godzin</small></span><p>Tydzień ma 168 godzin (7 x 24 = 168).</p></div>
+        <div class="pb-card"><span class="pb-num">8,5 <small>godz. dziennie</small></span><p>Po kursie nie tylko przeczytasz 60 książek w tydzień, ale zostanie Ci jeszcze 8,5 godziny dziennie na spacer, jedzenie i sen ;)</p></div>
+      </div>
+      <p class="pb-lead">Więc jeśli do tej pory widząc poradnik branżowy albo słysząc o ciekawej książce myślałeś „kiedy ja do tego usiądę?”, to szybkie czytanie online jest zdecydowanie dla Ciebie, bo po kursie pomyślisz</p>
+      <p class="pb-h3" style="font-family:'Caveat',cursive;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;color:var(--cegla)">„przeczytam pół tej książki w drodze do pracy a wracając drugie pół”</p>
+      <div class="pb-grid pb-mt">
+        <div class="pb-card"><span class="pb-num">8 <small>godzin</small></span><p>Z doświadczenia pracy w Fundacji wiem, że to, co zniechęca do książek to zobowiązanie czasowe. Żeby przeczytać jedną książkę potrzebujesz średnio 8 godzin.</p></div>
+        <div class="pb-card"><span class="pb-num">2 <small>godziny</small></span><p>Po kursie przeczytasz ją w 2 godziny.</p><p>A to tylko początek, bo nie chodzi tylko o czytanie. Będziesz szybciej chwytać sedno, uczyć się nowych rzeczy i skupiać na zawołanie.</p></div>
+      </div>
+      <p class="pb-lead pb-mt">Ale nie musisz mi wierzyć na słowo, poniżej znajdziesz kilka opinii o naszym kursie. Jest ich znacznie więcej a nasza średnia ocen na profilu Fundacji w Google to 5.0</p>
+      <div class="pb-opinie pb-mt">
+        <figure><img src="assets/opinia-01.webp" width="1016" height="742" alt="Opinia z Google: Aleksander Konieczny, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-02.webp" width="1016" height="506" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-03.webp" width="1016" height="506" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-04.webp" width="1016" height="346" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-05.webp" width="1016" height="496" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-06.webp" width="1016" height="496" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-07.webp" width="1016" height="468" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-08.webp" width="1016" height="426" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-09.webp" width="1016" height="304" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-10.webp" width="1016" height="376" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-11.webp" width="1016" height="272" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+        <figure><img src="assets/opinia-12.webp" width="1016" height="294" alt="Opinia z Google, 5 gwiazdek" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OD SCEPTYKA DO ENTUZJASTY ===== -->
+  <section class="pb-sec pb-dark" id="sceptyk">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Od sceptyka do entuzjasty</span>
+      <h2 class="pb-h2">Daliśmy kurs sceptykowi szybkiego czytania</h2>
+      <p class="pb-lead">Poza chwaleniem się kursem, daliśmy go do przetestowania sceptykowi szybkiego czytania - znanemu i lubianemu youtuberowi Danielowi Muniowskiemu z kanału Strefa Czytacza.</p>
+      <p class="pb-lead">Przed rozpoczęciem kursu miał dużo wątpliwości, ale po przejściu kursu zmienił zdanie.</p>
+      <div class="pb-video">
+        <iframe src="https://www.youtube-nocookie.com/embed/lJ5wem5Aykg?rel=0&modestbranding=1&playsinline=1" title="Czy kurs szybkiego czytania działa? Strefa Czytacza" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JAK DZIAŁA ===== -->
+  <section class="pb-sec" id="jak-dziala">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Metoda</span>
+      <h2 class="pb-h2">Jak działa Szybkie Czytanie Online?</h2>
+      <div class="pb-grid pb-mt">
+        <div class="pb-card"><div class="pb-ico"><i style="height:20px"></i><i style="height:40px"></i><i style="height:40px"></i><i style="height:20px"></i></div><h3>Kilka linijek na raz</h3><p>Nauczysz się czytać kilka linijek tekstu na raz BEZ UTRATY ZROZUMIENIA dzięki ćwiczeniom z rozszerzenia pola widzenia</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:40px"></i><i style="height:24px"></i><i style="height:40px"></i><i style="height:24px"></i></div><h3>Nowe skupienie</h3><p>Skupisz się na tekście w zupełnie nowy sposób, ponieważ aktywujesz więcej ośrodków mózgu z pomocą techniki Alphabet Game</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:40px"></i><i style="height:12px"></i><i style="height:12px"></i><i style="height:40px"></i></div><h3>Sedno w kilka sekund</h3><p>Rozpoznasz w kilka sekund to, o czym jest tekst dzięki skanowaniu i antycypacji</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:16px"></i><i style="height:26px"></i><i style="height:34px"></i><i style="height:40px"></i></div><h3>Więcej rozumiesz, więcej pamiętasz</h3><p>Będziesz lepiej rozumieć i więcej zapamiętywać z każdego czytanego tekstu</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:30px"></i><i style="height:30px"></i><i style="height:40px"></i><i style="height:40px"></i></div><h3>Proste techniki</h3><p>Zmienisz swoje podejście do czytania dzięki wykorzystaniu prostych technik takich jak wskaźnik czy metoda fotograficzna</p></div>
+        <div class="pb-card"><div class="pb-ico"><i style="height:10px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:40px"></i></div><h3>Motywacja w kosmos</h3><p>Twoja motywacja wystrzeli w kosmos, bo każdą stronę będziesz czytać coraz szybciej</p></div>
+      </div>
+
+      <h3 class="pb-h3" style="margin-top:56px">A jak znajdziesz na to czas?</h3>
+      <div class="pb-grid">
+        <div class="pb-card"><span class="pb-num">1</span><p>Lekcje są krótkie i konkretne (pierwsza z pomiarem tempa już za Tobą!)</p></div>
+        <div class="pb-card"><span class="pb-num">&lt; 2 h</span><p>Teoria w kursie to niecałe dwie godziny</p></div>
+        <div class="pb-card"><span class="pb-num">0</span><p>Techniki ćwiczysz na tekstach, które i tak teraz czytasz</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TWOJA DROGA ===== -->
+  <section class="pb-sec pb-light" id="droga">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Program kursu</span>
+      <h2 class="pb-h2">Twoja droga krok po kroku</h2>
+      <div class="pb-grid pb-mt">
+        <div class="pb-card"><span class="pb-num">0</span><h3>Rozrusznik czytania</h3><p>W pierwszych 15 minutach ze mną przejdziesz kompletną metodę, która pozwala czytać 2 razy szybciej bez utraty zrozumienia.</p></div>
+        <div class="pb-card"><span class="pb-num">1</span><h3>Wprowadzenie</h3><p>Tutaj dowiesz się, jak w pełni wykorzystać materiały zawarte w kursie i zmierzysz (tym razem porządnie) swoje obecne tempo czytania.</p></div>
+        <div class="pb-card"><span class="pb-num">2</span><h3>Rozszerzanie pola widzenia</h3><p>Ten dział poświęcony jest gimnastyce Twojego oka. Dzięki odpowiednim ćwiczeniom będziesz w stanie łapać tekst z trzech linijek na raz.</p></div>
+        <div class="pb-card"><span class="pb-num">3</span><h3>Koncentracja na tekście</h3><p>W tym miejscu nauczysz się technik utrzymania laserowego skupienia na czytanych tekstach. Będziesz w stanie czytać w każdych warunkach.</p></div>
+        <div class="pb-card"><span class="pb-num">4</span><h3>Czytanie poglądowe</h3><p>Łącząc poznane do tej pory techniki zaczniesz chwytać okiem kilka linijek tekstu na raz. To przełożenie znanego Ci testu czytania na książkę.</p></div>
+        <div class="pb-card"><span class="pb-num">5</span><h3>Zrozumienie i zapamiętywanie</h3><p>W tym miejscu nauczysz się przeglądać teksty i odpowiednio rozpracować strukturę książki, żeby wszystko rozumieć nawet przy wysokim tempie. W ramach tego segmentu podzielę się z Tobą swoją metodą na czytanie tekstów naukowych.</p></div>
+        <div class="pb-card"><span class="pb-num">6</span><h3>Podsumowanie i bonusy</h3><p>Na koniec nauczysz się, jak rozwijać swoje czytanie dalej, już po kursie. Znajdziesz tu m.in. ćwiczenia plenerowe, listę polecanych przeze mnie książek i ostatni test czytania.</p></div>
+        <div class="pb-card" style="background:var(--las);color:var(--krem)"><h3 style="color:var(--krem)">Jakieś pytania?</h3><p>Możesz zadać je pod każdą z lekcji przez cały kurs. Krótko odpiszę a jeśli sprawa jest bardziej złożona, nagram filmik z omówieniem danej kwestii.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GŁUPOTY, KTÓRE CIĘ HAMUJĄ ===== -->
+  <section class="pb-sec pb-dark" id="mity">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Wróćmy na chwilę do</span>
+      <h2 class="pb-h2">Głupot, które Cię hamują</h2>
+      <div class="pb-grid pb-mt">
+        <div class="pb-card pb-obiekcja">
+          <h3><b>❌</b><span>Czytając szybko nic nie zrozumiem i nic nie zapamiętam</span></h3>
+          <p>Mój kurs to nie tylko sztuczki na podkręcenie czytania, kładę ogromny nacisk na rozumienie i zapamiętywanie tekstu.</p>
+          <p>Łącząc techniki, które poznasz w kursie będziesz w stanie zapamiętać więcej, niż przy czytaniu tradycyjnym.</p>
+          <p>Przez cały kurs będziesz sprawdzać zarówno tempo jak i zrozumienie tekstu.</p>
+        </div>
+        <div class="pb-card pb-obiekcja">
+          <h3><b>❌</b><span>Nie będę mieć przyjemności czytając w ten sposób</span></h3>
+          <p>Kiedy poznasz już wszystkie techniki, będziesz dostosowywać tempo do celu czytania oraz rodzaju czytanego tekstu.</p>
+          <p>W jednej z lekcji odradzam nawet używanie szybkie czytanie poezji i dramatów romantycznych.</p>
+          <p>Jednakże w przypadku pozostałych tekstów możesz je czytać szybko - z przyjemnością i ogromną satysfakcją.</p>
+        </div>
+        <div class="pb-card pb-obiekcja">
+          <h3><b>❌</b><span>Oduczę się tradycyjnego czytania</span></h3>
+          <p>Szybkie czytanie to nowa umiejętność a nie zmiana sposobu czytania na zawsze. Zupełnie tak samo, jak kurs na prawo jazdy nie zabiera Ci możliwości długich spacerów po parku.</p>
+          <p class="pb-tak">✅ Tak, będziesz w stanie z powrotem czytać „wolno”</p>
+          <p>Chociaż nie będziesz chcieć czytać dłużej w ten sposób.</p>
+          <p>Ponadto po kursie Twoje tradycyjne czytanie i tak będzie szybsze, ze względu na Twoje wyćwiczone przez kurs oczy i poprawę koncentracji.</p>
+        </div>
+        <div class="pb-card pb-obiekcja">
+          <h3><b>❌</b><span>Potrzeba długich lat i wysiłku, żeby opanować tę umiejętność</span></h3>
+          <p>Wszystkie lekcje trwają krócej, niż 2 odcinki Gry o Tron.</p>
+          <p>A żeby wystartować kurs z przytupem, przygotowałem rozrusznik do szybkiego czytania, który w kwadrans dwukrotnie przyspieszy Twoje czytanie.</p>
+          <p>Rekomenduję przejście całego kursu w miesiąc (wariant ambitny) lub 6 tygodni (na spokojnie).</p>
+          <p>Oba warianty zakładają obejrzenie lekcji i wykonanie ćwiczeń na dowolnie wybranej przez Ciebie książce (poświęcasz średnio 10 minut dziennie).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CENA ===== -->
+  <section class="pb-sec" id="cena">
+    <div class="pb-wrap pb-center">
+      <span class="pb-kicker">Ile kosztuje kurs</span>
+      <h2 class="pb-h2">Szybkie Czytanie Online?</h2>
+      <div class="pb-cena">
+        <ul>
+          <li>Roczny dostęp do kursu i wsparcie</li>
+          <li>Autorski skrypt z ćwiczeniami i tekstami</li>
+          <li>Bonusowe lekcje i materiały</li>
+        </ul>
+        <p class="pb-stara">czyli Szybkie Czytanie Online<br>to tylko <s>500 złotych</s></p>
+        <div class="pb-kwota">147<small>,-</small></div>
+        <p class="pb-pilne">To duża zniżka, ale musisz działać szybko, bo mamy tylko 600 pakietów w tej cenie</p>
+        <p>W pakiecie do kursu podstawowego otrzymasz<br><strong>5 lekcji bonusowych i kurs rozrusznik czytania</strong></p>
+        <p><a class="pb-btn pb-btn--big" data-cta="cena" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">KUPUJĘ KURS</a></p>
+        <hr style="border:0;border-top:2px solid #EFE4CC;margin:28px 0">
+        <p style="font-weight:900;color:var(--las);margin-bottom:10px">W ramach pakietu otrzymasz:</p>
+        <ul>
+          <li>Szybkie Czytanie Online - pełen kurs</li>
+          <li>Rozrusznik czytania: mini kurs</li>
+          <li>5 lekcji bonusowych</li>
+        </ul>
+        <p class="pb-stara">mamy 600 pakietów w cenie <s>500 zł</s></p>
+        <div class="pb-kwota" style="font-size:clamp(2.6rem,7vw,3.6rem)">147<small>,-</small></div>
+        <p class="pb-drobne">Płatność blikiem, przelewem lub kartą. Wystawiamy faktury.</p>
+        <p><a class="pb-btn pb-btn--las" data-cta="cena-2" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję Kurs</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WIĘCEJ O MNIE ===== -->
+  <section class="pb-sec pb-light" id="o-mnie">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Więcej o mnie</span>
+      <h2 class="pb-h2">Piotr Starzyński</h2>
+      <div class="pb-omnie pb-mt">
+        <img src="assets/piotr.webp" width="600" height="405" alt="Piotr Starzyński" loading="lazy">
+        <div>
+          <p>Założyciel i Prezes największej organizacji w Polsce zajmującej się efektywną nauką. Złoty medalista i President of the WABA League for Poland (międzynarodowej Ligii Sportów Umysłowych). Obycie z kamerą zawdzięcza nagraniom edukacyjnym w TVP.</p>
+          <p>Prowadził szkolenia m. in. dla: Google Polska, Erasmus+, Sądu Najwyższego, LifeSkills, Social Wolves, ELSA Warszawa, MeetingPlaner.</p>
+          <p>Prowadzi szkolenia dla uczniów i nauczycieli - od szkół podstawowych przez instytucje edukacyjne po firmy i międzynarodowe organizacje. Ma na swoim koncie ponad 10 tysięcy godzin przeprowadzonych szkoleń.</p>
+          <p>Obecnie pracuje na Uniwersytecie Warszawskim nad doktoratem poświęconym wyzwaniom nauczycieli w polskiej szkole.</p>
+          <p>Jego Fundacja współpracuje z ponad 50 szkołami w całej Polsce, koordynuje projekty w ramach programu Erasmus+ i POWER oraz pomaga nauczycielom i pedagogom. W 2019 roku Fundacja Pięć Plus uzyskała akredytację programu Erasmus+ w dziedzinie kształcenia a przez ostatnie 2 lata działalności online - srebrne klapsy platformy Web To Learn.</p>
+          <p class="pb-mt"><a class="pb-btn" data-cta="o-mnie" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Teraz już na pewno kupuję kurs</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="pb-sec" id="faq">
+    <div class="pb-wrap">
+      <span class="pb-kicker">Najczęściej zadawane pytania</span>
+      <h2 class="pb-h2">Jeśli nadal masz wątpliwości</h2>
+      <p class="pb-lead">sprawdź czy nie rozwieją ich poniższe odpowiedzi - a jeśli nie, napisz na <a href="mailto:kontakt@5plus.edu.pl" style="color:var(--cegla);font-weight:700">kontakt@5plus.edu.pl</a></p>
+      <div class="pb-faq pb-mt">
+        <details data-acc="dysleksja"><summary>Czy dysleksja jest przeszkodą w odbyciu kursu?</summary><p>W żadnym wypadku! Dysleksja w żadnym stopniu nie przeszkadza w przejściu kursu. Wiele osób z dysleksją techniki szybkiego czytania zachęciły do nauki!</p></details>
+        <details data-acc="dostep"><summary>Na jaki czas wykupuję dostęp do kusu?</summary><p>Dostęp do wszystkich materiałów otrzymujesz na cały rok. Kurs zajmuje około miesiąca przy 10 minutach dziennie. Wierzymy, że każdy powinien realizować kurs w swoim tempie, a możliwość odświeżenia umiejętności jest bardzo ważna.</p></details>
+        <details data-acc="zwrot"><summary>Czy możliwy jest zwrot zakupionego kursu?</summary><p>W ciągu 14 dni od kupna możesz bez konsekwencji zrezygnować z zakupu kursu Szybkie Czytanie Online®. Skontaktuj się z nami przez kontakt@5plus.edu.pl a pieniądze znajdą się z powrotem na Twoim koncie w ciągu 7 dni roboczych.</p></details>
+        <details data-acc="jak-otrzymam"><summary>W jaki sposób otrzymam kurs?</summary><p>Dostęp do kursu odbywa się za pośrednictwem naszej platformy. Po założeniu swojego konta otrzymasz dostęp do wszystkich lekcji i skryptu z ćwiczeniami na rozszerzanie pola widzenia.</p></details>
+      </div>
+      <p class="pb-mt pb-center"><a class="pb-btn pb-btn--big" data-cta="faq" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Nie mam więcej pytań, poproszę o kurs!</a></p>
+    </div>
+  </section>
+
+  <!-- ===== STOPKA ===== -->
+  <footer class="pb-foot" id="kontakt">
+    <div class="pb-wrap">
+      <div>
+        <strong style="color:var(--krem)">©Fundacja Pięć Plus. Wszystkie prawa zastrzeżone.</strong><br>
+        e-mail: <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a>
+      </div>
+      <div>
+        <a href="https://5plus.edu.pl/polityka-prywatnosci/">Polityka prywatności</a> | <a href="https://5plus.edu.pl/">Strona Fundacji</a> | <button type="button" id="pb-cookie-settings">Ustawienia cookies</button>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<div class="pb-cookies" id="pb-cookies" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookies" hidden>
+  <p>Strona używa plików cookies. Niezbędne są do jej działania. Za Twoją zgodą włączamy też Piksel Meta i Clarity, żeby mierzyć, które reklamy naprawdę pomagają czytelnikom nas znaleźć. Szczegóły w <a href="https://5plus.edu.pl/polityka-prywatnosci/">polityce prywatności</a>.</p>
+  <div class="pb-btns">
+    <button type="button" class="pb-yes" data-consent="all">Akceptuję wszystkie</button>
+    <button type="button" data-consent="necessary">Tylko niezbędne</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.pb-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('pb-nav-toggle').checked=false})});
+
+(function(){
+  var PIXEL_ID = ''; // TODO: ID Piksela Meta fundacji. Pusty = piksel się nie ładuje.
+  var CLARITY_ID = 'vjr23eh9gx'; // ten sam projekt co 5plus.edu.pl
+  var KEY = 'sc_consent', consent = null, pending = [];
+  try { consent = localStorage.getItem(KEY); } catch(e){}
+
+  function loadPixel(){
+    if (!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  function loadClarity(){
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+  }
+  var STD = /^(ViewContent|InitiateCheckout|Purchase|Lead|AddToCart)$/;
+  function send(name, params){ if (window.fbq) try { fbq(STD.test(name)?'track':'trackCustom', name, params); } catch(e){} }
+  function track(name, params){
+    params = params || {};
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({event:name}, params));
+    if (consent === 'all') send(name, params);
+    else if (consent === null) pending.push([name, params]);
+  }
+  var banner = document.getElementById('pb-cookies');
+  function setConsent(v){
+    consent = v;
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    banner.hidden = true;
+    if (v === 'all') { loadPixel(); loadClarity(); pending.forEach(function(p){ send(p[0], p[1]); }); }
+    pending = [];
+  }
+  banner.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); });
+  });
+  document.getElementById('pb-cookie-settings').addEventListener('click', function(){ banner.hidden = false; });
+  if (consent === 'all') { loadPixel(); loadClarity(); }
+  else if (consent === null) banner.hidden = false;
+
+  track('ViewContent', {content_name:'szybkie-czytanie-online', value:147, currency:'PLN'});
+
+  // UTM z reklamy przechodzą na sklep (inna domena)
+  var utm = location.search.replace(/^\?/, '').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
+  document.querySelectorAll('a[data-cta]').forEach(function(a){
+    if (utm) a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm;
+    a.addEventListener('click', function(){
+      track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:147, currency:'PLN', cta_place:a.getAttribute('data-cta')});
+    });
+  });
+  document.querySelectorAll('details[data-acc]').forEach(function(d){
+    d.addEventListener('toggle', function(){ if (d.open) track('accordion_open', {card:d.getAttribute('data-acc')}); });
+  });
+})();
+</script>
+</body>
+</html>
