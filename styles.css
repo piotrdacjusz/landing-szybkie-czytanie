@@ -412,6 +412,6 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .opt p+p{margin-top:8px}
 
 /* kafelek Sądu Najwyższego: godło + nazwa (sąd podpisuje się godłem, nie ma logotypu) */
-.plogo-sn{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:nowrap;white-space:nowrap}
-.plogo-sn img{max-height:40px;height:40px;width:auto;flex:none}
+.partner .plogo.plogo-sn{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:nowrap;white-space:nowrap;height:44px}
+.partner .plogo.plogo-sn img{max-height:40px;height:40px;width:auto;flex:none}
 .plogo-sn b{font-weight:900;font-size:.95rem;line-height:1.1;letter-spacing:.02em;color:#1F2336;text-align:left}
