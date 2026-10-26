@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matura na 5 Plus: matematyka, poziom podstawowy | Fundacja Pięć Plus</title>
+<meta name="description" content="Kurs online do matury podstawowej z matematyki: 8 modułów, 42 krótkie lekcje, skrypt z ćwiczeniami i 3 arkusze CKE z kluczem. 300 zł, dostęp do 31 sierpnia 2027, zwrot przez 30 dni.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Matura na 5 Plus: matematyka">
+<meta property="og:description" content="Na maturze 2025 z matematyki same zadania zamknięte dawały najwyżej 50%. Strategie, pewniaki i wytrychy w 42 krótkich lekcjach. 300 zł.">
+<meta name="theme-color" content="#1f2336">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Alegreya+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<!--
+  Matura na 5 Plus: matematyka: landing, WERSJA 2 (2026-10-26). Szkielet: ~/Kodowanie/Landing 8kl/index.html (CSS, cookies, Piksel i Clarity po zgodzie,
+  track/trackCustom, UTM na koszyk, sticky CTA, akordeony), przez Landing Matura polski (ten sam odbiorca).
+  Tekst: vault 02 Fundacja Pięć Plus/kampanie/matura-matematyka-2027/10-landing-copy-v2.md.
+  Koszyk: WTL ID 28 https://kursy.piecplus.pl/s/matematyka-maturana5plus.html. Przed publikacją: lista „Przed publikacją” w copy v2 (panel ID 28,
+  lekcje 04/02/42, arkusz CKE 5.05.2026, opis w sklepie, regulamin 30 dni, data dostępu, pakiet ID 29, mailer, piksel). Miejsca do uzupełnienia: klasa .todo.
+-->
+
+<style>
+:root{
+  --navy:#1f2336; --navy-2:#2a2f47;
+  --pl:#124429; --mat:#073462; --ang:#451e3e;
+  --gold:#ffc676; --gold-soft:#ffd191; --gold-dark:#8a5a1c;
+  --paper:#fbf8f3; --paper-2:#f3eee5; --line:#e4ddd1;
+  --ink:#1f2336; --dim:#585c70; --faint:#7a7d8e;
+  --maxw:880px;
+  --serif:Merriweather,Georgia,serif; --sans:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.5 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,video{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:48px 0}
+@media(max-width:760px){section{padding:36px 0}}
+section.alt{background:#fff}
+h1,h2,h3{font-family:var(--serif);line-height:1.25;margin:0 0 16px;font-weight:900}
+h1{font-size:clamp(26px,5.4vw,42px);text-wrap:balance}
+h2{font-size:clamp(24px,4.2vw,34px);text-wrap:balance}
+h3{font-size:19px;font-weight:700}
+p{margin:0 0 16px}
+.lead{font-size:20px;line-height:1.45}
+p{text-wrap:pretty}
+.hint{color:var(--dim);margin:-6px 0 22px}
+.fn{font-size:14.5px;color:var(--faint);line-height:1.45;margin-top:22px;padding-top:12px;border-top:1px solid var(--line)}
+mark.todo{background:#fff3b0;color:#5a4a00;padding:0 4px;border-radius:3px;font-weight:700}
+.center{text-align:center}
+
+/* przycisk — jeden styl na całej stronie, bez animacji */
+.cta{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:800;font-size:20px;line-height:1.2;padding:16px 30px;border-radius:8px;text-align:center;border:2px solid var(--gold)}
+.cta small{display:block;font-weight:500;font-size:14.5px;margin-top:3px;color:#4a3a1c}
+.cta:hover,.cta:focus-visible{background:var(--gold-soft);border-color:var(--gold-soft)}
+.cta.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cta.line:hover{background:rgba(255,255,255,.08)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:26px 0 12px}
+
+/* górny pasek */
+.top{background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:var(--serif);font-weight:900;font-size:16px;white-space:nowrap}
+.brand b{width:30px;height:30px;border-radius:6px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:14px}
+.top nav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{color:#c9ccda;text-decoration:none;font-size:16px;padding:6px 9px;white-space:nowrap}
+.top nav a:hover{color:#fff}
+@media(max-width:760px){.top nav{display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:36px 0 40px}
+.hero .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start}
+.badge{display:inline-block;font-size:15px;font-weight:700;letter-spacing:.03em;color:var(--gold);border:1px solid rgba(255,198,118,.45);border-radius:4px;padding:5px 10px;margin-bottom:18px}
+.hero p{color:#dfe1ea}
+.hero p b{color:#fff}
+.trust{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:17px;color:#c9ccda}
+.trust b{color:var(--gold)}
+.hero .fn{color:#9ea2b6;border-top-color:rgba(255,255,255,.12)}
+.hero .video{border:1px solid rgba(255,255,255,.15)}
+@media(max-width:760px){.hero .grid{grid-template-columns:1fr;gap:8px}.hero .video{max-width:300px}}
+
+/* porównanie 84 — statyczne paski */
+.cmp{margin:26px 0 0;display:grid;gap:12px}
+.cmp .row{display:grid;grid-template-columns:150px 1fr 64px;gap:12px;align-items:center;font-size:16px}
+.cmp .track{height:14px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.cmp .fill{height:100%;background:#8f93a8}
+.cmp .row.win .fill{background:var(--gold)}
+.cmp .num{font-family:var(--serif);font-weight:900;font-size:20px;text-align:right}
+.cmp .row.win .num{color:var(--gold)}
+@media(max-width:480px){.cmp .row{grid-template-columns:1fr 58px}.cmp .track{grid-column:1/-1;order:3}}
+
+/* wideo */
+.video{border-radius:8px;overflow:hidden;background:#000;aspect-ratio:1/1}
+@media(max-width:700px){.two .video{max-width:300px}}
+.video video{width:100%;height:100%;object-fit:cover}
+.vcap{font-size:15px;color:var(--faint);margin-top:8px}
+.hero .vcap{color:#9ea2b6}
+
+/* pytania rodziców */
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.qs p{margin:0;padding:18px 18px 18px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-weight:700;font-size:18px;color:var(--navy);line-height:1.45}
+@media(max-width:620px){.qs{grid-template-columns:1fr}}
+
+/* scena */
+.quote{font-family:var(--serif);font-size:18px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:20px 0}
+.photo-note{background:var(--paper-2);border:1px dashed #cfc4b1;border-radius:6px;padding:12px 14px;font-size:15px;color:var(--dim)}
+
+/* stawka */
+.points{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:22px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.pt{padding:16px 8px;text-align:center;border-left:1px solid var(--line)}
+.pt:first-child{border-left:0;background:var(--navy);color:#fff}
+.pt .v{font-family:var(--serif);font-size:32px;font-weight:900;color:var(--navy)}
+.pt:first-child .v{color:var(--gold)}
+.pt .l{font-size:15px;color:var(--dim);line-height:1.25}
+.pt:first-child .l{color:#c9ccda}
+@media(max-width:620px){.points{grid-template-columns:repeat(2,1fr)}.pt{border-top:1px solid var(--line)}.pt:first-child{grid-column:1/-1;border-top:0}.pt:nth-child(2n){border-left:0}}
+.callout{background:var(--paper-2);border-left:4px solid var(--gold-dark);padding:14px 18px;margin:20px 0}
+
+/* dlaczego kończą */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px;margin-top:8px}
+.why h3{margin-bottom:6px}
+.why h3::before{content:"";display:block;width:36px;height:4px;background:var(--gold);margin-bottom:12px}
+.why p{margin:0;color:var(--dim)}
+@media(max-width:620px){.why{grid-template-columns:1fr}}
+.cons{background:var(--navy);color:#fff;padding:26px 28px;margin-top:34px;border-radius:8px}
+.cons h3{color:var(--gold);margin-bottom:8px}
+.cons p{margin:0;color:#dfe1ea}
+.cons b{color:#fff}
+.len{display:grid;gap:10px;margin:26px 0 0}
+.len .row{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center}
+.len .v{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--navy)}
+.len .bar{height:28px;background:#b7b9c4;border-radius:3px}
+.len .row.win .bar{background:var(--navy);width:30%}
+.len .l{grid-column:2;font-size:15px;color:var(--dim);margin-top:-4px}
+.proof{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.proof .shot{aspect-ratio:4/3;border:2px dashed #cfc4b1;border-radius:6px;background:var(--paper-2);display:grid;place-items:center;text-align:center;padding:12px;font-size:14px;color:var(--dim)}
+@media(max-width:620px){.proof{grid-template-columns:1fr;gap:6px}.proof .shot{aspect-ratio:auto;min-height:0;padding:8px}}
+.bridge{font-family:var(--serif);font-size:20px;color:var(--navy);margin:24px 0 10px;font-weight:700;line-height:1.4}
+.who{grid-template-columns:repeat(3,1fr)}
+@media(max-width:700px){.who{grid-template-columns:1fr}}
+.who p{font-size:17px}
+
+/* filary */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:20px 0 28px;border-top:4px solid var(--navy)}
+.pillar{padding:20px 20px 4px 0}
+.pillar+.pillar{padding-left:20px;border-left:1px solid var(--line)}
+.pillar .k{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);font-weight:800}
+.pillar h3{font-size:22px;margin:4px 0 10px}
+.pillar p{font-size:17px;color:var(--dim)}
+@media(max-width:700px){.pillars{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding:18px 0 4px;border-left:0;border-bottom:1px solid var(--line)}}
+.two{display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:start}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);padding:14px 18px;margin-top:16px}
+
+/* pasy przedmiotów — jak w starym landingu */
+.subj{color:#fff;padding:40px 0}
+.subj.pl{background:var(--pl)} .subj.mat{background:var(--mat)} .subj.ang{background:var(--ang)}
+.subj .head{display:grid;grid-template-columns:1fr 200px;gap:24px;align-items:center}
+.subj h3{font-size:clamp(23px,3.6vw,29px);margin:0 0 6px}
+.subj .meta{color:rgba(255,255,255,.78);margin:0}
+.subj .meta b{color:var(--gold)}
+.subj .head img{width:200px;height:auto;justify-self:end}
+@media(max-width:620px){.subj .head{grid-template-columns:1fr}.subj .head img{display:none}}
+details.lessons{margin-top:18px;border-top:1px solid rgba(255,255,255,.22)}
+details.lessons summary{cursor:pointer;list-style:none;padding:14px 0;font-weight:800;color:var(--gold)}
+details.lessons summary::-webkit-details-marker{display:none}
+details.lessons summary::after{content:" +"}
+details.lessons[open] summary::after{content:" \2212"}
+.mods{columns:2;column-gap:36px;padding-bottom:6px}
+.mod{break-inside:avoid;display:grid;grid-template-columns:34px 1fr;gap:4px 10px;margin-bottom:18px}
+.mod .n{font-family:var(--serif);font-weight:900;font-size:28px;line-height:1;color:rgba(255,255,255,.9)}
+.mod b{display:block;font-size:18px;margin-bottom:4px}
+.mod ol{margin:0;padding:0;list-style:none;font-size:15.5px;line-height:1.45;color:rgba(255,255,255,.82)}
+@media(max-width:620px){.mods{columns:1}}
+
+/* ścieżka */
+.path{list-style:none;margin:10px 0 0;padding:0}
+.path li{padding:0 0 22px 22px;border-left:3px solid var(--line);position:relative}
+.path li::before{content:"";position:absolute;left:-9px;top:4px;width:15px;height:15px;border-radius:50%;background:var(--gold);border:3px solid var(--paper)}
+.path .when{display:block;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);font-weight:800}
+.path b{display:block;font-family:var(--serif);font-size:18px;margin:2px 0 4px}
+.path p{margin:0;color:var(--dim);font-size:17px}
+
+/* autor */
+.author{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
+.author img{width:100%;height:auto;border-radius:6px}
+.author .meta{font-size:15.5px;color:var(--dim);margin-top:10px;line-height:1.4}
+@media(max-width:620px){.author{grid-template-columns:1fr;gap:14px}.author img{max-width:240px}}
+
+/* cena */
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:8px;padding:28px}
+.offer img{width:100%;height:auto}
+.price{font-family:var(--serif);font-size:58px;font-weight:900;color:var(--navy);line-height:1;margin:0}
+.price small{display:block;font-family:var(--sans);font-size:15px;font-weight:700;color:var(--dim);letter-spacing:.05em;text-transform:uppercase;margin-top:6px}
+.incl{list-style:none;margin:16px 0 22px;padding:0}
+.incl li{padding:7px 0 7px 24px;border-bottom:1px solid var(--line);position:relative;font-size:17.5px}
+.incl li:last-child{border-bottom:0}
+.incl li::before{content:"✓";position:absolute;left:0;color:var(--gold-dark);font-weight:800}
+.steps{margin:16px 0 0;padding-left:20px;font-size:16px;color:var(--dim)}
+.pay{font-size:16px;color:var(--dim);margin:10px 0 0}
+@media(max-width:700px){.offer{grid-template-columns:1fr;padding:18px}.offer img{max-width:260px;margin:0 auto}}
+.anchor{background:#fff;border:1px solid var(--line);padding:18px 20px;margin-top:18px;border-radius:8px;font-size:17.5px}
+.guar{display:flex;gap:16px;align-items:flex-start;background:var(--paper-2);border-radius:8px;padding:20px 22px;margin-top:18px}
+.guar svg{width:34px;height:34px;flex:none;fill:var(--gold-dark);margin-top:2px}
+.guar h3{margin-bottom:6px}
+.guar p{margin:0}
+
+/* akordeony */
+details.acc{background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:8px}
+details.acc summary{list-style:none;cursor:pointer;padding:15px 48px 15px 18px;position:relative;font-weight:700;line-height:1.4;color:var(--navy)}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"+";position:absolute;right:18px;top:12px;font-size:24px;font-weight:400;color:var(--gold-dark)}
+details.acc[open] summary::after{content:"\2212"}
+details.acc summary .q{color:var(--dim);font-weight:500}
+.acc-body{padding:0 18px 16px;color:var(--dim);font-size:17.5px}
+.acc-body p:last-child{margin:0}
+
+/* domknięcie */
+.closing{background:var(--navy);color:#fff;text-align:center}
+.closing p{color:#dfe1ea;max-width:62ch;margin-left:auto;margin-right:auto}
+.closing .ps{text-align:left;background:var(--navy-2);border-radius:8px;padding:16px 20px;font-size:17.5px;margin-top:28px}
+.closing .ps a{color:var(--gold);font-weight:700}
+.closing .cta-row{justify-content:center}
+footer{background:var(--navy);color:#9ea2b6;font-size:15px;padding:22px 0 100px;border-top:1px solid rgba(255,255,255,.08)}
+footer a{color:#c9ccda}
+footer button{background:none;border:0;padding:0;color:#c9ccda;font:inherit;text-decoration:underline;cursor:pointer}
+
+/* przycisk na dole ekranu — tylko telefon, bez animacji */
+.bar-cta{display:none}
+@media(max-width:760px){
+  .bar-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.12)}
+  .bar-cta.on{display:block}
+  .bar-cta .cta{display:block;padding:12px;font-size:18px}
+}
+
+/* cookies — jeden baner, dwie równorzędne decyzje */
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:560px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 30px rgba(31,35,54,.18);padding:18px 20px;font-size:16px;line-height:1.45}
+.cookies p{margin:0 0 14px}
+.cookies a{color:var(--navy);font-weight:700}
+.cookies .btns{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{flex:1 1 160px;font:700 16px var(--sans);padding:11px 14px;border-radius:6px;cursor:pointer;border:2px solid var(--navy);background:#fff;color:var(--navy)}
+.cookies button.yes{background:var(--navy);color:#fff}
+.cookies[hidden]{display:none}
+
+/* v6.1 */
+.kicker{font-size:15px;font-weight:700;letter-spacing:.02em;color:var(--gold);margin:0 0 14px}
+.hero .sub{color:#c9ccda;font-size:16.5px;margin:-4px 0 14px}
+.hero .cmp{margin:0 0 18px}
+.cmp-l{font-size:14px;color:#9ea2b6;margin:2px 0 0}
+.hero .video{max-width:300px}
+.pillar ul{margin:8px 0 0;padding-left:18px;font-size:17px;color:var(--dim)}
+.pillar li{margin-bottom:6px}
+.pillar li b{color:var(--navy)}
+.why.who h3{font-size:18px}
+.why.who p{color:var(--dim)}
+@media(max-width:620px){.subj .head{grid-template-columns:1fr 112px;gap:14px;align-items:center}.subj .head img{display:block;width:112px}}
+.subj .meta{font-size:16px}
+
+/* v7 */
+.h3big{font-size:22px;margin:30px 0 8px}
+.pillars.one{grid-template-columns:1fr;border-top:0;margin:8px 0 0}
+.pillars.one .pillar{padding:0 0 14px;border:0}
+.pillars.one .pillar p{font-size:17px;color:var(--ink)}
+.why.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:700px){.why.three{grid-template-columns:1fr}}
+.guar .sign{font-family:var(--serif);font-weight:700;margin:8px 0 0;color:var(--navy)}
+.closing .ps{text-align:center}
+p.note{margin-top:18px}
+</style>
+
+<style>
+/* ==== Matura matematyka (v2, 26.10) ==== */
+:root{--m1:#1f2336;--m2:#073462;--m3:#11525a;--m4:#124429;--m5:#34306b;--m6:#451e3e;--m7:#1d4a6e;--m8:#0f3d3a}
+.subj.m1{background:var(--m1)}.subj.m2{background:var(--m2)}.subj.m3{background:var(--m3)}.subj.m4{background:var(--m4)}
+.subj.m5{background:var(--m5)}.subj.m6{background:var(--m6)}.subj.m7{background:var(--m7)}.subj.m8{background:var(--m8)}
+.subj{padding:30px 0}
+.subj .head{grid-template-columns:1fr}
+.subj .txt{color:rgba(255,255,255,.88);font-size:17px;margin:10px 0 0;max-width:68ch}
+.subj .txt b{color:#fff}
+details.lessons{margin-top:14px}
+ol.ll{list-style:none;margin:0;padding:0 0 8px;columns:2;column-gap:36px;font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.85)}
+ol.ll li{break-inside:avoid;padding:2px 0}
+ol.ll li span{display:inline-block;min-width:28px;font-family:var(--serif);font-weight:700;color:var(--gold)}
+@media(max-width:620px){ol.ll{columns:1}}
+.hero .grid{grid-template-columns:1.35fr 1fr}
+.numline{font-size:17.5px}
+.sheet{margin-top:6px}
+.sheet .lab{font-size:14.5px;color:#9ea2b6;margin:0 0 8px}
+.sheet .bars{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.sheet .b{background:rgba(255,255,255,.12);border-radius:4px;padding:10px 10px;min-height:84px;display:flex;flex-direction:column;justify-content:space-between}
+.sheet .b .v{font-family:var(--serif);font-weight:900;font-size:24px;color:#fff;line-height:1}
+.sheet .b .l{font-size:14px;color:#c9ccda;line-height:1.25}
+.sheet .b.w{background:var(--gold)}
+.sheet .b.w .v,.sheet .b.w .l{color:var(--navy)}
+@media(max-width:760px){.hero .grid{grid-template-columns:1fr;gap:4px}.sheet{margin-top:18px}}
+h2.qh{font-size:clamp(22px,3.8vw,30px);font-style:italic;font-weight:700}
+.qsrc{font-size:15px;color:var(--faint);margin:-8px 0 20px}
+.why.tiles h3{font-size:19px}
+.why.tiles p{color:var(--ink);margin:0 0 10px}
+.why.tiles .say{display:block;font-size:16px;color:var(--dim);font-style:italic;margin-bottom:6px}
+.points .pt.hl{background:var(--navy)}
+.points .pt.hl .v{color:var(--gold)}
+.points .pt.hl .l{color:#c9ccda}
+.points .pt:first-child{background:#fff;color:inherit}
+.points .pt:first-child .v{color:var(--navy)}
+.points .pt:first-child .l{color:var(--dim)}
+@media(max-width:620px){.points{grid-template-columns:repeat(5,1fr)}.pt{border-top:0;padding:12px 2px}.pt:first-child{grid-column:auto}.pt:nth-child(2n){border-left:1px solid var(--line)}.pt .v{font-size:21px}.pt .l{font-size:13px}}
+.scale-l{font-size:15px;color:var(--dim);margin:-10px 0 18px}
+.uq{font-family:var(--serif);font-size:17px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:20px 0;font-style:italic}
+.offer.solo{grid-template-columns:1fr;max-width:640px}
+.author .cap{font-size:15.5px;color:var(--dim);margin-top:10px;line-height:1.4}
+.dates{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);padding:14px 18px;margin-top:22px}
+.dates p{margin:0 0 8px}.dates p:last-child{margin:0}
+@media(max-width:620px){.guar{flex-direction:column;gap:6px;padding:18px}.guar svg{width:28px;height:28px}}
+/* lista CKE: przyczyna → lekcja */
+.cke{list-style:none;margin:18px 0 6px;padding:0;border-top:1px solid var(--line)}
+.cke li{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cke q{font-size:16px;color:var(--dim);font-style:italic;quotes:"„" "”"}
+.cke b{font-family:var(--serif);font-size:17px;color:var(--navy)}
+.cke .to{display:block;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);font-weight:800;margin-bottom:2px}
+@media(max-width:620px){.cke li{grid-template-columns:1fr;gap:4px}}
+.lead-b{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18.5px;line-height:1.45;margin:26px 0 16px}
+.pillars.one .pillar p{margin:0 0 10px}
+.pillars.one .pillar .k{display:block;margin-bottom:2px}
+.notes p.note{margin-top:10px}
+.offer .cta{display:block;font-size:18.5px;padding:14px 12px}
+.why.three h3 sup{font-size:60%}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>5+</b>Matura na 5 Plus</a>
+    <nav aria-label="Nawigacja strony">
+      <a href="#cke">Gdzie uciekają punkty</a>
+      <a href="#co">Co w kursie</a>
+      <a href="#kto">Kim jesteśmy</a>
+      <a href="#cena">Cena</a>
+      <a href="#pytania">Pytania</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ==== 1. HERO ==== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="kicker" id="kicker">kurs online · matura z matematyki, poziom podstawowy · arkusz próbny CKE 18 grudnia, matura 5 maja 2027</p>
+    <div class="grid">
+      <div>
+        <h1 id="h1">Na maturze 2025 z matematyki same zadania zamknięte dawały najwyżej 50%.<sup>*</sup></h1>
+        <p class="lead">Drugie 50% to zadania otwarte. Są one bardziej wymagające od zadań zamkniętych.</p>
+        <p>Na szczęście jest pewien schemat, którego możesz się trzymać, aby zwiększyć swoje szanse na sukces.</p>
+        <p class="numline"><b>8 modułów · 42 krótkie lekcje · skrypt z ćwiczeniami · 3 arkusze CKE z kluczem</b><sup>**</sup></p>
+        <ul class="trust">
+          <li><b>300 zł</b></li>
+          <li><b>dostęp do 31 sierpnia 2027</b></li>
+          <li><b>żelazna gwarancja zwrotu</b> 30 dni</li>
+        </ul>
+        <div class="cta-row">
+          <a class="cta" data-cta="hero" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł<small>dostęp od razu po zakupie</small></a>
+        </div>
+      </div>
+      <div class="sheet" aria-label="Punkty w arkuszu maturalnym z matematyki, matura 2025">
+        <p class="lab">Arkusz z matematyki, poziom podstawowy, matura 2025: 50 punktów</p>
+        <div class="bars">
+          <div class="b"><span class="v">25</span><span class="l">zadania zamknięte</span></div>
+          <div class="b w"><span class="v">25</span><span class="l">zadania otwarte</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="fn"><sup>*</sup>Punkty za zadania zamknięte i otwarte w arkuszu standardowym z matematyki na poziomie podstawowym, formuła 2023.
+    Matura 2025: 35 zadań, 25 z 50 punktów za zamknięte i 25 za otwarte (CKE, „Sprawozdanie za rok 2025. Matematyka”, s. 4). Matura 2024: 17 z 46 punktów
+    za otwarte. Informator CKE na 2027 dopuszcza od 20 do 25 zadań zamkniętych i od 7 do 14 otwartych, więc podział może się zmienić.
+    Próg zdania 30%, czyli 15 z 50 punktów (CKE, „Wstępne informacje o wynikach egzaminu maturalnego 2026”, 8.07.2026).<br>
+    <sup>**</sup>Spis lekcji kursu „Matura na 5 Plus. Matematyka” na platformie kursowej, stan z <mark class="todo">[data odczytu panelu]</mark>: 8 modułów,
+    42 lekcje wideo; skrypt z ćwiczeniami do druku; trzy pełne arkusze CKE z kluczem w lekcji „Najlepsze ćwiczenia” (lata arkuszy: <mark class="todo">[odczyt panelu]</mark>).</p>
+  </div>
+</section>
+
+<!-- ==== 2. PROBLEM (nagłówek zmienia się z datą: do 17.12 / 18.12-28.02 / od 1.03, patrz copy v2) ==== -->
+<section class="alt" id="problemy">
+  <div class="wrap">
+    <h2 class="qh">„Matematyka była jedynym przedmiotem, któremu poswięcałem najwięcej czasu i przynosiła najmniej efektów.”</h2>
+    <p class="qsrc">z komentarza absolwenta na YouTube, 2025, pisownia oryginalna</p>
+    <div class="why tiles">
+      <div><h3>Od czego zacząć?</h3>
+        <p><span class="say">„Nie wiem od czego ja mam zaczynać” (z komentarza maturzysty)</span>
+        A Ty nie wiesz, w co ręce wsadzić? Zadania na YouTubie, podręczniki, arkusze CKE, karta wzorów.</p></div>
+      <div><h3>Najgłupszy błąd</h3>
+        <p>Jednym z częstych błędów jest niepoprawne przeniesienie odpowiedzi na kartę odpowiedzi. Jest on również niestety błędem „najgłupszym”.</p>
+        <p><span class="say">„gorzej jest popelnic bledy z nieuwagi niz gdy sie nie po prostu nie umie, wiekszy zal sie odczuwa” (z komentarza maturzysty)</span></p></div>
+      <div><h3>Sam wynik to za mało!</h3>
+        <p>Przy zadaniach otwartych pamiętaj, że samo podanie wyniku nie jest wystarczające.</p>
+        <p>Musisz zapisać wszystkie obliczenia i przekształcenia, które prowadzą do rozwiązania.</p></div>
+      <div><h3>Stres</h3>
+        <p>Nakręcanie się przed „sądnym dniem”, na który czekasz całe liceum, wcale nie pozwala Ci lepiej skupić się na nauce.</p>
+        <p>Wszechogarniająca panika to wróg nauki - w takim stanie każda rzecz w podręczniku będzie się wydawała ważna i w efekcie
+        przepiszesz wszystko do swoich notatek.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== 3. STAWKA ==== -->
+<section id="stawka">
+  <div class="wrap">
+    <h2>O co toczy się gra</h2>
+    <h3 class="h3big" style="margin-top:0">80% z matematyki to wynik równy albo lepszy niż u 75 na 100 zdających.<sup>*</sup></h3>
+    <div class="points" aria-label="Wynik w procentach i centyl, matura 2026, matematyka podstawowa">
+      <div class="pt"><div class="v">50%</div><div class="l">centyl 39</div></div>
+      <div class="pt"><div class="v">60%</div><div class="l">centyl 52</div></div>
+      <div class="pt"><div class="v">70%</div><div class="l">centyl 64</div></div>
+      <div class="pt hl"><div class="v">80%</div><div class="l">centyl 75</div></div>
+      <div class="pt"><div class="v">90%</div><div class="l">centyl 87</div></div>
+    </div>
+    <p class="scale-l">Wynik z matematyki na poziomie podstawowym i odsetek zdających z takim samym albo niższym wynikiem, matura 2026. Wyniku nie obiecujemy.</p>
+    <p>Najwięcej maturzystów ma problem z… matematyką.<sup>**</sup></p>
+    <p>Wydawałoby się, że nie ma nic pozornie prostszego. Pilny uczeń powinien dostać wysoki wynik na maturze. Słabszy uczeń zda egzamin gorzej.</p>
+    <p><b>Nic bardziej mylnego!</b></p>
+    <p>Okazuje się, że wielu tzw. „kujonów” nie radzi sobie dobrze na maturze. Przyczyn jest wiele: zmieniające się wymagania, niepewność
+    czy nawet stres w dniu egzaminu.</p>
+    <p>Z drugiej strony wielu słabszych uczniów potrafi napisać egzamin powyżej oczekiwań. <b>Mają swoje sposoby.</b></p>
+    <p class="bridge">Podczas egzaminów często nie decyduje wiedza, a umiejętność rozwiązywania konkretnego testu. Właśnie na tym się skupiliśmy.</p>
+    <p class="fn"><sup>*</sup>Wartość centyla to odsetek zdających, którzy mieli wynik taki sam albo niższy. CKE, „Skale centylowe wyników,
+    egzamin maturalny 2026”, 8.07.2026, matematyka, poziom podstawowy, s. 23. Średni wynik w 2026 roku: 59% (CKE, „Wstępne informacje
+    o wynikach egzaminu maturalnego 2026”, 8.07.2026, tab. 2).<br>
+    <sup>**</sup>Najniższa zdawalność wśród przedmiotów obowiązkowych w 2026 roku: matematyka 88,9%, polski 95,3%, angielski 95,5%
+    (tegoroczni absolwenci, po poprawce; CKE, „Informacja o wynikach egzaminu maturalnego 2026”, 11.09.2026, tab. 2).</p>
+  </div>
+</section>
+
+<!-- ==== 4. GDZIE WEDŁUG CKE UCIEKAJĄ PUNKTY + DLACZEGO TEN KURS ==== -->
+<section class="alt" id="cke">
+  <div class="wrap">
+    <h2>Gdzie według CKE uciekają punkty</h2>
+    <p class="lead">W sprawozdaniu z matury 2025 CKE wypisała, dlaczego zdający tracą punkty. Cztery z tych przyczyn mają w kursie własne lekcje:<sup>*</sup></p>
+    <ul class="cke">
+      <li><q>nieuwaga skutkująca popełnianiem błędów w obliczeniach lub w przekształceniach algebraicznych</q>
+        <span><span class="to">w kursie</span><b>Najczęstsze błędy, 8 lekcji</b></span></li>
+      <li><q>brak refleksji nad sensownością otrzymanego wyniku liczbowego</q>
+        <span><span class="to">w kursie</span><b>Szacowanie wyniku · Klucz CKE</b></span></li>
+      <li><q>brak umiejętności czytania ze zrozumieniem nieskomplikowanego tekstu matematycznego i poprawnej interpretacji treści zadania</q>
+        <span><span class="to">w kursie</span><b>Podkreślanie poleceń</b></span></li>
+      <li><q>brak umiejętności planowania strategii rozwiązania, która łączy w logiczną i uporządkowaną całość kilka umiejętności</q>
+        <span><span class="to">w kursie</span><b>Dobre rozwiązanie · Czytelny zapis</b></span></li>
+    </ul>
+
+    <h3 class="h3big" id="dlaczego">Dlaczego zrobisz ten kurs?</h3>
+    <p>Już tłumaczę. Kurs podzieliliśmy na krótkie, konkretne pigułki wiedzy, które następnie zmontowaliśmy w taki sam sposób,
+    jaki robią to youtuberzy.</p>
+    <p>Dlaczego? No bo łatwiej jest skupić się na chwilę, zrobić ćwiczenie i nauczyć się konkretnej techniki niż przysypiać na godzinnej lekcji.</p>
+    <p>Lekcje są krótkie, montaż przyspiesza naukę, a wszystkie ćwiczenia są pod ręką w skrypcie. Dzięki temu ten kurs naprawdę łatwo jest zrobić.</p>
+    <p class="lead-b">Naszym wbrew pozorom celem NIE jest nauka matematyki, ale poznanie strategii, które pomogą Ci osiągnąć wysokie wyniki.</p>
+    <p>Łatwo zauważyć, że nasz kurs przygotowujący do matury podstawowej z matematyki nie zawiera żadnego omówienia działów, konkretnych zadań,
+    albo globalnego powtórzenia wszystkich problemów z matematyki.</p>
+    <p>Dzieje się tak z bardzo prostej przyczyny: takie opracowania są, a nawet jest ich bardzo dużo dostępnych bezpłatnie w internecie.
+    Osobiście najbardziej polecam uczenie się z YouTube’em.</p>
+    <p>Zamiast skupiać się na teorii czy powtarzaniu całych działów, skoncentrujemy się na praktycznych aspektach rozwiązywania zadań
+    i unikania typowych błędów.</p>
+    <div class="cta-row">
+      <a class="cta" data-cta="dlaczego" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł</a>
+    </div>
+    <p class="fn"><sup>*</sup>CKE, „Sprawozdanie za rok 2025. Matematyka”, „Wnioski i rekomendacje”, s. 86 (cytaty dosłowne; pominięte dwie przyczyny:
+    „słaba sprawność rachunkowa” i „słaba znajomość praw oraz własności działań w zbiorze liczb rzeczywistych”, bo kurs nie powtarza teorii).</p>
+  </div>
+</section>
+
+<!-- ==== 5. CO W KURSIE ==== -->
+<section id="co">
+  <div class="wrap">
+    <h2>Trzy filary prostej matury z matematyki</h2>
+    <div class="pillars one">
+      <div class="pillar"><span class="k">pierwszy filar</span>
+        <p>Pierwszy filar to „strategie”, czyli sprytne sposoby, które pozwolą Ci wyciągnąć maksymalną liczbę punktów z matury.
+        Podzieliłem je na zadania zamknięte i otwarte, abyś mógł lub mogła się lepiej w nich odnajdywać.</p></div>
+      <div class="pillar"><span class="k">drugi filar</span>
+        <p>Drugi filar to „pewniaki”. Pewniaki budzą emocje i są często mylone z przeciekami. Przecieków nikt nie ma i nie będzie miał.</p>
+        <p>Natomiast nad pewniakami warto się pochylić, ponieważ są to zadania, które od lat powtarzają się na maturze.</p></div>
+      <div class="pillar"><span class="k">trzeci filar</span>
+        <p>Trzeci i ostatni filar to „wytrychy”, czyli sprawdzone metody rozwiązywania zadań.</p>
+        <p>W trakcie naszego kursu będziemy pracować na bazie egzaminów z poprzednich lat i materiałów CKE, co pozwoli Ci zrozumieć
+        poziom trudności i charakterystykę zadań egzaminacyjnych.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="subj m1" id="lekcje">
+  <div class="wrap">
+    <h3>Wprowadzenie</h3>
+    <p class="meta"><b>3 lekcje</b> · skrypt, trzy filary</p>
+    <p class="txt">Skrypt to kluczowy element naszego kursu „Matura na 5 Plus”. Działa jak osobisty asystent, pomagając Ci przyswoić
+    wszystkie egzaminacyjne triki i skróty podczas jednokrotnego oglądania filmów.</p>
+    <details class="lessons" data-acc="lekcje-wprowadzenie"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>01</span>Wprowadzenie</li><li><span>02</span>Skrypt i reszta</li><li><span>03</span>III filary</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m2">
+  <div class="wrap">
+    <h3>Strategie</h3>
+    <p class="meta"><b>3 lekcje</b> · jak wygląda matura, kolejność pracy z arkuszem</p>
+    <p class="txt">Po pierwsze przejdziemy wspólnie przez strategie rozwiązywania arkusza egzaminacyjnego, aby umożliwić Ci jak najlepsze
+    wykorzystanie czasu i niezablokowanie się na którymś z zadań.</p>
+    <details class="lessons" data-acc="lekcje-strategie"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>04</span>Jak wygląda matura</li><li><span>05</span>Strategie rozwiązywania arkusza</li><li><span>06</span>Sposób na dobry start</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m3">
+  <div class="wrap">
+    <h3>Tablice</h3>
+    <p class="meta"><b>3 lekcje</b> · karta wzorów CKE i wzory spoza karty</p>
+    <p class="txt">Potem przerobimy Twoją kartę wzorów maturalnych oraz omówimy wspólnie wszystkie wzory spoza karty, które musisz znać.</p>
+    <p class="txt">Ta karta to coś więcej niż tylko zbiór wzorów - to Twoja osobista i legalna ściągawka na egzamin.</p>
+    <details class="lessons" data-acc="lekcje-tablice"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>07</span>Tablice wzorów maturalnych</li><li><span>08</span>Tablica plus</li><li><span>09</span>Spoza karty</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m4">
+  <div class="wrap">
+    <h3>Zadania zamknięte</h3>
+    <p class="meta"><b>6 lekcji</b> · dopasowanie, wykreślanie, szacowanie, własności</p>
+    <p class="txt">Następnie zajmiemy się zadaniami zamkniętymi - w ramach tego działu dowiesz się, jak korzystać z dopasowywania i wykreślania odpowiedzi.</p>
+    <p class="txt">Nauczysz się też, kiedy korzystać z metody szacowania wyniku oraz sprawdzania własności. Szacowanie wyników wbrew pozorom
+    nie ma nic wspólnego ze strzelaniem.</p>
+    <details class="lessons" data-acc="lekcje-zamkniete"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>10</span>Zadania zamknięte</li><li><span>11</span>Arkusz, notatki i karta odpowiedzi</li><li><span>12</span>Dopasowanie odpowiedzi</li><li><span>13</span>Wykreślanie odpowiedzi</li><li><span>14</span>Szacowanie wyniku</li><li><span>15</span>Sprawdzanie własności</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m5">
+  <div class="wrap">
+    <h3>Zadania otwarte</h3>
+    <p class="meta"><b>8 lekcji</b> · polecenie, rysunek, zapis, klucz CKE, brudnopis</p>
+    <p class="txt">Nauczysz się też sposobów rozwiązywania zadań otwartych. W tym dziale przejdziemy przez to, jak korzystać z rysunków,
+    prowadzić czytelny zapis oraz jak sprytnie wykorzystać klucz CKE oraz Twój brudnopis.</p>
+    <p class="txt">Na maturze z matematyki prawie zawsze poszczególne etapy rozwiązania są punktowane, więc nawet pierwsze kroki prowadzące
+    do rozwiązania mogą być cenne.</p>
+    <details class="lessons" data-acc="lekcje-otwarte"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>16</span>Zadania otwarte</li><li><span>17</span>Podkreślanie poleceń</li><li><span>18</span>Wykorzystaj rysunek</li><li><span>19</span>Dobre rozwiązanie</li><li><span>20</span>Czytelny zapis</li><li><span>21</span>Kaligrafia</li><li><span>22</span>Klucz CKE</li><li><span>23</span>Skreślenia i brudnopis</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m6">
+  <div class="wrap">
+    <h3>Najczęstsze błędy</h3>
+    <p class="meta"><b>8 lekcji</b> · siedem błędów, każdy w osobnej lekcji</p>
+    <p class="txt">Pamiętaj, że najlepiej uczyć się na błędach innych, więc poświęćmy chwilę na to, aby zrozumieć, jak ich unikać.</p>
+    <p class="txt">Zdziwiłoby Cię, gdybyś wiedział lub wiedziała, jak wielu maturzystów wciąż ma z tym problem.</p>
+    <details class="lessons" data-acc="lekcje-bledy"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>24</span>Najczęstsze błędy</li><li><span>25</span>Kolejność wykonywania działań</li><li><span>26</span>Wzory skróconego mnożenia</li><li><span>27</span>Przybliżanie</li><li><span>28</span>Nierówność kwadratowa</li><li><span>29</span>Własności geometryczne</li><li><span>30</span>Nowe oznaczenia</li><li><span>31</span>Jednostki</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m7">
+  <div class="wrap">
+    <h3>Pewniaki</h3>
+    <p class="meta"><b>8 lekcji</b> · zadania rozwiązane krok po kroku w skrypcie</p>
+    <p class="txt">Procenty, logarytmy, nierówności, wartość bezwzględna, funkcja liniowa, ciągi, tożsamości trygonometryczne, proste równoległe
+    i prostopadłe, graniastosłupy i ostrosłupy, statystyka.</p>
+    <p class="txt">Spokojnie - rozwiązania rozpisałem krok po kroku w taki sposób, abyś Ty też mógł/mogła się z nich nauczyć.</p>
+    <details class="lessons" data-acc="lekcje-pewniaki"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>32</span>Pewniaki maturalne</li><li><span>33</span>Procenty, logarytmy, nierówności kwadratowe</li><li><span>34</span>Wartość bezwzględna, nierówności i własności funkcji</li><li><span>35</span>Funkcja liniowa, ciągi: arytmetyczny i geometryczny</li><li><span>36</span>Tożsamości trygonometryczne</li><li><span>37</span>Proste równoległe i prostopadłe</li><li><span>38</span>Graniastosłupy i ostrosłupy</li><li><span>39</span>Statystyka</li></ol>
+    </details>
+  </div>
+</div>
+<div class="subj m8">
+  <div class="wrap">
+    <h3>Na koniec</h3>
+    <p class="meta"><b>3 lekcje</b> · Profesor YouTube, arkusze CKE w całości</p>
+    <p class="txt">Wydrukuj pełne zestawy egzaminacyjne. W tej części kursu znajdziesz trzy różne egzaminy.</p>
+    <details class="lessons" data-acc="lekcje-koniec"><summary>Lista lekcji</summary>
+      <ol class="ll"><li><span>40</span>Profesor YouTube</li><li><span>41</span>Najlepsze ćwiczenia</li><li><span>42</span>Pożegnanie z matmą</li></ol>
+    </details>
+  </div>
+</div>
+
+<!-- ==== 5c. ILE ZAJMUJE ==== -->
+<section class="alt" id="ile">
+  <div class="wrap">
+    <h2>Ile zajmuje przejście kursu?</h2>
+    <p class="hint">To zależy, jak dokładnie go zrobisz...</p>
+    <div class="why three">
+      <div><h3>Ekspresowo · 2 godziny</h3><p>Samo obejrzenie wszystkich lekcji zajmuje zaledwie 2 godziny.</p></div>
+      <div><h3>Z ćwiczeniami · 6 godzin<sup>*</sup></h3></div>
+      <div><h3>Z trzema arkuszami · około 15 godzin<sup>*</sup></h3></div>
+    </div>
+    <div class="dates">
+      <p id="probna">Szkoły dostaną arkusz próbny CKE z matematyki 18 grudnia 2026.<sup>**</sup> Przejdź kurs przed tym dniem.
+      Na próbnej zobaczysz, czy strategie działają u Ciebie.</p>
+      <p>Działy, w których uciekną punkty, nadrobisz z filmów z lekcji „Profesor YouTube”. <b>Matura jest 5 maja 2027 o 9:00.</b><sup>***</sup></p>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="ile" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł<small>dostęp do 31 sierpnia 2027</small></a>
+    </div>
+    <p class="fn"><sup>*</sup>Program kursu (PDF, 2024): wszystkie lekcje 2 godziny, wszystkie ćwiczenia 4 godziny, jeden egzamin próbny 3 godziny,
+    czyli 2 + 4 = 6 godzin i 6 + 3 × 3 = 15 godzin.<br>
+    <sup>**</sup>CKE, informacja dyrektora z 30.09.2026 o arkuszach weryfikujących stan opanowania podstawy programowej, tab. 2.<br>
+    <sup>***</sup>CKE, komunikat o harmonogramie egzaminu ósmoklasisty i egzaminu maturalnego w 2027 r., 20.08.2026.</p>
+  </div>
+</section>
+
+<!-- ==== 6. DLA KOGO ==== -->
+<section>
+  <div class="wrap">
+    <h2>Dla kogo jest ten kurs?</h2>
+    <p class="lead">Przedmioty humanistyczne masz w małym palcu, ale boisz się podstawy z matematyki?</p>
+    <div class="why who three">
+      <div><h3>Dla słabszych uczniów, którzy dzięki kursowi...</h3><p>...poznają drogi na skróty i otrzymają więcej punktów na egzaminie - niezależnie od tego, jak do tej pory szło im w szkole.</p></div>
+      <div><h3>Dla dobrych uczniów, którzy dzięki kursowi...</h3><p>...powtórzą najważniejsze zagadnienia, unikną głupich błędów i nauczą się zaawansowanych metod rozwiązywania trudnych zadań.</p></div>
+      <div><h3>Dla zestresowanych uczniów, którzy dzięki kursowi...</h3><p>...będą dokładnie wiedzieli, czego spodziewać się na egzaminie, nie wpadną w panikę i będą rozwiązywać egzamin krok po kroku.</p></div>
+    </div>
+    <div class="notes">
+      <p class="note"><b>Nie dla osoby, która w arkuszu z poprzedniego roku nie rusza większości zadań.</b> Wtedy zacznij od działów na YouTube,
+      a kurs zrób potem: w lekcji „Profesor YouTube” pokazujemy, jak.</p>
+      <p class="note"><b>Nie dla osoby, która szykuje się do rozszerzenia z matematyki.</b> Kurs obejmuje tylko poziom podstawowy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==== 7. KIM JESTEŚMY ==== -->
+<section class="alt" id="kto">
+  <div class="wrap">
+    <h2>Kim jesteśmy?</h2>
+    <div class="author">
+      <div>
+        <img src="assets/piotr.webp" width="600" height="405" loading="lazy" alt="Piotr Starzyński, Fundacja Pięć Plus">
+        <p class="cap">Piotr Starzyński - pedagog, socjolog, doktorant IS UW. Prezes Fundacji Pięć Plus. Pomysłodawca i współautor kursu Matura na 5 Plus.</p>
+      </div>
+      <div>
+        <p>Nazywam się Piotr Starzyński i będę Twoim przewodnikiem w przygotowaniach do egzaminu maturalnego z matematyki na poziomie podstawowym.</p>
+        <p>Uczę, jak się uczyć, od 2013 roku, a od 2017 robimy to jako Fundacja Pięć Plus. Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026:
+        10 na 10 w ocenach klientów, z 68 opinii (<a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank">profil</a>).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== 8. KOSZT ZAKUPU… I JEGO BRAKU ==== -->
+<section id="cena">
+  <div class="wrap">
+    <h2>Koszt zakupu… i jego braku</h2>
+    <p class="lead">Ile kosztuje kurs Matura na 5 Plus i co tracisz, nie decydując się na niego.</p>
+    <p>Im dłużej zwlekasz, tym mniej czasu na solidne przećwiczenie wszystkiego.</p>
+    <p>Na koniec kursu dowiesz się, jak najlepiej wykorzystać pozostały czas na przygotowanie i skorzystasz z pomocy bezpłatnego korepetytora -
+    profesora YouTube i materiałów dołączonych do tego kursu.</p>
+    <p><b>Przy 30 minutach dziennie kurs z ćwiczeniami zajmuje około 12 dni.</b></p>
+    <p><b>Płacisz 300 zł za cały kurs.</b> Dzięki naszej platformie online solidne przygotowanie do matury z matematyki kosztuje mniej niż pięć godzin
+    dobrych korepetycji.<sup>*</sup> <span id="dzien">Od listopada do 5 maja kurs kosztuje Cię mniej niż 2 zł dziennie.</span></p>
+    <div class="offer solo">
+      <div>
+        <p class="price">300 zł<small>Matura na 5 Plus. Matematyka</small></p>
+        <p style="margin:12px 0 4px;font-weight:700">Kupując kurs otrzymujesz:</p>
+        <ul class="incl">
+          <li>42 krótkie lekcje wideo</li>
+          <li>skrypt z ćwiczeniami do druku i rozwiązania krok po kroku</li>
+          <li>kartę wzorów CKE do druku, z dopiskami i wzorami spoza karty</li>
+          <li>3 arkusze CKE z kluczem</li>
+          <li>dostęp do 31 sierpnia 2027, także na poprawkę</li>
+          <li>przypomnienie mailem przed arkuszem próbnym CKE i przed maturą</li>
+        </ul>
+        <a class="cta" data-cta="cena" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł<small>BLIK · przelew · karta</small></a>
+        <p class="pay">Płatność blikiem, przelewem lub kartą. Wystawiamy faktury. Przy zakupie można zaznaczyć fakturę na dane rodzica.
+        Dostęp dostajesz od razu po zakupie, na naszej platformie z lekcjami.</p>
+      </div>
+    </div>
+    <div class="guar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4Zm-1 15-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7Z"/></svg>
+      <div>
+        <h3>Żelazna gwarancja zwrotu 30 dni</h3>
+        <p>Osobiście gwarantuję, że ten kurs działa. Masz żelazną gwarancję zwrotu w ciągu 30 dni. Ty piszesz maila, a ja zwracam pieniądze.</p>
+        <p style="margin-top:8px"><b>100% zwrotu, bez zbędnych pytań, nawet jeśli obejrzysz cały kurs.</b></p>
+        <p style="margin-top:8px">Na ponad 3 700 zakupów naszych kursów o zwrot poprosił mniej niż 1 kupujący na 100.<sup>**</sup></p>
+        <p class="sign">Piotr Starzyński</p>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="gwarancja" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł</a>
+    </div>
+    <p class="fn"><sup>*</sup>Godzina korepetycji z matematyki w kategorii „liceum i matura” kosztuje w 2026 roku średnio około 66 zł (e-korepetycje.net,
+    „Ceny korepetycji 2026”, raport ze 140 648 ogłoszeń). Pięć godzin to 330 zł. Pół roku korepetycji raz w tygodniu, od listopada do kwietnia,
+    to około 1 700 zł. 300 zł od 1.11.2026 do 5.05.2027 (185 dni) to 1,62 zł dziennie.<br>
+    <sup>**</sup>Wszystkie kursy Fundacji Pięć Plus, powiadomienia platformy kursowej: 19 wątków o zwrot wobec ponad 3 700 zakupów,
+    stan z 25.10.2026; w tym czasie obowiązywały różne zasady zwrotu.</p>
+  </div>
+</section>
+
+<!-- ==== 9. OPINIE: wchodzi dopiero z trzema prawdziwymi opiniami kupujących (mail do 77 kupujących, decyzja 14). ==== -->
+
+<!-- ==== 10. PYTANIA ==== -->
+<section class="alt" id="pytania">
+  <div class="wrap">
+    <h2>Masz pytanie? Może mamy odpowiedź.</h2>
+    <details class="acc" data-acc="zdazysz"><summary>Kurs przejdziesz w kilka popołudni, więc zdążysz przed grudniowym arkuszem próbnym.</summary>
+      <div class="acc-body"><p>Niezależnie od tego, ile czasu zostało do egzaminu, nasz kurs jest zaprojektowany tak, abyś mógł lub mogła go szybko i efektywnie przejść.</p></div></details>
+    <details class="acc" data-acc="nowy-kontekst"><summary>Zadanie w nowym kontekście? Kurs uczy, jak je przeczytać, oszacować i zapisać pod klucz.</summary>
+      <div class="acc-body"><p>Otwierając arkusz egzaminacyjny z matematyki, poświęć pierwsze minuty na spokojne przejrzenie wszystkich zadań.</p>
+      <p>To kluczowy moment, który pozwoli Ci nie tylko zapoznać się z tym, co znajdziesz w arkuszu, ale także uspokoić emocje przed rozwiązaniem zadań.</p></div></details>
+    <details class="acc" data-acc="nic-nie-wychodzi"><summary>Kupiony kurs, a dalej nic nie wychodzi? Tu po lekcji robisz ćwiczenie ze skryptu i sprawdzasz rozwiązanie.</summary>
+      <div class="acc-body"><p>Pamiętaj, aby aktywnie uczestniczyć w kursie - samo słuchanie na pewno nie wystarczy do pełnego przyswojenia materiału.</p>
+      <p>Dlatego zalecam wykonywanie każdego ćwiczenia ze skryptu przed przejściem do następnego filmu.</p>
+      <p>W razie trudności możesz zawsze sprawdzić rozwiązania dołączone do każdej lekcji i zrozumieć, co należało zrobić inaczej.</p>
+      <p>A jeśli kurs Ci nie pasuje: Ty piszesz maila, a ja zwracam pieniądze.</p></div></details>
+    <details class="acc" data-acc="korepetycje"><summary>Chodzisz na korepetycje? Kurs i korki robią co innego.</summary>
+      <div class="acc-body"><p>Tradycyjne korki budują wiedzę miesiącami, ale rzadko uczą, jak zdawać ten konkretny egzamin.</p></div></details>
+    <details class="acc" data-acc="wynik"><summary>Czy to da wynik na maturze?</summary>
+      <div class="acc-body"><p>Wyniku nie obiecujemy. Kurs pokazuje, jak wyciągnąć punkty z tego, co już umiesz.</p></div></details>
+    <details class="acc" data-acc="rodzic"><summary>Kurs może kupić rodzic, a fakturę wystawiamy na jego dane albo na firmę.</summary>
+      <div class="acc-body"><p>Przy zakupie zaznaczasz „chcę fakturę” i podajesz dane, firmowe albo imienne.</p></div></details>
+    <details class="acc" data-acc="szacowanie"><summary>Szacowanie wyniku może pomóc Ci wydostać się z sytuacji, w której zapomnisz przekształceń albo poprawnej metody.</summary>
+      <div class="acc-body"><p>Pamiętaj jednak, że choć szacowanie może być pomocne, najlepiej jest zawsze dążyć do wykonania poprawnych przekształceń.</p>
+      <p>Czyli jeśli umiesz przekształcić wyrażenie, po prostu to zrób.</p></div></details>
+    <details class="acc" data-acc="arkusze"><summary>Arkusze z poprzednich lat ćwiczysz w kursie w całości, z kluczem CKE.</summary>
+      <div class="acc-body"><p>Być może sprawdzanie matury z kluczem jest mniej przejrzyste, niż po prostu znalezienie gotowych rozwiązań w internecie,
+      ale przebicie się przez klucz pozwoli Ci zrozumieć, jak konstruowane i punktowane są arkusze maturalne.</p></div></details>
+    <details class="acc" data-acc="dostep"><summary>Dostęp masz do 31 sierpnia 2027, także na poprawkę.</summary>
+      <div class="acc-body"><p>Data stała. Nie liczymy dni od zakupu.</p></div></details>
+    <details class="acc" data-acc="nie-widac"><summary>Kupiony kurs się nie wyświetla? Poprawimy dostęp.</summary>
+      <div class="acc-body"><p>Napisz na <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a> z adresu, którego użyto przy zakupie.</p></div></details>
+    <details class="acc" data-acc="urzadzenie"><summary>Z telefonu, tabletu i komputera.</summary>
+      <div class="acc-body"><p>Lekcje są krótkie i można je oglądać na swoim ukochanym smartfonie, leżąc na kanapie. Skrypt i arkusze polecamy wydrukować.</p></div></details>
+    <p class="hint" style="margin-top:18px">Masz inne pytanie? Napisz na <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a>, chętnie odpowiemy.</p>
+  </div>
+</section>
+
+<!-- ==== 11. DOMKNIĘCIE (do 17.12 arkusz próbny; od 18.12: „Matura i tak przyjdzie: 5 maja 2027. Pytanie, jak się do niej przygotujesz.”) ==== -->
+<section class="closing" id="offer">
+  <div class="wrap">
+    <h2>Jeszcze to czytasz?</h2>
+    <p class="lead" id="domkniecie">Arkusz próbny i tak przyjdzie: 18 grudnia. Pytanie, jak się do niego przygotujesz.</p>
+    <p>W takim razie nie ma na co czekać - pora ćwiczyć.</p>
+    <div class="cta-row">
+      <a class="cta" data-cta="domkniecie" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł<small>dostęp do 31 sierpnia 2027 · 30 dni na zwrot</small></a>
+    </div>
+    <p class="ps">300 zł · dostęp do 31 sierpnia 2027 · 30 dni na zwrot. Płatność blikiem, przelewem lub kartą. Wystawiamy faktury.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Fundacja Pięć Plus · <a href="mailto:biuro@5plus.edu.pl">biuro@5plus.edu.pl</a> · 5plus.edu.pl<br>
+    <a href="#" class="todo-link">Regulamin</a> · <a href="#" class="todo-link">Polityka prywatności</a> · <button type="button" id="cookieSettings">Ustawienia cookies</button><br>
+    <mark class="todo">[linki do regulaminu i polityki; zapisy o dostępie do 31.08.2027 i zwrocie w ciągu 30 dni muszą być identyczne w regulaminie]</mark>
+  </div>
+</footer>
+
+<div class="bar-cta" id="barCta">
+  <a class="cta" data-cta="sticky" href="https://kursy.piecplus.pl/s/matematyka-maturana5plus.html">Kupuję kurs matematyki - 300 zł</a>
+</div>
+
+<div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookies" hidden>
+  <p>Strona używa plików cookies. Niezbędne są do jej działania. Za Twoją zgodą włączamy też Piksel Meta i Microsoft Clarity, żeby mierzyć,
+  które reklamy naprawdę pomagają maturzystom nas znaleźć. Szczegóły w <a href="#" class="todo-link">polityce prywatności</a>.</p>
+  <div class="btns">
+    <button type="button" class="yes" data-consent="all">Akceptuję wszystkie</button>
+    <button type="button" data-consent="necessary">Tylko niezbędne</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // jeden wariant H1 (copy v2, decyzja 1); etykieta do Clarity i dataLayer
+  var HERO = 'zamkniete-50-2025';
+  var PIXEL_ID = ''; // TODO: ID Piksela, który wysyła Purchase z WTL dla ID 28 (w 2024 matura: 416334533111622, sprawdzić w Menedżerze zdarzeń). Pusty = piksel się nie ładuje.
+  var KEY = 'mm_consent', consent = null, pending = [];
+  try { consent = localStorage.getItem(KEY); } catch(e){}
+  var STD = /^(ViewContent|InitiateCheckout|Purchase|Lead|AddToCart)$/;
+
+  // --- Piksel Meta: tylko po zgodzie ---
+  function loadPixel(){
+    if (!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  // --- Microsoft Clarity (ten sam projekt co 5plus.edu.pl): tylko po zgodzie ---
+  var CLARITY_ID = 'vjr23eh9gx';
+  function loadClarity(){
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+    try { window.clarity('set', 'hero', HERO); } catch(e){}
+  }
+  function send(name, params){ if (window.fbq) try { fbq(STD.test(name) ? 'track' : 'trackCustom', name, params); } catch(e){} }
+  function track(name, params){
+    params = Object.assign({hero: HERO}, params || {});
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({event:name}, params));
+    if (consent === 'all') send(name, params);
+    else if (consent === null) pending.push([name, params]);
+  }
+  function setConsent(v){
+    consent = v;
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    banner.hidden = true; updateBar();
+    if (v === 'all') { loadPixel(); loadClarity(); pending.forEach(function(p){ send(p[0], p[1]); }); }
+    pending = [];
+  }
+
+  var banner = document.getElementById('cookies');
+  banner.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); });
+  });
+  document.getElementById('cookieSettings').addEventListener('click', function(){ banner.hidden = false; updateBar(); });
+  if (consent === 'all') { loadPixel(); loadClarity(); }
+  else if (consent === null) banner.hidden = false;
+
+  track('ViewContent', {content_name:'matura-matematyka', value:300, currency:'PLN'});
+
+  // --- UTM z reklamy przechodzą na koszyk (inna domena), strona niczego nie nadpisuje ---
+  var utm = location.search.replace(/^\?/, '').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
+  document.querySelectorAll('a[data-cta]').forEach(function(a){
+    if (utm) a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm;
+    a.addEventListener('click', function(){
+      track('InitiateCheckout', {content_name:'matura-matematyka', value:300, currency:'PLN', cta_place:a.getAttribute('data-cta')});
+    });
+  });
+
+  // --- które moduły i karty FAQ się otwiera ---
+  document.querySelectorAll('details[data-acc]').forEach(function(d){
+    d.addEventListener('toggle', function(){ if (d.open) track('accordion_open', {card:d.getAttribute('data-acc')}); });
+  });
+
+  // --- pasek z przyciskiem na telefonie: po hero, nie przy cenie, „Ile zajmuje” i domknięciu, nie razem z banerem ---
+  var bar = document.getElementById('barCta'), hero = document.getElementById('top'),
+      hide = [document.getElementById('cena'), document.getElementById('offer'), document.getElementById('ile')];
+  function inView(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+  function updateBar(){
+    var on = banner.hidden && hero.getBoundingClientRect().bottom < 0 && !hide.some(inView);
+    bar.classList.toggle('on', on);
+  }
+  addEventListener('scroll', updateBar, {passive:true}); addEventListener('resize', updateBar); updateBar();
+})();
+</script>
+</body>
+</html>

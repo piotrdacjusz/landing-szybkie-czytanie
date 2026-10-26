@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samodzielny Uczeń Online. Kurs dla uczniów od 7 klasy do matury | Fundacja Pięć Plus</title>
+<meta name="description" content="Wyobraź sobie, że nie ma kursów i egzaminów na prawo jazdy. Sześć kursów o tym, jak się uczyć, dla uczniów od 7 klasy do matury. 500 zł, roczny dostęp, 30 dni na zwrot.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Samodzielny Uczeń Online · Fundacja Pięć Plus">
+<meta property="og:description" content="Wyobraź sobie, że nie ma kursów i egzaminów na prawo jazdy. Sześć kursów o tym, jak się uczyć, dla uczniów od 7 klasy do matury. 500 zł, roczny dostęp, 30 dni na zwrot.">
+<meta name="theme-color" content="#1f2336">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Alegreya+Sans:wght@400;500;700;800&family=Alegreya+Sans+SC:wght@700;800&display=swap" rel="stylesheet">
+<!--
+  LANDING SUO DLA RODZICA, I SEMESTR 2026/27 · wersja ODJECHANA · v4 (2026-10-26), motyw „szkoła jazdy z nauki”, na tekście v2 cyklu 3
+  Projekt szaty: vault 02 Fundacja Pięć Plus/kampanie/suo-i-semestr-2026/13-wersja-odjechana.md
+  Tekst: vault 02 Fundacja Pięć Plus/kampanie/suo-i-semestr-2026/10-landing-copy-v2.md (bezpieczna, cykl 3) + hero F i akapit o sprzęgle (g12, g9)
+  Poprzednia odjechana (v3, tekst z 25.10): _archiwum/index-odjechana-v3-2026-10-25.html
+  Szkielet: ~/Kodowanie/Landing 8kl/index.html (CSS, cookies, Piksel i Clarity po zgodzie, track/trackCustom, UTM, sticky CTA).
+  Koszyk: WTL ID 76 SUO_pakiet_META (500 zł). Docelowo osobna kopia ID 76 dla tej wersji (tworzy Piotr w WTL).
+  Miejsca do sprawdzenia przed publikacją: klasa .todo, lista „Przed publikacją” w pliku copy.
+-->
+<style>
+
+:root{
+  --navy:#1f2336; --navy-2:#2a2f47;
+  --gold:#ffc676; --gold-soft:#ffd191; --gold-dark:#8a5a1c;
+  --paper:#fbf8f3; --paper-2:#f3eee5; --line:#e4ddd1;
+  --ink:#1f2336; --dim:#585c70; --faint:#7a7d8e;
+  --m-sk:#073462; --m-mo:#124429; --m-sc:#451e3e; --m-no:#11525a; --m-ja:#34306b; --m-st:#404759;
+  --lv-g:#2f7a4c; --lv-r:#a3312a;
+  --maxw:880px;
+  --serif:Merriweather,Georgia,serif; --sans:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.5 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:48px 0}
+@media(max-width:760px){section{padding:34px 0}}
+section.alt{background:#fff}
+h1,h2,h3{font-family:var(--serif);line-height:1.25;margin:0 0 16px;font-weight:900}
+h1{font-size:clamp(28px,6.4vw,44px);text-wrap:balance}
+h2{font-size:clamp(24px,4.6vw,34px);text-wrap:balance}
+h3{font-size:19px;font-weight:700}
+p{margin:0 0 14px;text-wrap:pretty}
+.lead{font-size:20px;line-height:1.45}
+.hint{color:var(--dim);margin:-6px 0 20px}
+.fn{font-size:14px;color:var(--faint);line-height:1.45;margin-top:22px;padding-top:12px;border-top:1px solid var(--line)}
+sup{font-size:.65em;line-height:0}
+mark.todo{background:#fff3b0;color:#5a4a00;padding:0 4px;border-radius:3px;font-weight:700}
+a{color:var(--navy)}
+.cta{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:800;font-size:20px;line-height:1.2;padding:16px 28px;border-radius:8px;text-align:center;border:2px solid var(--gold)}
+.cta small{display:block;font-weight:500;font-size:14.5px;margin-top:3px;color:#4a3a1c}
+.cta:hover,.cta:focus-visible{background:var(--gold-soft);border-color:var(--gold-soft)}
+.cta.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.55);font-size:18px;padding:14px 20px}
+.cta.line:hover{background:rgba(255,255,255,.08)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:22px 0 10px}
+.top{background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:52px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:var(--serif);font-weight:900;font-size:15.5px;white-space:nowrap}
+.brand b{width:30px;height:30px;border-radius:6px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:14px}
+.top nav{margin-left:auto;display:flex;gap:2px}
+.top nav a{color:#c9ccda;text-decoration:none;font-size:16px;padding:6px 9px;white-space:nowrap}
+.top nav a:hover{color:#fff}
+@media(max-width:760px){.top nav{display:none}}
+.hero{background:var(--navy);color:#fff;padding:26px 0 30px}
+.kicker{font-size:15.5px;font-weight:700;color:var(--gold);margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.hero h1{margin-bottom:12px}
+.hero .sub{color:#dfe1ea;font-size:19px;line-height:1.45;margin:0 0 12px}
+.hero sup{color:var(--gold)}
+.nw{font-family:var(--serif);font-weight:900;font-size:clamp(22px,4.6vw,30px);color:var(--gold);margin:4px 0 12px;line-height:1.2}
+.trust{margin:0;font-size:17px;color:#c9ccda;line-height:1.5}
+.trust b{color:#fff}
+.hero .cta-row{margin:16px 0 0}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:22px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.tile{padding:14px 8px;text-align:center;border-left:1px solid var(--line)}
+.tile:first-child{border-left:0}
+.tile b{display:block;font-family:var(--serif);font-size:32px;font-weight:900;color:var(--navy);line-height:1.1}
+.tile span{font-size:15px;color:var(--dim);line-height:1.25;display:block}
+@media(max-width:620px){.tiles{grid-template-columns:repeat(2,1fr)}.tile:nth-child(3),.tile:nth-child(4){border-top:1px solid var(--line)}.tile:nth-child(3){border-left:0}}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+@media(max-width:700px){.two{grid-template-columns:1fr;gap:6px}}
+.qs-h{margin:6px 0 8px}
+.qs3{margin:0 0 18px;padding:0;list-style:none;counter-reset:q}
+.qs3 li{counter-increment:q;border-top:1px solid var(--line);padding:12px 0 12px 40px;position:relative;font-family:var(--serif);font-weight:700;font-size:17.5px;line-height:1.4}
+.qs3 li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:15px}
+.qs3 a,.exits a{color:var(--navy);text-decoration:none}
+.yt{border-radius:8px;overflow:hidden;background:var(--navy);aspect-ratio:16/9}
+.yt-btn{all:unset;cursor:pointer;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;font:700 17px var(--sans)}
+.yt-btn svg{width:64px;height:64px}.yt-btn circle{fill:var(--gold)}.yt-btn path{fill:var(--navy)}
+.yt-btn:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.vcap{font-size:15px;color:var(--faint);margin-top:8px}
+.flip{background:var(--paper-2);border-radius:8px;padding:16px 18px 6px;margin:20px 0 26px;position:relative}
+.flip-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.flip-tabs button{font:700 16px var(--sans);padding:9px 14px;border-radius:6px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
+.flip-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.flip-hint{display:flex;align-items:center;gap:6px;font-size:15px;color:var(--lv-r);font-weight:700;margin:8px 0 10px}
+.flip-hint svg{width:40px;height:16px;fill:none;stroke:var(--lv-r);stroke-width:2.5}
+.flip-card p{font-size:17.5px}
+.h3big{font-size:21px;margin:28px 0 12px}
+.probs{display:grid;gap:14px}
+.prob{display:grid;grid-template-columns:74px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px}
+.prob .pimg{width:74px;height:74px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center}
+.prob .pimg img{width:54px;height:54px;object-fit:contain}
+.prob h3{margin:2px 0 8px}
+.prob p{font-size:17px;margin-bottom:10px}
+.bridge{font-family:var(--serif);font-size:19.5px;color:var(--navy);margin:24px 0 6px;font-weight:700;line-height:1.4;border-left:4px solid var(--gold);padding-left:14px}
+.qa{font-size:19px;margin:22px 0}
+.cons{background:var(--navy);color:#fff;padding:22px 22px 10px;margin-top:10px;border-radius:8px}
+.cons h3{color:var(--gold);font-size:21px}
+.cons p{color:#dfe1ea}
+.cons sup{color:var(--gold)}
+.note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);padding:14px 18px;margin-top:16px}
+section.alt .note{background:var(--paper)}
+.mods6{display:grid;gap:8px;margin:20px 0 6px}
+details.mband{border-radius:8px;color:#fff;overflow:hidden}
+.m-sk{background:var(--m-sk)}.m-mo{background:var(--m-mo)}.m-sc{background:var(--m-sc)}.m-no{background:var(--m-no)}.m-ja{background:var(--m-ja)}.m-st{background:var(--m-st)}
+details.mband summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:30px 1fr 64px 24px;gap:10px;align-items:center;padding:12px 14px}
+details.mband summary::-webkit-details-marker{display:none}
+.mnum{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--gold)}
+.mname b{display:block;font-family:var(--serif);font-size:19px;line-height:1.25}
+.mtag{display:block;font-size:15px;color:rgba(255,255,255,.8)}
+.mimg{width:64px;height:64px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+.mimg img{width:46px;height:46px;object-fit:contain}
+.mplus::after{content:"+";font-size:26px;color:var(--gold);font-weight:400}
+details.mband[open] .mplus::after{content:"–"}
+.mbody{padding:0 16px 8px 54px}
+.mbody p{color:rgba(255,255,255,.9);font-size:17px}
+.mbody .mlist{font-size:15.5px;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.18);padding-top:10px}
+.mbody .mlist b{color:var(--gold)}
+.note p{margin:0 0 10px}
+@media(max-width:420px){.mbody{padding-left:16px}}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 18px}
+.lv{border-top:6px solid;padding:10px 8px 4px;background:var(--paper)}
+.lv:nth-child(1){border-color:var(--lv-g)}.lv:nth-child(2){border-color:var(--gold)}.lv:nth-child(3){border-color:var(--lv-r)}
+.lv i{display:none}
+.lv b{display:block;font-size:16.5px}.lv span{font-size:14.5px;color:var(--dim);line-height:1.3;display:block}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px}
+.why.three{grid-template-columns:repeat(3,1fr);margin-bottom:22px}
+.why h3{margin-bottom:6px}
+.why h3::before{content:"";display:block;width:36px;height:4px;background:var(--gold);margin-bottom:10px}
+.why p{margin:0;color:var(--dim)}
+@media(max-width:700px){.why,.why.three{grid-template-columns:1fr;gap:16px}}
+.forwho{margin:0 0 18px;padding:0;list-style:none}
+.forwho li{padding:9px 0 9px 28px;border-bottom:1px solid var(--line);position:relative;font-size:18px}
+.forwho li::before{content:"";position:absolute;left:4px;top:17px;width:12px;height:12px;border-radius:2px;background:var(--gold)}
+.quote{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:20px 0}
+.author{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
+.author img{width:100%;height:auto;border-radius:6px}
+.author .meta{font-size:15.5px;color:var(--dim);margin-top:10px;line-height:1.4}
+@media(max-width:620px){.author{grid-template-columns:1fr;gap:14px}.author img{max-width:260px}}
+.pie{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;background:var(--paper);border-radius:8px;padding:14px 16px;margin:18px 0}
+.pie svg{width:96px;height:96px;transform:rotate(-90deg)}
+.pie-bg{fill:none;stroke:var(--line);stroke-width:8}
+.pie-fg{fill:none;stroke:var(--navy);stroke-width:8}
+.pie p{margin:0;font-size:17.5px}
+.pie b{font-family:var(--serif);font-size:22px}
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:8px;padding:24px;margin-top:20px}
+section.alt .offer{background:var(--paper)}
+.ptitle{font-family:var(--serif);font-weight:900;font-size:19px;margin:0 0 10px}
+.offer img{width:100%;height:auto;border-radius:6px}
+.price{font-family:var(--serif);font-size:56px;font-weight:900;color:var(--navy);line-height:1;margin:0}
+.price small{display:block;font-family:var(--sans);font-size:15px;font-weight:700;color:var(--dim);letter-spacing:.04em;text-transform:uppercase;margin-top:6px}
+.incl{list-style:none;margin:14px 0 20px;padding:0}
+.incl li{padding:7px 0 7px 24px;border-bottom:1px solid var(--line);position:relative;font-size:17px}
+.incl li:last-child{border-bottom:0}
+.incl li::before{content:"✓";position:absolute;left:0;color:var(--gold-dark);font-weight:800}
+.pay{display:flex;gap:10px;align-items:center;font-size:15.5px;color:var(--dim);margin:12px 0 0}
+.pay svg{width:30px;height:34px;flex:none;fill:var(--gold-dark)}
+@media(max-width:700px){.offer{grid-template-columns:1fr;padding:18px}.offer-img img{max-width:320px}}
+.guar{display:flex;gap:14px;align-items:flex-start;background:var(--paper-2);border-radius:8px;padding:20px;margin-top:18px}
+section.alt .guar{background:var(--paper-2)}
+.guar>svg{width:34px;height:34px;flex:none;fill:var(--gold-dark);margin-top:2px}
+.guar h3{margin-bottom:6px}
+.sign-name{font-family:var(--serif);font-weight:700;margin:8px 0 0;color:var(--navy)}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px}
+@media(max-width:700px){.ops{grid-template-columns:1fr}}
+.op{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px}
+.op blockquote{margin:0 0 12px;font-family:var(--serif);font-weight:700;font-size:17px;line-height:1.45;color:var(--navy)}
+.op img{width:100%;height:auto;border:1px solid var(--line);border-radius:4px}
+.op figcaption{font-size:14px;color:var(--faint);margin-top:6px}
+details.acc{background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:8px}
+section.alt details.acc{background:var(--paper)}
+details.acc summary{list-style:none;cursor:pointer;padding:14px 46px 14px 16px;position:relative;font-weight:700;line-height:1.4;color:var(--navy)}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"+";position:absolute;right:16px;top:10px;font-size:24px;font-weight:400;color:var(--gold-dark)}
+details.acc[open] summary::after{content:"–"}
+.acc-body{padding:0 16px 14px;color:var(--dim);font-size:17px}
+.acc-body p:last-child{margin:0}
+.acc-body b{color:var(--navy)}
+.closing{background:var(--navy);color:#fff;text-align:center}
+.closing p{color:#dfe1ea;max-width:62ch;margin-left:auto;margin-right:auto}
+.closing .date b{color:var(--gold);font-size:19px}
+.closing sup{color:var(--gold)}
+.closing .ps{background:var(--navy-2);border-radius:8px;padding:14px 18px;font-size:16.5px;margin-top:22px}
+.closing .cta-row{justify-content:center}
+.closing .fn{color:#9ea2b6;border-top-color:rgba(255,255,255,.12)}
+footer{background:var(--navy);color:#9ea2b6;font-size:15px;padding:22px 0 100px;border-top:1px solid rgba(255,255,255,.08)}
+footer a{color:#c9ccda}
+footer button{background:none;border:0;padding:0;color:#c9ccda;font:inherit;text-decoration:underline;cursor:pointer}
+.bar-cta{display:none}
+@media(max-width:760px){
+  .bar-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.12)}
+  .bar-cta.on{display:block}
+  .bar-cta .cta{display:flex;justify-content:center;align-items:center;gap:10px;padding:12px;font-size:18px}
+}
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:560px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 30px rgba(31,35,54,.18);padding:18px 20px;font-size:16px;line-height:1.45}
+.cookies p{margin:0 0 14px}
+.cookies a{color:var(--navy);font-weight:700}
+.cookies .btns{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{flex:1 1 140px;font:700 16px var(--sans);padding:11px 14px;border-radius:6px;cursor:pointer;border:2px solid var(--navy);background:#fff;color:var(--navy)}
+.cookies button.yes{background:var(--navy);color:#fff}
+.cookies[hidden]{display:none}
+@media(max-width:380px){.cta{font-size:18px;padding:14px 18px}}
+
+/* ===== WERSJA ODJECHANA: szkoła jazdy z nauki ===== */
+/* Jeden kolor motywu: niebieski znaków informacyjnych i polskiej L-ki. Reszta = paleta LP. */
+:root{--sign:#0e5a9c;--post:#9ea2b6;--paint:#fff}
+.v-odjechana .wrap{padding-left:36px}
+@media(min-width:900px){.v-odjechana .wrap{padding-left:20px}}
+/* droga po lewej krawędzi: asfalt, linia krawędziowa, przerywana linia środkowa (= nauka rozłożona w czasie) */
+.road{position:fixed;left:0;top:0;bottom:0;width:24px;background:var(--navy);z-index:40;box-shadow:inset -3px 0 0 var(--navy),inset -5px 0 0 var(--paint)}
+.road::after{content:"";position:absolute;left:10px;top:0;bottom:0;border-left:3px dashed var(--gold)}
+.car{position:absolute;left:3px;top:0;width:15px;height:26px;z-index:2;will-change:transform}
+.car-b{fill:var(--gold)}.car-w{fill:var(--navy)}
+/* tablice informacyjne zamiast śródtytułów: niebieska blacha, biała ramka, słupek */
+.sign{margin:0 0 26px}
+.sign span{position:relative;display:inline-block;background:var(--sign);color:#fff;font:800 15px/1 "Alegreya Sans SC",var(--sans);letter-spacing:.12em;text-transform:lowercase;padding:9px 14px 10px;border-radius:5px;box-shadow:inset 0 0 0 3px var(--sign),inset 0 0 0 5px #fff}
+.sign span::after{content:"";position:absolute;left:20px;bottom:-14px;width:6px;height:14px;background:var(--post)}
+/* L-ka: polska tablica nauki jazdy */
+.lplate{text-transform:none;letter-spacing:0;display:inline-grid;place-items:center;width:30px;height:30px;flex:none;background:var(--sign);color:#fff;font:900 20px/1 var(--sans);border-radius:3px;box-shadow:inset 0 0 0 2px #fff}
+.bar-cta .lplate,.cta .lplate{width:26px;height:26px;font-size:17px;margin-right:8px;vertical-align:-5px}
+/* HERO: tablica nad drogą */
+.hero{padding:18px 0 0;position:relative}
+.hero .kicker{color:#dfe1ea;font-weight:700;font-size:15.5px;line-height:1.3;margin-bottom:14px}
+.bigsign{background:var(--sign);border-radius:10px;padding:18px 18px 20px;box-shadow:inset 0 0 0 4px var(--sign),inset 0 0 0 7px #fff;position:relative}
+.bigsign h1{color:#fff;font-size:clamp(29px,7.6vw,46px);line-height:1.16;margin:0;letter-spacing:-.005em}
+.posts{display:flex;justify-content:space-around;height:22px;margin:0 16% 10px}
+.posts i{width:9px;background:var(--post)}
+.hero .sub{font-size:18.5px}
+.hero .nw{margin:2px 0 10px}
+.hero .cta-row{margin:14px 0 0}
+.hero .cta.line{font-size:17px;padding:13px 16px}
+.stopline{margin-top:24px;height:46px;display:block;width:100%}
+.zebra{display:block;width:100%;height:30px;background:var(--navy)}
+/* sekcje „asfaltowe”: granat z białymi liniami krawędziowymi */
+section.asphalt{background:var(--navy);color:#fff;box-shadow:inset 0 6px 0 var(--navy),inset 0 9px 0 var(--paint),inset 0 -6px 0 var(--navy),inset 0 -9px 0 var(--paint)}
+section.asphalt h2{color:#fff}
+section.asphalt p{color:#dfe1ea}
+section.asphalt .lead{color:#fff}
+section.asphalt .qa b{color:var(--gold)}
+section.asphalt .fn{color:#9ea2b6;border-top-color:rgba(255,255,255,.14)}
+section.asphalt sup{color:var(--gold)}
+section.asphalt .cons{background:var(--navy-2)}
+/* licznik kilometrów w nagłówku */
+.odo{display:inline-block;font-family:var(--serif);background:#151827;color:var(--gold);padding:0 .18em;margin:0 .04em;border-radius:4px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.22);letter-spacing:.06em;line-height:1.15}
+/* ten sam czas, inaczej poukładany: jedna kreska ciągła kontra linia przerywana */
+.spaced{margin:6px 0 18px}
+.lane{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;margin:0 0 10px}
+.lane span{font-size:15px;font-weight:700;color:#fff;line-height:1.2}
+.lane svg{width:100%;height:30px;display:block}
+.lane .asf{fill:#151827}
+.lane .pt{fill:var(--gold)}
+.spaced figcaption{font-size:14px;color:#c9ccda;margin-top:2px}
+/* deska rozdzielcza: cztery liczby jako zegary */
+.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:22px 0;background:var(--navy);border-radius:60px 60px 14px 14px;padding:18px 10px 12px;box-shadow:inset 0 0 0 3px #151827}
+.gauge{text-align:center;color:#fff}
+.gauge svg{width:100%;max-width:120px;height:auto;display:block;margin:0 auto}
+.g-arc{fill:none;stroke:#fff;stroke-width:3}
+.g-ticks line{stroke:var(--gold);stroke-width:2.5}
+.g-needle{stroke:var(--gold);stroke-width:3;stroke-linecap:round}
+.g-hub{fill:var(--gold)}
+.gauge b{display:block;font-family:var(--serif);font-size:26px;line-height:1.1;color:var(--gold)}
+.gauge span{display:block;font-size:13.5px;line-height:1.25;color:#dfe1ea}
+.gauge sup{color:var(--gold)}
+@media(max-width:620px){.dash{grid-template-columns:repeat(2,1fr);row-gap:12px;border-radius:40px 40px 14px 14px}}
+/* trzy pytania jako drogowskazy (tablice w kształcie strzałki) */
+.exits{margin:0 0 20px;padding:0;list-style:none;counter-reset:q;display:grid;gap:8px}
+.exits li{counter-increment:q}
+.exits a{display:block;background:#fff;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%);padding:3px;text-decoration:none}
+.exits a>span{display:flex;gap:12px;align-items:center;background:var(--sign);color:#fff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%);padding:11px 36px 11px 10px;font-family:var(--serif);font-weight:700;font-size:16.5px;line-height:1.3;border-radius:4px 0 0 4px}
+.exits a>span::before{content:counter(q);flex:none;width:30px;height:30px;display:grid;place-items:center;background:#fff;color:var(--sign);border-radius:3px;font:900 16px/1 var(--sans)}
+/* zwiastun w ramce ekranu nawigacji */
+.v-odjechana .yt{border-radius:14px;box-shadow:0 0 0 5px #151827}
+/* lusterko: „co myślą rodzice” / „jak jest naprawdę” */
+.flip{background:#fff;border:6px solid var(--navy);border-radius:30px;padding:16px 18px 6px;margin:34px 0 26px}
+.flip::before{content:"";position:absolute;left:50%;top:-22px;width:34px;height:16px;margin-left:-17px;background:var(--navy);border-radius:4px 4px 0 0}
+/* kontrolki na desce: trzy problemy */
+.probs.dashboard{background:var(--navy);border-radius:14px;padding:10px;gap:10px;margin-bottom:22px;box-shadow:inset 0 0 0 3px #151827}
+.probs.dashboard .prob{display:block;background:var(--navy-2);border:0;color:#fff;cursor:pointer;padding:14px}
+.probs.dashboard .prob .pimg{float:left;margin:2px 14px 8px 2px}
+.probs.dashboard .prob h3{padding-top:20px;margin-bottom:12px}
+.probs.dashboard .prob h3+p{clear:left;padding-top:4px}
+.probs.dashboard .prob::after{content:"";display:block;clear:both}
+.probs.dashboard .prob h3{color:var(--gold)}
+.probs.dashboard .prob p{color:#dfe1ea}
+.prob.lamp .pimg{width:64px;height:64px;background:var(--paper);box-shadow:0 0 0 3px var(--gold),0 0 0 6px var(--navy-2),0 0 0 8px rgba(255,198,118,.35);transition:background .35s,box-shadow .35s}
+.prob.lamp .pimg img{width:44px;height:44px;transition:opacity .35s,filter .35s}
+.prob.lamp.off .pimg{background:#3a3e55;box-shadow:0 0 0 3px #3a3e55}
+.prob.lamp.off .pimg img{opacity:.45;filter:grayscale(1)}
+.v-odjechana .bridge{border-left-color:var(--sign)}
+/* rozrusznik */
+.crank{margin:6px 0 18px;max-width:360px}
+.crank svg{width:100%;height:auto}
+.crank figcaption{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--navy);margin-top:4px}
+.c-road{stroke:var(--navy);stroke-width:3;stroke-dasharray:14 10}
+.c-body{fill:var(--navy)}
+.c-win{fill:var(--paper)}
+.c-tyre{fill:var(--navy);stroke:#fff;stroke-width:3}
+.c-rim{fill:var(--gold)}
+.c-gold{fill:var(--gold)}
+.c-plate{fill:var(--sign)}
+.c-arm{stroke:var(--gold-dark);stroke-width:5;stroke-linecap:round}
+.c-crank{transform-origin:292px 86px;transform-box:view-box;animation:crank 1.6s linear infinite}
+@keyframes crank{to{transform:rotate(360deg)}}
+/* plac manewrowy: moduły zaparkowane w kopertach */
+.plac{background:var(--navy);border-radius:10px;padding:6px 10px 10px 6px;margin:20px 0 6px}
+.plac .mods6{margin:0;gap:0}
+.bay{display:grid;grid-template-columns:38px 1fr;align-items:center;border-top:3px solid var(--paint);padding:10px 0}
+.bay:first-child{border-top:0}
+.bay:last-child{border-bottom:3px solid var(--paint)}
+.bayno{font:800 34px/1 var(--sans);color:transparent;-webkit-text-stroke:1.6px var(--paint);text-align:center}
+.v-odjechana .mnum{display:none}
+.v-odjechana details.mband summary{grid-template-columns:1fr 58px 22px;padding:10px 12px}
+.v-odjechana .mimg{width:58px;height:58px;box-shadow:0 0 0 3px #fff,0 0 0 5px currentColor}
+.v-odjechana .mimg img{width:40px;height:40px}
+.m-sk .mimg{color:var(--m-sk)}.m-mo .mimg{color:var(--m-mo)}.m-sc .mimg{color:var(--m-sc)}.m-no .mimg{color:var(--m-no)}.m-ja .mimg{color:var(--m-ja)}.m-st .mimg{color:var(--m-st)}
+.v-odjechana .mbody{padding:0 14px 6px 14px}
+/* sygnalizator z trzema poziomami */
+.lights{display:flex;gap:6px;background:#151827;border-radius:46px;padding:12px 14px;margin:14px 0 18px;justify-content:space-between;box-shadow:inset 0 0 0 2px rgba(255,255,255,.15)}
+.light{flex:1;text-align:center;color:#fff}
+.light i{display:block;width:38px;height:38px;border-radius:50%;margin:0 auto 6px;box-shadow:0 0 0 4px #2a2f47}
+.l-g{background:var(--lv-g)}.l-a{background:var(--gold)}.l-r{background:var(--lv-r)}
+.light b{display:block;font-size:15.5px}
+/* ile zajmuje: trzy tablice kierunkowe na jednym słupku */
+.signpost{position:relative;margin:18px 0 20px;padding-left:14px}
+.signpost::before{content:"";position:absolute;left:24px;top:-6px;bottom:-22px;width:8px;background:var(--post)}
+.signpost .dir{position:relative;display:block;background:#fff;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%);padding:3px;margin-bottom:8px}
+.signpost .dir>div{background:var(--sign);color:#fff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%);padding:10px 38px 10px 14px;border-radius:4px 0 0 4px}
+.signpost h3{color:#fff;margin:0 0 2px;font-size:18px}
+.signpost p{color:#e6ecf5;margin:0;font-size:16px;line-height:1.35}
+.signpost sup{color:var(--gold)}
+/* dla kogo: karta kursanta do odhaczenia */
+.karta{background:#fff;border:2px solid var(--navy);border-radius:6px;padding:4px 16px 8px;margin:0 0 18px}
+.karta-h{display:flex;align-items:center;gap:10px;font:800 14px/1 "Alegreya Sans SC",var(--sans);letter-spacing:.12em;text-transform:lowercase;color:var(--navy);border-bottom:2px solid var(--navy);padding:10px 0;margin:0}
+.forwho{margin:0}
+.forwho li{padding:0;border-bottom:1px solid var(--line)}
+.forwho li:last-child{border-bottom:0}
+.forwho li::before{display:none}
+.forwho label{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:10px 0;cursor:pointer}
+.forwho input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:1px 0 0;border:2px solid var(--navy);border-radius:3px;background:#fff;display:grid;place-items:center;cursor:pointer}
+.forwho input::after{content:"";width:12px;height:7px;border-left:3px solid var(--navy);border-bottom:3px solid var(--navy);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.forwho input:checked{background:var(--gold)}
+.forwho input:checked::after{opacity:1}
+.forwho input:focus-visible{outline:3px solid var(--sign);outline-offset:2px}
+/* instruktor: legitymacja */
+.v-odjechana .author>div:first-child{background:#fff;border:2px solid var(--navy);border-radius:8px;overflow:hidden;padding:0 0 12px}
+.legit{display:flex;align-items:center;gap:10px;background:var(--sign);color:#fff;font:800 14px/1 "Alegreya Sans SC",var(--sans);letter-spacing:.12em;text-transform:lowercase;padding:8px 12px;margin:0}
+.v-odjechana .author img{border-radius:0}
+.v-odjechana .author .meta{padding:0 12px}
+@media(max-width:620px){.v-odjechana .author>div:first-child{max-width:300px}.v-odjechana .author img{max-width:none}}
+/* opłata: kwit */
+.v-odjechana .offer{border:2px dashed var(--navy);border-top:10px solid var(--sign)}
+/* pytania egzaminacyjne */
+.faq{counter-reset:pyt}
+.v-odjechana details.acc{counter-increment:pyt;border-left:5px solid var(--line)}
+.v-odjechana details.acc[open]{border-left-color:var(--sign)}
+.v-odjechana details.acc summary::before{content:"Pytanie " counter(pyt) " z 11";display:block;font:800 12.5px/1.2 "Alegreya Sans SC",var(--sans);letter-spacing:.1em;color:var(--sign);margin-bottom:3px;text-transform:lowercase}
+/* meta: sygnalizator i linia zatrzymania */
+.semafor{display:flex;gap:10px;justify-content:center;background:#151827;border-radius:30px;padding:10px 14px;width:max-content;margin:0 auto 18px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.15)}
+.semafor i{width:26px;height:26px;border-radius:50%;background:#3a3e55;transition:background .5s}
+.semafor.stop .s-r{background:var(--lv-r)}
+.semafor.go .s-g{background:var(--lv-g);box-shadow:0 0 0 3px rgba(255,255,255,.25)}
+.closing .sign span{background:var(--sign)}
+@media(prefers-reduced-motion:reduce){.c-crank{animation:none}.semafor i,.prob.lamp .pimg,.prob.lamp .pimg img{transition:none}}
+
+/* v4: grafik jazd (ten sam czas, inaczej poukładany) i lusterko na jasnym tle */
+.grafik{background:var(--navy);color:#fff;border-radius:10px;padding:20px 18px 8px;margin:18px 0 6px;box-shadow:inset 0 0 0 3px #151827}
+.grafik h3{color:var(--gold);font-size:21px}
+.grafik p{color:#dfe1ea}
+.grafik sup{color:var(--gold)}
+.hero .sub sup a,.hero .sub sup{color:var(--gold);text-decoration:none}
+@media(prefers-reduced-motion:reduce){.car{transform:none!important}}
+
+</style>
+</head>
+<body class="v-odjechana">
+<div class="road" aria-hidden="true"><svg class="car" id="car" viewBox="0 0 20 34"><rect x="2" y="2" width="16" height="30" rx="5" class="car-b"/><rect x="5" y="8" width="10" height="6" rx="2" class="car-w"/><rect x="5" y="21" width="10" height="5" rx="2" class="car-w"/></svg></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>5+</b>Samodzielny Uczeń Online</a>
+    <nav aria-label="Nawigacja strony"><a href="#problem">Problem</a><a href="#co">Co w kursie</a><a href="#kto">Kim jesteśmy</a><a href="#cena">Cena</a><a href="#pytania">Pytania</a></nav>
+  </div>
+</header>
+
+<!-- 1. HERO: tablica informacyjna nad drogą (nagłówek F z v2 cyklu 3: „tylko wersja odjechana”, zdania g12 2024) -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="kicker"><span class="lplate" aria-hidden="true">L</span>Kurs online dla uczniów od siódmej klasy do matury</p>
+    <div class="bigsign"><h1 id="h1">Wyobraź sobie, że nie ma kursów i egzaminów na prawo jazdy.</h1></div>
+    <div class="posts" aria-hidden="true"><i></i><i></i></div>
+    <p class="sub" id="h1sub">Każdy po prostu wsiada w samochód i próbuje nim jechać. To byłaby katastrofa.
+    A dokładnie tak każdy uczeń spędza 12 lat<sup><a href="#fn6">6</a></sup> swojej obowiązkowej nauki. Musi się uczyć, chociaż nikt nie pokazał mu jak.<sup>1</sup></p>
+    <p class="nw">I to nie jest jego wina</p>
+    <p class="trust"><b>500 zł</b> · <b>roczny dostęp</b> · <b>żelazna gwarancja 30 dni</b> na zwrot</p>
+    <div class="cta-row">
+      <a class="cta" data-cta="hero" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html"><span class="lplate" aria-hidden="true">L</span>Kupuję kurs - 500 zł<small>dostęp od razu po zakupie</small></a>
+      <a class="cta line" href="#co">Zobacz, co dostajesz</a>
+    </div>
+  </div>
+  <div style="height:26px"></div>
+  <svg class="zebra" viewBox="0 0 390 30" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="zb" width="26" height="30" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="13" height="30" fill="#fff"/></pattern></defs><rect x="0" y="0" width="390" height="30" fill="url(#zb)"/></svg>
+</section>
+
+<section class="alt" id="o-kursie">
+  <div class="wrap">
+    <p class="sign"><span>Start</span></p>
+    <p class="lead">Samodzielny Uczeń Online to pakiet sześciu kursów, które poprowadzą Twoje dziecko za rękę od wymęczonego tematu szkoły do samodzielnego ogarniania swoich przedmiotów.</p>
+    <p>Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026: 10 na 10 w ocenach klientów, z 68 opinii (<a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank">profil</a>).</p>
+    <div class="dash" aria-label="Kurs w liczbach"><div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 64 A50 50 0 0 1 110 64" class="g-arc"/><g class="g-ticks"><line x1="16.0" y1="64.0" x2="10.0" y2="64.0"/><line x1="21.9" y1="42.0" x2="16.7" y2="39.0"/><line x1="38.0" y1="25.9" x2="35.0" y2="20.7"/><line x1="60.0" y1="20.0" x2="60.0" y2="14.0"/><line x1="82.0" y1="25.9" x2="85.0" y2="20.7"/><line x1="98.1" y1="42.0" x2="103.3" y2="39.0"/><line x1="104.0" y1="64.0" x2="110.0" y2="64.0"/></g><line x1="60" y1="64" x2="92.9" y2="45.0" class="g-needle"/><circle cx="60" cy="64" r="5" class="g-hub"/></svg><b>6</b><span>pełnych kursów merytorycznych</span></div><div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 64 A50 50 0 0 1 110 64" class="g-arc"/><g class="g-ticks"><line x1="16.0" y1="64.0" x2="10.0" y2="64.0"/><line x1="21.9" y1="42.0" x2="16.7" y2="39.0"/><line x1="38.0" y1="25.9" x2="35.0" y2="20.7"/><line x1="60.0" y1="20.0" x2="60.0" y2="14.0"/><line x1="82.0" y1="25.9" x2="85.0" y2="20.7"/><line x1="98.1" y1="42.0" x2="103.3" y2="39.0"/><line x1="104.0" y1="64.0" x2="110.0" y2="64.0"/></g><line x1="60" y1="64" x2="79.0" y2="31.1" class="g-needle"/><circle cx="60" cy="64" r="5" class="g-hub"/></svg><b>161</b><span>lekcji wideo<sup>2</sup></span></div><div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 64 A50 50 0 0 1 110 64" class="g-arc"/><g class="g-ticks"><line x1="16.0" y1="64.0" x2="10.0" y2="64.0"/><line x1="21.9" y1="42.0" x2="16.7" y2="39.0"/><line x1="38.0" y1="25.9" x2="35.0" y2="20.7"/><line x1="60.0" y1="20.0" x2="60.0" y2="14.0"/><line x1="82.0" y1="25.9" x2="85.0" y2="20.7"/><line x1="98.1" y1="42.0" x2="103.3" y2="39.0"/><line x1="104.0" y1="64.0" x2="110.0" y2="64.0"/></g><line x1="60" y1="64" x2="63.3" y2="26.1" class="g-needle"/><circle cx="60" cy="64" r="5" class="g-hub"/></svg><b>88</b><span>lifehacków na start<sup>3</sup></span></div><div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 64 A50 50 0 0 1 110 64" class="g-arc"/><g class="g-ticks"><line x1="16.0" y1="64.0" x2="10.0" y2="64.0"/><line x1="21.9" y1="42.0" x2="16.7" y2="39.0"/><line x1="38.0" y1="25.9" x2="35.0" y2="20.7"/><line x1="60.0" y1="20.0" x2="60.0" y2="14.0"/><line x1="82.0" y1="25.9" x2="85.0" y2="20.7"/><line x1="98.1" y1="42.0" x2="103.3" y2="39.0"/><line x1="104.0" y1="64.0" x2="110.0" y2="64.0"/></g><line x1="60" y1="64" x2="86.9" y2="37.1" class="g-needle"/><circle cx="60" cy="64" r="5" class="g-hub"/></svg><b>177</b><span>stron skryptu<sup>4</sup></span></div></div>
+    <div class="two">
+      <div><p class="qs-h"><b>Na tej stronie znajdziesz odpowiedź na trzy pytania</b></p>
+    <ol class="exits">
+      <li><a href="#problem"><span>Jaki jest ukryty problem ze szkołą?</span></a></li>
+      <li><a href="#da-sie"><span>Czy da się coś z tym zrobić?</span></a></li>
+      <li><a href="#dlaczego"><span>Czy Twoje dziecko ukończy nasz kurs?</span></a></li>
+    </ol></div>
+      <div><div class="yt" id="film">
+      <button type="button" class="yt-btn" data-yt="m5JHAPaKsd4" aria-label="Odtwórz zwiastun kursu (YouTube)">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30"/><path d="M26 20 46 32 26 44Z"/></svg>
+        <span>Obejrzyj zwiastun</span>
+      </button>
+    </div>
+    <p class="vcap">Jeśli wolisz posłuchać, w filmiku powyżej opowiadam o wszystkim.</p></div>
+    </div>
+    <p class="fn"><sup>1</sup> Dlaczego czytanie w kółko przestaje wystarczać: Dunlosky i in. 2013, „Psychological Science in the Public Interest” 14(1), 4-58: z dziesięciu technik uczenia się ponowne czytanie i podkreślanie mają niską użyteczność, a sprawdzanie się i rozłożone powtórki wysoką.
+    <sup>2</sup> Liczba z opisu kursu 2026 <mark class="todo">[odczyt z panelu WTL przed publikacją; bez odczytu zegar wypada]</mark>. <sup>3</sup> Lekcje oznaczone na zielono: koncentracja 9, motywacja 7, notatki 11, stres 8, szybkie czytanie 36, języki 17. <sup>4</sup> Skrypt w wersji 2026, plik PDF do druku.</p>
+  </div>
+</section>
+
+<!-- 2. PROBLEM: teoria, lusterko, kontrolki -->
+<section id="problem">
+  <div class="wrap">
+    <p class="sign"><span>Teoria</span></p>
+    <h2>Jaki jest ukryty problem ze szkołą?</h2>
+    <p class="lead">Czy szkoła Twojego dziecka to Twoje zmartwienie? Spięcia w domu, przykre wywiadówki, pilnowanie ocen, ogarnianie korków, kontrolowanie i ogólnie bycie cerberem…</p>
+    <p>Jest taki moment, który zna prawie każdy rodzic. Na początku szkoły podstawowej jest dobrze. Dziecko przynosi dobre oceny, uczy się w zasadzie samo, nikt nie robi z tego tematu.</p>
+    <p>A potem, gdzieś koło siódmej klasy albo na początku liceum, wszystko zaczyna się sypać.</p>
+    <div class="flip" id="flip">
+      <div class="flip-tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-flip="0">Co myślą rodzice</button>
+        <button type="button" role="tab" aria-selected="false" data-flip="1">Jak jest naprawdę</button>
+      </div>
+      <p class="flip-hint" aria-hidden="true">kliknij, żeby się przekonać <svg viewBox="0 0 40 16"><path d="M2 8 H34 M27 2 L35 8 L27 14"/></svg></p>
+      <div class="flip-card" data-card="0"><p>Pierwsza myśl jest zawsze ta sama. Przestał się starać. Druga - no cóż, taki wiek.</p></div>
+      <div class="flip-card" data-card="1" hidden><p>Po latach pracy w Fundacji wiem, że to coś zupełnie innego.</p>
+        <p>Bo przez pierwsze lata szkoły w zupełności wystarczy czytać w kółko podręcznik. Materiału jest na tyle mało, że po dwukrotnym przeczytaniu zostaje w głowie sam z siebie. Bez żadnej metody.</p>
+        <p>I przy okazji dziecko uczy się wtedy czegoś jeszcze. Uczy się, że nauka to jest czytanie. Że wystarczy ślęczeć nad podręcznikiem wystarczająco długo.</p>
+        <p>To działa dokładnie do momentu, w którym materiału robi się za dużo. Wtedy czytanie w kółko przestaje działać praktycznie z dnia na dzień.</p>
+        <p>A uczeń robi dalej to samo, tylko dłużej i coraz bardziej się frustrując.</p></div>
+    </div>
+    <h3 class="h3big">Problem ze szkołą to tak naprawdę 3 spore problemy:</h3>
+    <div class="probs dashboard"><div class="prob lamp" data-kontrolka="koncentracja"><div class="pimg"><img src="assets/modul-1-koncentracja.png" alt="Rysunek do modułu koncentracja" width="200" height="200" loading="lazy"></div><div><h3>Z koncentracją.</h3><p>No bo jak masz się skupić, kiedy jesteś pod ostrzałem informacji z każdej strony? TikTok, gry na telefonie, powiadomienia, dźwięki, reklamy, alerty, stories, wiadomości, ciągle coś.</p><p>Jeśli Twoje dziecko nie nauczy się filtrować informacji, to… po prostu nie zrobi nic sensownego. I to nie jest jego wina. To umiejętność skupienia się, której nikt go nie nauczył.</p></div></div><div class="prob lamp" data-kontrolka="motywacja"><div class="pimg"><img src="assets/modul-2-motywacja.png" alt="Rysunek do modułu motywacja" width="200" height="200" loading="lazy"></div><div><h3>Z motywacją.</h3><p>Przypomnij sobie, jak to było. Masz kilkanaście lat, trawa jest zielona, po szkole masz ocean czasu na wszystkie wspaniałe rzeczy.</p><p>Systematyczne uczenie się nie jest jedną z tych rzeczy, na które ma się wtedy ochotę.</p></div></div><div class="prob lamp" data-kontrolka="kucie"><div class="pimg"><img src="assets/modul-3-notatki.png" alt="Rysunek do modułu notatki" width="200" height="200" loading="lazy"></div><div><h3>Z kuciem.</h3><p>Bo czytanie notatki po raz czwarty daje poczucie mocnego skupienia i nauki. Wszystko wygląda znajomo, wszystko jest zrozumiałe, więc uczeń zamyka zeszyt z poczuciem, że umie.</p><p>Tylko że rozpoznawanie tekstu i zrozumienie i zapamiętanie go to dwie zupełnie różne bajki. Na sprawdzianie nie ma notatki pod ręką tylko pusta kartka.</p></div></div></div>
+    <p>Czasem jakiś fajniejszy nauczyciel przemyci może coś o tym, jak należy się uczyć, ale to za mało.
+    No bo ile da komuś sama informacja o tym, że warto wciskać sprzęgło podczas zmiany biegów?</p>
+    <p class="bridge">Jeśli siedzi nad zeszytem godzinami, a efekty są nikłe, nie potrzebuje kolejnych korków tylko zmiany tego, jak się uczy.</p>
+  </div>
+</section>
+
+<!-- 3. STAWKA: droga -->
+<section class="asphalt" id="stawka">
+  <div class="wrap">
+    <p class="sign"><span>Droga</span></p>
+    <h2>Na nauce Twoje dziecko spędzi od <span class="odo">12</span> do <span class="odo">17</span> lat.<sup>6</sup></h2>
+    <p class="lead">Dziecko musi nauczyć się tylko jednej rzeczy. Tego, jak się uczyć. Przyda mu się to w szkole podstawowej, liceum i na studiach.</p>
+    <p>Kiedy szkoła nie daje rady, rodzice próbują ratować się lekcjami dodatkowymi. To jest błędne koło, które można przerwać. Zamiast ryby proponujemy wędkę.</p>
+    <p class="fn" id="fn6"><sup>6</sup> 8 lat szkoły podstawowej i 4 lata liceum to 12 lat, z pięcioletnimi studiami 17; z technikum rok dłużej.</p>
+  </div>
+</section>
+
+<!-- 4. CZY DA SIĘ: grafik jazd -->
+<section id="da-sie">
+  <div class="wrap">
+    <p class="sign"><span>Grafik jazd</span></p>
+    <h2>Czy da się coś z tym zrobić?</h2>
+    <p class="lead">Tak i tym właśnie zajmujemy się w Fundacji Pięć Plus.</p>
+    <p>Twoje dziecko dostało we wrześniu plan lekcji na cały rok. Godzina po godzinie, wszystkie rozpisane co do minuty. Nie dostaje jednak znacznie ważniejszej rzeczy: planu, jak się tego wszystkiego nauczyć.</p>
+    <div class="grafik">
+      <h3>Wystarczy ten sam czas nauki poukładać inaczej.</h3>
+      <p>Weźmy najprostszy przykład. Sprawdzian we wtorek, więc uczeń siada w niedzielę wieczorem na dwie godziny i w poniedziałek na dwie.</p>
+      <p>We wtorek na sprawdzianie dostaje czwórkę i wszyscy są zadowoleni. Ale w czerwcu, przy powtórce do egzaminu, okazuje się, że z tamtych czterech godzin nauki nie zostało prawie nic.</p>
+      <p>W 2006 roku zebrano wyniki ponad trzystu eksperymentów na temat skutecznego uczenia się i policzono to raz a porządnie.<sup>5</sup></p>
+      <figure class="spaced" role="img" aria-label="Ten sam czas nauki: raz jedną kreską w jeden wieczór, raz w siedmiu kawałkach przez tydzień">
+        <div class="lane"><span>jeden wieczór</span><svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><rect class="asf" x="0" y="0" width="300" height="30" rx="4"/><rect class="pt" x="8" y="12" width="140" height="6" rx="1"/></svg></div>
+        <div class="lane"><span>cały tydzień</span><svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><rect class="asf" x="0" y="0" width="300" height="30" rx="4"/><rect class="pt" x="8" y="12" width="20" height="6" rx="1"/><rect class="pt" x="52" y="12" width="20" height="6" rx="1"/><rect class="pt" x="96" y="12" width="20" height="6" rx="1"/><rect class="pt" x="140" y="12" width="20" height="6" rx="1"/><rect class="pt" x="184" y="12" width="20" height="6" rx="1"/><rect class="pt" x="228" y="12" width="20" height="6" rx="1"/><rect class="pt" x="272" y="12" width="20" height="6" rx="1"/></svg></div>
+      </figure>
+      <p>Kilka godzin nauki rozbite na cały tydzień daje lepszy efekt, niż zakuwanie przez jeden cały wieczór.</p>
+      <p>Bo Twoje dziecko nie musi uczyć się więcej. Nie musi jeszcze dłużej ślęczeć nad książkami.</p>
+    </div>
+    <p style="margin-top:20px">I planowanie nauki to nie jest wyjątek. Tak samo jest z resztą. Z tym, jak uczeń robi notatki. Jak czyta. Jak z powrotem się skupia po tym, jak zerknął w telefon.</p>
+    <p>Jak siada do nauki w dniu, w którym mu się nie chce. Jak radzi sobie ze stresem przed egzaminem. Do każdej z tych rzeczy można podejść lepiej lub gorzej. A większość uczniów robi to po prostu źle.</p>
+    <p>Nie dlatego, że im się nie chce. Dlatego, że nikt im nigdy nie pokazał, że można to zrobić inaczej.</p>
+    <p class="fn"><sup>5</sup> Cepeda, Pashler, Vul, Wixted, Rohrer 2006, „Distributed practice in verbal recall tasks”, „Psychological Bulletin” 132(3), 354-380: metaanaliza 839 porównań z 317 eksperymentów (184 publikacje). Ten sam łączny czas nauki rozłożony na kilka sesji daje lepsze zapamiętanie na teście odroczonym niż nauka jednym ciągiem. Zadania: odtwarzanie materiału słownego (słówka, fakty, listy).</p>
+  </div>
+</section>
+
+<!-- 5. SZEŚĆ KONKRETÓW: plac manewrowy -->
+<section class="alt" id="co">
+  <div class="wrap">
+    <p class="sign"><span>Plac manewrowy</span></p>
+    <h2>Kurs to 6 konkretów</h2>
+    <p>I właśnie dlatego kurs Samodzielny Uczeń Online podzieliliśmy na sześć części, które dotykają wszystkich zagadnień związanych z samodzielną nauką.</p>
+    <p>Motywacja, koncentracja, szybkie czytanie, notatki, nauka języków obcych i radzenie sobie ze stresem - do każdej z nich przygotowaliśmy też skrypt z ćwiczeniami, bo od samego oglądania filmów jeszcze nikt się niczego nie nauczył.</p>
+    <p class="hint" style="margin:0 0 4px">Kliknij konkret, aby dowiedzieć się więcej</p>
+    <div class="plac"><div class="mods6">
+<div class="bay"><span class="bayno" aria-hidden="true">1</span><details class="mband m-sk" data-acc="modul-sk"><summary><span class="mnum">1</span><span class="mname"><b>Skupienie</b><span class="mtag">Uczenie się bez rozpraszaczy</span></span><span class="mimg"><img src="assets/modul-1-koncentracja.png" alt="" width="200" height="200" loading="lazy"></span><span class="mplus" aria-hidden="true"></span></summary><div class="mbody"><p>Metoda budki telefonicznej jest jedną z naszych propozycji poskromienia smartfona. Ale to tylko wierzchołek góry lodowej.</p><p>Koncentracja jest jak mięsień - odpowiednie ćwiczenia pozwalają korzystać z niej na zawołanie.</p><p class="mlist"><b>W środku m.in.:</b> budka telefoniczna, smartfon czarno-biały, Pomodoro, muzyka do nauki, Czapka czarodzieja, Myślodsiewnia, sen i drzemka.</p></div></details></div>
+<div class="bay"><span class="bayno" aria-hidden="true">2</span><details class="mband m-mo" data-acc="modul-mo"><summary><span class="mnum">2</span><span class="mname"><b>Motywacja</b></span><span class="mimg"><img src="assets/modul-2-motywacja.png" alt="" width="200" height="200" loading="lazy"></span><span class="mplus" aria-hidden="true"></span></summary><div class="mbody"><p>Przez odpowiednie ćwiczenia można ze zdolnego lenia zrobić samodzielnego ucznia.</p><p class="mlist"><b>W środku m.in.:</b> 5× Dlaczego, Bucket List, 1-3-5, Dziennik sukcesów, Starter, krąg nawyku, zasada 2 dni i 21 dni.</p></div></details></div>
+<div class="bay"><span class="bayno" aria-hidden="true">3</span><details class="mband m-sc" data-acc="modul-sc"><summary><span class="mnum">3</span><span class="mname"><b>Szybkie czytanie</b></span><span class="mimg"><img src="assets/modul-5-czytanie.png" alt="" width="200" height="200" loading="lazy"></span><span class="mplus" aria-hidden="true"></span></summary><div class="mbody"><p>Szybkie czytanie pozwoli Twojemu dziecku nie tylko czytać szybciej ale też łatwiej koncentrować się na tekście i więcej z niego zapamiętywać.</p><p class="mlist"><b>W środku m.in.:</b> czytanie ze wskaźnikiem, pole widzenia, tablice Schulza, Alphabet game, metronom, kiedy nie czytać szybko.</p></div></details></div>
+<div class="bay"><span class="bayno" aria-hidden="true">4</span><details class="mband m-no" data-acc="modul-no"><summary><span class="mnum">4</span><span class="mname"><b>Notatki</b></span><span class="mimg"><img src="assets/modul-3-notatki.png" alt="" width="200" height="200" loading="lazy"></span><span class="mplus" aria-hidden="true"></span></summary><div class="mbody"><p>Bez dobrych notatek nie da się zapamiętać informacji na długo ani szybko sobie ich przypomnieć.</p><p>Dlatego pokazujemy jak notować, żeby nie tylko zapełnić zeszyt, ale przede wszystkim mieć powtórkę najważniejszej wiedzy zawsze pod ręką.</p><p class="mlist"><b>W środku m.in.:</b> mapy myśli, notatki Cornella, notatki Feynmana, notatki cyfrowe.</p></div></details></div>
+<div class="bay"><span class="bayno" aria-hidden="true">5</span><details class="mband m-ja" data-acc="modul-ja"><summary><span class="mnum">5</span><span class="mname"><b>Języki obce</b></span><span class="mimg"><img src="assets/modul-6-jezyki.png" alt="" width="200" height="200" loading="lazy"></span><span class="mplus" aria-hidden="true"></span></summary><div class="mbody"><p>Z dużą chęcią przeprowadzę Twojego syna albo Twoją córkę przez sposoby na lepsze zapamiętywanie słówek, samodzielne ćwiczenie konwersacji, zeszyty słówek, środowisko językowe i całą resztę.</p><p>A no i wytłumaczę też, dlaczego takie brzydkie, własnoręcznie nabazgrane fiszki są warte znacznie więcej od tych pięknych, kupnych kartoników ze sklepu.</p><p class="mlist"><b>W środku m.in.:</b> krzywa zapominania, fiszki, zeszyt słówek, język w telefonie, podcasty, powtarzanie „na papugę”, alfabet fonetyczny.</p></div></details></div>
+<div class="bay"><span class="bayno" aria-hidden="true">6</span><details class="mband m-st" data-acc="modul-st"><summary><span class="mnum">6</span><span class="mname"><b>Stres</b></span><span class="mimg"><img src="assets/modul-4-stres.png" alt="" width="200" height="200" loading="lazy"></span><span class="mplus" aria-hidden="true"></span></summary><div class="mbody"><p>Wisienką na torcie są metody radzenia sobie ze stresem - niezbędne przy wszystkich sprawdzianach, wystąpieniach oraz egzaminach i maturach.</p><p class="mlist"><b>W środku m.in.:</b> planowanie, przebodźcowanie, ćwiczenia oddechowe, poranne strony, trening Jacobsona.</p></div></details></div>
+    </div></div>
+    <h3 class="h3big">Trzy poziomy w każdym module</h3>
+    <p>Każdy przedmiot w samodzielnym uczeniu ma trzy poziomy trudności, bo kurs ma być asystentem Twojego dziecka przez dłuższy czas.</p>
+    <div class="lights" aria-label="Trzy poziomy">
+        <div class="light"><i class="l-g"></i><b>zielony</b></div>
+        <div class="light"><i class="l-a"></i><b>pomarańczowy</b></div>
+        <div class="light"><i class="l-r"></i><b>czerwony</b></div>
+      </div>
+    <p>Poziom zielony to łatwe do wdrożenia lifehacki, czyli sprytne sposoby na przeglądanie lektur czy skupienie na egzaminach.</p>
+    <p>Poziom pomarańczowy wymaga wykonania trudniejszych ćwiczeń, ale jego efekty to już umiejętność szybkiego zapamiętywania słówek (…).</p>
+    <p>Czerwony poziom wymaga najwięcej pracy, ale po jego ukończeniu Twoje dziecko będzie w stanie samodzielnie zaplanować swoją naukę do egzaminów i szukać rozwiązań na własną rękę.</p>
+  </div>
+</section>
+
+<section class="asphalt" id="ile">
+  <div class="wrap">
+    <h2>Ile zajmuje przejście kursu?</h2>
+    <p class="lead">To zależy, jak uczeń go zrobi.</p>
+    <div class="signpost">
+      <div class="dir"><div><h3>Ekspresowo</h3><p>Same zielone lekcje: 88 lifehacków, gotowych do wdrożenia.</p></div></div>
+      <div class="dir"><div><h3>Po kawałku</h3><p>10 minut dziennie, ok. 3 miesiące.</p></div></div>
+      <div class="dir"><div><h3>Intensywnie</h3><p>Orientacyjny plan: jeden moduł na tydzień.<sup>7</sup></p></div></div>
+    </div>
+    <div style="height:18px"></div>
+    <p>Dostęp trwa rok od zakupu, więc całość da się przejść w swoim tempie.</p>
+    <div class="cta-row"><a class="cta" data-cta="ile" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html">Kupuję kurs - 500 zł<small>roczny dostęp · 30 dni na zwrot</small></a></div>
+    <p class="fn"><sup>7</sup> Łączny czas wideo według opisu kursu 2026: ok. 6 h 50 min; ćwiczenia w skrypcie są poza tym czasem. <mark class="todo">[odczyt z panelu WTL]</mark></p>
+  </div>
+</section>
+
+<!-- 6. CZY UKOŃCZY: rozrusznik -->
+<section id="dlaczego">
+  <div class="wrap">
+    <p class="sign"><span>Rozrusznik</span></p>
+    <h2>Zastanawiasz się, czy Twoje dziecko ukończy nasz kurs?</h2>
+    <!-- „Krótka odpowiedź - tak. Dłuższa? Tak, ponieważ:” wraca dopiero z eksportem ukończeń SUO (N, definicja); decyzja przewidziana 7 -->
+    <figure class="crank"><svg viewBox="0 0 320 150" role="img" aria-label="Rysunek: stary samochód uruchamiany korbą rozrusznika">
+      <line x1="10" y1="132" x2="310" y2="132" class="c-road"/>
+      <path d="M60 104 V80 Q62 70 74 68 L110 66 L128 40 Q132 34 142 34 H206 Q216 34 222 44 L236 66 L262 70 Q274 72 276 84 V104 Z" class="c-body"/>
+      <path d="M134 64 L146 44 H176 V64 Z M184 64 V44 H204 Q210 44 214 50 L222 64 Z" class="c-win"/>
+      <circle cx="98" cy="106" r="20" class="c-tyre"/><circle cx="98" cy="106" r="8" class="c-rim"/>
+      <circle cx="238" cy="106" r="20" class="c-tyre"/><circle cx="238" cy="106" r="8" class="c-rim"/>
+      <rect x="276" y="80" width="8" height="12" class="c-gold"/><rect x="236" y="48" width="16" height="16" rx="2" class="c-plate"/><path d="M241 51 V60 H248" stroke="#fff" stroke-width="2.4" fill="none"/>
+      <g class="c-crank"><line x1="284" y1="86" x2="300" y2="86" class="c-arm"/><line x1="300" y1="86" x2="300" y2="62" class="c-arm"/><line x1="300" y1="62" x2="312" y2="62" class="c-arm"/></g>
+    </svg><figcaption>Rozrusznik, a nie silnik.</figcaption></figure>
+    <p class="lead">Najważniejsze rzeczy uczniowie poznają podczas 5-minutowych filmów (montowanych na wzór filmików na YT). Do każdej lekcji przygotowaliśmy ćwiczenia i notatki w fizycznym skrypcie.</p>
+    <p>W ten sposób nowy sposób notowania czy uczenia się jest gotowy do użycia od razu po lekcji.</p>
+    <p>Dodatkowo na naszej grupie na Facebooku udzielamy stałej pomocy i jest to miejsce wymiany doświadczeń z innymi uczniami. <mark class="todo">[tylko jeśli grupa działa]</mark></p>
+    <p>Dziesięć minut dziennie przez mniej więcej trzy miesiące. Małe porcje wiedzy i Youtubowa forma kursu sprawiają, że łatwo jest namówić Twoje dziecko na ten kurs.</p>
+    <p>Wiedza odkłada się mimochodem a umiejętności można od razu ćwiczyć w szkole - czyli zgodnie z najlepszymi technikami zapamiętywania.</p>
+    <div class="note"><p><b>Czy wiesz, że… (sekcja dla Rodzica).</b> I właśnie dzięki tym małym porcjom wiedzy, Twoje dziecko kroczek po kroczku opanuje samodzielne, skuteczne i sensowne uczenie się.</p>
+      <p>Ta samodzielność to dla Ciebie koniec pilnowania i sprawdzania a dla Twojego dziecka wzięcie swoich szkolnych spraw w swoje ręce, poczucie sprawczości i po prostu radość z uczenia się.</p>
+      <p>I możesz oczywiście samodzielnie się tego nauczyć i spróbować przekazać to swojemu nastolatkowi… ale po pierwsze raczej nie znajdziesz na to czasu, a po drugie - nie czarujmy się - Twoje dziecko prawdopodobnie nie będzie chciało Cię słuchać.</p>
+      <p style="margin:0">Dlatego zrobiliśmy to za Ciebie. W przystępnej formie, krok po kroku i bez rewolucji.</p></div>
+    <h3 class="h3big">Czy to ja mam go pilnować?</h3>
+    <p>No to masz pomóc, czy masz nie pomagać? Możesz pomóc ale tylko trochę, pokazać drogę ale nie prowadzić za rękę.</p>
+    <p>Po zakupie dostajesz mailem kontrakt na pierwsze tygodnie i przypomnienia. <mark class="todo">[po ustawieniu maili w mailerze]</mark></p>
+    <p>Co zrobić, jeśli na start nie usiądzie, piszę niżej, w <a href="#nie-usiadzie" data-open="nie-usiadzie">„A jak nie usiądzie?”</a>.</p>
+    <div class="cta-row"><a class="cta" data-cta="dlaczego" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html">Kupuję kurs - 500 zł</a></div>
+  </div>
+</section>
+
+<!-- 7. DLA KOGO: karta kursanta -->
+<section class="alt">
+  <div class="wrap">
+    <p class="sign"><span>Dla kogo</span></p>
+    <h2>Dla kogo jest ten kurs?</h2>
+    <p>Ten kurs jest dla Twojego dziecka, jeśli:</p>
+    <div class="karta"><p class="karta-h"><span class="lplate" aria-hidden="true">L</span>Karta kursanta</p>
+      <ul class="forwho">
+        <li><label><input type="checkbox" data-forwho="1"><span>siedzi nad zeszytem godzinami, a efekty są nikłe</span></label></li>
+        <li><label><input type="checkbox" data-forwho="2"><span>płacicie za korepetycje, ale to nie jest długotrwałe rozwiązanie</span></label></li>
+        <li><label><input type="checkbox" data-forwho="3"><span>zakuwa na sprawdzian i zapomina po tygodniu</span></label></li>
+        <li><label><input type="checkbox" data-forwho="4"><span>chcesz przestać ciągle pilnować szkoły swojego dziecka</span></label></li>
+        <li><label><input type="checkbox" data-forwho="5"><span>chcesz, żeby od nowego roku jego nauka była samodzielna</span></label></li>
+      </ul></div>
+    <blockquote class="quote">Nieważne, jakiego ma nauczyciela przedmiotowego, nieważne, z czego chce zdawać maturę rozszerzoną, nieważne, w co celuje, nieważne, czy jest zdolny i chce mieć więcej czasu, nieważne, czy ma trudności z nauką i te metody pozwolą mu nie spędzać całych popołudniów nad książkami, tylko po prostu to sobie ogarnąć.</blockquote>
+    <p>Widziałem zarówno słabszych uczniów, którzy zaczynali uczyć się dobrze jak i świetne uczennice, które zyskiwały czas dla siebie pozostając w czołówce szkolnej.</p>
+    <p>Dla słabszego ucznia mamy dedykowaną ścieżkę, która jest krótsza (same zielone lekcje).</p>
+    <p>Dolną granicą wiekową jest siódma klasa, górna to zwyczajowo maturzyści przygotowujący się na akademickie wyzwania.</p>
+    <p class="note" id="specjalista"><b>Nie zastąpi specjalisty.</b> Ze względu na formę wszystkie nasze techniki są proste i nie dotykają głębokich problemów. Sposoby na stres nie zastąpią spotkania ze specjalistą i terapii, co podkreślam w prawie każdej lekcji poświęconej temu tematowi.</p>
+  </div>
+</section>
+
+<!-- 8. KIM JESTEŚMY: instruktor -->
+<section id="kto">
+  <div class="wrap">
+    <p class="sign"><span>Instruktor</span></p>
+    <h2>Kim jesteśmy?</h2>
+    <div class="author">
+      <div>
+        <p class="legit"><span class="lplate" aria-hidden="true">L</span>Legitymacja</p>
+        <img src="assets/piotr.webp" width="600" height="405" loading="lazy" alt="Piotr Starzyński, Fundacja Pięć Plus">
+        <p class="meta">Piotr Starzyński<br>Uczę, jak się uczyć, od 2013 roku. Fundacja Pięć Plus od 2017.</p>
+      </div>
+      <div>
+        <p>Pierwszy raz o efektywnej nauce usłyszałem na kursie szybkiego czytania. To było w pierwszej klasie liceum. Dostałem się do dość wymagającej szkoły i po prostu bałem się, jak to będzie.</p>
+        <p>No i porządnie się wkurzyłem, bo w głowie od tamtej pory świeciła mi się tylko jedna pretensja: dlaczego mi tego nikt wcześniej nie pokazał?</p>
+        <p>Z tego pytania narodziły się korki z efektywnej nauki, Fundacja Pięć Plus i w końcu ten kurs, który sprawia, że nauka jest lekka, łatwa, przyjemna i przede wszystkim sensowna.</p>
+        <p>Nasze doświadczenia zaczynaliśmy od prowadzenia kursów stacjonarnych w niewielkich grupach. To doskonała metoda szkolenia, ale ma jedną wielką wadę. W ten sposób możesz przeszkolić tylko kilkadziesiąt osób miesięcznie.</p>
+        <p>Poza tym, żeby się u nas uczyć, trzeba było mieć pieniądze i trzeba było mieszkać w Warszawie. Więc no kolejne bariery nie do przeskoczenia.</p>
+        <p>I w związku z tym ja doszedłem do wniosku, że jedyną opcją to jest zrobienie tego online. I zrobiliśmy to online. Zrobiliśmy ogromny projekt własnymi siłami, własnymi zasobami.</p>
+        <p>I teraz go udostępniam. Udostępniam go wszystkim tym rodzicom, którzy chcą dać swoim dzieciom narzędzia do tego, żeby się skutecznie uczyć.</p>
+        <p>Wiem, że w szkole dają po prostu za mało Twojemu dziecku, za mało pasji, za mało serca.</p>
+        <p>Wiem, bo zacząłem od badania strajku nauczycieli, a potem się tak zaangażowałem, że zrobiłem uprawnienia nauczycielskie i sam zostałem nauczycielem, bo chciałem sprawdzić, czy da się coś zmienić.</p>
+        <p>Obecnie pracuję na Uniwersytecie Warszawskim nad doktoratem poświęconym wyzwaniom nauczycieli w polskiej szkole.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. KOSZT: opłata za kurs -->
+<section class="alt" id="cena">
+  <div class="wrap">
+    <p class="sign"><span>Opłata za kurs</span></p>
+    <h2>Koszt zakupu… i jego braku</h2>
+    <p class="lead">Ile kosztuje kurs Samodzielny Uczeń Online i co tracisz, nie decydując się na niego</p>
+    <h3 class="h3big">Korepetycje czy kurs?</h3>
+    <p>I żeby nie było, nie winię nauczycieli. Byłem nauczycielem, przerąbane mają nauczyciele. I odbiłem się od papierologii zamiast uczenia, od przeładowanych klas, od słabych warunków, od niedziałających rzutników (…). Ale nie można od nich oczekiwać nie wiadomo czego w tych warunkach.</p>
+    <p>Więc jeśli takie są warunki w szkole, to jak Twoje dziecko ma się uczyć? No, z Tobą.</p>
+    <p>Więc spiny, wkurzanie się i Twój czas, który moglibyście poświęcić wspólnie na coś innego, na coś fajniejszego, bo dziecko nie pomaga Ci w pracy, bo praca to jest Twoja sprawa. Więc wzajemna frustracja i zabieranie dziecku sprawczości z dobrego serca.</p>
+    <p>No to korki. No to jest po prostu zapłacenie pieniędzmi, żeby ktoś inny nad tym siedział. Nie ma sprawczości. A Twoje dziecko będzie musiało sobie umieć poradzić.</p>
+    <div class="pie">
+      <svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.915" class="pie-bg"/><circle cx="21" cy="21" r="15.915" class="pie-fg" stroke-dasharray="34 66" stroke-dashoffset="25"/></svg>
+      <p><b>34 na 100</b> rodzin z uczniami płaci za korepetycje albo kursy przygotowawcze.<sup>8</sup></p>
+    </div>
+    <p><b>Płacisz tylko 500 zł za pakiet 6 kursów.</b> Dzięki naszej platformie online cały pakiet kosztuje mniej niż osiem godzin korepetycji z matematyki w liceum i niecałe dziesięć w 7-8 klasie.<sup>9</sup> Przy rocznym dostępie to mniej niż 1,40 zł dziennie.</p>
+    <div class="offer">
+      <div class="offer-img"><p class="ptitle">Pakiet Samodzielny Uczeń Online</p><img src="assets/SUO.webp" width="700" height="500" loading="lazy" alt="Kurs Samodzielny Uczeń Online na laptopie i telefonie, obok skrypt z materiałami"></div>
+      <div>
+        <p class="price">500 zł<small>6 kursów · roczny dostęp</small></p>
+        <p style="margin:12px 0 4px;font-weight:700">Kupując pakiet otrzymujesz:</p>
+        <ul class="incl">
+          <li>6 kursów wideo: skupienie, motywacja, notatki, stres, szybkie czytanie, języki</li>
+          <li>maksymalnie 5-minutowe lekcje z ćwiczeniem i podsumowaniem</li>
+          <li>skrypt PDF do druku, 177 stron</li>
+          <li>3 poziomy: zielony, pomarańczowy, czerwony, dopasowane zarówno do lepszych, jak i słabszych uczniów</li>
+          <li>plan na pierwsze tygodnie i przypomnienia mailem <mark class="todo">[po ustawieniu maili]</mark></li>
+          <li>roczny dostęp od zakupu, przedłużenie za 50 zł bez autosubskrypcji</li>
+        </ul>
+        <a class="cta" data-cta="cena" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html">Kupuję kurs - 500 zł<small>BLIK · przelew · karta</small></a>
+        <p class="pay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4Z"/></svg><span>Płatność blikiem, przelewem lub kartą. Wystawiamy faktury. Dostęp dostajesz od razu po zakupie, na naszej platformie z lekcjami.</span></p>
+      </div>
+    </div>
+    <div class="guar" id="gwarancja">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4Zm-1 15-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7Z"/></svg>
+      <div>
+        <h3>Żelazna gwarancja 30 dni na zwrot</h3>
+        <p>Wystarczy wysłać do nas maila, informację o rezygnacji, a oddamy całą kwotę.</p>
+        <p><b>100% zwrotu bez zbędnych pytań.</b></p>
+        <div class="cta-row" style="margin:6px 0 16px"><a class="cta" data-cta="gwarancja" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html">Kupuję kurs - 500 zł</a></div>
+        <p>Macie trudności finansowe? Napisz maila, zawsze coś wymyślę, żeby Twoje dziecko mogło skorzystać z kursu. Instytucje takie jak dom dziecka mogą liczyć na bezpłatną pulę kursów dla swoich podopiecznych.</p>
+        <p class="sign-name">Piotr Starzyński</p>
+      </div>
+    </div>
+    <p class="fn"><sup>8</sup> CBOS, komunikat 107/2025 „Wydatki rodziców na edukację dzieci w roku szkolnym 2025/2026”, badanie 2-13.10.2025; odpowiedzi 178 rodziców dzieci w wieku szkolnym z próby 901 dorosłych; zajęcia opłacane lub planowane.
+    <sup>9</sup> e-korepetycje.net, „Ceny korepetycji 2026”, 140 648 ogłoszeń: matematyka w liceum i do matury 66 zł za godzinę (500 / 66 = 7,6 h), w szkole podstawowej i do E8 53 zł (500 / 53 = 9,4 h). 500 zł / 365 dni = 1,37 zł.</p>
+  </div>
+</section>
+
+<!-- 10. OPINIE -->
+<section id="opinie">
+  <div class="wrap">
+    <p class="sign"><span>Opinie</span></p>
+    <h2>Co mówią o kursach Fundacji: opinie Google</h2>
+    <div class="ops">
+<figure class="op"><blockquote>„Kurs dodatkowo jest bardzo przyjemny - aż chce się po każdej zakończonej lekcji przechodzić do kolejnej.”</blockquote><img src="assets/opinia-05.webp" alt="Opinia z Google: Michal Franka" width="1016" height="700" loading="lazy"><figcaption>Michal Franka, opinia w Google</figcaption></figure>
+<figure class="op"><blockquote>„Kurs jest profesjonalnie przygotowany. (…) Efekty kursu są bardzo dobre.”</blockquote><img src="assets/opinia-01.webp" alt="Opinia z Google: Aleksander Konieczny" width="1016" height="700" loading="lazy"><figcaption>Aleksander Konieczny, opinia w Google</figcaption></figure>
+<figure class="op"><blockquote>„Materiały dostarczone przez organizatora są bardzo przejrzyste, ciekawe i zachęcające do nauki.”</blockquote><img src="assets/opinia-02.webp" alt="Opinia z Google: Renata Woś" width="1016" height="700" loading="lazy"><figcaption>Renata Woś, opinia w Google</figcaption></figure>
+<figure class="op"><blockquote>„Prowadzący bardzo miły i bardzo dobrze się go słucha, więc kurs bardzo przyjemnie się odsłuchuje.”</blockquote><img src="assets/opinia-07.webp" alt="Opinia z Google: Tomasz Kędra" width="1016" height="700" loading="lazy"><figcaption>Tomasz Kędra, opinia w Google</figcaption></figure>
+<figure class="op"><blockquote>„Jestem zachwycony rezultatami, jakie osiągnąłem dzięki temu kursowi!”</blockquote><img src="assets/opinia-10.webp" alt="Opinia z Google: Piotr Cieślak" width="1016" height="700" loading="lazy"><figcaption>Piotr Cieślak, opinia w Google</figcaption></figure>
+    </div>
+    <p class="hint">Opinie dotyczą kursu Szybkie czytanie i pochodzą z profilu Fundacji Pięć Plus w Google.</p>
+  </div>
+</section>
+
+<!-- 11. PYTANIA EGZAMINACYJNE -->
+<section class="alt" id="pytania">
+  <div class="wrap">
+    <p class="sign"><span>Pytania egzaminacyjne</span></p>
+    <h2>Masz pytanie? Może mamy odpowiedź.</h2>
+    <div class="faq">
+<details class="acc" data-acc="nie-usiadzie" id="nie-usiadzie"><summary>A jak nie usiądzie?</summary><div class="acc-body"><p>Ten kurs to nie jest kobyła. Ja zrobiłem z tego maksymalnie 5-minutowe, króciusieńkie lekcje w stylu filmików na YouTubie.</p><p><b>Sprytny szlaban, marchewka zamiast kija.</b> To podejście menedżerskie: co możemy wspólnie zrobić z tym problemem? Wychodzisz z propozycją kontraktu, który ustalacie wspólnie.</p><p>W zamian za to, że Ty rezygnujesz z tradycyjnej kary, Twój nastolatek obiecuje nie olać Twojej propozycji. Jeśli wykona umówioną godzinę z kursem (może Ci pokazać wypełniony skrypt, wtedy będziesz wiedzieć, że naprawdę to zrobił), ma wolny cały dzień.</p><p><b>Rozrusznik, a nie silnik.</b> To podejście jest potrzebne tylko na start - jak rozrusznik w samochodzie.</p><p>A jeśli mimo to nie podejdzie, masz 30 dni na zwrot.</p></div></details>
+<details class="acc" data-acc="zwrot"><summary>Jak działa zwrot?</summary><div class="acc-body"><p>Ty piszesz maila, a ja zwracam pieniądze. 100% zwrotu, bez zbędnych pytań i bez progu ukończenia. Na ponad 3 700 zakupów naszych kursów o zwrot poprosił mniej niż 1 kupujący na 100.<sup>10</sup></p><p class="fn" style="margin-top:10px"><sup>10</sup> Prośby o zwrot w skrzynce Fundacji wobec ponad 3 700 zakupów wszystkich naszych kursów, okres ok. 12-18 miesięcy, stan na 25.10.2026.</p></div></details>
+<details class="acc" data-acc="adhd"><summary>Dziecko ma ADHD. Czy kurs się sprawdzi?</summary><div class="acc-body"><p>Wiele metod zawartych w kursie pokrywa się ze standardowymi zaleceniami dla osób z deficytami uwagi. Dzieci z ADHD często mają problem z utrzymaniem długotrwałego skupienia, dlatego kurs proponuje pracę w 25-minutowych blokach z obowiązkowymi przerwami.</p><p>Kurs uczy też techniki startera, która pomaga pokonać paraliż decyzyjny przy dużych zadaniach poprzez wyznaczenie pierwszego, banalnie prostego kroku. Naszym zdaniem kurs to skrzynka z narzędziami. Nie wszystkie z nich będą pasować każdemu.</p><p>Weź pod uwagę, że uczeń z ADHD może potrzebować Twojej obecności przy wdrażaniu tych metod, przynajmniej na początku, aby nie porzucił kursu w połowie drogi. Kurs nie zastąpi specjalisty: więcej w części <a href="#specjalista">„Dla kogo jest ten kurs?”</a>.</p></div></details>
+<details class="acc" data-acc="czytanie"><summary>Czy szybkie czytanie nie odbiera zrozumienia?</summary><div class="acc-body"><p>Nie obiecujemy gruszek na wierzbie i cudownych metod! Twoje dziecko opanuje odpowiednie techniki i po pierwsze zwiększy prędkość czytania, po drugie poprawi swoją koncentrację na tekście a po trzecie zwiększy zrozumienie i zapamiętywanie tego, co przeczyta.</p></div></details>
+<details class="acc" data-acc="efekt"><summary>Czy efekt zostaje po kursie?</summary><div class="acc-body"><p>Pomóż swojemu dziecku uczyć się samodzielnie - jest to supermoc, która zostanie z nim na całe życie.</p></div></details>
+<details class="acc" data-acc="korepetycje"><summary>Już płacimy za korepetycje. Po co jeszcze kurs?</summary><div class="acc-body"><p>Nie obiecujemy, że kurs zastąpi korepetycje. Ale gdy dziecko uczy się samo, korepetycje wreszcie zaczynają dawać trwały efekt. Więcej o tym w części <a href="#cena">„Korepetycje czy kurs?”</a>.</p></div></details>
+<details class="acc" data-acc="youtube"><summary>Na YouTube jest mnóstwo filmów o nauce. Czym to się różni?</summary><div class="acc-body"><p>I nie łudź się, że jeden filmik na YouTubie od coacha sukcesu albo kanał o nauce na TikToku załatwią sprawę. Wyrzuciliśmy teorię, zostawiliśmy praktykę.</p></div></details>
+<details class="acc" data-acc="druk"><summary>Czy skrypt trzeba drukować?</summary><div class="acc-body"><p>Polecamy. Skrypt to plik PDF do druku, 177 stron.</p></div></details>
+<details class="acc" data-acc="modul"><summary>Czy mogę kupić jeden moduł?</summary><div class="acc-body"><p>Można, jeden moduł kosztuje 300 zł. Pakiet sześciu modułów kosztuje 500 zł.</p></div></details>
+<details class="acc" data-acc="urzadzenie"><summary>Z jakiego urządzenia?</summary><div class="acc-body"><p>Z telefonu, tabletu i komputera. Wystarczy internet, nic nie instalujesz. <mark class="todo">[potwierdzić zakupem testowym]</mark></p></div></details>
+<details class="acc" data-acc="faktura"><summary>Czy dostanę fakturę?</summary><div class="acc-body"><p>Tak. Przy zakupie zaznaczasz „Proszę o wystawienie faktury” i podajesz dane, firmowe albo imienne.</p></div></details>
+    </div>
+    <p class="hint" style="margin-top:18px">Masz inne pytanie? Napisz na <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a>, chętnie odpowiemy.</p>
+  </div>
+</section>
+
+<!-- 12. META -->
+<section class="closing" id="offer" style="padding-top:0">
+  <svg class="zebra" viewBox="0 0 390 30" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="zb2" width="26" height="30" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="13" height="30" fill="#fff"/></pattern></defs><rect x="0" y="0" width="390" height="30" fill="url(#zb2)"/></svg>
+  <div style="height:34px"></div>
+  <div class="wrap">
+    <p class="sign"><span>Meta</span></p>
+    <div class="semafor" id="semafor" aria-hidden="true"><i class="s-r"></i><i class="s-a"></i><i class="s-g"></i></div>
+    <h2>Jeszcze to czytasz?</h2>
+    <p class="lead">Twoje dziecko i tak będzie się uczyć codziennie przez najbliższych kilka lat.</p>
+    <p>Pytanie tylko, czy nauka będzie męką czy przygodą.</p>
+    <p>Nieważne, czy na Twoje dziecko czeka egzamin ósmoklasisty, matura czy trudne studia - metody sensownej nauki będą mu pomagać przez całe życie.</p>
+    <p>Mnie tego nikt wcześniej nie pokazał. Na szczęście dla Twojego dziecka jesteś Ty. I właśnie Ty możesz pomóc Twojemu dziecku uczyć się z sensem. Najprościej - pokazując mu nasz kurs.</p>
+    <p class="date"><b>Oceny na półrocze: styczeń 2027.</b> Same zielone lekcje to ok. 3,7 godziny wideo.<sup>11</sup> <mark class="todo">[po odczycie z panelu]</mark></p>
+    <div class="cta-row" id="finalCta"><a class="cta" data-cta="domkniecie" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html">Kupuję kurs - 500 zł<small>roczny dostęp · 30 dni na zwrot</small></a></div>
+    <p class="ps">500 zł · roczny dostęp · 30 dni na zwrot. Płatność blikiem, przelewem lub kartą. Wystawiamy faktury.</p>
+    <p class="fn"><sup>11</sup> Klasyfikacja śródroczna w roku szkolnym 2026/27 przypada w styczniu 2027. Szacunek: 88 zielonych lekcji × średnio ok. 2,5 min (6 h 50 min wideo / 161 lekcji) = ok. 3,7 h, czyli ok. 22 dni po 10 minut.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Fundacja Pięć Plus · <a href="mailto:biuro@5plus.edu.pl">biuro@5plus.edu.pl</a> · 5plus.edu.pl<br>
+    <a href="#" class="todo-link">Regulamin</a> · <a href="#" class="todo-link">Polityka prywatności</a> · <button type="button" id="cookieSettings">Ustawienia cookies</button><br>
+    <mark class="todo">[linki do regulaminu i polityki]</mark> · Zapisy o rocznym dostępie i zwrocie w ciągu 30 dni bez progu muszą być identyczne w regulaminie i w koszyku.
+  </div>
+</footer>
+
+<div class="bar-cta" id="barCta">
+  <a class="cta" data-cta="sticky" href="https://kursy.piecplus.pl/s/samodzielnyuczen.html"><span class="lplate" aria-hidden="true">L</span>Kupuję kurs - 500 zł</a>
+</div>
+
+<div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookies" hidden>
+  <p>Strona używa plików cookies. Niezbędne są do jej działania. Za Twoją zgodą włączamy też Piksel Meta i Microsoft Clarity, żeby mierzyć,
+  które reklamy naprawdę pomagają rodzicom nas znaleźć. Szczegóły w <a href="#" class="todo-link">polityce prywatności</a>.</p>
+  <div class="btns">
+    <button type="button" class="yes" data-consent="all">Akceptuję wszystkie</button>
+    <button type="button" data-consent="necessary">Tylko niezbędne</button>
+  </div>
+</div>
+
+<script>
+
+(function(){
+  var WERSJA = 'odjechana';
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // wariant hero A dla ruchu z reklamy R2 „Plan lekcji” (utm_content=plan-lekcji)
+  var uc = (location.search.match(/[?&]utm_content=([^&]*)/) || [])[1] || '';
+  var HERO = 'C';
+  if (/plan-lekcji/i.test(decodeURIComponent(uc))) {
+    HERO = 'A';
+    document.getElementById('h1').textContent = 'Twoje dziecko nie musi uczyć się więcej.';
+    document.getElementById('h1sub').innerHTML = 'Wystarczy ten sam czas nauki poukładać inaczej.<sup>5</sup>';
+    var nw = document.querySelector('.hero .nw'); if (nw) nw.hidden = true;
+  }
+  var PIXEL_ID = ''; // TODO: ID Piksela, który wysyła Purchase z WTL (kandydat z v1: 1489569048060450, sprawdzić w Menedżerze zdarzeń). Pusty = piksel się nie ładuje.
+  var KEY = 'suo_consent', consent = null, pending = [];
+  try { consent = localStorage.getItem(KEY); } catch(e){}
+  var STD = /^(ViewContent|InitiateCheckout|Purchase|Lead|AddToCart)$/;
+  function loadPixel(){
+    if (!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  var CLARITY_ID = 'vjr23eh9gx';
+  function loadClarity(){
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+    try { window.clarity('set', 'wersja', WERSJA); window.clarity('set', 'hero', HERO); } catch(e){}
+  }
+  function track(name, params){
+    params = Object.assign({wersja: WERSJA, hero: HERO}, params || {});
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({event:name}, params));
+    var std = STD.test(name) ? 'track' : 'trackCustom';
+    if (consent === 'all') { if (window.fbq) try { fbq(std, name, params); } catch(e){} }
+    else if (consent === null) pending.push([name, params]);
+  }
+  var banner = document.getElementById('cookies');
+  function setConsent(v){
+    consent = v;
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    banner.hidden = true; updateBar();
+    if (v === 'all') { loadPixel(); loadClarity(); pending.forEach(function(p){ if (window.fbq) try { fbq(STD.test(p[0])?'track':'trackCustom', p[0], p[1]); } catch(e){} }); }
+    pending = [];
+  }
+  banner.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); });
+  });
+  document.getElementById('cookieSettings').addEventListener('click', function(){ banner.hidden = false; updateBar(); });
+  if (consent === 'all') { loadPixel(); loadClarity(); }
+  else if (consent === null) banner.hidden = false;
+
+
+  // odsyłacz do karty FAQ otwiera ją
+  document.querySelectorAll('a[data-open]').forEach(function(a){
+    a.addEventListener('click', function(){ var d = document.getElementById(a.getAttribute('data-open')); if (d) d.open = true; });
+  });
+
+  track('ViewContent', {content_name:'samodzielny-uczen-online', value:500, currency:'PLN'});
+
+  // UTM z reklamy przechodzą na koszyk WTL
+  var utm = location.search.replace(/^\?/, '').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
+  document.querySelectorAll('a[data-cta]').forEach(function(a){
+    if (utm) a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm;
+    a.addEventListener('click', function(){
+      track('InitiateCheckout', {content_name:'samodzielny-uczen-online', value:500, currency:'PLN', cta_place:a.getAttribute('data-cta')});
+    });
+  });
+
+  // akordeony: moduły i pytania
+  document.querySelectorAll('details[data-acc]').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      var k = d.getAttribute('data-acc');
+      track('accordion_open', {card:k});
+      if (WERSJA === 'odjechana' && /^modul-/.test(k)) track('znak_modulu', {modul:k});
+    });
+  });
+
+  // widget „Co myślą rodzice / Jak jest naprawdę”
+  var flip = document.getElementById('flip');
+  if (flip) flip.querySelectorAll('[data-flip]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.getAttribute('data-flip');
+      flip.querySelectorAll('[data-flip]').forEach(function(x){ x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      flip.querySelectorAll('[data-card]').forEach(function(c){ c.hidden = c.getAttribute('data-card') !== n; });
+      if (n === '1') track('widget', {karta:'jak-jest-naprawde'});
+    });
+  });
+
+  // kontrolki (odjechana): zapalają się po kolei, gdy deska wjeżdża w ekran (jak po przekręceniu kluczyka)
+  var lamps = [].slice.call(document.querySelectorAll('.prob.lamp')), board = document.querySelector('.probs.dashboard');
+  if (!still) lamps.forEach(function(l){ l.classList.add('off'); });
+  function lightAll(){ lamps.forEach(function(l, i){ setTimeout(function(){ l.classList.remove('off'); l.classList.add('lit'); }, still ? 0 : i * 350); }); }
+  if (board && 'IntersectionObserver' in window) {
+    var lio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { lightAll(); lio.disconnect(); } }); }, {threshold:.25});
+    lio.observe(board);
+  } else { lightAll(); }
+  // karta kursanta: który punkt rodzic odhacza
+  document.querySelectorAll('[data-forwho]').forEach(function(c){
+    c.addEventListener('change', function(){ if (c.checked) track('dla_kogo', {punkt:c.getAttribute('data-forwho')}); });
+  });
+  // kontrolki (odjechana): który problem rodzic klika
+  document.querySelectorAll('.prob.lamp').forEach(function(p){
+    p.addEventListener('click', function(){ track('kontrolka', {problem:p.getAttribute('data-kontrolka')}); });
+  });
+
+  // zwiastun YouTube dopiero po kliknięciu
+  document.querySelectorAll('[data-yt]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var id = b.getAttribute('data-yt'), f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      f.title = 'Zwiastun kursu Samodzielny Uczeń Online';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+      b.parentNode.replaceChild(f, b);
+      track('video_play', {video:'zwiastun'});
+    });
+  });
+
+  // sticky przycisk na telefonie: po hero, nie przy cenie i domknięciu, nie razem z banerem
+  var bar = document.getElementById('barCta'), hero = document.getElementById('top'),
+      hide = [document.getElementById('cena'), document.getElementById('offer'), document.getElementById('ile')];
+  function inView(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+  function updateBar(){
+    var on = banner.hidden && hero.getBoundingClientRect().bottom < 0 && !hide.some(inView);
+    bar.classList.toggle('on', on);
+  }
+
+  // odjechana: samochód jedzie po drodze razem z przewijaniem; sygnalizator przy domknięciu
+  var car = document.getElementById('car');
+  function drive(){
+    if (!car || still) return;
+    var max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? scrollY / max : 0;
+    car.style.transform = 'translateY(' + Math.round(p * (innerHeight - 30)) + 'px)';
+  }
+  var sem = document.getElementById('semafor'), fin = document.getElementById('finalCta');
+  if (sem) {
+    sem.classList.add(still ? 'go' : 'stop');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { sem.classList.remove('stop'); sem.classList.add('go'); io.disconnect(); } }); }, {threshold:.6});
+      io.observe(fin);
+    } else { sem.classList.add('go'); }
+  }
+  function onScroll(){ updateBar(); drive(); }
+  addEventListener('scroll', onScroll, {passive:true}); addEventListener('resize', onScroll); onScroll();
+})();
+
+</script>
+</body>
+</html>

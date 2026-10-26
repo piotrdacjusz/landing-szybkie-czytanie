@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pogotowie koncentracji: kurs online o skupieniu dla dorosłych | Fundacja Pięć Plus</title>
+<meta name="description" content="Kurs online o skupieniu dla dorosłych: 45 krótkich lekcji w trzech działach, skrypt z ćwiczeniami, podcast. Około miesiąca przy 10 minutach dziennie. 300 zł, rok dostępu, zwrot bez pytań przez 30 dni.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nie masz problemu z lenistwem - po prostu trudno Ci się skupić">
+<meta property="og:description" content="Pogotowie koncentracji, kurs online Fundacji Pięć Plus. 45 lekcji i 3 poziomy zaawansowania. 300 zł, rok dostępu, żelazna gwarancja zwrotu 30 dni.">
+<meta name="theme-color" content="#1f2336">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,400;1,700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!--
+  POGOTOWIE KONCENTRACJI, WERSJA B „ODJECHANA” (2026-10-26): „Izba przyjęć”.
+  Strona jest pobytem w szpitalu, na którego metaforze Piotr zbudował kurs: karta przyjęcia (hero), wywiad z kartą objawów,
+  wydruk wyników badań, konsultacja, oddziały z liniami na podłodze, zalecenia, rejestracja (cena), informacja (pytania), wypis.
+  Treść: zdania z 10-landing-copy-v2.md (wersja A), skrócone i przestawione pod motyw; opis i wybór w 13-wersja-odjechana.md.
+  Szkielet techniczny jak w index-v2.html (cookies, Piksel i Clarity po zgodzie, track/trackCustom, UTM na przyciskach, pasek na dole),
+  zdarzenia z lp_variant 'B'. index.html i index-v2.html w tym katalogu zostają nietknięte.
+  Koszyk: ID 30 PK_baza (koncentracja.html). Decyzja 24 w v2: wersja B dostanie nową kopię ID 30 (albo ID 84 po 30 dniach bez zamówień);
+  po jej utworzeniu podmień adres w KOSZYK na dole skryptu.
+  Kolor motywu (jedyny spoza palety LP): lamperia #d4e7dd, olejna farba z korytarzy polskich szpitali.
+-->
+<style>
+:root{
+  --navy:#1f2336; --navy-2:#2a2f47;
+  --gold:#ffc676; --gold-soft:#ffd191; --gold-dark:#8a5a1c;
+  --paper:#fbf8f3; --sheet:#fff; --line:#e4ddd1; --rule:#d9d1c3;
+  --ink:#1f2336; --dim:#585c70; --faint:#6f7385;
+  --d1:#124429; --d2:#073462; --d3:#451e3e;
+  --lamp:#d4e7dd;
+  --serif:Merriweather,Georgia,serif; --sans:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:12px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.5 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:44px 0 46px;position:relative}
+p{margin:0 0 14px;text-wrap:pretty}
+h1,h2,h3{font-family:var(--serif);margin:0 0 14px;line-height:1.24}
+h2{font-size:clamp(23px,4.6vw,31px);font-weight:900;text-wrap:balance}
+h3{font-size:19px;font-weight:700}
+b,strong{font-weight:800}
+sup{font-size:.62em;line-height:0}
+mark.todo{background:#fff3b0;color:#5a4a00;padding:0 4px;border-radius:3px;font-weight:700}
+.fn{font-size:14.5px;color:var(--faint);line-height:1.45;margin:22px 0 0;padding-top:12px;border-top:1px dashed var(--rule)}
+
+/* ── ŚCIANY: krem u góry, lamperia na dole. Sekcja .lamp = pas olejnej farby z ciemną kreską na górze ── */
+section.lamp{background:var(--lamp);border-top:3px solid var(--navy)}
+section.lamp .fn{border-top-color:rgba(31,35,54,.22);color:#4f5468}
+
+/* ── TABLICZKI KIERUNKOWE: jedyny nagłówek działu szpitala, zawsze granat, wersaliki ── */
+.plate{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font:800 13.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:9px 14px 9px 12px;border-radius:3px;margin:0 0 18px;box-shadow:inset 0 0 0 2px var(--navy),inset 0 0 0 3px rgba(255,255,255,.5)}
+.plate i{font-style:normal;color:var(--gold);letter-spacing:0;font-size:15px}
+
+/* ── PAPIER: druki leżą na ścianie, więc mają cień, a nie ramkę ── */
+.sheet{background:var(--sheet);border-radius:3px;box-shadow:0 1px 2px rgba(31,35,54,.10),0 8px 22px -12px rgba(31,35,54,.28);padding:18px 18px 16px;position:relative}
+.sheet-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:2px solid var(--navy);padding-bottom:7px;margin:0 0 12px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700}
+.sheet-h b{color:var(--navy);font-weight:800}
+.fld{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);font-weight:800;margin:0 0 3px}
+
+/* przycisk: jeden styl, bez animacji, wciśnięcie lekko go obniża */
+.cta{display:block;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:800;font-size:20px;line-height:1.2;padding:15px 22px;border-radius:6px;text-align:center;box-shadow:0 3px 0 var(--gold-dark)}
+.cta small{display:block;font-weight:500;font-size:14.5px;margin-top:3px;color:#4a3a1c}
+.cta:active{transform:translateY(2px);box-shadow:0 1px 0 var(--gold-dark)}
+@media(hover:hover){.cta:hover{background:var(--gold-soft)}}
+.cta-row{margin:24px 0 10px}
+@media(min-width:700px){.cta{display:inline-block;padding:15px 34px}}
+
+/* ── GÓRNY PASEK ── */
+.top{background:var(--navy);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:14px;height:52px;max-width:960px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:var(--serif);font-weight:900;font-size:16px;white-space:nowrap}
+.brand b{width:30px;height:30px;border-radius:5px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:14px}
+.top nav{margin-left:auto;display:flex;gap:2px}
+.top nav a{color:#c9ccda;text-decoration:none;font-size:15px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 9px}
+@media(hover:hover){.top nav a:hover{color:#fff}}
+@media(max-width:760px){.top nav{display:none}}
+
+/* ── 1. IZBA PRZYJĘĆ: karta przyjęcia przypięta do podkładki ── */
+.hero{padding:14px 0 26px;background:var(--paper)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:var(--lamp);border-top:3px solid var(--navy);z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero .plate{margin-bottom:12px;padding:7px 12px 7px 10px}
+.karta{padding:18px 16px 12px;margin-top:4px}
+.karta .clip{position:absolute;top:-13px;left:50%;width:74px;height:26px;margin-left:-37px}
+.karta .sheet-h{margin-bottom:10px}
+.karta .row{border-bottom:1px dashed var(--rule);padding:0 0 7px;margin:0 0 7px}
+.karta .row:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.karta h1{font-size:clamp(25px,6.6vw,40px);font-weight:900;line-height:1.16;margin:2px 0 0;text-wrap:balance}
+.karta h1 u{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:.3em;text-underline-offset:-.12em;text-decoration-skip-ink:none}
+.karta .lead{font-style:italic;font-size:18px;line-height:1.4;margin:1px 0 0;color:var(--navy)}
+.karta .prod{font-size:16.5px;line-height:1.38;margin:1px 0 0}
+.trust{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:2px 14px;font-size:16px;color:var(--navy)}
+.trust li b{font-weight:800}
+.trust li:first-child b{font-family:var(--serif);font-weight:900}
+.hero .cta-row{margin:12px 0 6px}
+.omni{font-size:14.5px;color:var(--dim);margin:6px 0 0}
+.hero .fn{margin-top:14px}
+@media(min-width:700px){.hero{padding:30px 0 40px}.karta{padding:30px 34px 22px}.karta .lead{font-size:19px}.karta .prod{font-size:18px}}
+
+/* ── 2. WYWIAD: karta objawów do odhaczenia ── */
+.objawy{padding:16px 16px 14px}
+.obj{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;min-height:44px;padding:9px 0;cursor:pointer;border-bottom:1px solid var(--line);-webkit-tap-highlight-color:transparent}
+.obj input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.obj .box{width:28px;height:28px;border:2px solid var(--navy);border-radius:3px;background:#fff;display:grid;place-items:center;margin-top:1px}
+.obj .box svg{width:24px;height:24px;fill:none;stroke:var(--navy);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:28;stroke-dashoffset:28;transition:stroke-dashoffset .22s ease-out}
+.obj input:checked + .box svg{stroke-dashoffset:0}
+.obj input:focus-visible + .box{outline:3px solid var(--gold);outline-offset:2px}
+.obj .t{font-weight:700;line-height:1.38;font-size:17.5px}
+.obj-more{padding:6px 0 4px 42px;color:var(--dim);font-size:16.5px;border-bottom:1px solid var(--line)}
+.obj-more p{margin:0 0 8px}
+.obj.last,.obj-more.last{border-bottom:0}
+.korytarz{margin:18px 0 6px;padding:14px 0 2px;border-top:2px solid var(--navy)}
+.korytarz h3{font-size:18px;margin:0 0 8px}
+.korytarz p{font-size:17px;margin:0 0 10px}
+.dlg{font-family:var(--serif);font-size:16px;color:var(--navy);padding-left:12px;border-left:3px solid var(--gold)}
+.licznik{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0 0;padding-top:12px;border-top:2px solid var(--navy);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--dim)}
+.licznik b{color:var(--navy);font-family:var(--serif);font-size:18px;letter-spacing:0;text-transform:none}
+.ulga{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;margin:18px 0 0}
+.ulga p{margin:0;font-size:18px}
+.stamp{display:inline-block;font:900 15px/1.15 var(--serif);text-transform:uppercase;letter-spacing:.05em;color:var(--navy);border:3px double var(--navy);border-radius:4px;padding:8px 10px;max-width:170px;text-align:center;transform:rotate(-5deg);filter:url(#ink);opacity:.92}
+.stamp.czeka{color:var(--faint);border:2px dashed var(--rule);filter:none;opacity:1;transform:none}
+.stamp.bije{animation:bije .26s ease-out}
+@keyframes bije{0%{transform:rotate(-5deg) scale(1.25);opacity:.2}100%{transform:rotate(-5deg) scale(1);opacity:.92}}
+.bridge{font-family:var(--serif);font-size:20px;color:var(--navy);margin:26px 0 10px;font-weight:900;line-height:1.35}
+
+/* ── 3. WYNIKI BADAŃ: pasek papieru z drukarki ── */
+.wydruk{max-width:360px;margin:6px auto 26px;background:#fff;padding:20px 18px 18px;position:relative;transform:rotate(-.8deg);box-shadow:0 10px 22px -14px rgba(31,35,54,.45);font-variant-numeric:tabular-nums}
+.wydruk::before,.wydruk::after{content:"";position:absolute;left:0;right:0;height:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 8 L6 0 L12 8 Z' fill='%23fff'/%3E%3C/svg%3E") repeat-x;background-size:12px 8px}
+.wydruk::before{top:-8px}
+.wydruk::after{bottom:-8px;transform:scaleY(-1)}
+.wydruk .wh{text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--navy);line-height:1.35;padding-bottom:10px;border-bottom:2px dashed var(--navy)}
+.wydruk .wh span{display:block;font-weight:500;letter-spacing:.08em;color:var(--dim);margin-top:3px}
+.wyn{padding:12px 0;border-bottom:1px dashed var(--rule)}
+.wyn .k{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.wyn .k span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--dim)}
+.wyn .v{font-family:var(--serif);font-weight:900;font-size:30px;color:var(--navy);white-space:nowrap}
+.wyn .l{font-size:15.5px;line-height:1.35;color:var(--ink);margin-top:2px}
+.wydruk .wf{font-size:12.5px;color:var(--faint);text-align:center;margin:10px 0 0;letter-spacing:.06em}
+.ticks{list-style:none;margin:0 0 16px;padding:0}
+.ticks li{position:relative;padding:6px 0 6px 34px;border-bottom:1px solid rgba(31,35,54,.13)}
+.ticks li:last-child{border-bottom:0}
+.ticks li::after{content:"";position:absolute;left:9px;top:10px;width:8px;height:15px;border:solid var(--gold-dark);border-width:0 3.5px 3.5px 0;transform:rotate(45deg)}
+
+/* ── 4. KONSULTACJA ── */
+.cons{background:var(--navy);color:#fff;padding:20px 20px;margin:22px 0 22px;border-radius:3px;position:relative}
+.cons .fld{color:var(--gold)}
+.cons p{margin:0;font-family:var(--serif);font-weight:700;font-size:18.5px;line-height:1.45}
+.h3big{font-size:22px;font-weight:900;margin:32px 0 10px}
+.zal{list-style:none;margin:12px 0 18px;padding:0;counter-reset:z}
+.zal li{counter-increment:z;display:grid;grid-template-columns:36px 1fr;gap:0 10px;padding:12px 0;border-top:1px solid var(--line)}
+.zal li::before{content:counter(z);font-family:var(--serif);font-weight:900;font-size:26px;line-height:1;color:var(--gold-dark);grid-column:1;grid-row:1/span 4}
+.zal li>*{grid-column:2}
+.zal b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:3px}
+.zal p{margin:0 0 6px;font-size:17px}
+.fizjo{margin-top:18px}
+.fizjo p{font-size:17px}
+.fizjo p:last-child{margin-bottom:0}
+
+/* ── 5. ODDZIAŁY: tablica kierunkowa i kolorowe linie na podłodze ── */
+.kier{background:var(--navy);border-radius:4px;padding:6px 0;margin:22px 0 0;box-shadow:inset 0 0 0 3px var(--navy),inset 0 0 0 4px rgba(255,255,255,.45)}
+.kier a{display:grid;grid-template-columns:14px 1fr auto;gap:12px;align-items:center;padding:11px 16px;color:#fff;text-decoration:none;border-top:1px solid rgba(255,255,255,.14);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:15px}
+.kier a:first-child{border-top:0}
+.kier a i{width:14px;height:14px;border-radius:2px;box-shadow:0 0 0 2px rgba(255,255,255,.7)}
+.kier a span{color:#c9ccda;font-weight:500;letter-spacing:.04em;text-transform:none;font-size:15px}
+.kier a span em{font-style:normal;color:var(--gold);font-weight:800;margin-left:6px}
+.floor{position:relative;padding-left:34px}
+.odz{position:relative;padding:26px 0 0}
+.odz .ln{position:absolute;top:0;bottom:0;width:4px;border-radius:0}
+.odz .ln.a{left:-30px;background:var(--d1)} .odz .ln.b{left:-21px;background:var(--d2)} .odz .ln.c{left:-12px;background:var(--d3)}
+.odz .ln.turn{bottom:auto;height:54px}
+.odz .ln.turn::after{content:"";position:absolute;left:0;bottom:-4px;height:4px;background:inherit}
+.odz .ln.a.turn::after{width:30px} .odz .ln.b.turn::after{width:21px} .odz .ln.c.turn::after{width:12px}
+.odz .sheet{padding:0;overflow:hidden;border-radius:3px}
+.odz .door{color:#fff;padding:14px 16px 14px}
+.odz.o1 .door{background:var(--d1)} .odz.o2 .door{background:var(--d2)} .odz.o3 .door{background:var(--d3)}
+.odz .dz{margin:0 0 2px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold)}
+.odz h3{font-size:23px;font-weight:900;margin:0}
+.odz .meta{padding:12px 16px 2px;margin:0;font-size:16.5px}
+.odz .meta b{color:var(--navy)}
+details.lessons{margin:8px 16px 0;border-top:1px solid var(--line)}
+details.lessons summary{cursor:pointer;list-style:none;padding:12px 0 13px;font-weight:800;color:var(--navy);font-size:16.5px}
+details.lessons summary::-webkit-details-marker{display:none}
+details.lessons summary::after{content:" +";color:var(--gold-dark)}
+details.lessons[open] summary::after{content:" \2212"}
+ol.ll{margin:0;padding:0 0 14px 30px;font-size:15.5px;line-height:1.5;color:var(--dim)}
+ol.ll li::marker{color:var(--gold-dark);font-weight:800}
+.floor-end{height:26px}
+
+/* ── 6. ZALECENIA: bloczek z perforacją ── */
+.bloczek{display:grid;gap:14px;margin:6px 0 0}
+.slip{background:#fff;padding:16px 16px 12px;position:relative;border-top:2px dashed var(--rule);box-shadow:0 1px 2px rgba(31,35,54,.10),0 8px 20px -14px rgba(31,35,54,.3)}
+.slip:nth-child(2){transform:rotate(.5deg)} .slip:nth-child(3){transform:rotate(-.4deg)}
+.slip .fld{margin-bottom:6px}
+.slip h3{font-size:20px;font-weight:900;margin:0 0 8px}
+.slip p{font-size:17px;margin:0 0 8px}
+.pobyt{margin:10px 0 0}
+.pobyt .r{display:grid;grid-template-columns:118px 1fr;gap:4px 14px;padding:13px 0;border-top:1px solid var(--line)}
+.pobyt .r:last-child{border-bottom:1px solid var(--line)}
+.pobyt .r .fld{margin:3px 0 0;font-size:12.5px}
+.pobyt .r p{margin:0 0 8px;font-size:17px}
+.pobyt .r p:last-child{margin:0}
+@media(max-width:420px){.pobyt .r{grid-template-columns:1fr}}
+.hint{color:var(--dim);margin:-6px 0 8px}
+.plate.sub{margin-top:40px}
+
+/* ── 7. KOGO PRZYJMUJEMY ── */
+.przyj{display:grid;gap:12px}
+.przyj .sheet{padding:16px 16px 6px}
+.przyj h3{font-size:18.5px;margin:0 0 8px}
+.przyj p{font-size:17px;margin:0 0 10px}
+.przyj .nie{background:transparent;box-shadow:none;border:2px solid rgba(31,35,54,.35)}
+
+/* ── 8. PROWADZĄCY: identyfikator na smyczy ── */
+.ident{width:250px;margin:4px 0 22px 4px;position:relative;padding-top:34px}
+.ident .smycz{position:absolute;top:0;left:50%;width:120px;height:40px;margin-left:-60px}
+.ident .sheet{padding:0;overflow:hidden;transform:rotate(-1.5deg)}
+.ident .bar{background:var(--navy);color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;padding:8px 12px;display:flex;justify-content:space-between}
+.ident .bar b{color:var(--gold)}
+.ident img{width:100%;height:170px;object-fit:cover;object-position:52% 30%}
+.ident .nm{padding:9px 12px 11px}
+.ident .nm b{display:block;font-family:var(--serif);font-size:18px;font-weight:900}
+.ident .nm span{font-size:14.5px;color:var(--dim)}
+.bio p{font-size:17.5px}
+.bio .bridge{font-size:20px}
+.bio .sz{font-family:var(--serif);font-weight:900}
+
+/* ── 9. REJESTRACJA ── */
+.okienko{padding:0;overflow:hidden}
+.okienko .bel{background:var(--navy);color:#fff;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:10px 16px;display:flex;justify-content:space-between}
+.okienko .bel b{color:var(--gold)}
+.okienko .in{padding:18px 16px 18px}
+.price{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;margin:18px 0 6px;padding:14px 0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy)}
+.price img{width:96px;height:auto;border-radius:2px;box-shadow:0 4px 12px -6px rgba(31,35,54,.5)}
+.price .v{font-family:var(--serif);font-weight:900;font-size:50px;line-height:1;color:var(--navy)}
+.price .v small{display:block;font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--dim);margin-top:8px}
+.incl{list-style:none;margin:8px 0 18px;padding:0}
+.incl li{padding:7px 0 7px 26px;border-bottom:1px dashed var(--rule);position:relative;font-size:17px}
+.incl li:last-child{border-bottom:0}
+.incl li::after{content:"";position:absolute;left:5px;top:12px;width:6px;height:11px;border:solid var(--gold-dark);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.pay{font-size:15.5px;color:var(--dim);margin:12px 0 0}
+.pismo{margin-top:18px;padding:20px 18px 18px;overflow:hidden}
+.pismo h3{font-size:21px;font-weight:900;margin:0 0 10px}
+.pismo p{font-size:17.5px;margin:0 0 10px}
+.pismo .sign{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--navy);margin:14px 0 0}
+.podpis{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+.podpis .sign{margin:0}
+.pieczec{width:96px;height:96px;flex:none;transform:rotate(-11deg);filter:url(#ink);opacity:.9}
+
+/* ── 10. OPINIA: kartka przypięta pinezką ── */
+.kartka{padding:26px 18px 16px;margin-top:6px;transform:rotate(.6deg)}
+.kartka .pin{position:absolute;top:-9px;left:50%;width:22px;height:22px;margin-left:-11px}
+.pull{font-family:var(--serif);font-weight:900;font-size:clamp(22px,5.4vw,29px);color:var(--navy);line-height:1.3;margin:0 0 12px}
+blockquote.quote{margin:0;font-size:18px;line-height:1.48}
+blockquote.quote cite{display:block;font-style:normal;font-size:15.5px;color:var(--dim);margin-top:10px}
+
+/* ── 11. INFORMACJA ── */
+details.acc{background:#fff;border-radius:3px;margin-bottom:8px;box-shadow:0 1px 2px rgba(31,35,54,.10)}
+details.acc summary{list-style:none;cursor:pointer;padding:15px 46px 15px 16px;position:relative;font-weight:800;line-height:1.38;color:var(--navy)}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"+";position:absolute;right:16px;top:11px;font-size:24px;font-weight:400;color:var(--gold-dark)}
+details.acc[open] summary::after{content:"\2212"}
+.acc-body{padding:0 16px 16px;color:var(--dim);font-size:17px}
+.acc-body p{margin:0 0 10px}
+.acc-body p:last-child{margin:0}
+.acc-body a{color:var(--navy);font-weight:700}
+
+/* ── 12. WYPIS ── */
+.closing{background:var(--navy);padding-bottom:54px}
+.closing .plate{background:var(--gold);color:var(--navy);box-shadow:inset 0 0 0 2px var(--gold),inset 0 0 0 3px rgba(31,35,54,.45)}
+.closing .plate i{color:var(--navy)}
+.wypis{padding:24px 18px 18px;overflow:visible}
+.wypis h2{padding-right:70px}
+.wypis .lead{font-family:var(--serif);font-size:18.5px;line-height:1.5;color:var(--navy)}
+.wypis .ps{font-size:15.5px;color:var(--dim);margin:12px 0 0}
+.naklejka{position:absolute;right:-6px;top:-22px;width:92px;height:92px;border-radius:50%;background:var(--gold);display:grid;place-items:center;text-align:center;font:900 13.5px/1.15 var(--serif);color:var(--navy);box-shadow:0 0 0 4px var(--navy),0 0 0 6px var(--gold),0 6px 14px -6px rgba(0,0,0,.6);transform:rotate(-12deg)}
+.naklejka span{display:block;padding:0 10px}
+.naklejka.wjedz{animation:naklej .32s ease-out both}
+@keyframes naklej{0%{transform:rotate(-30deg) scale(1.35);opacity:0}100%{transform:rotate(-12deg) scale(1);opacity:1}}
+footer{background:var(--navy);color:#9ea2b6;font-size:15px;padding:22px 0 104px;border-top:1px solid rgba(255,255,255,.1)}
+footer a{color:#c9ccda}
+footer button{background:none;border:0;padding:0;color:#c9ccda;font:inherit;text-decoration:underline;cursor:pointer}
+
+/* ── OPASKA: przycisk przyklejony do dołu telefonu ma kształt opaski na nadgarstek ── */
+.bar-cta{display:none}
+@media(max-width:760px){
+  .bar-cta{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:50}
+  .bar-cta.on{display:block}
+  .bar-cta .cta{display:block;position:relative;border-radius:28px;padding:13px 44px 13px 52px;font-size:18px;box-shadow:0 0 0 2px var(--navy),0 8px 18px -6px rgba(31,35,54,.55)}
+  .bar-cta .cta::before{content:"";position:absolute;left:14px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 5px var(--navy)}
+}
+
+/* cookies: jeden baner, dwie równorzędne decyzje */
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:560px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 30px rgba(31,35,54,.18);padding:18px 20px;font-size:16px;line-height:1.45}
+.cookies p{margin:0 0 14px}
+.cookies a{color:var(--navy);font-weight:700}
+.cookies .btns{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{flex:1 1 160px;font:700 16px var(--sans);padding:11px 14px;border-radius:6px;cursor:pointer;border:2px solid var(--navy);background:#fff;color:var(--navy)}
+.cookies button.yes{background:var(--navy);color:#fff}
+.cookies[hidden]{display:none}
+
+@media(prefers-reduced-motion:reduce){
+  .obj .box svg{transition:none}
+  .stamp.bije,.naklejka.wjedz{animation:none}
+}
+</style>
+</head>
+<body>
+<!-- filtr „tusz z pieczątki”: lekko poszarpana krawędź liter i ramki -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>5+</b>Pogotowie koncentracji</a>
+    <nav aria-label="Nawigacja strony">
+      <a href="#problemy">Wywiad</a>
+      <a href="#co">Oddziały</a>
+      <a href="#cena">Rejestracja</a>
+      <a href="#pytania">Informacja</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════ 1. IZBA PRZYJĘĆ (hero) ══════════ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="plate"><i>&#8595;</i>Izba przyjęć</p>
+    <article class="karta sheet">
+      <svg class="clip" viewBox="0 0 74 26" aria-hidden="true"><rect x="1" y="6" width="72" height="19" rx="4" fill="#585c70"/><rect x="22" y="1" width="30" height="12" rx="6" fill="none" stroke="#585c70" stroke-width="3"/><rect x="5" y="10" width="64" height="3" rx="1.5" fill="#7a7d8e"/></svg>
+      <p class="sheet-h"><b>Karta przyjęcia</b><span>kurs online · 5+</span></p>
+      <div class="row"><span class="fld">Rozpoznanie</span>
+        <h1>Nie masz problemu z lenistwem - po prostu <u>trudno Ci się skupić</u></h1></div>
+      <div class="row"><span class="fld">Uwagi</span>
+        <p class="lead">Nie ma Twojej winy w braku koncentracji - Twoje skupienie zostało Ci bezceremonialnie ukradzione. Chciałbym pomóc Ci je odzyskać.</p></div>
+      <div class="row"><span class="fld">Zalecenia</span>
+        <p class="prod"><b>45 lekcji i 3 poziomy zaawansowania. Kurs zajmuje około miesiąca przy 10 minutach dziennie.</b> Do dziś kupiono go ponad 400 razy.<sup>*</sup></p></div>
+    </article>
+    <ul class="trust">
+      <li><b class="js-cena">300 zł</b></li>
+      <li><b>rok dostępu</b> na 2 urządzeniach</li>
+      <li><b>żelazna gwarancja zwrotu</b> 30 dni</li>
+    </ul>
+    <div class="cta-row">
+      <a class="cta" data-cta="hero" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span><small>dostęp od razu po zakupie</small></a>
+    </div>
+    <p class="omni js-omni" hidden>Najniższa cena z ostatnich 30 dni przed obniżką: <span class="js-przed"></span>. <span class="js-koniec"></span></p>
+    <p class="fn"><sup>*</sup>429 potwierdzeń zakupu z Pogotowiem koncentracji w skrzynce Fundacji: 408 razem z Szybkim Czytaniem (w 392 Pogotowie
+    dołożone do koszyka Szybkiego Czytania, w 16 odwrotnie), 21 samodzielnie. Etykiety zakupów obejmują ok. 12-18 ostatnich miesięcy
+    (dokładnego zakresu nie ustaliliśmy), a pierwszy znany zakup Pogotowia jest z czerwca 2024, więc wszystkich zakupów było co najmniej tyle.
+    Liczymy zakupy, nie osoby; stan 26.10.2026.</p>
+  </div>
+</section>
+
+<!-- ══════════ 2. WYWIAD (problem, karta objawów) ══════════ -->
+<section id="problemy">
+  <div class="wrap">
+    <p class="plate"><i>01</i>Wywiad</p>
+    <h2>Próbujesz coś zrobić i nie możesz się skupić?</h2>
+    <div class="objawy sheet" id="objawy">
+      <p class="sheet-h"><b>Karta objawów</b><span>zaznacz, co pasuje</span></p>
+      <label class="obj"><input type="checkbox" name="o1"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span>
+        <span class="t">Podczas rozmowy odczuwasz impuls, aby sięgnąć po telefon?</span></label>
+      <div class="obj-more"><p>Pomyśl o tym, ile razy zdarzy ci się wyciągnąć telefon podczas oglądania filmu.</p>
+        <p>Albo lepiej, ile razy szukasz idealnego serialu tak długo albo filmu, że w końcu nie wybierasz nic.</p></div>
+      <label class="obj"><input type="checkbox" name="o2"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span>
+        <span class="t">Sensowne rzeczy przegrywają z pierdołami (Netflix, YouTube, Instagram)? Brzmi znajomo?</span></label>
+      <div class="obj-more last"><p>Pomyśl o całym czasie, który spędzasz na YouTubie, przerzucasz się z jednej aplikacji na drugą, odpisujesz na czatach, grupach, przeglądasz rzeczy, których nie kupisz.</p></div>
+
+      <div class="korytarz">
+        <h3>Co chwilę coś wpada.</h3>
+        <p>Kierownik budowy widzi, że wszyscy jego robotnicy uwijają się jak w ukropie. Podchodzi do człowieka, który biega w kółko z pustą taczką.</p>
+        <p class="dlg">- Dlaczego nic nie masz w taczce?<br>- Taki dziś... młyn..., że nie ma kiedy załadować.</p>
+        <p>I chociaż na co dzień nie pracujesz przy budowie domu, to pewnie znasz ten tryb. Działając w ten sposób:</p>
+      </div>
+      <label class="obj"><input type="checkbox" name="o3"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span><span class="t">męczy Cię odkładanie ważnych rzeczy na święte nigdy</span></label>
+      <label class="obj"><input type="checkbox" name="o4"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span><span class="t">ledwo panujesz nad strumieniem 'bieżączki'</span></label>
+      <label class="obj"><input type="checkbox" name="o5"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span><span class="t">Twój kalendarz pęka w szwach</span></label>
+      <label class="obj"><input type="checkbox" name="o6"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span><span class="t">ciągle gonisz, nadrabiając zadania 'na wczoraj'</span></label>
+      <label class="obj last"><input type="checkbox" name="o7"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l5 5L20 6"/></svg></span><span class="t">męczysz się, a realnych efektów brak</span></label>
+      <p class="licznik" aria-live="polite">Zaznaczone <b><span class="js-n">0</span> z 7</b></p>
+    </div>
+    <div class="ulga">
+      <p>Spokojnie. Nie tylko Ty tak masz.</p>
+      <p class="stamp czeka js-stamp">I to nie jest Twoja wina.</p>
+    </div>
+    <p class="bridge">To nie czas jest Twoim problemem tylko brak skupienia.</p>
+    <p>Jeśli kończysz dzień z poczuciem, że nic nie udało się posunąć do przodu - to znaczy, że przez cały ten czas ktoś lub coś marnowało Twoją cenną energię.</p>
+  </div>
+</section>
+
+<!-- ══════════ 3. WYNIKI BADAŃ (stawka) ══════════ -->
+<section class="lamp" id="stawka">
+  <div class="wrap">
+    <p class="plate"><i>02</i>Wyniki badań</p>
+    <h2>Witaj w erze braku skupienia.</h2>
+    <div class="wydruk" aria-label="Wyniki badania Higiena cyfrowa dorosłych">
+      <p class="wh">Higiena cyfrowa dorosłych<span>CAWI · XII 2024 · N = 1000</span></p>
+      <div class="wyn"><div class="k"><span>ponad</span><b class="v">9 na 10</b></div>
+        <p class="l">dorosłych internautów zauważyło, że za długo korzysta z telefonu czy komputera</p></div>
+      <div class="wyn"><div class="k"><span>niecałe</span><b class="v">2 na 10</b></div>
+        <p class="l">z nich zawsze albo prawie zawsze ograniczało wtedy czas</p></div>
+      <p class="wf">źródło w przypisie *</p>
+    </div>
+    <p>Ponad 9 na 10 dorosłych internautów w Polsce zauważyło, że za długo korzysta z telefonu czy komputera. Z nich mniej niż 2 na 10
+    zawsze albo prawie zawsze ograniczało wtedy czas.<sup>*</sup></p>
+    <p>W związku z tym mam dwie wiadomości. Dobra wiadomość jest taka, że dobrze wiesz, co musisz zrobić. Zła niestety jest taka, że nie wiesz jak.</p>
+    <p>A lifehacki z motywacyjnych postów i filmiki na YouTubie nie rozwiązują Twoich problemów.</p>
+    <p><b>Ty też wiesz, że kiedy tylko ODZYSKASZ SKUPIENIE, to:</b></p>
+    <ul class="ticks">
+      <li>ruszysz w końcu duże, ważne zadania</li>
+      <li>odkleisz od siebie ciągnące Cię w dół pierdoły (wiesz jakie)</li>
+      <li>zamienisz setki mikroskopijnych działań w jeden, konkretny efekt</li>
+      <li>zajmiesz się tylko tym, co naprawdę uważasz za ważne</li>
+    </ul>
+    <p class="fn"><sup>*</sup>91,7% badanych zauważyło, że zbyt długo używało urządzeń ekranowych; z nich 17,6% „zawsze lub prawie zawsze” wtedy
+    ograniczało czas. Bigaj M., Woynarowska M. (red.), „Higiena cyfrowa dorosłych. Raport z drugiego Ogólnopolskiego Badania Higieny Cyfrowej
+    Dorosłych”, Newsline, Rzeszów 2025; badanie CAWI, grudzień 2024, N = 1000 dorosłych internautów.</p>
+  </div>
+</section>
+
+<!-- ══════════ 4. KONSULTACJA (dlaczego nie działa) ══════════ -->
+<section id="dlaczego">
+  <div class="wrap">
+    <p class="plate"><i>03</i>Konsultacja</p>
+    <h2>Czemu większość kursów koncentracji i produktywności nie działa, a nasz tak?</h2>
+    <p>Jeśli nadal mierzysz skuteczność swojego działania liczbą wykonanych zadań i temu podporządkowujesz swoje wysiłki, nigdy nie wyrwiesz się z błędnego koła.</p>
+    <p>Już na samym starcie torpedujesz się robieniem kilometrowych list zadań i wrzucaniem ich w odpowiednie przegródki. Tylko od porządków w systemie zadania nie robią się same.</p>
+    <p>Robią się od robienia.</p>
+    <p>To właśnie problem z większością 'systemów obiecujących maksymalną produktywność' - tradycyjne metody zarządzania czasem i zadaniami nie działają, bo dają Ci sztuczki, tricki i drobne usprawnienia.</p>
+    <p>Z drugiej strony barykady stoją systemy produktywności tak skomplikowane, że ich wypełnianie zajmuje więcej czasu, niż to warte.</p>
+    <div class="cons"><span class="fld">Rozpoznanie</span><p>Sama organizacja czasu po prostu Ci nie pomoże. Jeśli nie umiesz się skupić na tym, co robisz - nie wdrożysz żadnej metody.</p></div>
+    <p>A brak koncentracji, czyli rozproszenie, jest męczące. A im dłużej trwa, tym bardziej jest męczące.</p>
+    <p>Więc jeśli nie jesteś w stanie odpocząć, jeśli nie jesteś w stanie odpuścić, to bardzo możliwe, że potrzebujesz po prostu uspokoić swój umysł i opanować sztukę skupienia.</p>
+    <p>Bo to jest umiejętność. Taka jak spawanie albo jazda ciężarówką.</p>
+    <p>Tylko że to jest umiejętność, o której łatwo jest zapomnieć, a bez której sypie się praktycznie wszystko.</p>
+
+    <h3 class="h3big">Odwaliliśmy za Ciebie ciężką robotę</h3>
+    <p>Koncentracja, produktywność, organizacja czasu i budowanie nawyków to dość oklepany temat. Szukając w książkach i Internecie, znajdziesz miliony metod, tricków i porad.</p>
+    <p>Przejrzeliśmy i przetestowaliśmy niemal wszystkie i wybraliśmy te, które działają... a potem nagraliśmy kurs przedstawiający je w prosty i przystępny sposób, bo na tym znamy się najlepiej.</p>
+    <p>Zapomnij o świszczących mikrofonach, godzinnych wykładach i prezentacjach w PowerPoincie.</p>
+    <!-- WARUNKOWO (pytanie 9): blok „U nas kryterium tworzenia tego kursu…” wchodzi po potwierdzeniu, kto w biurze stosuje którą metodę. -->
+    <p style="font-weight:800;margin:22px 0 0">Nasz kurs online to:</p>
+    <ol class="zal">
+      <li><b>Krótkie lekcje</b><p>Każdą z metod zamknęliśmy w formie krótkiej, maksymalnie 5-minutowej lekcji, które obejrzysz na telefonie lub laptopie.</p></li>
+      <li><b>Praktyczne ćwiczenia</b><p>Poza lekcjami w kursie znajdziesz skrypt z ćwiczeniami, dzięki któremu każdą z metod zamienisz w działanie, a przecież właśnie o to chodzi, bo od samego słuchania nic się nie zmieni.</p></li>
+      <li><b>Spójność i konsekwencja</b><p>Kurs jest ułożony tak, aby zacząć od naprawienia najprostszych elementów psujących Twoje skupienie, a potem przejść przez rozwiązania dające długoterminowe efekty.</p><p>Jest podzielony na 3 następujące po sobie segmenty zaawansowania.</p></li>
+    </ol>
+    <div class="fizjo sheet">
+      <p><b>Dlaczego zawracam Ci głowę ćwiczeniami?</b> Słuchanie krótkich filmików jest przyjemne i daje poczucie szybkiego postępu. Usłyszeć to jedno, a zrobić to drugie.</p>
+      <p>To trochę jak wizyta u fizjoterapeuty i robienie ćwiczeń rehabilitacyjnych w domu. Najlepszy, długotrwały efekt zawsze przynosi własna praktyka.</p>
+      <p>Dlatego do każdej lekcji otrzymasz jakieś praktyczne zadanie.</p>
+      <p>Czasem będzie to schowanie swojego telefonu na godzinę do pudełka po butach, czasem wypełnienie ćwiczenia w skrypcie, a czasami po prostu przemyślenie jakiejś kwestii.</p>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="dlaczego" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 5. ODDZIAŁY (co otrzymasz, trzy działy) ══════════ -->
+<section class="lamp" id="co">
+  <div class="wrap">
+    <p class="plate"><i>04</i>Oddziały</p>
+    <h2>Co otrzymasz w ramach kursu?</h2>
+    <p>Przeprowadzę Cię krok po kroku przez proces uratowania Twojej koncentracji, wyćwiczenia jej oraz utrzymania w długiej perspektywie. Będzie konkretnie, szybko i skutecznie.</p>
+    <p>Kurs oparliśmy na metaforze szpitala, do którego zabieramy Twoją umiejętność skupienia. Podzieliliśmy go na 3 moduły, które odpowiadają na kolejne poziomy potrzeb:</p>
+    <nav class="kier" aria-label="Trzy działy kursu">
+      <a href="#dzial-1"><i style="background:var(--d1)"></i>Pierwsza pomoc<span>1-13<em>&#8594;</em></span></a>
+      <a href="#dzial-2"><i style="background:var(--d2)"></i>Rehabilitacja<span>14-31<em>&#8594;</em></span></a>
+      <a href="#dzial-3"><i style="background:var(--d3)"></i>Medycyna sportowa<span>32-45<em>&#8594;</em></span></a>
+    </nav>
+    <div class="floor" id="lekcje">
+      <div class="odz o1" id="dzial-1">
+        <span class="ln a turn"></span><span class="ln b"></span><span class="ln c"></span>
+        <div class="sheet">
+          <div class="door"><p class="dz">Dział 1</p><h3>Pierwsza pomoc</h3></div>
+          <p class="meta"><b>13 lekcji</b> · Proste techniki, które możesz od razu wdrożyć do swojego codziennego życia.</p>
+          <details class="lessons" data-acc="lekcje-pierwsza-pomoc"><summary>Lista lekcji</summary>
+            <ol class="ll" start="1"><li>Wprowadzenie</li><li>SOR, Rehabilitacja i Medycyna Sportowa</li><li>Książeczka zdrowia</li><li>Zanim zaczniesz</li><li>SOR</li><li>Izba przyjęć i wywiad lekarski</li><li>Pierwsza pomoc</li><li>Tlen</li><li>Woda</li><li>Budka telefoniczna</li><li>Myślodsiewnia</li><li>Potęga skakanki</li><li>SOR - podsumowanie</li></ol>
+          </details>
+        </div>
+      </div>
+      <div class="odz o2" id="dzial-2">
+        <span class="ln b turn"></span><span class="ln c"></span>
+        <div class="sheet">
+          <div class="door"><p class="dz">Dział 2</p><h3>Rehabilitacja</h3></div>
+          <p class="meta"><b>18 lekcji</b> · Techniki bardziej zaawansowane i pozwalające na lepsze skupienie oraz solidna dawka wiedzy teoretycznej.</p>
+          <details class="lessons" data-acc="lekcje-rehabilitacja"><summary>Lista lekcji</summary>
+            <ol class="ll" start="14"><li>Rehabilitacja - wstęp</li><li>To nie Twoja wina!</li><li>Pomodoro</li><li>Matrix Cię więzi</li><li>Centrowanie</li><li>Media niespołecznościowe</li><li>Telefon 5.0</li><li>Mit multitaskingu</li><li>Bezstresowa produktywność</li><li>Nowa nadzieja</li><li>Czapka czarodzieja</li><li>Efekt Mozarta</li><li>Sen 2.0</li><li>Sen 2.5</li><li>Kwarantanna wyszukiwań</li><li>Asynchroniczność</li><li>Skrzynka z narzędziami</li><li>Rehabilitacja - podsumowanie</li></ol>
+          </details>
+        </div>
+      </div>
+      <div class="odz o3" id="dzial-3">
+        <span class="ln c turn"></span>
+        <div class="sheet">
+          <div class="door"><p class="dz">Dział 3</p><h3>Medycyna sportowa</h3></div>
+          <p class="meta"><b>14 lekcji</b> · Techniki, których wprowadzenie poprawi organizację całego Twojego życia.</p>
+          <details class="lessons" data-acc="lekcje-medycyna-sportowa"><summary>Lista lekcji</summary>
+            <ol class="ll" start="32"><li>Medycyna Sportowa - wstęp</li><li>Pytanie o wielką żabę</li><li>Wstępnie nie</li><li>Koncepcja wahadła</li><li>Nawykologia - wprowadzenie</li><li>Nawykologia #1 - Środowisko</li><li>Nawykologia #2 - Daj się uwieść</li><li>Nawykologia #3 - Mniej to więcej</li><li>Nawykologia #4 - Mała wielka nagroda</li><li>Jedz, skup się, biegaj</li><li>Poziom energii</li><li>Życie w kratki</li><li>Medycyna sportowa - podsumowanie</li><li>Podsumowanie kursu</li></ol>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 6. ZALECENIA (trzy metody) I CZAS POBYTU (ile zajmuje) ══════════ -->
+<section id="ile">
+  <div class="wrap">
+    <p class="plate"><i>05</i>Zalecenia</p>
+    <h2>Trzy metody, które możesz wdrożyć od razu</h2>
+    <div class="bloczek">
+      <div class="slip"><span class="fld">Lekcja 10</span><h3>Budka telefoniczna</h3><p>Wystarczy zwykłe pudełko, do którego zmieścisz telefon.</p><p>Gdy rozpoczynasz pracę czy sesję naukową, umieść telefon w tym pudełku i je zamknij.</p><p>Najlepiej wynieś pudełko z telefonem do innego pokoju.</p></div>
+      <div class="slip"><span class="fld">Lekcja 11</span><h3>Myślodsiewnia</h3><p>Wystarczy ci czysta kartka. Tak, to jest właśnie zwykła kartka papieru.</p><p>Za każdym razem, kiedy uczysz się i skupiasz się na konkretnej rzeczy i nagle przychodzi do głowy jakaś myśl, po prostu zapisz ją na kartce.</p></div>
+      <div class="slip"><span class="fld">Lekcja 33</span><h3>Pytanie o wielką żabę</h3><p>„Co jest jedną rzeczą, którą mogę zrobić teraz, tak że wszystko inne stanie się łatwiejsze lub niepotrzebne?”</p><p>Przez pewien czas miałem to pytanie przyklejone do monitora i… polecam Ci zacząć właśnie od tego.</p></div>
+    </div>
+
+    <p class="plate sub"><i>06</i>Czas pobytu</p>
+    <h2>Ile zajmuje przejście kursu?</h2>
+    <p class="hint">To zależy, jak go zrobisz.</p>
+    <div class="pobyt">
+      <div class="r"><span class="fld">W biegu</span><div><p>Ten kurs zajmie Ci mało czasu. Filmiki są krótkie.</p><p>Włożyliśmy dużo wysiłku w to, żeby żadna lekcja nie trwała dłużej niż 5 minut.</p><p>Możesz się z nimi zapoznać w drodze do pracy albo kiedy akurat Ci się przypomni - w kolejce albo kiedy akurat sięgasz po telefon, żeby poprzeglądać Internet.</p></div></div>
+      <div class="r"><span class="fld">Z ćwiczeniami</span><div><p>Kurs zajmuje około miesiąca przy 10 minutach dziennie.</p></div></div>
+      <div class="r"><span class="fld">Do powtórek</span><div><p>Wszystkie lekcje przygotowałem również dla Ciebie w formie podcastu.</p><p>Serdecznie polecam wrócić sobie do niego, kiedy poczujesz, że Twoja koncentracja zaczyna słabnąć.</p></div></div>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="ile" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span><small>dostęp od razu po zakupie</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 7. KOGO PRZYJMUJEMY (dla kogo) ══════════ -->
+<section class="lamp" id="dla-kogo">
+  <div class="wrap">
+    <p class="plate"><i>07</i>Kogo przyjmujemy</p>
+    <h2>Dla kogo jest ten kurs?</h2>
+    <div class="przyj">
+      <div class="sheet"><h3>Dla pracujących głową.</h3><p>Techniki, które pokazujemy, są uniwersalne.</p><p>Najlepiej stosuje się je w zawodach opierających się na pracy umysłowej za biurkiem, ale osoby pracujące fizycznie też mogą skorzystać co najmniej z niektórych porad.</p><p>W kursie pokazujemy, jak radzić sobie z deadlinami i wrzutkami na za pięć piąta, nie zawalając ważnych zadań.</p></div>
+      <div class="sheet"><h3>Dla tych, którzy od dawna się do czegoś zbierają.</h3><p>Napisanie pracy/książki/ebooka, do którego zbierasz się od dłuższego czasu.</p><p>Przejście od zakupu karnetu na siłownię do regularnych ćwiczeń.</p><p>Bycie człowiekiem czynu, a nie (jak to zwykle bywa) człowiekiem refleksji.</p></div>
+      <div class="sheet nie"><h3>Nie dla osoby, która szuka cudu.</h3><p>Ten kurs nie odkrywa Ameryki na nowo. Nie jest cudownym remedium ani metodą nieznaną światu. To prosty i gotowy do wdrożenia system.</p></div>
+      <div class="sheet nie"><h3>Jeśli się leczysz.</h3><p>Kurs nie diagnozuje i nie zastępuje terapii. Metody z kursu możesz stosować obok leczenia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 8. PROWADZĄCY (kto uczy) ══════════ -->
+<section id="kto">
+  <div class="wrap">
+    <p class="plate"><i>08</i>Prowadzący</p>
+    <h2>Piotr Starzyński. Czyli kto będzie Cię uczyć</h2>
+    <div class="ident">
+      <svg class="smycz" viewBox="0 0 120 40" aria-hidden="true"><path d="M8 0 L52 34 M112 0 L68 34" stroke="#1f2336" stroke-width="7" fill="none"/><rect x="48" y="28" width="24" height="12" rx="3" fill="#585c70"/></svg>
+      <div class="sheet">
+        <p class="bar"><b>5+</b><span>Fundacja Pięć Plus</span></p>
+        <img src="assets/piotr.webp" width="600" height="405" loading="lazy" alt="Piotr Starzyński, Fundacja Pięć Plus">
+        <p class="nm"><b>Piotr Starzyński</b><span>Pogotowie koncentracji</span></p>
+      </div>
+    </div>
+    <div class="bio">
+      <p>Nazywam się Piotr Starzyński i temat skupienia towarzyszy mi od bardzo dawna.</p>
+      <p>Pierwsze planowanie celów zrobiłem sobie w kalendarzu na nadchodzący 2007 rok (byłem wtedy w drugiej gimnazjum).</p>
+      <p>Bardzo szybko uznałem, że oczywistą receptą na wykorzystanie czasu w stu procentach jest po prostu obłożenie się zajęciami, projektami i sprawami. Brzmi znajomo?</p>
+      <p>Moje zamiłowanie do robienia wielu rzeczy naraz nie minęło (Rodzina (!), Fundacja Pięć Plus, Firma Władysław Remont, organizowanie praktyk Erasmus+, zespół Igray, pisanie tekstów).</p>
+      <p>Żeby wszystkie te wspaniałe rzeczy (i wiele innych) mogły się wydarzyć, potrzebowałem systemu skupienia, który będzie odporny na "całą resztę" - facebooka, instagrama, przeglądanie rolek, newsy, clickbaity, zadania, które ktoś zrzuca mi na głowę oraz... moje własne wspaniałe pomysły, z których często wynikało dużo pracy i nic poza tym.</p>
+      <p class="sz">Ten niepozorny kawałek sznurka uratował mój doktorat.</p>
+      <p>Miałem OGROMNY problem ze skończeniem pewnej pracy, a był to MÓJ KONSPEKT DOKTORATU.</p>
+      <p>Kiedy wydawało się, że nic mi nie pomoże i przyjdę na rozmowę z 9 profesorami z pustą kartką, uratowała mnie SKAKANKA.</p>
+      <p>Co wtedy było dla mnie najważniejsze, to fakt, że konspekt, do którego zbierałem się przez 2 tygodnie, powstał w 2 DNI.</p>
+      <p>Obecnie pracuję na Uniwersytecie Warszawskim nad doktoratem poświęconym wyzwaniom nauczycieli w polskiej szkole.</p>
+      <p>Przeczytałem mnóstwo książek, przetestowałem wszystkie metody znalezione u guru produktywności.</p>
+      <p>A szukałem zarówno w opracowaniach naukowych, jak i filmikach na YouTubie.</p>
+      <p>Zajęło mi to dwa lata, ale nie żałuję ani chwili.</p>
+      <p class="bridge">Ale Ty możesz przejść tę drogę w zaledwie 30 dni...</p>
+    </div>
+    <h3 class="h3big">Pogotowie wyrosło z Szybkiego Czytania</h3>
+    <p>Po premierze naszego kursu w 2019 roku szybko okazało się, że największy problem kursanci mają właśnie z… koncentracją na tekście.</p>
+    <p>Tworząc kurs, nie przewidzieliśmy tego, że smartfony i aplikacje będą coraz mocniej odciągać nas od rzeczy ważnych, takich jak na przykład czytanie książek.</p>
+    <p>Ponieważ próśb o ratowanie koncentracji dostawaliśmy coraz więcej, stworzyliśmy kurs Pogotowie Koncentracji.</p>
+    <p>Uczę, jak się uczyć, od 2013 roku, a od 2017 robimy to jako Fundacja Pięć Plus.</p>
+    <p>Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026: 10 na 10
+    w ocenach klientów, z 68 opinii (<a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank" style="color:var(--navy);font-weight:700">profil</a>).</p>
+  </div>
+</section>
+
+<!-- ══════════ 9. REJESTRACJA (cena i gwarancja) ══════════ -->
+<section class="lamp" id="cena">
+  <div class="wrap">
+    <p class="plate"><i>09</i>Rejestracja</p>
+    <div class="okienko sheet">
+      <p class="bel"><span>Pogotowie koncentracji</span><b>kurs online</b></p>
+      <div class="in">
+        <h2>Koszt zakupu… i jego braku</h2>
+        <p><b>Ile kosztuje kurs Pogotowie koncentracji i co tracisz, nie decydując się na niego.</b></p>
+        <p>Przy stałym poczuciu bycia zajętym, pomalutku orze cię każda z rzeczy.</p>
+        <p>Jeśli chcesz naprawdę odzyskać czas, musisz zmienić podejście i trafić do sedna problemu.</p>
+        <div class="price">
+          <img src="assets/skrypt-okladka.webp" width="400" height="566" loading="lazy" alt="Okładka skryptu z ćwiczeniami do kursu Pogotowie koncentracji">
+          <p class="v"><span class="js-cena">300 zł</span><small>cały kurs</small></p>
+        </div>
+        <p class="omni js-omni" hidden>Najniższa cena z ostatnich 30 dni przed obniżką: <span class="js-przed"></span>. <span class="js-koniec"></span></p>
+        <p><b>Płacisz <span class="js-cena">300 zł</span> za cały kurs.</b> Przy przeciętnej pensji brutto to mniej niż jeden dzień pracy.<sup>**</sup></p>
+        <p>Przez miesiąc kursu wychodzi mniej więcej <span class="js-dzien">10 zł</span> dziennie.<sup>*</sup></p>
+        <p style="margin:16px 0 0;font-weight:800">Kupując kurs, otrzymujesz:</p>
+        <ul class="incl">
+          <li>45 krótkich lekcji wideo w trzech działach</li>
+          <li>skrypt z ćwiczeniami do wydrukowania, 53 strony</li>
+          <li>wszystkie lekcje także jako podcast</li>
+          <li>roczny dostęp na 2 urządzeniach</li>
+        </ul>
+        <a class="cta" data-cta="cena" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span><small>BLIK · przelew · karta</small></a>
+        <p class="pay">Płatność blikiem, przelewem lub kartą. Wystawiamy faktury. Dostęp dostajesz od razu po zakupie, na naszej platformie z lekcjami.</p>
+      </div>
+    </div>
+    <div class="pismo sheet">
+      
+      <h3>Żelazna gwarancja zwrotu 30 dni</h3>
+      <p>Osobiście gwarantuję, że ten kurs działa. Masz żelazną gwarancję zwrotu w ciągu 30 dni.</p>
+      <p>Ty piszesz maila, a ja zwracam pieniądze. <b>100% zwrotu, bez zbędnych pytań i bez progu ukończenia.</b></p>
+      <p>Na ponad 3 700 zakupów naszych kursów o zwrot poprosił mniej niż 1 kupujący na 100.<sup>***</sup></p>
+      <div class="podpis"><p class="sign">Piotr Starzyński</p>
+      <svg class="pieczec" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><path id="krag" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs>
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#1f2336" stroke-width="3"/>
+        <circle cx="50" cy="50" r="27" fill="none" stroke="#1f2336" stroke-width="1.6"/>
+        <text font-family="Alegreya Sans, sans-serif" font-weight="800" font-size="9.2" letter-spacing=".7" fill="#1f2336"><textPath href="#krag">ŻELAZNA GWARANCJA ZWROTU · 30 DNI ·</textPath></text>
+        <text x="50" y="49" text-anchor="middle" font-family="Merriweather, serif" font-weight="900" font-size="17" fill="#1f2336">30</text>
+        <text x="50" y="62" text-anchor="middle" font-family="Alegreya Sans, sans-serif" font-weight="800" font-size="10" letter-spacing="1.5" fill="#1f2336">DNI</text>
+      </svg>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="gwarancja" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span><small>30 dni na zwrot</small></a>
+    </div>
+    <p class="fn"><sup>*</sup><span class="js-dzien-fn">300 zł / 30 dni.</span> Długość kursu: „około miesiąca przy 10 minutach dziennie”.<br>
+    <sup>**</sup>Przeciętne miesięczne wynagrodzenie brutto w sektorze przedsiębiorstw (firmy powyżej 9 osób; to średnia, nie mediana) we wrześniu 2026 r.:
+    9 266,48 zł (GUS, komunikat z 20.10.2026). Przy 168 godzinach pracy w miesiącu to ok. 55 zł brutto za godzinę i ok. 441 zł brutto
+    za ośmiogodzinny dzień; 300 zł to ok. 5,4 godziny pracy.<br>
+    <sup>***</sup>27 wiadomości z etykietą zwrotu wobec ok. 3 780 potwierdzeń zakupu, wszystkie kursy Fundacji, okres etykietowania ok. 12-18 miesięcy,
+    w tym okresy z krótszymi zasadami zwrotu; stan 06.10.2026. Osobnej liczby dla Pogotowia nie ma.</p>
+  </div>
+</section>
+
+<!-- ══════════ 10. OPINIA ══════════ -->
+<section id="opinie">
+  <div class="wrap">
+    <p class="plate"><i>10</i>Opinia absolwenta</p>
+    <h2>Zobacz, co piszą o naszych kursach Ci, którzy z nich skorzystali</h2>
+    <div class="kartka sheet">
+      <svg class="pin" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="#ffc676" stroke="#1f2336" stroke-width="2"/><circle cx="8.5" cy="8.5" r="2.4" fill="#fff" opacity=".8"/></svg>
+      <p class="pull">„Dziennie te pół godziny - godzinkę odzyskałem.”</p>
+      <blockquote class="quote">„Kurs zmobilizował mnie do stosowania tych metod. Dziennie te pół godziny - godzinkę odzyskałem. Kurs jest naprawdę fajny, mogę go polecić!”
+        <cite>Paweł Poryzała, absolwent kursu</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11. INFORMACJA (pytania) ══════════ -->
+<section class="lamp" id="pytania">
+  <div class="wrap">
+    <p class="plate"><i>?</i>Informacja</p>
+    <h2>Masz pytanie? Może mamy odpowiedź.</h2>
+    <details class="acc" data-acc="nic-nowego"><summary>Znam pomodoro i listy zadań. Co tu jest nowego?</summary>
+      <div class="acc-body"><p>To kompilacja tricków i metod, które znajdziesz w Internecie, ale w Pogotowiu Koncentracji są one podane tak, żebyś nie musiał (albo nie musiała) testować każdej z nich z osobna.</p></div></details>
+    <details class="acc" data-acc="metody-mecza"><summary>Metody mnie męczą. Zawsze w końcu je zarzucam.</summary>
+      <div class="acc-body"><p>Wszystko fajnie, ale na pewno znasz 12-stopniowe schematy zarządzania skrzynką mailową i kalendarzem. My też... i nigdy nie używaliśmy ich dłużej niż tydzień.</p><p>Dlatego wszystkie metody w tym kursie są proste i możesz zacząć je stosować bez stawiania życia na głowie.</p></div></details>
+    <details class="acc" data-acc="odpuszcze"><summary>A jeśli zacznę i odpuszczę w połowie?</summary>
+      <div class="acc-body"><p>Wierzymy, że każdy powinien realizować kurs w swoim tempie, a możliwość odświeżenia umiejętności jest bardzo ważna.</p><p>Dostęp do wszystkich materiałów otrzymujesz na cały rok.</p></div></details>
+    <details class="acc" data-acc="nie-zadziala"><summary>A jeśli to u mnie nie zadziała?</summary>
+      <div class="acc-body"><p>Masz żelazną gwarancję zwrotu w ciągu 30 dni.</p><p>Ty piszesz maila, a ja zwracam pieniądze. 100% zwrotu, bez zbędnych pytań i bez progu ukończenia.</p></div></details>
+    <details class="acc" data-acc="telefon-w-pracy"><summary>Moja praca wymaga telefonu. Budka telefoniczna odpada?</summary>
+      <div class="acc-body"><p>Ta strategia nie zakłada rezygnacji ze smartfona, lecz wprowadzenie jednego nawyku, który pomoże Ci lepiej zarządzać Twoją koncentracją.</p><p>Zaraz powiesz: ALE PRZECIEŻ MUSZĘ ODEBRAĆ TELEFON! O tym porozmawiamy w lekcji o asynchroniczności.</p></div></details>
+    <details class="acc" data-acc="zwrot"><summary>Czy możliwy jest zwrot zakupionego kursu?</summary>
+      <div class="acc-body"><p>Tak, w ciągu 30 dni. Skontaktuj się z nami przez <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a>, a pieniądze znajdą się z powrotem na Twoim koncie w ciągu 7 dni roboczych.</p></div></details>
+    <details class="acc" data-acc="jak-otrzymam"><summary>W jaki sposób otrzymam kurs?</summary>
+      <div class="acc-body"><p>Dostęp do kursu odbywa się za pośrednictwem naszej platformy. Po założeniu swojego konta otrzymasz dostęp do wszystkich lekcji i skryptu z ćwiczeniami.</p></div></details>
+    <details class="acc" data-acc="urzadzenie"><summary>Z jakiego urządzenia?</summary>
+      <div class="acc-body"><p>Nasza platforma jest dostępna na komputerach i urządzeniach mobilnych - znajdziesz na niej wszystkie lekcje, skrypt do pobrania i bonusowe materiały.</p></div></details>
+    <details class="acc" data-acc="skrypt"><summary>Co jest w skrypcie?</summary>
+      <div class="acc-body"><p>Do kursu przygotowałem dodatek w postaci skryptu. To ćwiczenia i podsumowania lekcji w papierowej formie.</p></div></details>
+    <details class="acc" data-acc="faktura"><summary>Czy dostanę fakturę?</summary>
+      <div class="acc-body"><p>Tak. Przy zakupie zaznaczasz „chcę fakturę” i podajesz dane, firmowe albo imienne.</p></div></details>
+    <details class="acc" data-acc="mam-sc"><summary>Mam już Szybkie Czytanie z Pogotowiem. To ten sam dostęp?</summary>
+      <div class="acc-body"><p>Dostęp do każdego kursu liczymy osobno, więc Pogotowie Koncentracji ma swój własny okres dostępu i nie odnawia się automatycznie razem z kursem szybkiego czytania.</p></div></details>
+    <p class="hint" style="margin-top:18px">Masz inne pytanie? Napisz na <a href="mailto:kontakt@5plus.edu.pl" style="color:var(--navy);font-weight:700">kontakt@5plus.edu.pl</a>, chętnie odpowiemy.</p>
+  </div>
+</section>
+
+<!-- ══════════ 12. WYPIS (domknięcie) ══════════ -->
+<section class="closing" id="offer">
+  <div class="wrap">
+    <p class="plate"><i>&#8594;</i>Wypis</p>
+    <div class="wypis sheet">
+      <div class="naklejka js-naklejka" aria-hidden="true"><span>Za dzielność</span></div>
+      <p class="sheet-h" style="padding-right:88px"><b>Karta wypisu</b></p>
+      <h2>Jeszcze to czytasz?</h2>
+      <p class="lead">I po skupieniu wszystko robi się proste. Wiesz, co chcesz robić, wiesz, w jakiej kolejności.</p>
+      <p>A jeśli nie wiesz, od czego zacząć, by to osiągnąć... zacznij od tego kursu.</p>
+      <div class="cta-row">
+        <a class="cta" data-cta="domkniecie" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span><small>rok dostępu · 30 dni na zwrot</small></a>
+      </div>
+      <p class="ps"><span class="js-cena">300 zł</span> · rok dostępu · 30 dni na zwrot. Płatność blikiem, przelewem lub kartą. Wystawiamy faktury.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Fundacja Pięć Plus · <a href="mailto:biuro@5plus.edu.pl">biuro@5plus.edu.pl</a> · 5plus.edu.pl<br>
+    <a href="#" class="todo-link">Regulamin</a> · <a href="#" class="todo-link">Polityka prywatności</a> · <button type="button" id="cookieSettings">Ustawienia cookies</button><br>
+    <mark class="todo">[linki do regulaminu i polityki]</mark> · Zapisy o rocznym dostępie i o zwrocie w ciągu 30 dni muszą być identyczne w regulaminie.
+  </div>
+</footer>
+
+<div class="bar-cta" id="barCta">
+  <a class="cta" data-cta="sticky" href="https://kursy.piecplus.pl/s/koncentracja.html">Kupuję kurs - <span class="js-cena">300 zł</span></a>
+</div>
+
+<div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookies" hidden>
+  <p>Strona używa plików cookies. Niezbędne są do jej działania. Za Twoją zgodą włączamy też Piksel Meta i Microsoft Clarity, żeby mierzyć,
+  które reklamy naprawdę pomagają nas znaleźć. Szczegóły w <a href="#" class="todo-link">polityce prywatności</a>.</p>
+  <div class="btns">
+    <button type="button" class="yes" data-consent="all">Akceptuję wszystkie</button>
+    <button type="button" data-consent="necessary">Tylko niezbędne</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ===== CENA: jedno miejsce na zmianę (te same zasady co w index-v2.html) =====
+  // Do 12.11: CENA 300, PRZED 0, KONIEC ''. Okno kodu (od 13.11): CENA = kwota po kodzie, PRZED 300, KONIEC = data końca kodu,
+  // ale linia Omnibus tylko po sprawdzeniu ceny Pogotowia w koszyku SC (10-landing-copy-v2.md, „Dla wdrożenia”).
+  var CENA = 300, PRZED = 0, KONIEC = '';
+  // Koszyk wersji B: na razie ID 30 PK_baza. Po utworzeniu kopii (decyzja 24 w v2) wpisz jej adres tutaj.
+  var KOSZYK = 'https://kursy.piecplus.pl/s/koncentracja.html';
+  var WARIANT = 'B';
+  function zl(v){ return String(v).replace('.', ',') + '\u00a0zł'; }
+  document.querySelectorAll('.js-cena').forEach(function(e){ e.textContent = zl(CENA); });
+  document.querySelectorAll('.js-przed').forEach(function(e){ e.textContent = zl(PRZED); });
+  document.querySelectorAll('.js-koniec').forEach(function(e){ e.textContent = KONIEC ? 'Cena ' + zl(CENA) + ' do ' + KONIEC + '.' : ''; });
+  document.querySelectorAll('.js-omni').forEach(function(e){ e.hidden = !(PRZED > CENA); });
+  document.querySelectorAll('.js-dzien').forEach(function(e){ e.textContent = zl(Math.round(CENA / 30)); });
+  document.querySelectorAll('.js-dzien-fn').forEach(function(e){ e.textContent = CENA + ' zł / 30 dni.'; });
+  document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = KOSZYK; });
+
+  var PIXEL_ID = ''; // TODO: ID Piksela Meta fundacji (ten sam, który wysyła Purchase z WTL). Pusty = piksel się nie ładuje.
+  var KEY = 'e5p_consent', consent = null, pending = [];
+  try { consent = localStorage.getItem(KEY); } catch(e){}
+
+  // --- Piksel Meta: tylko po zgodzie ---
+  function loadPixel(){
+    if (!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  // --- Microsoft Clarity (ten sam projekt co 5plus.edu.pl): tylko po zgodzie ---
+  var CLARITY_ID = 'vjr23eh9gx';
+  function loadClarity(){
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+    try { window.clarity('set', 'lp_variant', WARIANT); } catch(e){}
+  }
+  var STD = /^(ViewContent|InitiateCheckout|Purchase|Lead|AddToCart)$/;
+  function track(name, params){
+    params = Object.assign({lp_variant:WARIANT}, params || {});
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({event:name}, params));
+    if (consent === 'all') { if (window.fbq) try { fbq(STD.test(name) ? 'track' : 'trackCustom', name, params); } catch(e){} }
+    else if (consent === null) pending.push([name, params]);
+  }
+  function setConsent(v){
+    consent = v;
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    banner.hidden = true; updateBar();
+    if (v === 'all') { loadPixel(); loadClarity(); pending.forEach(function(p){ if (window.fbq) fbq(STD.test(p[0]) ? 'track' : 'trackCustom', p[0], p[1]); }); }
+    pending = [];
+  }
+
+  var banner = document.getElementById('cookies');
+  banner.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); });
+  });
+  document.getElementById('cookieSettings').addEventListener('click', function(){ banner.hidden = false; updateBar(); });
+  if (consent === 'all') { loadPixel(); loadClarity(); }
+  else if (consent === null) banner.hidden = false;
+
+  track('ViewContent', {content_name:'pogotowie-koncentracji', value:CENA, currency:'PLN'});
+  track('lp_variant', {variant:WARIANT});
+
+  // --- UTM z reklamy przechodzą na sklep (inna domena) ---
+  var utm = location.search.replace(/^\?/, '').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
+  document.querySelectorAll('a[data-cta]').forEach(function(a){
+    if (utm) a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm;
+    a.addEventListener('click', function(){
+      track('InitiateCheckout', {content_name:'pogotowie-koncentracji', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta'), objawy:zaznaczone()});
+    });
+  });
+
+  // --- które karty i listy lekcji ktoś otwiera ---
+  document.querySelectorAll('details[data-acc]').forEach(function(d){
+    d.addEventListener('toggle', function(){ if (d.open) track('accordion_open', {card:d.getAttribute('data-acc')}); });
+  });
+
+  // --- karta objawów: odhaczasz zdania, które Cię opisują; pierwsza kreska przybija pieczątkę.
+  //     Zaznaczenia nie wychodzą ze strony; do pomiaru idzie tylko liczba (raz, przy pierwszym zaznaczeniu, i przy kliknięciu w przycisk).
+  var boxes = [].slice.call(document.querySelectorAll('#objawy input[type=checkbox]')),
+      licz = document.querySelector('.js-n'), stamp = document.querySelector('.js-stamp'), raz = false;
+  function zaznaczone(){ return boxes.filter(function(b){ return b.checked; }).length; }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      var n = zaznaczone(); licz.textContent = n;
+      if (n > 0 && stamp.classList.contains('czeka')) {
+        stamp.classList.remove('czeka'); stamp.classList.add('bije');
+      }
+      if (n > 0 && !raz) { raz = true; track('karta_objawow', {n:n}); }
+    });
+  });
+
+  // --- naklejka „Za dzielność” przykleja się, gdy wypis wjedzie w kadr ---
+  var nak = document.querySelector('.js-naklejka');
+  if ('IntersectionObserver' in window) {
+    nak.style.visibility = 'hidden';
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { nak.style.visibility = ''; nak.classList.add('wjedz'); io.disconnect(); } }); }, {threshold:.6});
+    io.observe(nak);
+  }
+
+  // --- opaska z przyciskiem na telefonie: po karcie przyjęcia, nie przy rejestracji i wypisie, nie razem z banerem ---
+  var bar = document.getElementById('barCta'), hero = document.getElementById('top'),
+      hide = [document.getElementById('cena'), document.getElementById('offer')];
+  function inView(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+  function updateBar(){
+    var on = banner.hidden && hero.getBoundingClientRect().bottom < 0 && !hide.some(inView);
+    bar.classList.toggle('on', on);
+  }
+  addEventListener('scroll', updateBar, {passive:true}); addEventListener('resize', updateBar); updateBar();
+})();
+</script>
+</body>
+</html>

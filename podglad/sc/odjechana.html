@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Szybkie Czytanie Online: kurs dla zajętych ludzi, którzy chcą czytać więcej | Fundacja Pięć Plus</title>
+<meta name="description" content="Czytanie = czas + skupienie. Kurs online szybkiego czytania dla dorosłych: Rozrusznik na 15 minut, potem około 10 minut dziennie. Roczny dostęp, zwrot bez pytań przez 30 dni.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Szybkie Czytanie Online, Fundacja Pięć Plus">
+<meta property="og:description" content="Czytanie = czas + skupienie. Kurs dla zajętych ludzi, którzy chcą czytać więcej.">
+<meta name="theme-color" content="#1f2336">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<!--
+  SZYBKIE CZYTANIE ONLINE, WERSJA B „odjechana”: STRONA JEST KSIĄŻKĄ (2026-10-25, przebieg 2: 2026-10-26, tekst z v2 z 26.10).
+  Okładka (hero) → wyklejka z regałem → rozdziały I do VIII z paginą, numerem strony, przypisami → recenzje → przypisy od autora → tylna okładka.
+  Każdy przycisk to zakładka (złota wstążka z wcięciem). Pomysł i wybór: vault 02 …/kampanie/sc-jesien-2026/13-wersja-odjechana.md.
+  Tekst: zdania Piotra z wersji A (10-landing-copy-v2.md), skrócone i przestawione; moje są tylko etykiety motywu.
+  Mechanika jak w A (index-v2.html): cookies z Pikselem i Clarity po zgodzie, track/trackCustom, UTM na koszyk, sticky po hero.
+  CENA: stałe CENA / PRZED / KONIEC w skrypcie na dole (te same co w A). Bez przekreślenia: Omnibus jako linia tekstu.
+  Rysunki: SVG w pliku, bez obrazków AI i stocków. Zdjęcia: assets/ jak w A.
+-->
+<style>
+:root{
+  --navy:#1f2336; --navy-2:#2a2f47;
+  --gold:#ffc676; --gold-soft:#ffd191; --gold-dark:#8a5a1c;
+  --paper:#fbf8f3; --paper-2:#f3eee5; --line:#e4ddd1;
+  --ink:#1f2336; --dim:#585c70; --faint:#7a7d8e;
+  --rub:#9e2a2b; /* jedyny kolor motywu: czerwień rubryk */
+  --m1:#073462; --m2:#1d4e5a; --m3:#124429; --m4:#451e3e; --m5:#33325e; --m6:#5a1f2c;
+  --serif:Merriweather,Georgia,serif; --sans:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:48px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;counter-reset:folio}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);line-height:1.25;margin:0;font-weight:900;text-wrap:balance}
+p{margin:0 0 14px;text-wrap:pretty}
+.sc{font-variant-caps:all-small-caps;letter-spacing:.09em;font-weight:700}
+
+/* ===== przycisk = zakładka: złota wstążka z wcięciem z prawej ===== */
+.cta{display:inline-block;position:relative;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:800;font-size:20px;line-height:1.2;
+  padding:15px 46px 15px 22px;text-align:left;clip-path:polygon(0 0,100% 0,calc(100% - 18px) 50%,100% 100%,0 100%)}
+.cta small{display:block;font-weight:500;font-size:14.5px;margin-top:3px;color:#4a3a1c}
+.cta:hover,.cta:focus-visible{background:var(--gold-soft)}
+.cta:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--navy)}
+.cta-row{margin:22px 0 10px}
+
+/* ===== żywa pagina (po zejściu z okładki) ===== */
+.rh{position:fixed;top:0;left:0;right:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-100%);transition:transform .2s}
+.rh.on{transform:none}
+.rh .wrap{display:flex;justify-content:space-between;gap:12px;height:36px;align-items:center;font-size:14px;color:var(--dim)}
+.rh span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rh b{color:var(--rub);font-weight:700}
+@media (prefers-reduced-motion:reduce){.rh{transition:none}}
+
+/* ===== okładka ===== */
+.cover{background:var(--navy);color:#fff;padding:18px 0 22px;position:relative}
+.plate{position:relative;border:1px solid rgba(255,198,118,.7);outline:1px solid rgba(255,198,118,.35);outline-offset:5px;padding:22px 18px 18px;margin:6px 0 0}
+.ribbon{position:absolute;top:-30px;right:22px;width:22px;height:96px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+.pub{font-size:14px;color:var(--gold);margin:0 34px 10px 0}
+.rule{display:block;width:150px;height:12px;margin:0 0 14px}
+.cover h1{font-size:clamp(34px,9.4vw,52px);color:var(--gold);line-height:1.12;margin:0 30px 12px 0}
+.cover .subt{font-family:var(--sans);font-size:20px;font-weight:500;color:#fff;line-height:1.35;margin:0 0 16px}
+.cover .price-l{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0;border-top:1px solid rgba(255,198,118,.35);padding-top:12px}
+.cover .price-l .sc{color:#c9ccda;font-size:15px}
+.cover .num{font-family:var(--serif);font-weight:900;font-size:36px;color:#fff;line-height:1}
+.cover .terms{font-size:16.5px;color:#dfe1ea;margin:6px 0 0}
+.cover .terms b{color:var(--gold)}
+.omni{font-size:14.5px;color:#9ea2b6;margin:4px 0 0;line-height:1.4}
+.koniec{font-weight:700;color:var(--gold);margin:8px 0 0;font-size:16px}
+.cover .cta-row{margin:16px 0 8px}
+.cover .start{font-size:16px;color:#c9ccda;margin:0}
+.cover .start b{color:#fff}
+.author-l{margin:18px 0 0;font-size:15px;color:#c9ccda}
+.author-l b{color:#fff;font-weight:700}
+.cover .more{color:#dfe1ea;font-size:17px;margin:18px 0 0}
+.cover .count{color:#dfe1ea;font-size:16.5px;margin:10px 0 0}
+.cover .count sup a,.cover .fn sup{color:var(--gold)}
+.cover .fn{font-size:14px;color:#9ea2b6;line-height:1.45;margin:12px 0 0;padding-top:10px;border-top:1px solid rgba(255,255,255,.12)}
+@media(min-width:760px){.cover{padding:48px 0 52px}.plate{padding:40px 44px 32px}}
+
+/* ===== wyklejka: regał ===== */
+.endpaper{background:var(--navy);border-top:1px solid rgba(255,198,118,.2);padding:4px 0 0;line-height:0}
+.endpaper svg{display:block;width:100%;max-width:680px;height:auto;margin:0 auto}
+
+/* ===== strony ===== */
+.page{padding:34px 0 18px;counter-increment:folio;border-bottom:1px solid var(--line)}
+.page.alt{background:#fff}
+.chap{color:var(--rub);font-size:15px;margin:0 0 6px}
+.page h2{font-size:clamp(25px,6.6vw,34px);margin:0 0 18px}
+.prose p{margin:0}
+.prose p+p{text-indent:1.4em}
+.prose{margin:0 0 14px}
+.drop::first-letter{font-family:var(--serif);font-weight:900;color:var(--rub);float:left;font-size:62px;line-height:.9;margin:4px 8px 0 0}
+.lead{font-size:20px;line-height:1.45}
+.folio{text-align:center;color:var(--faint);font-size:14px;margin:26px 0 0}
+.folio::before{content:counter(folio)}
+.fns{font-size:14.5px;color:var(--faint);line-height:1.45;margin-top:20px;padding-top:10px;border-top:1px solid var(--line);max-width:60%}
+.fns p{margin:0 0 6px}
+@media(max-width:620px){.fns{max-width:none}}
+sup a,sup.n{color:var(--rub);text-decoration:none;font-weight:700}
+.fns :target{background:#fff3cf}
+.motto{margin:0 0 22px 34%;font-family:var(--serif);font-style:italic;font-weight:700;font-size:16.5px;line-height:1.5;color:var(--dim)}
+@media(max-width:480px){.motto{margin-left:18%}}
+
+/* rozdział I: dopiski na marginesie */
+.margins{margin:20px 0 8px;display:grid;grid-template-columns:1fr 1fr;gap:16px 26px}
+.mn{border-left:2px solid #a7aab8;padding:0 0 0 12px;font-size:16.5px;color:var(--dim)}
+.mn .sc{display:block;color:var(--navy);font-size:15.5px;margin-bottom:2px}
+.mn i{font-style:italic;font-weight:500}
+@media(max-width:620px){.margins{grid-template-columns:1fr}}
+.bridge{font-family:var(--serif);font-size:19.5px;color:var(--navy);margin:20px 0 6px;font-weight:700;line-height:1.45}
+
+/* rozdział II: książka z zakładkami */
+.tabs-ill{margin:4px 0 16px}
+.tabs-ill svg{width:100%;max-width:420px;height:auto;display:block}
+
+/* rozdział III: errata */
+.h3big{font-size:21px;margin:30px 0 4px}
+.kick{color:var(--rub);font-size:14.5px;margin:30px 0 0}
+.kick+.h3big{margin-top:2px}
+.errata{margin:12px 0 0;border-top:2px solid var(--navy)}
+.err{padding:12px 0;border-bottom:1px solid var(--line)}
+.err p{margin:0}
+.err .jest{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:17.5px;margin-bottom:6px;line-height:1.45}
+.err .sc{color:var(--rub);font-size:14.5px;margin-right:6px;font-family:var(--sans)}
+.err .pow{color:var(--dim);font-size:17px}
+.say{font-family:var(--serif);font-style:italic;font-weight:700;font-size:21px;line-height:1.45;color:var(--navy);margin:18px 0 6px}
+.say cite{display:block;font:500 15px var(--sans);font-style:normal;color:var(--dim);margin-top:8px}
+.say cite .sc{color:var(--navy)}
+.plate-fig{margin:16px 0 0}
+.plate-fig figcaption{font-size:14.5px;color:var(--dim);margin-top:8px;line-height:1.4}
+.plate-fig figcaption .sc{color:var(--rub);margin-right:4px}
+.prose.runin p{margin:0 0 12px;text-indent:0}
+.runin b{font-variant-caps:all-small-caps;letter-spacing:.07em;color:var(--navy);font-weight:800}
+
+/* film YouTube po kliknięciu */
+.yt{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;cursor:pointer;border:1px solid var(--navy);padding:0;width:100%;display:block;outline-offset:3px}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.yt .play{position:absolute;left:12px;bottom:12px;background:var(--gold);color:var(--navy);font:800 16px var(--sans);padding:10px 30px 10px 14px;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 50%,100% 100%,0 100%)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* rozdział IV: spis treści */
+.list{margin:0 0 16px;padding:0;list-style:none;counter-reset:li}
+.list li{counter-increment:li;padding:0 0 10px 30px;position:relative}
+.list li::before{content:counter(li) ".";position:absolute;left:0;top:0;font-family:var(--serif);font-weight:900;color:var(--rub);font-size:16px}
+.box{border:1px solid var(--line);border-left:3px solid var(--navy);background:#fff;padding:14px 16px;margin:14px 0}
+.toc{margin:10px 0 0;border-top:2px solid var(--navy)}
+details.ch{border-bottom:1px solid var(--line);position:relative}
+details.ch summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px;padding:14px 0 12px;font-weight:700;color:var(--navy)}
+details.ch summary::-webkit-details-marker{display:none}
+details.ch summary .no{font-family:var(--serif);font-weight:900;color:var(--rub);min-width:16px}
+details.ch summary .t{font-family:var(--serif);font-size:17px;line-height:1.35}
+details.ch summary .lead-dots{flex:1;border-bottom:2px dotted #b9b3a6;transform:translateY(-5px);min-width:14px}
+details.ch summary .c{font-size:15.5px;color:var(--dim);white-space:nowrap;font-weight:500}
+details.ch summary .tab{position:absolute;right:-20px;top:10px;width:12px;height:30px}
+details.ch[open] summary .c::after{content:" ·  zwiń"}
+.ch-body{padding:0 0 16px 24px;color:var(--dim);font-size:17px}
+.ch-body p{margin:0 0 10px}
+.ch-body ol{margin:0 0 12px;padding-left:20px;columns:2;column-gap:24px;font-size:15.5px}
+@media(max-width:620px){.ch-body ol{columns:1}}
+.ch-body img{width:100%;max-width:300px;height:auto;filter:grayscale(.15)}
+.toc-hint{font-size:15.5px;color:var(--dim);margin:0 0 6px}
+
+/* rozdział V: czas lektury */
+.dl{margin:8px 0 14px;border-top:2px solid var(--navy)}
+.dl div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.dl dt{font-family:var(--serif);font-weight:900;color:var(--navy);font-size:17px;line-height:1.35}
+.dl dd{margin:0;color:var(--dim);font-size:17px}
+@media(max-width:420px){.dl div{grid-template-columns:1fr;gap:2px}}
+
+/* rozdział VI */
+.nie{border-top:1px solid var(--navy);border-bottom:1px solid var(--navy);padding:12px 0;margin:16px 0 0;font-size:17px}
+
+/* rozdział VII: skrzydełko */
+.flap{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:start}
+.flap figure{margin:0}
+.flap img{width:100%;height:auto;filter:grayscale(1) contrast(1.05)}
+.flap figcaption{font-size:14.5px;color:var(--dim);margin-top:8px;line-height:1.4}
+.flap figcaption .sc{color:var(--navy)}
+@media(max-width:620px){.flap{grid-template-columns:1fr;gap:14px}.flap figure{max-width:260px}}
+.verse{font-family:var(--serif);font-style:italic;font-weight:700;color:var(--navy);line-height:1.7;margin:16px 0 16px 1.4em!important;text-indent:0!important}
+.logos-h{font-family:var(--serif);font-weight:700;color:var(--navy);margin:26px 0 10px;font-size:18px;line-height:1.4}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.logos span{display:grid;place-items:center;height:58px;padding:8px}
+.logos span+span{border-left:1px solid var(--line)}
+.logos img{max-height:30px;max-width:100%;width:auto;filter:grayscale(1);opacity:.75}
+@media(max-width:620px){.logos{grid-template-columns:repeat(3,1fr)}.logos span:nth-child(4){border-left:0}.logos span:nth-child(n+4){border-top:1px solid var(--line)}}
+
+/* rozdział VIII: cena */
+.price-box{border:1px solid var(--navy);outline:1px solid var(--navy);outline-offset:4px;background:#fff;padding:18px 18px 16px;margin:22px 4px 8px}
+.price-box .sc{color:var(--rub);font-size:15px;margin:0}
+.price-box .big{font-family:var(--serif);font-weight:900;font-size:52px;line-height:1;color:var(--navy);margin:2px 0 4px}
+.price-box .omni{color:var(--faint)}
+.price-box .koniec{color:var(--gold-dark)}
+.price-box .what{font-weight:700;margin:16px 0 4px}
+.incl{margin:0 0 6px;padding:0;list-style:none;counter-reset:inc}
+.incl li{counter-increment:inc;padding:6px 0 6px 28px;border-bottom:1px solid var(--line);position:relative;font-size:17px}
+.incl li:last-child{border-bottom:0}
+.incl li::before{content:counter(inc);position:absolute;left:2px;top:6px;font-family:var(--serif);font-weight:900;color:var(--rub);font-size:15px}
+.pay{font-size:16px;color:var(--dim);margin:8px 0 0}
+.letter{margin:22px 0 0;padding:18px 0 0;border-top:2px solid var(--navy)}
+.letter h3{font-size:20px;margin:0 0 8px}
+.letter p{margin:0 0 10px}
+.sign{font-family:var(--serif);font-style:italic;font-weight:700;font-size:20px;color:var(--navy);margin:6px 0 0!important}
+
+/* recenzje */
+.blurbs{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;margin-top:8px}
+.bl q{display:block;font-family:var(--serif);font-style:italic;font-weight:700;font-size:18.5px;line-height:1.45;color:var(--navy);quotes:none;margin:0 0 10px}
+.bl img{width:100%;height:auto;border:1px solid var(--line);background:#fff}
+@media(max-width:700px){.blurbs{grid-template-columns:1fr}}
+
+/* przypisy od autora = pytania */
+details.acc{border-bottom:1px solid var(--line)}
+.accs{border-top:2px solid var(--navy);counter-reset:q}
+details.acc summary{list-style:none;cursor:pointer;padding:13px 34px 13px 30px;position:relative;font-weight:700;line-height:1.4;color:var(--navy);counter-increment:q}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::before{content:counter(q);position:absolute;left:0;top:12px;font-family:var(--serif);font-weight:900;font-size:15px;color:var(--rub)}
+details.acc summary::after{content:"+";position:absolute;right:4px;top:8px;font-size:24px;font-weight:400;color:var(--gold-dark);transition:transform .15s}
+details.acc[open] summary::after{transform:rotate(45deg)}
+.acc-body{padding:0 0 14px 30px;color:var(--dim);font-size:17px}
+.acc-body p:last-child{margin:0}
+.hint{color:var(--dim);margin:16px 0 0;font-size:17px}
+
+/* tylna okładka */
+.back{background:var(--navy);color:#fff;padding:26px 0 30px}
+.back .plate{padding:24px 18px 20px;text-align:left}
+.back h2{color:var(--gold);font-size:clamp(28px,7.6vw,40px);margin:0 0 14px}
+.back p{color:#dfe1ea}
+.back .lead{color:#fff}
+.back .ps{font-size:16px;color:#c9ccda;border-top:1px solid rgba(255,198,118,.35);padding-top:12px;margin:14px 0 0}
+.fleuron{display:block;width:120px;height:20px;margin:22px auto 0}
+footer{background:var(--navy);color:#9ea2b6;font-size:15px;padding:18px 0 100px;border-top:1px solid rgba(255,255,255,.1)}
+footer .sc{color:var(--gold);display:block;margin-bottom:4px;font-size:14px}
+footer a{color:#c9ccda}
+footer button{background:none;border:0;padding:0;color:#c9ccda;font:inherit;text-decoration:underline;cursor:pointer}
+mark.todo{background:#fff3b0;color:#5a4a00;padding:0 4px;font-weight:700}
+
+/* zakładka przyklejona na dole telefonu */
+.bar-cta{display:none}
+@media(max-width:760px){
+  .bar-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);padding:8px 16px calc(8px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  .bar-cta.on{display:block}
+  .bar-cta .cta{display:block;padding:12px 46px 12px 18px;font-size:18px}
+}
+
+/* cookies: kartka */
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:560px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--navy);outline:1px solid var(--navy);outline-offset:-5px;box-shadow:0 8px 30px rgba(31,35,54,.18);padding:18px 20px;font-size:16px;line-height:1.45}
+.cookies p{margin:0 0 14px}
+.cookies a{color:var(--navy);font-weight:700}
+.cookies .btns{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{flex:1 1 160px;font:700 16px var(--sans);padding:11px 14px;cursor:pointer;border:2px solid var(--navy);background:#fff;color:var(--navy)}
+.cookies button.yes{background:var(--navy);color:#fff}
+.cookies[hidden]{display:none}
+
+/* przebieg 2 (26.10): copy v2 z 26.10 */
+.mn p{margin:0}
+.mn-wide{grid-column:1/-1}
+.mn-wide .tabs-ill{margin:12px 0 0}
+.mn-wide .tabs-ill svg{max-width:320px}
+.essay p+p{text-indent:1.4em}
+.ask{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18px;margin:14px 0 4px}
+.inner{font-style:italic;font-weight:500;color:var(--dim);font-size:18px;margin:0 0 0 1.4em;border-left:2px solid var(--rub);padding-left:12px}
+.pull{margin:22px 0 10px;padding:16px 0;border-top:1px solid var(--navy);border-bottom:1px solid var(--navy);font-family:var(--serif);font-weight:900;font-size:21px;line-height:1.45;color:var(--navy);text-align:center}
+.say2{margin-top:4px}
+.bl .who{color:var(--dim);font-size:15px;margin:-4px 0 10px}
+.src{font-size:15px;color:var(--faint);margin:18px 0 0}
+.koniec-l{font-weight:700;color:var(--gold-dark);font-size:16px;margin:0 0 8px}
+.dl dd p{margin:0 0 8px}
+.dl dd p:last-child{margin:0}
+.prose p.drop+p{clear:left}
+</style>
+</head>
+<body>
+
+<header class="rh" id="rh" aria-hidden="true">
+  <div class="wrap"><span class="sc">Szybkie Czytanie Online</span><span id="rhR"><b class="sc" id="rhCh"></b> <span id="rhP"></span></span></div>
+</header>
+
+<!-- ══════════ OKŁADKA (hero) ══════════ -->
+<section class="cover" id="top">
+  <div class="wrap">
+    <div class="plate">
+      <span class="ribbon" aria-hidden="true"></span>
+      <p class="pub sc">kurs online · szybkie czytanie dla dorosłych</p>
+      <svg class="rule" viewBox="0 0 150 12" aria-hidden="true"><path d="M0 6H64M86 6H150" stroke="#ffc676" stroke-width="1.2"/><path d="M75 1l5 5-5 5-5-5z" fill="#ffc676"/></svg>
+      <h1>Czytanie = czas + skupienie.</h1>
+      <p class="subt">Kurs dla zajętych ludzi, którzy chcą czytać więcej.</p>
+      <p class="price-l"><span class="sc">Cena</span><span class="num js-cena">197 zł</span></p>
+      <p class="terms"><b>roczny dostęp</b><br><b>żelazna gwarancja zwrotu</b> 30 dni</p>
+      <p class="omni js-omni">Najniższa cena z ostatnich 30 dni przed obniżką: <span class="js-przed">500 zł</span>.</p>
+      <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
+      <div class="cta-row">
+        <a class="cta" data-cta="hero" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>dostęp od razu po zakupie</small></a>
+      </div>
+      <p class="start"><b>Na start: 15 minut.</b> Rozrusznik czytania.</p>
+      <p class="author-l sc"><b>Piotr Starzyński</b> · Fundacja Pięć Plus</p>
+    </div>
+    <p class="more">Po premierze naszego kursu w 2019 roku szybko okazało się, że największy problem kursanci mają właśnie z… koncentracją na tekście.</p>
+    <p class="count">Od grudnia 2023 ten kurs kupiło ponad 1 700 osób.<sup><a href="#fn-kup" id="r-kup">1</a></sup></p>
+    <p class="fn" id="fn-kup"><sup>1</sup> Eksport z platformy kursowej WTL, kurs „Szybkie Czytanie Online”: 1 711 unikalnych adresów e-mail, które zapłaciły
+    97, 147 albo 244 zł (kurs z Pogotowiem Koncentracji), od 27.12.2023 do 20.07.2025. Bez transakcji testowych, adresów Fundacji
+    i 128 adresów, które płaciły wyłącznie 194 albo 500 zł (oferty z 2024 r., produkt nieustalony). Liczba obejmuje wszystkich kupujących,
+    także tych, którzy kursu nie ukończyli.</p>
+  </div>
+</section>
+
+<div class="endpaper" aria-hidden="true"><svg viewBox="0 0 680 118" role="presentation"><g><rect x="14" y="41" width="16" height="63" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M17 49H27M17 53H27" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="32" y="27" width="12" height="77" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M35 90H41" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="46" y="23" width="12" height="81" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M49 31H55M49 35H55" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="60" y="14" width="12" height="90" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M63 22H69M63 26H69" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="74" y="14" width="12" height="90" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M77 22H83M77 26H83" stroke="#ffc676" stroke-width=".8"/><path d="M77 90H83" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="88" y="42" width="20" height="62" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M91 50H105M91 54H105" stroke="#ffc676" stroke-width=".8"/><path d="M91 90H105" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="110" y="15" width="16" height="89" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M113 23H123M113 27H123" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="128" y="38" width="22" height="66" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M131 46H147M131 50H147" stroke="#ffc676" stroke-width=".8"/><path d="M131 90H147" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="152" y="37" width="12" height="67" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M155 45H161M155 49H161" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="166" y="21" width="18" height="83" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M169 29H181M169 33H181" stroke="#ffc676" stroke-width=".8"/><path d="M169 90H181" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="186" y="35" width="26" height="69" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M189 43H209M189 47H209" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="214" y="22" width="16" height="82" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M217 90H227" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="232" y="40" width="18" height="64" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M235 48H247M235 52H247" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="252" y="46" width="12" height="58" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M255 54H261M255 58H261" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="266" y="29" width="16" height="75" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M269 37H279M269 41H279" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="284" y="46" width="18" height="58" fill="none" stroke="#ffc676" stroke-width="1.2"/></g><g><rect x="304" y="46" width="22" height="58" fill="none" stroke="#ffc676" stroke-width="1.2"/></g><g><rect x="328" y="22" width="22" height="82" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M331 30H347M331 34H347" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="352" y="21" width="12" height="83" fill="none" stroke="#ffc676" stroke-width="1.2"/></g><g><rect x="366" y="32" width="14" height="72" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M369 40H377M369 44H377" stroke="#ffc676" stroke-width=".8"/><path d="M369 90H377" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="382" y="19" width="26" height="85" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M385 27H405M385 31H405" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="410" y="23" width="14" height="81" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M413 31H421M413 35H421" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="426" y="26" width="16" height="78" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M429 34H439M429 38H439" stroke="#ffc676" stroke-width=".8"/><path d="M429 90H439" stroke="#ffc676" stroke-width=".8"/></g><g transform="rotate(-9 458 104)"><rect x="444" y="36" width="14" height="68" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M447 90H455" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="464" y="50" width="16" height="54" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M467 58H477M467 62H477" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="482" y="42" width="16" height="62" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M485 50H495M485 54H495" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="500" y="47" width="22" height="57" fill="none" stroke="#ffc676" stroke-width="1.2"/></g><g><rect x="524" y="15" width="22" height="89" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M527 23H543M527 27H543" stroke="#ffc676" stroke-width=".8"/><path d="M527 90H543" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="548" y="25" width="22" height="79" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M551 33H567M551 37H567" stroke="#ffc676" stroke-width=".8"/><path d="M551 90H567" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="572" y="43" width="14" height="61" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M575 51H583M575 55H583" stroke="#ffc676" stroke-width=".8"/><path d="M575 90H583" stroke="#ffc676" stroke-width=".8"/></g><g><rect x="588" y="16" width="14" height="88" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M591 24H599M591 28H599" stroke="#ffc676" stroke-width=".8"/><path d="M591 90H599" stroke="#ffc676" stroke-width=".8"/></g><rect x="599" y="92" width="70" height="12" fill="none" stroke="#ffc676" stroke-width="1.2"/><rect x="606" y="82" width="62" height="10" fill="none" stroke="#ffc676" stroke-width="1.2"/><rect x="596" y="69" width="74" height="13" fill="none" stroke="#ffc676" stroke-width="1.2"/><rect x="606" y="60" width="58" height="9" fill="none" stroke="#ffc676" stroke-width="1.2"/><rect x="603" y="49" width="66" height="11" fill="none" stroke="#ffc676" stroke-width="1.2"/><path d="M0 104.6H680M0 109H680" stroke="#ffc676" stroke-width="1.2"/></svg></div>
+
+<!-- ══════════ ROZDZIAŁ I. PROBLEM ══════════ -->
+<section class="page" id="problemy" data-rh="Rozdział I">
+  <div class="wrap">
+    <p class="chap sc">Rozdział I</p>
+    <h2>Chcesz czytać, ale nie masz na to przestrzeni.</h2>
+    <div class="prose">
+      <p class="drop lead">Świat bombarduje Cię lawiną powiadomień, mailingów, wiadomości. Informacji jest coraz więcej, a czasu coraz mniej
+      i to się nie zmieni.</p>
+    </div>
+    <div class="margins">
+      <p class="mn"><span class="sc">Nie mogę się skupić</span>Jak to jest, że na telefonie skupisz się w każdych warunkach, a do książki
+        potrzebujesz ciszy, kominka i miękkiej głowy psa pod ręką? To nie Twoja wina, że nie możesz usiedzieć nad książką.</p>
+      <p class="mn"><span class="sc">Czytam wolno</span>Szkolne czytanie to za mało. To, w jaki sposób teraz czytasz, wystarczyło wprawdzie
+        na wymęczenie lektur, ale zupełnie nie przystaje do współczesnego świata.</p>
+      <p class="mn"><span class="sc">Nie wiem, co czytam</span><i>„Czytam np. stronę i nie wiem o czym ona jest, muszę przeczytać ponownie”.</i>
+        Też tak masz? Musisz wracać i sprawdzać? Przy „wolnym” czytaniu to zupełnie normalne.</p>
+      <p class="mn"><span class="sc">Nie mam czasu</span>Odpuszczasz książkę, bo masz tylko chwilę. Z doświadczenia pracy w Fundacji wiem,
+        że to, co zniechęca do książek, to zobowiązanie czasowe.</p>
+      <div class="mn mn-wide"><p><span class="sc">14 zakładek na potem</span>Masz otwartych 14 zakładek, kilka pobranych ebooków czy artykułów
+        „na potem”. O prawdziwych książkach już nie wspomnę.</p>
+        <div class="tabs-ill" aria-hidden="true"><svg viewBox="0 0 420 160" role="presentation"><rect x="46.0" y="37" width="13" height="55" fill="#073462" transform="rotate(-0.3 52.5 92)"/><rect x="70.4" y="21" width="13" height="71" fill="#ffc676" stroke="#1f2336" stroke-width="1" transform="rotate(3.5 76.9 92)"/><rect x="94.8" y="43" width="13" height="49" fill="#1d4e5a" transform="rotate(-0.2 101.3 92)"/><rect x="119.2" y="33" width="13" height="59" fill="#fbf8f3" stroke="#1f2336" stroke-width="1" transform="rotate(-4.1 125.7 92)"/><rect x="143.6" y="20" width="13" height="72" fill="#124429" transform="rotate(2.5 150.1 92)"/><rect x="168.0" y="30" width="13" height="62" fill="#451e3e" transform="rotate(-0.2 174.5 92)"/><rect x="192.4" y="24" width="13" height="68" fill="#ffc676" stroke="#1f2336" stroke-width="1" transform="rotate(0.2 198.9 92)"/><rect x="216.8" y="27" width="13" height="65" fill="#33325e" transform="rotate(4.5 223.3 92)"/><rect x="241.2" y="37" width="13" height="55" fill="#fbf8f3" stroke="#1f2336" stroke-width="1" transform="rotate(-3.5 247.7 92)"/><rect x="265.6" y="15" width="13" height="77" fill="#5a1f2c" transform="rotate(2.6 272.1 92)"/><rect x="290.0" y="33" width="13" height="59" fill="#073462" transform="rotate(4.8 296.5 92)"/><rect x="314.4" y="19" width="13" height="73" fill="#ffc676" stroke="#1f2336" stroke-width="1" transform="rotate(2.0 320.9 92)"/><rect x="338.8" y="30" width="13" height="62" fill="#124429" transform="rotate(0.2 345.3 92)"/><rect x="363.2" y="24" width="13" height="68" fill="#fbf8f3" stroke="#1f2336" stroke-width="1" transform="rotate(-1.4 369.7 92)"/><rect x="30" y="78" width="360" height="14" fill="#fbf8f3" stroke="#1f2336" stroke-width="1.2"/><path d="M36 82.5H384M36 86.5H384" stroke="#c9c2b4" stroke-width=".8"/><rect x="22" y="92" width="376" height="52" fill="#1f2336"/><path d="M30 100H390M30 136H390" stroke="#ffc676" stroke-width="1"/><rect x="168" y="110" width="84" height="16" fill="none" stroke="#ffc676" stroke-width="1"/></svg></div></div>
+    </div>
+    <p class="bridge">Potrzebujesz technik czytania. Bo założę się, że czytasz dokładnie tak samo jak w szkole.</p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ II. MECHANIZM (wypowiedź autora) ══════════ -->
+<section class="page alt" id="mechanizm" data-rh="Rozdział II">
+  <div class="wrap">
+    <p class="chap sc">Rozdział II · Od autora</p>
+    <h2>Im szybciej czytasz, tym łatwiej Ci się skupić na tekście.</h2>
+    <div class="prose essay">
+      <p class="drop">Chcesz więcej czytać. To jasne. Ale trudno Ci się zebrać, a jak już się zbierzesz, to szybko się nudzisz.</p>
+      <p>Może nawet głupio Ci się do tego przyznać. Po latach zbierania się do czytania, odpuszczania i poczucia winy zaczynasz się
+      zastanawiać, czy Ty w ogóle lubisz czytać?</p>
+    </div>
+    <p class="bridge">Lubisz. Tylko w codziennym zgiełku zapominasz, że lubisz.</p>
+    <p class="ask">A co jeśli zaczniesz czytać szybciej?</p>
+    <p class="inner">Wtedy już na pewno nic nie zrozumiem. Prawda? Prawda?</p>
+    <p class="ask">No właśnie nieprawda.</p>
+    <div class="prose essay">
+      <p>Pomyśl o tym, jak o prowadzeniu samochodu. Gdy jedziesz 30 km/h pustą drogą, nudzisz się. Zmieniasz stacje w radiu,
+      wyglądasz przez okno, droga zaczyna się dłużyć.</p>
+      <p>Ale gdy jedziesz 120 km/h na autostradzie, Twoja uwaga musi być całkowita. Jesteś tylko Ty i droga. Skupienie staje się
+      naturalne, a nie wymuszone.</p>
+      <p>Motocykliści, którzy kochają pędzić 250 na godzinę, mówią, że wchodzą w „stan flow”. Dla nas to po prostu pełne skupienie
+      na książce. Z szybkim czytaniem jest identycznie.</p>
+    </div>
+    <blockquote class="pull">Kiedy Twój mózg dostaje informacje w tempie, do którego jest przyzwyczajony, przestaje szukać rozpraszaczy.</blockquote>
+    <p class="sign">Piotr Starzyński</p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ III. DLA NIEDOWIARKÓW ══════════ -->
+<section class="page" id="niedowiarki" data-rh="Rozdział III">
+  <div class="wrap">
+    <p class="chap sc">Rozdział III</p>
+    <h2>Ten kurs przygotowałem specjalnie dla niedowiarków</h2>
+    <div class="prose">
+      <p class="drop lead">Chcesz czytać więcej, szybciej. I w pełnym skupieniu.</p>
+      <p>Zacznijmy od tego, że czytasz wolno tylko dlatego, że tak Cię nauczono i przyzwyczajono w szkole. Drugi powód jest taki,
+      że „szybkie czytanie” do tej pory niewiele Ci mówiło i brzmiało jak magia albo oszustwo.</p>
+    </div>
+    <p class="bridge">Dlatego u mnie wszystko opiera się na faktach i ćwiczeniach, które działają już po pierwszych 15 minutach kursu.</p>
+
+    <p class="kick sc">Errata</p>
+    <h3 class="h3big">3 mity Szybkiego Czytania</h3>
+    <div class="errata">
+      <div class="err"><p class="jest"><span class="sc">Jest:</span>Czytając szybko nic nie zrozumiem i nic nie zapamiętam.</p>
+        <p class="pow"><span class="sc">Powinno być:</span>Mój kurs to nie tylko sztuczki na podkręcenie czytania, kładę ogromny nacisk na rozumienie
+        i zapamiętywanie tekstu. Przez cały kurs będziesz sprawdzać zarówno tempo, jak i zrozumienie tekstu.</p></div>
+      <div class="err"><p class="jest"><span class="sc">Jest:</span>Nie będę mieć przyjemności czytając w ten sposób.</p>
+        <p class="pow"><span class="sc">Powinno być:</span>Kiedy poznasz już wszystkie techniki, będziesz dostosowywać tempo do celu czytania oraz rodzaju
+        czytanego tekstu. W jednej z lekcji odradzam nawet szybkie czytanie poezji i dramatów romantycznych.</p></div>
+      <div class="err"><p class="jest"><span class="sc">Jest:</span>Oduczę się tradycyjnego czytania.</p>
+        <p class="pow"><span class="sc">Powinno być:</span>Szybkie czytanie to nowa umiejętność, a nie zmiana sposobu czytania na zawsze. Zupełnie tak samo,
+        jak kurs na prawo jazdy nie zabiera Ci możliwości długich spacerów po parku.</p></div>
+    </div>
+
+    <p class="kick sc">Recenzja</p>
+    <h3 class="h3big">Od sceptyka do entuzjasty</h3>
+    <p>Poza chwaleniem się kursem, daliśmy go do przetestowania sceptykowi szybkiego czytania: znanemu i lubianemu youtuberowi
+    Danielowi Muniowskiemu z kanału Strefa Czytacza. Przed rozpoczęciem kursu miał dużo wątpliwości, ale po przejściu kursu zmienił zdanie.</p>
+    <blockquote class="say">„Muszę zwrócić Piotrowi honor (…) tak, to działa, bez żadnej magii.”</blockquote>
+    <blockquote class="say say2">„Nie powiem wam, że mam nagle 5 razy przyspieszone tempo czytania, bo nie mam.”<cite><span class="sc">Daniel Muniowski</span>, Strefa Czytacza</cite></blockquote>
+    <figure class="plate-fig">
+      <button type="button" class="yt" data-yt="lJ5wem5Aykg" data-video="sceptyk" aria-label="Odtwórz recenzję kursu, Strefa Czytacza">
+        <img src="https://i.ytimg.com/vi/lJ5wem5Aykg/hqdefault.jpg" width="480" height="360" loading="lazy" alt=""><span class="play">Odtwórz recenzję</span>
+      </button>
+      <figcaption><span class="sc">Rycina</span> Film powstał we współpracy z Fundacją Pięć Plus. Opinie w nim są autora (opis filmu na YouTube, styczeń 2022).</figcaption>
+    </figure>
+
+    <h3 class="h3big">5 minut słuchania i drugie tyle na ćwiczenie</h3>
+    <div class="prose runin">
+      <p><b>Kurs nagrany z ekipą filmową.</b> (…) chciałem, żeby realizacja kursu była „na bogato”, żeby to nie był kolejny smutny kurs online,
+      na którym poza wyświetlaną prezentacją jest smętny prowadzący w rogu ekranu, który mówi w pół godziny coś, co mieści się w dwóch punktach.</p>
+      <p>Dlatego wynajęliśmy ekipę filmową, a lekcje to zamknięte całości: przeważnie 5 minut słuchania i drugie tyle na ćwiczenie.
+      To akurat tyle, żeby nauczyć się czegoś nowego i przećwiczyć.</p>
+      <p>Masz gotową notatkę w swoim skrypcie i przygotowane ćwiczenia.</p>
+      <p><b>Ćwiczysz na tym, co i tak czytasz.</b> Ograniczyłem sztukę dla sztuki, dlatego większość ćwiczeń wykonasz i tak na książce, którą
+      aktualnie czytasz.</p>
+      <p><b>Odpowiedzi pod lekcjami.</b> Jakieś pytania? Możesz zadać je pod każdą z lekcji przez cały kurs. Krótko odpiszę, a jeśli sprawa
+      jest bardziej złożona, nagram filmik z omówieniem danej kwestii.</p>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="niedowiarki" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span></a>
+    </div>
+    <p class="koniec-l js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ IV. SPIS TREŚCI ══════════ -->
+<section class="page alt" id="co" data-rh="Rozdział IV">
+  <div class="wrap">
+    <p class="chap sc">Rozdział IV</p>
+    <h2>Jak działa Szybkie Czytanie Online?</h2>
+    <ol class="list">
+      <li>Nauczysz się czytać kilka linijek tekstu na raz (…) dzięki ćwiczeniom z rozszerzenia pola widzenia</li>
+      <li>Skupisz się na tekście w zupełnie nowy sposób (…) z pomocą techniki Alphabet Game</li>
+      <li>Rozpoznasz w kilka sekund to, o czym jest tekst, dzięki skanowaniu i antycypacji</li>
+      <li>Zmienisz swoje podejście do czytania dzięki wykorzystaniu prostych technik, takich jak wskaźnik czy metoda fotograficzna</li>
+    </ol>
+    <div class="box"><b>Naucz się wychwytywać kluczowe słowa i filtrować informacje, żeby od razu wiedzieć, który tekst warto przeczytać.</b>
+    W badaniu Duggana i Payne'a osoby, które miały czas na przeczytanie tylko połowy tekstu i przejrzały go w całości, zapamiętały więcej
+    najważniejszych myśli niż osoby, które przeczytały połowę linijka po linijce. Pamięci szczegółów to nie poprawiło.<sup><a href="#fn-dug">2</a></sup></div>
+
+    <p class="kick sc">Spis treści</p>
+    <h3 class="h3big">Twoja droga krok po kroku</h3>
+    <p class="toc-hint">Sześć działów kursu. Dotknij działu, żeby zobaczyć, co jest w środku.</p>
+    <div class="toc">
+      <details class="ch" data-acc="lekcje-1"><summary><span class="no">1</span><span class="t">Rozrusznik i wprowadzenie</span><span class="lead-dots"></span><span class="c">4 lekcje</span><span class="tab" style="background:var(--m1)"></span></summary>
+        <div class="ch-body"><p>Pierwsza lekcja to piętnaście minut. Już po niej nauczysz się odpowiednio prowadzić wzrok i lepiej skupiać na tekście.
+        Potem dowiesz się, jak w pełni wykorzystać materiały zawarte w kursie i zmierzysz (tym razem porządnie) swoje obecne tempo czytania.</p>
+        <ol><li>Rozrusznik czytania (mini kurs)</li><li>Wprowadzenie</li><li>Mierzenie tempa czytania</li><li>Czytanie tradycyjne a czytanie poglądowe</li></ol>
+        <img src="assets/droga/krok-1.jpg" width="686" height="720" loading="lazy" alt="Piotr Starzyński w studiu"></div></details>
+      <details class="ch" data-acc="lekcje-2"><summary><span class="no">2</span><span class="t">Rozszerzanie pola widzenia</span><span class="lead-dots"></span><span class="c">9 lekcji</span><span class="tab" style="background:var(--m2)"></span></summary>
+        <div class="ch-body"><p>Ten dział poświęcony jest gimnastyce Twojego oka. Dzięki odpowiednim ćwiczeniom będziesz w stanie łapać tekst
+        z trzech linijek na raz.</p>
+        <ol><li>Rozszerzanie pola widzenia</li><li>Wskaźnik</li><li>Łapanie wyrazów</li><li>Kontrola źrenicy</li><li>Rozluźnianie oka</li><li>Metoda fotograficzna</li><li>Wertykalne rozszerzanie pola widzenia</li><li>Tablice Schulza</li><li>Ćwiczenie pełnego pola widzenia</li></ol>
+        <img src="assets/droga/krok-2.jpg" width="720" height="480" loading="lazy" alt="Piotr Starzyński przy pracy"></div></details>
+      <details class="ch" data-acc="lekcje-3"><summary><span class="no">3</span><span class="t">Koncentracja na tekście</span><span class="lead-dots"></span><span class="c">2 lekcje</span><span class="tab" style="background:var(--m3)"></span></summary>
+        <div class="ch-body"><p>W tym miejscu nauczysz się technik utrzymania laserowego skupienia na czytanych tekstach. Będziesz w stanie czytać
+        w każdych warunkach.</p>
+        <ol><li>Pole liczbowe</li><li>Alphabet Game</li></ol>
+        <img src="assets/droga/krok-3.jpg" width="720" height="480" loading="lazy" alt="Piotr Starzyński z książką w kawiarni"></div></details>
+      <details class="ch" data-acc="lekcje-4"><summary><span class="no">4</span><span class="t">Czytanie poglądowe</span><span class="lead-dots"></span><span class="c">6 lekcji</span><span class="tab" style="background:var(--m4)"></span></summary>
+        <div class="ch-body"><p>Łącząc poznane do tej pory techniki, zaczniesz chwytać okiem kilka linijek tekstu na raz. To przełożenie znanego Ci
+        testu czytania na książkę.</p>
+        <ol><li>Czytanie wielu linijek na raz</li><li>Metronom</li><li>Prowadzenie wzroku od tyłu</li><li>Choinki</li><li>Wąż</li><li>Pętelki</li></ol>
+        <img src="assets/droga/krok-4.jpg" width="720" height="480" loading="lazy" alt="Piotr Starzyński czyta"></div></details>
+      <details class="ch" data-acc="lekcje-5"><summary><span class="no">5</span><span class="t">Zrozumienie i zapamiętywanie</span><span class="lead-dots"></span><span class="c">4 lekcje</span><span class="tab" style="background:var(--m5)"></span></summary>
+        <div class="ch-body"><p>W tym miejscu nauczysz się przeglądać teksty i odpowiednio rozpracować strukturę książki, żeby wszystko rozumieć
+        nawet przy wysokim tempie. W ramach tego segmentu podzielę się z Tobą swoją metodą na czytanie tekstów naukowych.</p>
+        <ol><li>Mierzenie tempa i zrozumienia</li><li>Antycypacja treści i przeglądanie tekstu</li><li>Dekompozycja treści</li><li>Czytanie tekstów naukowych</li></ol>
+        <img src="assets/droga/krok-5.jpg" width="720" height="480" loading="lazy" alt="Piotr Starzyński przy biurku"></div></details>
+      <details class="ch" data-acc="lekcje-6"><summary><span class="no">6</span><span class="t">Podsumowanie i bonusy</span><span class="lead-dots"></span><span class="c">5 lekcji</span><span class="tab" style="background:var(--m6)"></span></summary>
+        <div class="ch-body"><p>Na koniec nauczysz się, jak rozwijać swoje czytanie dalej, już po kursie. Znajdziesz tu m.in. ćwiczenia plenerowe,
+        listę polecanych przeze mnie książek i ostatni test czytania.</p>
+        <ol><li>Podsumowanie i wykres postępu</li><li>Tarcza antyterrorysty</li><li>Ćwiczenia plenerowe</li><li>Diagram antycypacyjny</li><li>Lista książek</li></ol>
+        <img src="assets/droga/krok-6.jpg" width="686" height="720" loading="lazy" alt="Piotr Starzyński w bibliotece"></div></details>
+    </div>
+    <figure class="plate-fig">
+      <button type="button" class="yt" data-yt="99AWIqzCS84" data-video="test-tempa" aria-label="Odtwórz filmik i sprawdź swoje tempo">
+        <img src="https://i.ytimg.com/vi/99AWIqzCS84/hqdefault.jpg" width="480" height="360" loading="lazy" alt=""><span class="play">Odtwórz filmik i sprawdź swoje tempo</span>
+      </button>
+    </figure>
+    <div class="fns"><p id="fn-dug"><sup class="n">2</sup> Duggan G. B., Payne S. J., „Text skimming: the process and effectiveness of foraging through text under time
+    pressure”, Journal of Experimental Psychology: Applied 15(3), 2009, eksperyment 1.</p></div>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ V. CZAS LEKTURY ══════════ -->
+<section class="page" id="ile" data-rh="Rozdział V">
+  <div class="wrap">
+    <p class="chap sc">Rozdział V · Czas lektury</p>
+    <h2>Ile zajmuje przejście kursu?</h2>
+    <dl class="dl">
+      <div><dt>Na start: 15 minut</dt><dd>Rozrusznik czytania.</dd></div>
+      <div><dt>Potem reszta kursu</dt><dd><p>Projektowałem lekcje w tym kursie tak, żeby można je było robić mimochodem, bo wiem, że szybkie czytanie
+        jest właśnie dla osób zabieganych.</p>
+        <p>A co się stanie po tych 15 minutach? Czas na resztę kursu. Wszystko udało mi się zamknąć w 30 dni, więc jeśli lubisz wyzwania,
+        możesz po prostu przejść przez kurs w miesiąc. Będziesz na to potrzebować około 10 minut dziennie.</p></dd></div>
+      <div><dt>Ile to trwa</dt><dd><p>Rekomenduję przejście całego kursu w miesiąc (wariant ambitny) lub 6 tygodni (na spokojnie).</p>
+        <p>Dostęp i tak dostajesz na rok, więc możesz dostosować tempo do siebie albo wracać i powtarzać poszczególne sekcje.</p></dd></div>
+    </dl>
+    <div class="cta-row">
+      <a class="cta" data-cta="ile" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>roczny dostęp · 30 dni na zwrot</small></a>
+    </div>
+    <p class="koniec-l js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ VI. DLA KOGO ══════════ -->
+<section class="page alt" id="kogo" data-rh="Rozdział VI">
+  <div class="wrap">
+    <p class="chap sc">Rozdział VI</p>
+    <h2>Dla wszystkich zabieganych, którzy chcą czytać więcej</h2>
+    <div class="prose runin">
+      <p><b>Książki na półce.</b> Kupujesz książki, bo chcesz się rozwijać, ale kolejne tytuły trafiają na półkę z obietnicą:
+        „przeczytam, jak będę mieć czas”?</p>
+      <p><b>Teksty do pracy.</b> Przeglądam artykuły, posty na blogu i mailingi i od razu filtruję to, co jest dla mnie ważne.
+        I Ty też możesz tak czytać.</p>
+      <p><b>Nauka i studia.</b> Kolejne rozdziały podręczników i teksty do przeczytania przed zajęciami sprawiają, że coraz trudniej
+        znaleźć czas na całą lekturę?</p>
+      <p><b>Powrót do czytania.</b> Zaczniesz (z powrotem) regularnie czytać i odzyskasz przyjemność z czytania.</p>
+    </div>
+    <p class="nie"><b>Nie dla osoby, która szuka sposobu na tysiąc słów na minutę od jutra.</b></p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ VII. O AUTORZE (skrzydełko) ══════════ -->
+<section class="page" id="kto" data-rh="Rozdział VII">
+  <div class="wrap">
+    <p class="chap sc">Rozdział VII · O autorze</p>
+    <h2>Kim jestem?</h2>
+    <div class="flap">
+      <figure>
+        <img src="assets/piotr.webp" width="600" height="405" loading="lazy" alt="Piotr Starzyński, Fundacja Pięć Plus">
+        <figcaption><span class="sc">Piotr Starzyński, Fundacja Pięć Plus</span><br>Uczę, jak się uczyć, od 2013 roku. Fundacja Pięć Plus od 2017.</figcaption>
+      </figure>
+      <div class="prose">
+        <p class="drop">Nazywam się Piotr Starzyński. Uczę, jak się uczyć, od 2013 roku, a od 2017 robimy to jako Fundacja Pięć Plus.</p>
+        <p>Odkąd pamiętam, uwielbiałem książki. Ponieważ nie udało mi się zostać pisarzem, uznałem, że skoro nie będę ich pisać, to chociaż
+        przeczytam ich jak najwięcej.</p>
+        <p class="verse">Czy mam obsesję na punkcie czytania?<br>Może malutką…</p>
+        <p>Na pierwszy kontakt z szybkim czytaniem zareagowałem mocnym sceptycyzmem. To były czasy boomu na coaching i rzeczy sensowne
+        (takie jak mapy myśli czy szybkie czytanie właśnie) były wrzucone do jednego worka z potęgą podświadomości, słuchaniem nagranych braw
+        i powtarzaniem sobie „jesteś zwycięzcą”.</p>
+        <p>Głównie po to, żeby sprzedawać nikomu niepotrzebne (i wątpliwej jakości) przepisy na osobisty sukces.</p>
+        <p>Na kurs szybkiego czytania poszedłem, bo była na nim też dziewczyna, która mi się podobała. I temu przypadkowi zawdzięczam wszystko,
+        co stało się później.</p>
+        <p class="verse">Niedowierzałem.<br>Spróbowałem.<br>Wsiąkłem.<br>Zacząłem uczyć…<br>Założyłem Fundację.<br>Nagraliśmy kurs Szybkiego Czytania.</p>
+        <p>Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026: 10 na 10 w ocenach klientów, z 68 opinii
+        (<a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank">profil</a>).</p>
+        <p>Obecnie pracuję na Uniwersytecie Warszawskim nad doktoratem poświęconym wyzwaniom nauczycieli w polskiej szkole.</p>
+      </div>
+    </div>
+    <p class="logos-h">Pracowałem dla największych.</p>
+    <div class="logos">
+      <span><img src="assets/loga/allegro.webp" alt="Allegro" loading="lazy"></span>
+      <span><img src="assets/loga/rossmann.webp" alt="Rossmann" loading="lazy"></span>
+      <span><img src="assets/loga/tvp.png" alt="Telewizja Polska" loading="lazy"></span>
+      <span><img src="assets/loga/google.webp" alt="Google" loading="lazy"></span>
+      <span><img src="assets/loga/kruk.webp" alt="KRUK S.A." loading="lazy"></span>
+    </div>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ VIII. CENA ══════════ -->
+<section class="page alt" id="cena" data-rh="Rozdział VIII">
+  <div class="wrap">
+    <p class="chap sc">Rozdział VIII · Cena</p>
+    <h2>Ile kosztuje kurs Szybkie Czytanie Online?</h2>
+    <div class="prose">
+      <p>(…) w końcu nagrałem kurs online, bo nie byliśmy w stanie logistycznie spiąć dostępnych cenowo warsztatów stacjonarnych.</p>
+    </div>
+    <p class="bridge">Płacisz <span class="js-cena">197 zł</span> za rok, czyli <span class="js-dzien">54 grosze</span>. Tyle kosztuje dzień dostępu do naszego kursu.<sup><a href="#fn-dzien">3</a></sup></p>
+    <p>Kurs szybkiego czytania na żywo w grupie to 787 zł za 16 godzin.<sup><a href="#fn-787">4</a></sup></p>
+    <p>I kiedy już nauczysz się czytać na nowo, założę się, że tak samo jak ja wkurzysz się na to, że nikt Ci tego nie pokazał wcześniej.</p>
+    <div class="price-box">
+      <p class="sc">Cena · Szybkie Czytanie Online</p>
+      <p class="big js-cena">197 zł</p>
+      <p class="omni js-omni">Najniższa cena z ostatnich 30 dni przed obniżką: <span class="js-przed">500 zł</span>.</p>
+      <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
+      <p class="what">Kupując pakiet otrzymujesz:</p>
+      <ol class="incl">
+        <li>Szybkie Czytanie Online - pełen kurs (6 działów)</li>
+        <li>Rozrusznik czytania: mini kurs</li>
+        <li>5 lekcji bonusowych</li>
+        <li>autorski skrypt z ćwiczeniami i tekstami</li>
+        <li>roczny dostęp do kursu i wsparcie</li>
+        <li>odpowiedzi pod każdą lekcją</li>
+      </ol>
+      <div class="cta-row">
+        <a class="cta" data-cta="cena" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>BLIK · przelew · karta</small></a>
+      </div>
+      <p class="pay">Płatność blikiem, przelewem lub kartą. Wystawiamy faktury. Dostęp dostajesz od razu po zakupie, na naszej platformie z lekcjami.</p>
+    </div>
+    <div class="letter">
+      <h3>Żelazna gwarancja zwrotu 30 dni</h3>
+      <p>Osobiście gwarantuję, że ten kurs działa. Masz żelazną gwarancję zwrotu w ciągu 30 dni. Ty piszesz maila, a ja zwracam pieniądze.
+      <b>100% zwrotu, bez zbędnych pytań i bez progu ukończenia.</b></p>
+      <p>Na ponad 3 700 zakupów naszych kursów o zwrot poprosił mniej niż 1 kupujący na 100.<sup><a href="#fn-zwr">5</a></sup></p>
+      <p class="sign">Piotr Starzyński</p>
+    </div>
+    <div class="cta-row">
+      <a class="cta" data-cta="gwarancja" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>30 dni na zwrot</small></a>
+    </div>
+    <p class="koniec-l js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
+    <div class="fns">
+      <p id="fn-dzien"><sup class="n">3</sup> <span class="js-dzien-fn">197 zł / 365 dni = 0,54 zł.</span></p>
+      <p id="fn-787"><sup class="n">4</sup> Tajemnice Umysłu, kurs grupowy online i stacjonarny, 16 godzin, cennik odczytany 25.10.2026. Najtańsza oferta na żywo w naszym zestawieniu.</p>
+      <p id="fn-zwr"><sup class="n">5</sup> Gmail biuro@, etykieta PŁATNOŚĆ/ZWROT: 19 wątków (27 wiadomości) i 1 zwrot poza etykietą, wobec ponad 3 700 zakupów
+      z etykiet ZAKUP. Wszystkie kursy, lata z różnymi zasadami zwrotu, stan 25.10.2026. Osobnej liczby dla tego kursu nie mamy.</p>
+    </div>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ Z RECENZJI (opinie) ══════════ -->
+<section class="page" id="opinie" data-rh="Z recenzji">
+  <div class="wrap">
+    <p class="chap sc">Z recenzji</p>
+    <h2>Ale nie musisz mi wierzyć na słowo</h2>
+    <p>Poniżej znajdziesz kilka opinii o naszym kursie. Jest ich znacznie więcej (…).</p>
+    <div class="blurbs">
+      <div class="bl"><q>„Efekt jest taki, że od stycznia do połowy marca przeczytałem 18 książek.”</q><p class="who sc">Aleksander Konieczny</p>
+        <img src="assets/opinia-01.webp" loading="lazy" alt="Opinia Google: Aleksander Konieczny, 5 gwiazdek"></div>
+      <div class="bl"><q>„Oczywiście nie jest to żadna cudowna metoda, która zaraz po zakupie pozwoli wam czytać 10x szybciej, ale (…) rzetelny kurs.”</q><p class="who sc">Tomasz Kędra</p>
+        <img src="assets/opinia-07.webp" loading="lazy" alt="Opinia Google: Tomasz Kędra, 5 gwiazdek"></div>
+      <div class="bl"><q>„Pamiętajcie, że nauka szybkiego czytania to głównie praca w domu, a ten kurs ma wszystkie ćwiczenia żeby tę pracę wykonać.”</q><p class="who sc">Michał Fabiszewski</p>
+        <img src="assets/opinia-06.webp" loading="lazy" alt="Opinia Google: Michał Fabiszewski, 5 gwiazdek"></div>
+      <div class="bl"><q>„Aż chce się po każdej zakończonej lekcji przechodzić do kolejnej.”</q><p class="who sc">Michal Franka</p>
+        <img src="assets/opinia-05.webp" loading="lazy" alt="Opinia Google: Michal Franka, 5 gwiazdek"></div>
+    </div>
+    <p class="src">Opinie z profilu Fundacji Pięć Plus w Google. Pełne zrzuty pod cytatami.</p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ PRZYPISY OD AUTORA (pytania) ══════════ -->
+<section class="page alt" id="pytania" data-rh="Przypisy od autora">
+  <div class="wrap">
+    <p class="chap sc">Przypisy od autora</p>
+    <h2>Masz pytanie? Może mamy odpowiedź.</h2>
+    <div class="accs">
+    <details class="acc" data-acc="ile-razy"><summary>Ile razy szybciej będę czytać?</summary>
+      <div class="acc-body"><p>To zależy od tempa na starcie i od tego, ile ćwiczysz. W kursie mierzysz tempo i zrozumienie na początku i na końcu,
+      więc zobaczysz własny wynik.</p></div></details>
+    <details class="acc" data-acc="przerwa"><summary>A jak przerwę w połowie?</summary>
+      <div class="acc-body"><p>Dostęp do wszystkich materiałów otrzymujesz na cały rok. Kurs zajmuje około miesiąca przy 10 minutach dziennie.
+      Wierzymy, że każdy powinien realizować kurs w swoim tempie, a możliwość odświeżenia umiejętności jest bardzo ważna.</p></div></details>
+    <details class="acc" data-acc="youtube"><summary>Na YouTube są darmowe ćwiczenia. Po co płacić?</summary>
+      <div class="acc-body"><p>Ćwiczeń na poprawę czytania są setki, a my wybraliśmy te, które działały na naszych kursantach.</p></div></details>
+    <details class="acc" data-acc="audiobooki"><summary>A audiobooki?</summary>
+      <div class="acc-body"><p>Wolę audiobooki. Są znacznie wolniejsze niż samodzielne czytanie, ale pozwalają mi wrzucać książki na czas dojazdów i sprzątania.</p></div></details>
+    <details class="acc" data-acc="skrypt"><summary>Czy trzeba drukować skrypt?</summary>
+      <div class="acc-body"><p>Tak. Wydrukowanie skryptu jest niezbędne do kolejnych ćwiczeń i do przejścia całego kursu. Skrypt do całego kursu
+      jest pod lekcją „Wprowadzenie”.</p></div></details>
+    <details class="acc" data-acc="oczy"><summary>Czy od ćwiczeń bolą oczy?</summary>
+      <div class="acc-body"><p>W późniejszej części kursu są ćwiczenia na rozluźnianie oka :) A na razie polecam po prostu zamknąć oczy na chwilę
+      i pozwolić im się rozluźnić. Jeśli A4 jest na dziś za szerokie, proszę nie zmniejszać wydruku, tylko odsunąć kartkę dalej od oczu.
+      I proszę się nie przetrenowywać. To ma być część codziennej dziesięciominutówki dla oczu, nie godzina walki.</p></div></details>
+    <details class="acc" data-acc="dysleksja"><summary>Czy dysleksja jest przeszkodą w odbyciu kursu?</summary>
+      <div class="acc-body"><p>W żadnym wypadku! Dysleksja w żadnym stopniu nie przeszkadza w przejściu kursu.</p></div></details>
+    <details class="acc" data-acc="dostep"><summary>W jaki sposób otrzymam kurs?</summary>
+      <div class="acc-body"><p>Dostęp do kursu odbywa się za pośrednictwem naszej platformy. Po założeniu swojego konta otrzymasz dostęp do wszystkich
+      lekcji i skryptu z ćwiczeniami na rozszerzanie pola widzenia.</p></div></details>
+    <details class="acc" data-acc="zwrot"><summary>Czy możliwy jest zwrot zakupionego kursu?</summary>
+      <div class="acc-body"><p>W ciągu 30 dni od kupna możesz bez konsekwencji zrezygnować z zakupu kursu Szybkie Czytanie Online®. Skontaktuj się
+      z nami przez kontakt@5plus.edu.pl, a pieniądze znajdą się z powrotem na Twoim koncie w ciągu 7 dni roboczych.</p></div></details>
+    <details class="acc" data-acc="faktura"><summary>Czy dostanę fakturę?</summary>
+      <div class="acc-body"><p>Tak. Przy zakupie zaznaczasz „chcę fakturę” i podajesz dane, firmowe albo imienne.</p></div></details>
+    </div>
+    <p class="hint">Masz inne pytanie? Napisz na <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a>, chętnie odpowiemy.</p>
+    <p class="folio" aria-hidden="true"></p>
+  </div>
+</section>
+
+<!-- ══════════ TYLNA OKŁADKA (domknięcie) ══════════ -->
+<section class="back" id="offer">
+  <div class="wrap">
+    <div class="plate">
+      <h2>Jeszcze to czytasz?</h2>
+      <p class="lead">Co z tym wszystkim możesz zrobić?</p>
+      <p>Możesz kupić kurs i sprawdzić, o co to całe zamieszanie. Dzięki żelaznej gwarancji nic nie ryzykujesz, a zyskać możesz umiejętność,
+      która może zmienić całe Twoje życie.</p>
+      <p>Albo przynajmniej wspólnie sprawimy, że wrócisz do regularnego czytania. Nie dostrzegam tu słabych punktów.</p>
+      <p>Kliknij poniżej i weź się za swoje czytanie.</p>
+      <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
+      <div class="cta-row">
+        <a class="cta" data-cta="domkniecie" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>roczny dostęp · 30 dni na zwrot</small></a>
+      </div>
+      <p class="ps"><span class="js-cena">197 zł</span><span class="js-omni"> (najniższa cena z ostatnich 30 dni przed obniżką: <span class="js-przed">500 zł</span>)</span>
+      · roczny dostęp · 30 dni na zwrot. Płatność blikiem, przelewem lub kartą. Wystawiamy faktury.</p>
+      <svg class="fleuron" viewBox="0 0 120 20" aria-hidden="true"><path d="M0 10H42M78 10H120" stroke="#ffc676" stroke-width="1"/><path d="M60 3l7 7-7 7-7-7z" fill="none" stroke="#ffc676" stroke-width="1.2"/><circle cx="48" cy="10" r="2" fill="#ffc676"/><circle cx="72" cy="10" r="2" fill="#ffc676"/></svg>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="sc">Stopka redakcyjna</span>
+    Fundacja Pięć Plus · <a href="mailto:biuro@5plus.edu.pl">biuro@5plus.edu.pl</a> · 5plus.edu.pl<br>
+    <a href="#" class="todo-link">Regulamin</a> · <a href="#" class="todo-link">Polityka prywatności</a> · <button type="button" id="cookieSettings">Ustawienia cookies</button><br>
+    <mark class="todo">[linki do regulaminu i polityki]</mark> · Zapisy o rocznym dostępie i zwrocie w ciągu 30 dni muszą być identyczne w regulaminie.
+  </div>
+</footer>
+
+<div class="bar-cta" id="barCta">
+  <a class="cta" data-cta="sticky" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span></a>
+</div>
+
+<div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookies" hidden>
+  <p>Strona używa plików cookies. Niezbędne są do jej działania. Za Twoją zgodą włączamy też Piksel Meta i Microsoft Clarity, żeby mierzyć,
+  które reklamy i fragmenty strony naprawdę pomagają. Szczegóły w <a href="#" class="todo-link">polityce prywatności</a>.</p>
+  <div class="btns">
+    <button type="button" class="yes" data-consent="all">Akceptuję wszystkie</button>
+    <button type="button" data-consent="necessary">Tylko niezbędne</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ===== CENA: jedno miejsce na zmianę (te same stałe co w wersji A, index-v2.html) =====
+  // Okno kodu (decyzja 25.10): CENA 197, PRZED 500 → linia Omnibus tekstem, bez przekreślenia. Bez obniżki: CENA 500, PRZED 0.
+  // KONIEC: prawdziwa data końca kodu, np. '15 grudnia'. Pusta = linia z datą ukryta.
+  var CENA = 197, PRZED = 500, KONIEC = '';
+  var KOSZYK = 'https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html'; // WTL ID 63
+  var PIXEL_ID = ''; // TODO: ID Piksela Meta, ten sam, który wysyła Purchase z WTL. Pusty = piksel się nie ładuje.
+  var WARIANT = 'odjechana'; // test A/B: parametr lp_variant w zdarzeniach
+
+  function zl(n){ return String(n).replace('.', ',') + ' zł'; }
+  function dzien(c){
+    var gr = Math.round(c / 365 * 100);
+    if (gr >= 100) return (gr / 100).toFixed(2).replace('.', ',') + ' zł';
+    var d = gr % 10, s = gr % 100;
+    return gr + (d >= 2 && d <= 4 && (s < 12 || s > 14) ? ' grosze' : ' groszy');
+  }
+  document.querySelectorAll('.js-cena').forEach(function(e){ e.textContent = zl(CENA); });
+  document.querySelectorAll('.js-przed').forEach(function(e){ if (PRZED > CENA) e.textContent = zl(PRZED); else e.hidden = true; });
+  document.querySelectorAll('.js-omni').forEach(function(e){ e.hidden = !(PRZED > CENA); });
+  document.querySelectorAll('.js-dzien').forEach(function(e){ e.textContent = dzien(CENA); });
+  document.querySelectorAll('.js-dzien-fn').forEach(function(e){ e.textContent = CENA + ' zł / 365 dni = ' + (CENA / 365).toFixed(2).replace('.', ',') + ' zł.'; });
+  document.querySelectorAll('.js-koniec').forEach(function(e){ e.hidden = !KONIEC; });
+  document.querySelectorAll('.js-koniec-d').forEach(function(e){ e.textContent = KONIEC; });
+  document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = KOSZYK; });
+
+  var KEY = 'sc5p_consent', consent = null, pending = [];
+  try { consent = localStorage.getItem(KEY); } catch(e){}
+
+  // --- Piksel Meta: tylko po zgodzie ---
+  function loadPixel(){
+    if (!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  // --- Microsoft Clarity (ten sam projekt co 5plus.edu.pl): tylko po zgodzie ---
+  var CLARITY_ID = 'vjr23eh9gx';
+  function loadClarity(){
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+    try { window.clarity('set', 'lp_variant', WARIANT); } catch(e){}
+  }
+  var STD = /^(ViewContent|InitiateCheckout|Purchase|Lead|AddToCart)$/;
+  function track(name, params){
+    params = Object.assign({lp_variant: WARIANT}, params || {});
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({event:name}, params));
+    if (consent === 'all') { if (window.fbq) try { fbq(STD.test(name) ? 'track' : 'trackCustom', name, params); } catch(e){} }
+    else if (consent === null) pending.push([name, params]);
+  }
+  function setConsent(v){
+    consent = v;
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    banner.hidden = true; updateBar();
+    if (v === 'all') { loadPixel(); loadClarity(); pending.forEach(function(p){ if (window.fbq) fbq(STD.test(p[0]) ? 'track' : 'trackCustom', p[0], p[1]); }); }
+    pending = [];
+  }
+
+  var banner = document.getElementById('cookies');
+  banner.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); });
+  });
+  document.getElementById('cookieSettings').addEventListener('click', function(){ banner.hidden = false; updateBar(); });
+  if (consent === 'all') { loadPixel(); loadClarity(); }
+  else if (consent === null) banner.hidden = false;
+
+  track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
+
+  // --- UTM z reklamy przechodzą na koszyk (inna domena) ---
+  var utm = location.search.replace(/^\?/, '').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
+  document.querySelectorAll('a[data-cta]').forEach(function(a){
+    if (utm) a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm;
+    a.addEventListener('click', function(){
+      track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta')});
+    });
+  });
+
+  // --- które działy spisu treści i przypisy ktoś otwiera ---
+  document.querySelectorAll('details[data-acc]').forEach(function(d){
+    d.addEventListener('toggle', function(){ if (d.open) track('accordion_open', {card:d.getAttribute('data-acc')}); });
+  });
+
+  // --- filmy YouTube: iframe dopiero po kliknięciu (youtube-nocookie) ---
+  document.querySelectorAll('button.yt[data-yt]').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (b.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.getAttribute('data-yt') + '?autoplay=1&rel=0';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+      f.title = b.getAttribute('aria-label') || 'Film';
+      b.appendChild(f);
+      track('video_play', {video:b.getAttribute('data-video')});
+    });
+  });
+
+  // --- żywa pagina: rozdział i numer strony (ten sam licznik co numer u dołu strony) ---
+  var rh = document.getElementById('rh'), rhCh = document.getElementById('rhCh'), rhP = document.getElementById('rhP');
+  var pages = [].slice.call(document.querySelectorAll('section.page[data-rh]')), lastPage = -1;
+  function updateRh(){
+    var cur = -1;
+    for (var i = 0; i < pages.length; i++){ if (pages[i].getBoundingClientRect().top < 60) cur = i; }
+    var back = document.getElementById('offer').getBoundingClientRect().top < 60;
+    rh.classList.toggle('on', cur > -1 && !back);
+    if (cur !== lastPage && cur > -1){ rhCh.textContent = pages[cur].getAttribute('data-rh'); rhP.textContent = '· str. ' + (cur + 1); lastPage = cur; }
+  }
+
+  // --- zakładka na dole telefonu: po okładce, nie przy cenie i tylnej okładce, nie razem z banerem ---
+  var bar = document.getElementById('barCta'), hero = document.getElementById('top'),
+      hide = [document.getElementById('cena'), document.getElementById('offer'), document.getElementById('ile')];
+  function inView(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+  function updateBar(){
+    var on = banner.hidden && hero.getBoundingClientRect().bottom < 0 && !hide.some(inView);
+    bar.classList.toggle('on', on);
+  }
+  function onScroll(){ updateBar(); updateRh(); }
+  addEventListener('scroll', onScroll, {passive:true}); addEventListener('resize', onScroll); onScroll();
+})();
+</script>
+</body>
+</html>

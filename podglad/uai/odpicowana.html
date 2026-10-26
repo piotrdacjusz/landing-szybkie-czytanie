@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ucz się z AI. Kurs dla ucznia od 13 lat i jego rodzica | Fundacja Pięć Plus</title>
+<meta name="description" content="Kurs online: jak dziecko ma używać AI, żeby się uczyć, a nie przepisywać. Cztery moduły dla ucznia i jeden dla rodzica, bezpłatne narzędzia. 300 zł, rok dostępu, 30 dni na zwrot.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ucz się z AI. Kurs dla ucznia od 13 lat i jego rodzica">
+<meta property="og:description" content="Czy wiesz, że w 30 sekund możesz sprawdzić, czy dziecko bezmyślnie przepisuje z AI? 300 zł, rok dostępu, 30 dni na zwrot.">
+<meta property="og:locale" content="pl_PL">
+<!-- og:image (1200×630), og:url i canonical dopiero po wyborze adresu publikacji -->
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#1f2336">
+<meta name="robots" content="noindex">
+<!--
+  Ucz się z AI, wersja odpicowana (C), 2026-10-26, po poprawce końcowej.
+  Przełączniki na górze skryptu: CENA, MODUL5_YT, PIXEL_ID, VARIANT, HERO.
+-->
+<style>
+/* fonty lokalnie (assets/fonts): zero zapytań do Google przed zgodą */
+@font-face{font-family:'Alegreya Sans';font-style:italic;font-weight:500;font-display:swap;src:url(assets/fonts/alegreya-sans-500i-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Alegreya Sans';font-style:italic;font-weight:500;font-display:swap;src:url(assets/fonts/alegreya-sans-500i-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alegreya Sans';font-style:italic;font-weight:700;font-display:swap;src:url(assets/fonts/alegreya-sans-700i-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Alegreya Sans';font-style:italic;font-weight:700;font-display:swap;src:url(assets/fonts/alegreya-sans-700i-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/alegreya-sans-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/alegreya-sans-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/alegreya-sans-500-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/alegreya-sans-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/alegreya-sans-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/alegreya-sans-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/alegreya-sans-800-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/alegreya-sans-800-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Merriweather';font-style:normal;font-weight:700 900;font-display:swap;src:url(assets/fonts/merriweather-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Merriweather';font-style:normal;font-weight:700 900;font-display:swap;src:url(assets/fonts/merriweather-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --navy:#1f2336; --navy-2:#2a2f47; --spine:#161927;
+  --pl:#124429; --mat:#073462; --ang:#451e3e;
+  --gold:#ffc676; --gold-soft:#ffd191; --gold-dark:#8a5a1c; --note:#ffe3ab;
+  --paper:#fbf8f3; --paper-2:#f3eee5; --line:#e4ddd1;
+  --ink:#1f2336; --dim:#585c70; --faint:#666a7c;
+  --olowek:#4b4f5d;            /* grafit: pytania ołówkiem, numerki przypisów, ptaszki */
+  --margines:#c4404a;          /* czerwień tylko jako ręka nauczyciela: linia marginesu, kółko, podkreślenia */
+  --mx:46px;
+  --serif:Merriweather,Georgia,serif; --sans:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/28px var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--navy)}
+p{margin:0 0 16px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0 0 16px;color:var(--navy)}
+h1{font-weight:900}
+h2{font-size:24px;line-height:32px}
+h3{font-size:20px;line-height:28px}
+sup{line-height:0}
+.nw{white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- kartki z czerwonym marginesem ---------- */
+.zeszyt{position:relative;background:var(--paper)}
+.zeszyt::before{content:"";position:absolute;top:0;bottom:0;left:calc(var(--mx) - 12px);width:1.5px;background:var(--margines);opacity:.8;z-index:0}
+.k{position:relative;z-index:1;padding:40px 18px 32px var(--mx);max-width:760px;margin:0 auto}
+.k + .k{border-top:1px solid var(--line)}
+.k > :last-child{margin-bottom:0}
+.lead{font-size:18px;line-height:28px}
+.key{font:700 20px/28px var(--serif);color:var(--navy)}
+
+/* pytanie ołówkiem: kursywa z kreską ołówka */
+.olowek{font:italic 700 24px/32px var(--sans);color:#3b3f4c;margin:0 0 16px}
+.olowek span{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5C30 3 52 6.5 86 4.6S150 3 199 5.4' fill='none' stroke='%234b4f5d' stroke-width='1.5' stroke-linecap='round' opacity='.65'/%3E%3C/svg%3E") 0 100%/100% 7px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding-bottom:5px}
+.olowek.maly{font-size:20px;line-height:28px;margin:24px 0 16px}
+
+/* przypisy: numerek prowadzi do źródła (cel dotyku powiększony bez zmiany wyglądu) */
+.cite{position:relative;display:inline-block;vertical-align:3px;margin-left:3px;min-width:18px;padding:3px 4px 2px;border-radius:4px;background:var(--olowek);color:#fff;font:700 12px/1 var(--sans);text-align:center;text-decoration:none;letter-spacing:0}
+.cite::after{content:"";position:absolute;left:-12px;right:-12px;top:-14px;bottom:-14px}
+.przypisy{margin-top:24px;padding-top:12px;border-top:1px dashed #cfc4b1;font-size:14px;line-height:20px;color:var(--faint)}
+.przypisy p{margin:0 0 8px;padding:4px 6px 4px 0;scroll-margin-top:70px;border-radius:4px;transition:background .4s}
+.przypisy p:target,.przypisy p.flash{background:#fff0cf;color:var(--ink)}
+.przypisy .nr{display:inline-block;min-width:18px;margin-right:6px;padding:2px 4px 1px;border-radius:4px;background:var(--olowek);color:#fff;font:700 12px/1.2 var(--sans);text-align:center}
+.przypisy a.wroc{display:inline-block;font-size:14px;color:var(--faint);margin:-12px 0 -12px 2px;padding:12px 8px}
+
+/* ---------- przyciski ---------- */
+.cta{display:block;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:800;font-size:20px;line-height:28px;padding:14px 18px;border-radius:8px;text-align:center;border:2px solid var(--gold);box-shadow:0 3px 0 var(--gold-dark)}
+.cta small{display:block;font-weight:500;font-size:14px;line-height:20px;margin-top:2px;color:#3a3420}
+.cta:hover,.cta:focus-visible{background:var(--gold-soft);border-color:var(--gold-soft)}
+.cta:active{transform:translateY(2px);box-shadow:0 1px 0 var(--gold-dark)}
+.cta-row{margin:24px 0 12px}
+
+/* ---------- okładka (hero) ---------- */
+.okladka{position:relative;z-index:2;background:var(--navy);color:#fff;padding:12px 16px 24px 30px;overflow:hidden}
+.okladka::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--spine);border-right:1px solid rgba(255,255,255,.07)}
+.okladka .in{max-width:640px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:8px;margin:0 0 10px;color:#c9ccda;font:700 14px/1 var(--sans);letter-spacing:.04em}
+.brand b{width:24px;height:24px;border-radius:5px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font:900 12px var(--serif)}
+.etykieta{background:#fff;color:var(--navy);border-radius:12px;padding:12px 16px;box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5.5px var(--navy)}
+.etykieta .et-top{margin:0 0 8px;text-align:center;font:800 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.etykieta h1{font-size:24px;line-height:32px;margin:0 0 10px}
+.et-row{display:flex;align-items:baseline;gap:8px;margin:0;font-size:14px;line-height:20px;color:var(--dim)}
+.et-row b{flex:1;border-bottom:1.5px dotted #9a9db0;padding:0 0 2px 2px;font:italic 700 16px/24px var(--sans);color:var(--navy)}
+.okladka .test{font:700 18px/28px var(--sans);color:#fff;margin:16px 0 12px}
+.okladka .test q{quotes:none;color:var(--gold)}
+.pasek{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 12px;padding:0;list-style:none;font-size:16px;line-height:24px;color:#dfe1ea}
+.pasek b{color:var(--gold)}
+.okladka .cta-row{margin:0}
+.okladka .facts{font-size:16px;line-height:24px;color:#c9ccda;margin:14px 0 0}
+.okladka .facts b{color:#fff}
+.okladka .m5link{display:inline-block;color:var(--gold);font-weight:700;margin-top:8px}
+.okladka .cite{background:rgba(255,255,255,.16);color:#fff}
+.okladka .etykieta .cite{background:var(--olowek);color:#fff}
+html:not(.m5) .m5-on{display:none!important}
+html.m5 .m5-off{display:none!important}
+
+/* kartka 1: obietnica i film przyklejony taśmą */
+.obietnica{font:700 20px/28px var(--serif);color:var(--navy)}
+.podkr{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cpath d='M1 4.6C40 6.4 70 2.8 110 4.4S170 5.6 199 3.6' fill='none' stroke='%23c4404a' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E") 0 100%/100% 6px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding-bottom:3px}
+.tasma{position:relative;margin:28px auto 8px;max-width:340px;padding:8px;background:#fff;box-shadow:0 1px 2px rgba(31,35,54,.12),0 6px 18px rgba(31,35,54,.08);transform:rotate(-1deg)}
+.tasma::before,.tasma::after{content:"";position:absolute;top:-11px;width:76px;height:22px;background:rgba(236,229,214,.85);border:1px solid rgba(31,35,54,.06)}
+.tasma::before{left:14px;transform:rotate(-5deg)}
+.tasma::after{right:14px;transform:rotate(4deg)}
+.yt{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;cursor:pointer;border:0;padding:0;width:100%;display:block}
+#film .yt{aspect-ratio:1/1}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--gold);color:var(--navy);font:800 16px var(--sans);padding:11px 18px;border-radius:6px;white-space:nowrap}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt.plain{background:var(--navy-2);border-radius:6px}
+
+/* ---------- wpisy (akordeony) ---------- */
+details.wpis{position:relative;border-bottom:1px solid var(--line)}
+details.wpis:first-of-type{border-top:1px solid var(--line)}
+details.wpis summary{list-style:none;cursor:pointer;padding:12px 30px 12px 0;font:700 18px/28px var(--sans);color:var(--navy)}
+details.wpis summary::-webkit-details-marker{display:none}
+details.wpis summary::after{content:"+";position:absolute;right:2px;top:10px;font:500 26px/1 var(--sans);color:var(--olowek)}
+details.wpis[open] summary::after{content:"\2212"}
+details.wpis .nr{position:absolute;left:calc(-1 * var(--mx) + 2px);top:12px;width:28px;text-align:center;font:italic 800 19px/28px var(--sans);color:var(--margines)}
+details.wpis .tresc{padding:0 0 12px}
+.bridge{font:700 20px/28px var(--serif);color:var(--navy);margin:24px 0 8px}
+
+/* stawka: cztery punkty przepisane do zeszytu */
+figure.akapit{margin:16px 0 16px;padding:0}
+figure.akapit svg{display:block;width:100%;height:auto}
+
+/* kolejność: zasada w ramce ołówkiem, karteczka dla rodzica */
+.zasada{margin:24px 0 8px;padding:16px;border:1.5px solid var(--olowek);border-radius:3px 12px 4px 10px/10px 4px 12px 3px;background:var(--paper)}
+.zasada p{font:700 20px/28px var(--serif);color:var(--navy);margin:0}
+.zasada p + p{margin-top:12px}
+.karteczka{position:relative;margin:32px 4px 8px;padding:20px 18px 16px;background:var(--note);color:#2c2a22;box-shadow:0 1px 1px rgba(31,35,54,.1),0 8px 18px rgba(31,35,54,.1)}
+.karteczka::before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:24px;margin-left:-45px;transform:rotate(-3deg);background:rgba(251,248,243,.78);border:1px solid rgba(31,35,54,.06)}
+.karteczka .k-tyt{font:italic 700 16px/24px var(--sans);color:#6d4a14;margin:0 0 8px}
+.karteczka p{margin:0 0 12px}
+.karteczka p:last-child{margin:0}
+
+/* sześć kroków */
+ol.kroki{list-style:none;margin:16px 0 0;padding:0}
+ol.kroki > li{position:relative;padding:0 0 20px}
+ol.kroki .n{position:absolute;left:calc(-1 * var(--mx) + 1px);top:-1px;width:30px;height:30px;display:grid;place-items:center;border:1.8px solid var(--olowek);border-radius:52% 46% 55% 45%/48% 56% 44% 52%;font:italic 800 17px/1 var(--sans);color:var(--olowek);background:var(--paper)}
+ol.kroki .kt{display:block;font:700 20px/28px var(--serif);color:var(--navy);margin-bottom:4px}
+ol.kroki .kt small{display:block;font:italic 700 16px/24px var(--sans);color:var(--dim)}
+ol.kroki p{margin:0}
+ol.kroki .eff{display:block;margin-top:6px;font-weight:700;color:var(--navy)}
+.hint{color:var(--dim);font-style:italic;margin:-4px 0 12px}
+
+/* domowy pakt: trzy zasady do odhaczenia, dwa podpisy */
+.pakt{margin:12px 0 4px;padding:12px 14px 34px;background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 1px 0 var(--line)}
+.pakt label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;font-size:18px;line-height:26px;cursor:pointer}
+.pakt input{position:absolute;opacity:0;pointer-events:none}
+.pakt .box{flex:0 0 22px;height:22px;margin-top:2px;border:1.6px solid var(--olowek);border-radius:3px 5px 3px 4px;position:relative;background:#fff}
+.pakt .box svg{position:absolute;left:1px;top:-6px;width:24px;height:24px;overflow:visible}
+.pakt .box path{fill:none;stroke:var(--margines);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .25s ease}
+.pakt input:checked + .box path{stroke-dashoffset:0}
+.pakt input:focus-visible + .box{outline:2px solid var(--navy);outline-offset:2px}
+.pakt .trzy{margin:8px 0 0}
+.podpisy{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+.podpisy div{border-bottom:1.5px dotted #9a9db0;height:44px;position:relative}
+.podpisy svg{position:absolute;left:4px;bottom:2px;width:calc(100% - 8px);height:40px;overflow:visible}
+.podpisy path{fill:none;stroke:var(--navy);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1s ease}
+.pakt.podpisany .podpisy path{stroke-dashoffset:0}
+.pakt.podpisany .podpisy div + div path{transition-delay:.5s}
+.podpisy span{position:absolute;left:0;top:100%;margin-top:4px;font:italic 500 14px/1 var(--sans);color:var(--faint)}
+.po-pakcie{margin:16px 0 0}
+
+/* moduły: pięć zeszytów (leżą na kartce i zasłaniają margines) */
+.h3big{margin:32px 0 8px}
+.zeszyty{position:relative;z-index:2;margin:16px -4px 0 calc(-1 * var(--mx) + 10px);background:var(--paper);padding:2px 0 1px}
+.subj{position:relative;color:#fff;padding:16px 16px 6px 30px;margin:0 0 14px;border-radius:2px 6px 6px 2px;box-shadow:0 2px 0 rgba(31,35,54,.18),0 8px 16px rgba(31,35,54,.1)}
+.subj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:13px;background:rgba(0,0,0,.28);border-radius:2px 0 0 2px}
+.subj.m1{background:var(--pl)} .subj.m2{background:var(--mat)} .subj.m3{background:var(--ang)} .subj.m4{background:var(--navy-2)} .subj.m5{background:var(--gold);color:var(--navy)}
+.subj .et{background:#fff;color:var(--navy);border-radius:9px;padding:9px 12px 10px;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4.5px var(--navy);margin:0 0 12px}
+.subj .et .mod{display:flex;justify-content:space-between;gap:8px;font:800 12px/20px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 4px}
+.subj .et .mod b{letter-spacing:.02em;text-transform:none;font:italic 700 16px/20px var(--sans);color:var(--navy)}
+.subj .et .mod .cite{vertical-align:1px}
+.subj .et h3{margin:0;font-size:20px;line-height:28px}
+.subj .free{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:3px;background:var(--navy);color:#fff;font:800 12px/1.3 var(--sans);letter-spacing:.06em;vertical-align:3px}
+.subj .meta{font-size:16px;line-height:24px;color:#d9dbe6;margin:0 0 8px}
+.subj .desc{margin:0 0 8px}
+.subj.m5 .meta{color:#3c3420}
+details.lessons{border-top:1px solid rgba(255,255,255,.22);margin-top:6px}
+.subj.m5 details.lessons{border-top-color:rgba(31,35,54,.25)}
+details.lessons summary{cursor:pointer;list-style:none;padding:10px 0;font-weight:800;color:var(--gold)}
+.subj.m5 details.lessons summary{color:var(--navy)}
+details.lessons summary::-webkit-details-marker{display:none}
+details.lessons summary::after{content:" +"}
+details.lessons[open] summary::after{content:" \2212"}
+details.lessons ol{margin:0 0 12px;padding-left:22px;font-size:16px;line-height:24px}
+.subj .yt{margin:6px 0 10px;max-width:520px}
+
+/* dla kogo: ptaszki na marginesie */
+ul.dla{list-style:none;margin:8px 0 0;padding:0}
+ul.dla li{position:relative;padding:10px 0;font:700 18px/28px var(--sans);color:var(--navy);border-bottom:1px solid var(--line)}
+ul.dla li::before{content:"";position:absolute;left:calc(-1 * var(--mx) + 6px);top:13px;width:22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.5 13.5c2.2 1.6 3.6 3.4 4.8 5.6C11 12.4 15.4 7.2 21 3.8' fill='none' stroke='%234b4f5d' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.uwaga{margin:16px 0 0;font-weight:700}
+
+/* kim jesteśmy: zdjęcie przyklejone taśmą */
+.foto{margin:18px 8px 20px;padding:8px 8px 10px;background:#fff;box-shadow:0 1px 2px rgba(31,35,54,.12),0 6px 18px rgba(31,35,54,.08);transform:rotate(1deg);position:relative;max-width:420px}
+.foto::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:24px;margin-left:-48px;transform:rotate(-2deg);background:rgba(236,229,214,.85);border:1px solid rgba(31,35,54,.06)}
+.foto p{font:italic 500 16px/24px var(--sans);color:var(--olowek);margin:8px 2px 0}
+
+/* cena */
+.oferta{margin:24px 0 0;padding:16px 16px 18px;background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 2px 0 var(--line),0 10px 24px rgba(31,35,54,.07)}
+.oferta .price{font:900 48px/48px var(--serif);color:var(--navy);margin:0 0 6px}
+.oferta .price small{display:block;font:500 16px/24px var(--sans);color:var(--dim);margin-top:6px}
+.oferta .raz{font:700 20px/28px var(--serif);color:var(--navy);margin:0 0 12px}
+.oferta .co{font-weight:700;margin:12px 0 4px}
+ul.incl{list-style:none;margin:0 0 16px;padding:0}
+ul.incl li{position:relative;padding:5px 0 5px 28px}
+ul.incl li::before{content:"";position:absolute;left:0;top:9px;width:19px;height:19px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.5 13.5c2.2 1.6 3.6 3.4 4.8 5.6C11 12.4 15.4 7.2 21 3.8' fill='none' stroke='%234b4f5d' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.pay{font-size:16px;line-height:24px;color:var(--dim);margin:12px 0 0}
+.gwar{margin:32px 0 0}
+.gwar h3{font-size:20px;margin:0 0 12px}
+.kolko{position:relative;white-space:nowrap;display:inline-block;padding:0 4px}
+.kolko svg{position:absolute;left:-6px;top:-7px;width:calc(100% + 12px);height:calc(100% + 13px);overflow:visible;pointer-events:none}
+.kolko path{fill:none;stroke:var(--margines);stroke-width:2;stroke-linecap:round}
+.sign{font:italic 700 24px/32px var(--sans);color:var(--navy);margin:12px 0 0;display:inline-block}
+.sign + .cta-row{margin-top:20px}
+
+/* tylna okładka */
+.tyl{position:relative;z-index:2;background:var(--navy);color:#fff;padding:32px 18px 32px 32px}
+.tyl::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--spine)}
+.tyl .in{max-width:640px;margin:0 auto}
+.tyl .olowek{color:#d9dbe6}
+.tyl .olowek span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5C30 3 52 6.5 86 4.6S150 3 199 5.4' fill='none' stroke='%23d9dbe6' stroke-width='1.5' stroke-linecap='round' opacity='.7'/%3E%3C/svg%3E")}
+.tyl .lead b{color:var(--gold);font:700 20px/28px var(--serif)}
+.tyl p{color:#dfe1ea}
+.tyl .ps{font-size:16px;line-height:24px;color:#b7bacb;margin-top:16px}
+
+footer{background:var(--spine);color:#9ea2b6;font-size:14px;line-height:20px;padding:24px 18px 100px}
+footer .in{max-width:640px;margin:0 auto}
+footer p{margin:0 0 8px}
+footer a{color:#c9ccda}
+footer button{background:none;border:0;padding:0;color:#c9ccda;font:inherit;text-decoration:underline;cursor:pointer}
+
+/* przyklejony przycisk (telefon) */
+.bar-cta{display:none}
+@media (max-width:899px){
+  .bar-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.12)}
+  .bar-cta.on{display:block}
+  .bar-cta .cta{padding:10px 12px;font-size:18px;box-shadow:none}
+}
+
+/* cookies: jeden baner, dwie równorzędne decyzje */
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:560px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 30px rgba(31,35,54,.18);padding:18px 20px;font-size:16px;line-height:1.45}
+.cookies p{margin:0 0 14px}
+.cookies a{color:var(--navy);font-weight:700}
+.cookies .btns{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{flex:1 1 160px;font:700 16px var(--sans);padding:11px 14px;border-radius:6px;cursor:pointer;border:2px solid var(--navy);background:#fff;color:var(--navy)}
+.cookies button.yes{background:var(--navy);color:#fff}
+.cookies[hidden]{display:none}
+@media(max-width:600px){.cookies{left:8px;right:8px;bottom:8px;padding:12px 14px;font-size:14.5px;line-height:1.4}.cookies p{margin:0 0 10px}.cookies .btns{flex-wrap:nowrap;gap:8px}.cookies button{flex:1 1 0;font-size:15px;padding:10px 8px}}
+
+/* komputer: zeszyt na biurku */
+@media (min-width:900px){
+  :root{--mx:104px}
+  body{background:var(--paper-2);font-size:19px;line-height:30px}
+  .zeszyt{max-width:780px;margin:0 auto;box-shadow:0 0 0 1px var(--line),0 18px 40px rgba(31,35,54,.08)}
+  .zeszyt::before{left:calc(var(--mx) - 22px)}
+  .k{padding:48px 54px 40px var(--mx)}
+  details.wpis .nr,ol.kroki .n,ul.dla li::before{left:calc(-1 * var(--mx) + 40px)}
+  .okladka{max-width:780px;margin:0 auto;padding:22px 40px 34px 64px}
+  .okladka::before{width:22px}
+  .etykieta{max-width:560px;padding:18px 22px}
+  .etykieta h1{font-size:30px;line-height:40px}
+  .okladka .cta{display:inline-block;padding:16px 34px}
+  .zeszyty{margin-left:calc(-1 * var(--mx) + 30px)}
+  .tyl{max-width:780px;margin:0 auto;padding:44px 40px 44px 64px}
+  .tyl .cta{display:inline-block;padding:16px 34px}
+  .oferta .cta,.gwar .cta,.k .cta-row .cta{display:inline-block;padding:15px 34px}
+  footer{max-width:780px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ 1. OKŁADKA (hero): hook M4 ══════════ -->
+<section class="okladka" id="top">
+  <div class="in">
+    <p class="brand"><b>5+</b>Fundacja Pięć Plus</p>
+    <div class="etykieta">
+      <p class="et-top">Ucz się z AI · kurs online</p>
+      <h1>Czy wiesz, że w 30 sekund możesz sprawdzić, czy dziecko bezmyślnie przepisuje z AI?<a class="cite" href="#p1" id="c1" aria-label="Przypis 1">1</a></h1>
+      <p class="et-row">dla <b>ucznia od 13 lat i jego rodzica</b></p>
+    </div>
+    <p class="test">Zapytaj: <q>„Wytłumacz mi własnymi słowami, co tu napisałeś.”</q></p>
+    <ul class="pasek">
+      <li><b class="cena">300 zł</b></li>
+      <li><b>rok dostępu</b> i aktualizacje</li>
+      <li><b>30 dni</b> na zwrot</li>
+    </ul>
+    <div class="cta-row">
+      <a class="cta" data-cta="hero" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span><small>dostęp po zaksięgowaniu płatności</small></a>
+    </div>
+    <p class="facts m5-off"><b>Cztery moduły dla ucznia i jeden dla rodzica.</b></p>
+    <p class="facts m5-on"><b>Cztery moduły dla dziecka. Piąty, bezpłatny, dla Ciebie.</b></p>
+    <a class="m5link m5-on" data-m5="hero" href="#modul-dla-rodzica">Obejrzyj bezpłatny moduł dla rodzica (25 minut)</a>
+  </div>
+</section>
+
+<main class="zeszyt">
+
+<!-- ══════════ kartka 1: obietnica, film ══════════ -->
+<section class="k" id="obietnica">
+  <p class="obietnica">Nie chodzi o to, żeby zabrać dziecku sztuczną inteligencję.</p>
+  <p class="obietnica">Chodzi o to, żeby przestawić ją z trybu „zrób za mnie” na tryb <span class="podkr">wytłumacz, przepytaj mnie i pomóż zapamiętać</span> to, z czym mam kłopoty.</p>
+  <p>Asystent, którego wspólnie konfigurujemy, ma poprawiać, tłumaczyć, odpytywać i ustalać harmonogram powtórek. Nie robi nic za ucznia.</p>
+  <div class="tasma" id="film">
+    <button type="button" class="yt" data-yt="41FyJYgWfYk" data-video="o-kursie" aria-label="Odtwórz film o kursie Ucz się z AI">
+      <img src="assets/film-o-kursie.webp" width="600" height="600" loading="lazy" alt=""><span class="play">O kursie · niecała minuta</span>
+    </button>
+  </div>
+  <div class="przypisy">
+    <p id="p1"><span class="nr">1</span>Zasada testu jest w Domowym Pakcie AI (moduł dla rodzica, lekcja 5.4): „Jeśli uczeń nie potrafi wyjaśnić własnymi słowami tego, co napisał asystent, pakt zostaje złamany.” <a class="wroc" href="#c1">wróć</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 2. ZNASZ TE SYTUACJE? ══════════ -->
+<section class="k" id="problemy">
+  <h2 class="olowek"><span>Znasz te sytuacje?</span></h2>
+  <p>Siedmiu na dziesięciu nastolatków już korzysta z narzędzi opartych na <span class="nw">AI.<a class="cite" href="#p2" id="c2" aria-label="Przypis 2">2</a></span></p>
+  <p>A teraz drugi wynik tego samego badania: czterdzieści trzy procent rodziców jest przekonanych, że ich dziecko w ogóle nie korzysta z AI, a kolejne trzydzieści procent nie ma pewności.</p>
+  <details class="wpis" data-acc="matma-jedynka" open><summary><span class="nr">1.</span>„Zadania z matmy odrobione. Na sprawdzianie jedynka.”</summary>
+    <div class="tresc"><p>Zadanie z matematyki wrzuca do Chata, przepisuje gotowe rozwiązanie i w ten sposób odrabia lekcje w rekordowym tempie. Niestety ten proces nie zawiera myślenia.</p>
+    <p>A gotowe rozwiązanie nie pojawi się w magiczny sposób na sprawdzianie. Ani na egzaminie ósmoklasisty. Ani na maturze. Ani na studiach.</p></div></details>
+  <details class="wpis" data-acc="nie-wyjasni"><summary><span class="nr">2.</span>„Nie potrafi wyjaśnić tego, co samo napisało”</summary>
+    <div class="tresc"><p>Pytasz: „Jak doszedłeś do tego wyniku?” Odpowiada Ci cisza, wykręcanie się, zmiana tematu. Dziecko nie ma pojęcia, jak rozwiązać zadanie.</p>
+    <p>Ma tylko gotową odpowiedź, którą przepisało bez zrozumienia. Równie dobrze mogłoby przepisywać książkę po chińsku, bo przyrost wiedzy byłby taki sam.</p></div></details>
+  <details class="wpis" data-acc="wypracowania"><summary><span class="nr">3.</span>„Świetne wypracowania i zero umiejętności pisania”</summary>
+    <div class="tresc"><p>Dziecko, które miało problemy z polskim, nagle pisze jak Olga Tokarczuk. Ale jak pytasz o główną myśl tekstu, patrzy na Ciebie pustym wzrokiem.</p>
+    <p>To znak, że wypracowanie zostało przepisane z okna chatu.</p></div></details>
+  <details class="wpis" data-acc="fakty"><summary><span class="nr">4.</span>„Wkuwa fakty, które nigdy się nie zdarzyły”</summary>
+    <div class="tresc"><p>AI potrafi wymyślać daty, nazwiska, wydarzenia z miną profesora. Nazywamy to halucynacjami, bo w ten sposób AI „widzi” rzeczy, których nie ma.</p>
+    <p>W ten sposób Twoje dziecko wkuwa rzeczy, które są nieprawdziwe. Nie dość, że dostanie jedynkę, to jeszcze nie będzie wiedziało dlaczego.</p></div></details>
+  <p style="margin-top:24px">Tak wygląda nowa, szkolna codzienność. Tylko to wcale nie musi być źle.</p>
+  <p class="bridge">Twoje dziecko musi tylko nauczyć się, jak działać z AI mądrze i bezpiecznie.</p>
+  <div class="przypisy">
+    <p id="p2"><span class="nr">2</span>NASK-PIB, „Nastolatki. Raport z ogólnopolskiego badania uczniów i rodziców. Suplement”, 2025, rozdz. 13. Ankieta internetowa jesienią 2024: 3 665 uczniów klas 7-8 szkoły podstawowej i 1-2 szkoły ponadpodstawowej, 918 rodziców, 160 szkół. 70% uczniów zaznaczyło co najmniej jedno narzędzie AI (ChatGPT 53%, CapCut 25%; w klasie 7 ChatGPT 37%). Wśród rodziców 43% odpowiedziało, że dziecko nie używa takich narzędzi, a 30% „trudno powiedzieć”. <a class="wroc" href="#c2">wróć</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 3. STAWKA ══════════ -->
+<section class="k" id="stawka">
+  <h2>Twoje dziecko uczy się bzdur, odrabiając lekcje z AI.</h2>
+  <p><b>Nie wierzysz?</b> Zrób prosty test. Zapytaj sztuczną inteligencję o coś, na czym znasz się naprawdę dobrze.</p>
+  <p>O swoją branżę, o swoją okolicę, o Twoją ulubioną książkę lub film.</p>
+  <p>Większość będzie się zgadzać. „Z grubsza” będzie ok. Ale gdzieś w środku znajdziesz jedno zdanie, które jest zmyślone.</p>
+  <p>A przy tym napisane dokładnie tak samo i z taką samą pewnością, jak cała reszta.</p>
+  <p>Bo sztuczna inteligencja nie wie. Algorytm zgaduje, jakie słowo powinno paść następne. I zwykle trafia... a czasami nie.</p>
+  <p>A teraz przenieśmy to na wieczór przed sprawdzianem z historii.</p>
+  <p>Uczeń pyta o przyczyny powstania, dostaje gładki akapit z czterema punktami i przepisuje go do zeszytu.</p>
+  <figure class="akapit" role="img" aria-label="Cztery punkty przepisane do zeszytu. Wszystkie wyglądają tak samo.">
+    <svg viewBox="0 0 320 150" aria-hidden="true">
+      <g font-family="Alegreya Sans, sans-serif" font-style="italic" font-weight="700" font-size="17" fill="#4b4f5d">
+        <text x="30" y="27">1.</text><text x="30" y="63">2.</text><text x="30" y="99">3.</text><text x="30" y="135">4.</text>
+      </g>
+      <g fill="none" stroke="#1f2336" stroke-width="1.5" stroke-linecap="round" opacity=".72">
+        <path d="M58 22 c4 -6 9 4 14 0 s10 4 14 -1 m7 0 s14 3 18 -1 s9 3 13 1 m7 0 s7 6 11 -1 s14 -3 18 1 m7 0 s9 -3 13 0 s9 -3 13 0 m7 0 s14 4 18 -1 s14 4 18 1 s12 6 16 0 s9 -3 13 1 s12 -5 16 -1 s12 -4 16 0"/>
+        <path d="M58 31 c4 -6 9 4 14 0 s12 -3 16 -1 s14 5 18 0 s14 6 18 -1 s12 3 16 0 s12 -5 16 0 m7 0 s12 5 16 -1 s9 5 13 0 s12 3 16 1 s9 -6 13 0 s10 -6 14 0"/>
+        <path d="M58 58 c4 -6 9 4 14 0 s9 -4 13 -1 s14 4 18 -1 s14 -5 18 0 s14 3 18 1 s12 3 16 1 m7 0 s7 4 11 -1 s7 3 11 0 s10 3 14 0 s9 -5 13 0 s7 -6 11 1 s10 3 14 0 s12 -4 16 0 s14 5 18 -1 s10 -3 14 0"/>
+        <path d="M58 67 c4 -6 9 4 14 0 s9 -5 13 0 s14 -4 18 1 s9 -4 13 0 s7 5 11 0 s10 -6 14 0 s10 3 14 0 s10 4 14 -1 s10 -3 14 -1 s9 -6 13 1 s10 -3 14 1 s7 4 11 0 s14 -6 18 0"/>
+        <path d="M58 94 c4 -6 9 4 14 0 s14 -6 18 0 s14 4 18 -1 s9 -6 13 0 s9 3 13 0 s14 5 18 1 s7 -5 11 1 s14 -4 18 -1 s9 -3 13 0 s12 -3 16 0 s14 -6 18 -1 s7 4 11 -1 s14 -6 18 -1 s14 -4 18 1 s12 -4 16 0"/>
+        <path d="M58 103 c4 -6 9 4 14 0 s9 6 13 -1 s10 -3 14 1 m7 0 s10 -3 14 0 s10 4 14 0 s9 3 13 1 s9 -4 13 1 s9 5 13 0 m7 0 s14 6 18 -1 s14 -5 18 -1"/>
+        <path d="M58 130 c4 -6 9 4 14 0 s9 3 13 0 m7 0 s9 -5 13 1 s10 6 14 1 s7 5 11 0 s7 -5 11 -1 s7 4 11 -1 s10 -6 14 0 s7 -4 11 0 s9 -4 13 0 s9 5 13 0 s7 5 11 -1 s14 -4 18 0 s7 -6 11 1 s10 -4 14 0 s9 -6 13 -1 s7 -3 11 0"/>
+        <path d="M58 139 c4 -6 9 4 14 0 s7 -3 11 1 s10 -4 14 -1 s9 5 13 0 s10 5 14 0 s9 3 13 -1 s14 4 18 -1 m7 0 s7 4 11 -1 s10 -5 14 -1 s14 -4 18 1 s12 4 16 0 m7 0 s14 -6 18 0 s14 -3 18 0"/>
+      </g>
+      <path d="M17 10q-8 1-8 12v34q0 10-6 12q6 3 6 12v36q0 12 8 12" fill="none" stroke="#c4404a" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </figure>
+  <p>Jeden z tych punktów jest zmyślony. Wkuwa go razem z resztą, bo nie rozpoznaje halucynacji. Cały akapit jest napisany w tym samym tonie.</p>
+  <p class="key">Potem dostaje ocenę słabszą, niż mogłaby być, i nie ma pojęcia dlaczego. Przecież się nauczył.</p>
+  <p>Mówi się o tym, jasne. Sprawdzaj informacje, nie ufaj wszystkiemu.</p>
+  <p class="olowek maly"><span>Tylko kto będzie sprawdzał każde zdanie o dwudziestej drugiej w przeddzień sprawdzianu?</span> Ani uczeń, ani Ty.</p>
+  <p>I właśnie dlatego stworzyliśmy kurs „Ucz się z AI”. Nie uczymy w nim tylko sprawdzania. Uczymy zmiany pytania.</p>
+  <p>Bo prawdziwa różnica tkwi w tym, czy pytamy sztuczną inteligencję o wiedzę (której może nie mieć lub zmyślić), czy każemy jej przetwarzać sprawdzone źródła.</p>
+  <p>Pokazujemy bezpłatne narzędzie, do którego wgrywa się podręcznik, notatki z lekcji i własne <span class="nw">wypracowanie.<a class="cite" href="#p3" id="c3" aria-label="Przypis 3">3</a></span></p>
+  <div class="przypisy">
+    <p id="p3"><span class="nr">3</span>NotebookLM (Google, wersja bezpłatna) odpowiada na podstawie wgranych plików i przy odpowiedzi pokazuje odnośnik do fragmentu źródła; numer strony widać, gdy jest w treści pliku (np. PDF podręcznika). Narzędzie też może się pomylić. Stan: październik 2026. <a class="wroc" href="#c3">wróć</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 4. KOLEJNOŚĆ ══════════ -->
+<section class="k" id="dlaczego">
+  <h2>Kolejność</h2>
+  <p>Pięćdziesiąt cztery osoby posadzono do pisania esejów i podłączono im do głów elektrody. Pierwsza grupa pisała samodzielnie. Druga miała do dyspozycji Google’a. Trzecia: <span class="nw">ChataGPT.<a class="cite" href="#p4" id="c4" aria-label="Przypis 4">4</a></span></p>
+  <p>Najciekawsze jest to, że ostatnia grupa (ta pisząca z czatem) nie potrafiła zacytować własnego eseju. Mówimy o tekście, który skończyli pisać kilka minut wcześniej.</p>
+  <p>Była w tym badaniu jeszcze czwarta część i o niej mówi się rzadziej. Zamieniono grupy miejscami.</p>
+  <p>Ci, którzy cały czas pisali z czatem, po odcięciu od niego wypadli słabo.</p>
+  <p>A ci, którzy najpierw pisali sami i sztuczną inteligencję dostali do pomocy dopiero na końcu, zapamiętali więcej.</p>
+  <p>Według mnie to jest najważniejszy wniosek z całej dyskusji o AI w szkole.</p>
+  <p>Problemem nie jest narzędzie. Problemem jest to, kiedy i do czego jest stosowana.</p>
+  <div class="zasada">
+    <p>Sztuczna inteligencja użyta po własnej próbie pomaga osiągnąć lepsze wyniki i zrozumieć więcej.</p>
+    <p>Użyta zamiast własnej próby po prostu wyręcza i no niestety ogłupia.</p>
+  </div>
+  <div class="przypisy">
+    <p id="p4"><span class="nr">4</span>Kosmyna N. i in., MIT Media Lab, „Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task”, arXiv 2506.08872, czerwiec 2025. Wstępne badanie (preprint bez recenzji): 54 dorosłe osoby w wieku 18-39 lat; mierzono aktywność mózgu (EEG) i pamięć tekstu, a eseje oceniali nauczyciele i model AI (nie były to oceny szkolne). W pierwszej sesji 15 z 18 osób (83%) z grupy z czatem nie umiało zacytować zdania z własnego eseju. W czwartej sesji wzięło udział 18 osób; ci, którzy najpierw pisali sami, a potem z czatem, lepiej przypominali sobie tekst niż osoby, które w sesjach 1-3 pisały z czatem, a w czwartej bez niego. Wniosek w ramce to opinia autora kursu, nie wynik badania. <a class="wroc" href="#c4">wróć</a></p>
+  </div>
+  <aside class="karteczka" aria-label="Sekcja dla rodzica">
+    <p class="k-tyt">Sekcja dla Rodzica</p>
+    <p>Ty nie musisz siedzieć mu nad głową. Wystarczy, że będziesz pasażerem z mapą na tylnym siedzeniu.</p>
+    <p>Kierownicę trzyma dziecko, a Ty co jakiś czas pytasz: „Skąd Twój asystent to wie? Pokaż mi to w podręczniku”.</p>
+    <p><b>A przy kolacji Ty masz jeden test, który zajmuje trzydzieści sekund: „wytłumacz mi własnymi słowami, co tu napisałeś”. Usłyszysz wytłumaczenie? To była nauka.</b></p>
+    <p>Z doświadczenia wiem, że sama świadomość tego, że rodzic może przejrzeć konwersacje, wystarczy, żeby konto do nauki było wykorzystywane tylko do niej.</p>
+    <p>Więcej o AI w kontekście nauki dowiesz się w specjalnym module dla rodzica.</p>
+  </aside>
+  <div class="cta-row">
+    <a class="cta" data-cta="dlaczego" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span></a>
+  </div>
+</section>
+
+<!-- ══════════ 5. CO W KURSIE ══════════ -->
+<section class="k" id="co">
+  <h2>Nauczę Twoje dziecko DZIAŁAĆ z AI</h2>
+  <p>Nasz kurs to komplet narzędzi do uczenia się z AI.</p>
+  <p>Zaczyna się od zasad bezpieczeństwa, a kończy na tym, jak zamienić telefon w porządne narzędzie do nauki.</p>
+  <p class="hint">Sześć kroków od „przepisywania bzdur” do „sensownej nauki z AI”</p>
+  <ol class="kroki">
+    <li><span class="n" aria-hidden="true">1</span><span class="kt">Cyfrowa pracownia<small>czyste środowisko, pełna kontrola</small></span>
+      <p>Osobne konto Google tylko do <span class="nw">nauki.<a class="cite" href="#p5" id="c5" aria-label="Przypis 5">5</a></span> Ty masz dostęp jako „bezpiecznik”. Nie żeby szpiegować, ale żeby sprawdzić jakość myślenia.
+      <span class="eff">Efekt: dziecko wie, że możesz sprawdzić, więc używa konta do prawdziwej nauki.</span></p></li>
+    <li><span class="n" aria-hidden="true">2</span><span class="kt">Zaklęcie Tarczy<small>ochrona przed kłamstwami AI</small></span>
+      <p><span class="eff">Efekt: dziecko wie, kiedy AI może zmyślać.</span></p></li>
+    <li><span class="n" aria-hidden="true">3</span><span class="kt">Cyfrowy Sokrates<small>myślenie zamiast przepisywania</small></span>
+      <p>AI nie daje gotowych odpowiedzi, tylko zadaje pytania. Buduje „rusztowanie wiedzy”. Zmusza do myślenia.
+      <span class="eff">Efekt: dziecko rozumie materiał zamiast go przepisywać.</span></p></li>
+    <li><span class="n" aria-hidden="true">4</span><span class="kt">NotebookLM jako weryfikator</span>
+      <p>Koniec z „bo Chat tak <span class="nw">powiedział”.<a class="cite" href="#p3" aria-label="Przypis 3">3</a></span>
+      <span class="eff">Efekt: możesz przy kolacji zapytać „Skąd Twój asystent to wie?”, a dziecko pokaże konkretne miejsce w źródle.</span></p></li>
+    <li><span class="n" aria-hidden="true">5</span><span class="kt">Konkretne zastosowania</span>
+      <p>Jak internet, tylko mądrze. Fiszki do powtórek w 5 minut, podcasty z podręcznika, trening rozmowy po angielsku z natychmiastową poprawką błędów, tłumaczenie trudnych zagadnień na język zrozumiały, ocenianie wypracowań z wyjaśnieniem każdej uwagi.</p></li>
+    <li><span class="n" aria-hidden="true">6</span><span class="kt">Domowy pakt AI</span>
+      <p>Przejrzystość zamiast ukrywania. Wspólna pisemna umowa:</p>
+      <div class="pakt" id="pakt">
+        <label><input type="checkbox" data-pakt="konto"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 13.5c2.2 1.6 3.6 3.4 4.8 5.6C11 12.4 15.4 7.2 21 3.8"/></svg></span>nauka z AI na wspólnym koncie,</label>
+        <label><input type="checkbox" data-pakt="przepisywanie"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 13.5c2.2 1.6 3.6 3.4 4.8 5.6C11 12.4 15.4 7.2 21 3.8"/></svg></span>zakaz bezmyślnego przepisywania,</label>
+        <label><input type="checkbox" data-pakt="sprawdzanie"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 13.5c2.2 1.6 3.6 3.4 4.8 5.6C11 12.4 15.4 7.2 21 3.8"/></svg></span>sprawdzanie przed użyciem.</label>
+        <p class="trzy">Trzy zasady, pod którymi oboje się podpisujecie.</p>
+        <div class="podpisy" aria-hidden="true">
+          <div><svg viewBox="0 0 150 40" preserveAspectRatio="none"><path d="M4 30c8-18 14-24 18-20s-6 22-2 22 10-20 16-22 2 18 8 18 8-12 14-14 4 10 10 10 10-8 16-8 8 6 14 4 14-6 26-8"/></svg><span>rodzic</span></div>
+          <div><svg viewBox="0 0 150 40" preserveAspectRatio="none"><path d="M6 26c6-4 10-16 16-16s0 20 6 20 8-18 14-18-2 16 4 16 8-10 12-10 2 8 8 8 14-12 20-12 4 10 12 8 20-6 30-10"/></svg><span>uczeń</span></div>
+        </div>
+      </div>
+      </li>
+  </ol>
+  <h3 class="h3big">Co dokładnie znajduje się w kursie</h3>
+  <p>Nasz kurs to kompendium, do którego można wracać albo wybrać najważniejsze moduły.</p>
+
+  <div class="zeszyty" id="lekcje">
+    <article class="subj m1">
+      <div class="et"><p class="mod">moduł 1</p><h3>Opanowanie podstaw</h3></div>
+      <p class="meta">Bezpieczeństwo i dobre polecenia.</p>
+      <p class="desc">W pierwszym uczę, jak szybko zestawić swoją cyfrową pracownię, jak chronić swoje dane i jak bezpiecznie korzystać z AI.</p>
+      <details class="lessons" data-acc="lekcje-m1"><summary>Lista lekcji</summary>
+        <ol><li>Wprowadzenie</li><li>Wykrywacz kłamstw i strażnik</li><li>Cyfrowy Arsenał</li><li>Zaklęcia, które działają</li></ol></details>
+    </article>
+    <article class="subj m2">
+      <div class="et"><p class="mod">moduł 2</p><h3>Profesjonalna nauka z AI</h3></div>
+      <p class="meta">Stworzenie korepetytora, pomoc w pisaniu, notatki 2.0.</p>
+      <p class="desc">W drugim pokazuję, jak od ręki wykorzystać bezpłatne narzędzia do tworzenia konspektów wypracowań na polski, tłumaczenia trudnych pojęć z fizyki, chemii czy biologii, przygotowania skrótów z podręcznika i porządkowania notatek.</p>
+      <details class="lessons" data-acc="lekcje-m2"><summary>Lista lekcji</summary>
+        <ol><li>Koniec z pustą kartką</li><li>Asystent pisarza</li><li>Prościej się nie da</li><li>Czysty konkret</li><li>Cyfryzacja Analogu</li><li>Twój drugi mózg</li></ol></details>
+    </article>
+    <article class="subj m3">
+      <div class="et"><p class="mod">moduł 3</p><h3>Zaawansowane uczenie się z AI</h3></div>
+      <p class="meta">Native za 0 zł, tłumaczenie matematyki, tworzenie gier edukacyjnych.</p>
+      <p class="desc">W trzecim module wspólnie przechodzimy krok po kroku przez zaawansowane techniki pracy ze sztuczną inteligencją.</p>
+      <p class="desc">Twoje dziecko nauczy się m.in. tego, jak ustawić dla siebie cierpliwego, bezpłatnego korepetytora z matematyki, przećwiczyć z nativem konwersacje po angielsku albo poprawiać wypracowanie według wytycznych CKE.</p>
+      <p class="desc">Nauczy się generowania fiszek i zarządzania dużymi zadaniami.</p>
+      <details class="lessons" data-acc="lekcje-m3"><summary>Lista lekcji</summary>
+        <ol><li>Odkryj pisarskie DNA</li><li>Niestrudzony korepetytor</li><li>Sparingpartner</li><li>Matematyka bez lęku</li><li>Wydobywanie wiedzy</li><li>Native w kieszeni</li><li>Fiszki bez płaczu</li><li>Słoń w kawałkach</li><li>Google na sterydach</li><li>Stwórz swoją grę</li><li>Ekstrakt z YouTube</li><li>Porządek i iteracje</li></ol></details>
+    </article>
+    <article class="subj m4">
+      <div class="et"><p class="mod">moduł 4</p><h3>Prowadzenie dużych projektów</h3></div>
+      <p class="meta">Prezentacja, grafiki, ćwiczenie wystąpień.</p>
+      <p class="desc">W czwartym module pokażę, jak stosując poznane techniki zrobić z pomocą sztucznej inteligencji duży projekt - od konspektu, przez prezentacje i wystąpienie po własną grę edukacyjną.</p>
+      <details class="lessons" data-acc="lekcje-m4"><summary>Lista lekcji</summary>
+        <ol><li>Architektura prezentacji</li><li>Grafiki z NanoBanana</li><li>Notatki wizualne</li><li>Mówca doskonały</li><li>Podsumowanie kursu</li></ol></details>
+    </article>
+    <article class="subj m5" id="modul-dla-rodzica">
+      <div class="et"><p class="mod">moduł 5 <b>25 minut</b></p><h3>Dział dla rodzica <span class="free m5-on">BEZPŁATNY</span></h3></div>
+      <p class="meta">Bezpieczeństwo, jak sprawdzać dziecko, jak ustalić granice.</p>
+      <p class="desc">Piąty moduł stworzyliśmy z myślą o Tobie, rodzicu.</p>
+      <p class="desc">W pięciu filmikach zawarłem wszystko to, co musisz wiedzieć o AI w kontekście nauki Twojego dziecka.</p>
+      <p class="desc">Dzięki temu będziesz wiedzieć, co dzieje się w kursie i do czego Twoje dziecko powinno wykorzystywać sztuczną inteligencję.</p>
+      <p class="desc m5-on">Ponieważ to zbyt ważne, żeby za to płacić. Udostępniliśmy bezpłatnie na YouTubie. Możesz posłuchać i sprawdzić, czy mówię sensownie, zanim wydasz złotówkę.</p>
+      <button type="button" class="yt plain m5-on" id="modul5" data-video="modul-5" aria-label="Odtwórz moduł dla rodzica"><span class="play">Obejrzyj moduł dla rodzica (25 minut)</span></button>
+      <details class="lessons" data-acc="lekcje-m5"><summary>Lista lekcji</summary>
+        <ol><li>AI - ani sztuczna ani inteligencja</li><li>Bzdury od AI (i jak z nimi walczyć?)</li><li>Rodzic siedzi z tyłu</li><li>Domowy Pakt AI</li><li>Korepetytor za 0 PLN</li></ol></details>
+    </article>
+  </div>
+  <div class="cta-row">
+    <a class="cta" data-cta="moduly" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span><small>rok dostępu i aktualizacje</small></a>
+  </div>
+  <div class="przypisy">
+    <p id="p5"><span class="nr">5</span>Konto Google w Polsce można samodzielnie założyć od 16 lat; młodszemu dziecku konto zakłada i nadzoruje rodzic (Family Link). ChatGPT: od 13 lat, poniżej 18 lat za zgodą rodzica. Stan: październik 2026. <a class="wroc" href="#c5">wróć</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 6. DLA KOGO ══════════ -->
+<section class="k" id="dla-kogo">
+  <h2 class="olowek"><span>Dla kogo jest ten kurs?</span></h2>
+  <ul class="dla">
+    <li>Dla rodziców uczniów 13+, którzy widzą, że AI to temat, który trzeba opanować.</li>
+    <li>Dla uczniów od 7 klasy do matury.</li>
+  </ul>
+  <p class="uwaga">Ważna uwaga: to nie jest kurs o ściąganiu.</p>
+</section>
+
+<!-- ══════════ 7. KIM JESTEŚMY ══════════ -->
+<section class="k" id="kto">
+  <h2 class="olowek"><span>Kim jesteśmy?</span></h2>
+  <div class="foto">
+    <img src="assets/piotr.webp" width="600" height="405" loading="lazy" alt="Piotr Starzyński, Fundacja Pięć Plus">
+    <p>Piotr Starzyński</p>
+  </div>
+  <p>Nazywam się Piotr Starzyński. Od 13 lat uczę, jak się solidnie i szybko uczyć. Nie jestem informatykiem. Nie uważam, że sztuczną inteligencję trzeba wciskać zawsze i wszędzie. Jestem ekspertem od uczenia się, i to robi największą różnicę w moim podejściu.</p>
+  <p class="key">Muszę tu powiedzieć bardzo dobitnie: według mnie sztuczna inteligencja najlepiej nadaje się właśnie jako asystent samodzielnej nauki szkolnych przedmiotów.</p>
+  <p>Zrozumiały strach rodziców i nauczycieli przed wykorzystaniem sztucznej inteligencji w ten sposób bardzo przypomina mi moment, kiedy internet wchodził do Polski.</p>
+  <p>Byłem wówczas w pierwszej gimnazjum i wtedy również sprawdzaliśmy, czy można oddać w ramach wypracowania przeklejony 1:1 artykuł z Wikipedii. Okazało się, że nie można (chociażby dlatego, że w ten sposób były widoczne wszystkie hiperłącza).</p>
+  <p>Na co dzień widzę, które dzieci używają nowych narzędzi mądrze, a które bezmyślnie przepisują.</p>
+  <p>Dlatego właśnie powstał ten kurs.</p>
+  <p>Samodzielna nauka to jedna z najlepszych rzeczy, w której może pomagać sztuczna inteligencja. Trzeba tylko wiedzieć, jak bezpiecznie z niej korzystać.</p>
+  <p>Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026: ocena 5,0 na 5 z <span class="nw"><a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank">68 ocen</a><a class="cite" href="#p6" id="c6" aria-label="Przypis 6">6</a>.</span></p>
+  <p>Obecnie pracuję na Uniwersytecie Warszawskim nad doktoratem poświęconym wyzwaniom nauczycieli w polskiej szkole.</p>
+  <div class="przypisy">
+    <p id="p6"><span class="nr">6</span>Oceny Fundacji Pięć Plus (wszystkie kursy i zajęcia, nie tylko ten kurs), które orlyedukacji.pl zbiera z zewnętrznych stron (skan serwisu z 3.01.2026, odczyt profilu 26.10.2026). Nie sprawdzamy, czy każdą ocenę wystawił kupujący. <a class="wroc" href="#c6">wróć</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 8. KOSZT ZAKUPU… I JEGO BRAKU ══════════ -->
+<section class="k" id="cena">
+  <h2>Koszt zakupu… i jego braku</h2>
+  <p class="lead">Ile kosztuje kurs Ucz się z AI i co tracisz, nie decydując się na niego.</p>
+  <p>LLM to czat w rodzaju ChatGPT albo Gemini.</p>
+  <p>Odpowiednio użyty LLM może wytłumaczyć trudny wzór z fizyki na przykładzie Minecrafta, może pomóc zaplanować pracę nad prezentacją albo trenować z dzieckiem rozmowę po angielsku.</p>
+  <p>To są prywatne korepetycje za zero <span class="nw">złotych.<a class="cite" href="#p7" id="c7" aria-label="Przypis 7">7</a></span></p>
+  <p>To tylko trochę pracy teraz i zbieranie owoców przez cały rok szkolny. A potem kolejny rok. Później przed egzaminem albo maturą.</p>
+  <p>A potem na studiach i w pracy, gdzie (stety lub niestety) wykorzystanie AI stanie się standardem.</p>
+  <p>300 zł to niecałe pięć godzin korepetycji z angielskiego na poziomie <span class="nw">liceum<a class="cite" href="#p8" id="c8" aria-label="Przypis 8">8</a></span> i około 82 groszy <span class="nw">dziennie.<a class="cite" href="#p9" id="c9" aria-label="Przypis 9">9</a></span></p>
+  <p>Wszystkie metody oparliśmy na bezpłatnych narzędziach, więc ich stosowanie na co dzień nie kosztuje nawet złotówki.</p>
+  <div class="oferta">
+    <p class="price"><span class="cena">300 zł</span><small>Ucz się z AI · 12 miesięcy dostępu</small></p>
+    <p class="raz">Raz. Na cały rok szkolny.</p>
+    <p class="co">Kupując pakiet, otrzymujesz:</p>
+    <ul class="incl">
+      <li>4 moduły wideo dla ucznia, 27 lekcji</li>
+      <li>moduł dla rodzica: 5 filmów, 25 minut</li>
+      <li>skrypt z zadaniem do każdej lekcji i gotowymi poleceniami: Zaklęcie Tarczy, Cyfrowy Sokrates i 15 poleceń do różnych przedmiotów</li>
+      <li>Domowy Pakt AI i pytania kontrolne na kolację</li>
+      <li>dostęp na rok z aktualizacjami, potem 50 zł rocznie, bez automatycznej subskrypcji</li>
+    </ul>
+    <a class="cta" data-cta="cena" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span></a>
+    <p class="pay">Płatność online przez Paynow. Wystawiamy faktury. Dostęp dostajesz od razu po zaksięgowaniu płatności.</p>
+  </div>
+  <div class="gwar">
+    <h3>Żelazna gwarancja zwrotu <span class="kolko">30 dni<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M60 3C30 1 4 8 3 20s26 18 50 17 45-6 44-18S70 2 40 5"/></svg></span></h3>
+    <p>Osobiście gwarantuję, że ten kurs działa. Masz żelazną gwarancję zwrotu w ciągu 30 dni.</p>
+    <p>Ty piszesz maila, a ja zwracam pieniądze. <b>Jeden mail, 100% zwrot, bez </b><span class="nw"><b>pytań.</b><a class="cite" href="#p10" id="c10" aria-label="Przypis 10">10</a></span></p>
+    <p class="sign podkr">Piotr Starzyński</p>
+    <div class="cta-row">
+      <a class="cta" data-cta="gwarancja" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span><small>30 dni na zwrot</small></a>
+    </div>
+  </div>
+  <div class="przypisy">
+    <p id="p7"><span class="nr">7</span>Bezpłatne wersje ChatGPT, Gemini i NotebookLM mają limity ustalane przez dostawcę (np. dzienna liczba wiadomości albo minut rozmowy głosowej). Stan: październik 2026. <a class="wroc" href="#c7">wróć</a></p>
+    <p id="p8"><span class="nr">8</span>Średnia stawka w ogłoszeniach korepetycji z angielskiego na poziomie liceum i matury: 61 zł za 60 minut (e-korepetycje.net, „Ceny korepetycji 2026”, raport z 140 648 ogłoszeń, odczyt 25.10.2026). 300 zł to 4,9 takiej godziny. <a class="wroc" href="#c8">wróć</a></p>
+    <p id="p9"><span class="nr">9</span>300 zł podzielone na 365 dni dostępu. <a class="wroc" href="#c9">wróć</a></p>
+    <p id="p10"><span class="nr">10</span>Gwarantem jest Apetrus Piotr Starzyński (dane w stopce). Masz też ustawowe prawo odstąpienia od umowy, zasady są w regulaminie. Gwarancja nie ogranicza tego prawa ani praw z tytułu niezgodności treści cyfrowej z umową. <a class="wroc" href="#c10">wróć</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 9. OPINIE: wchodzi dopiero z trzema prawdziwymi opiniami o tym kursie. ══════════ -->
+
+<!-- ══════════ 10. PYTANIA ══════════ -->
+<section class="k" id="pytania">
+  <h2 class="olowek"><span>Masz pytanie? Może mamy odpowiedź.</span></h2>
+  <details class="wpis" data-acc="wiek"><summary>„Od jakiego wieku?”</summary>
+    <div class="tresc"><p>Krótka odpowiedź brzmi - od 7 klasy, czyli od 13 roku <span class="nw">życia.<a class="cite" href="#p5" aria-label="Przypis 5">5</a></span></p></div></details>
+  <details class="wpis" data-acc="pierwszy-krok"><summary>„Czy moje dziecko w ogóle używa AI?”</summary>
+    <div class="tresc"><p>Jeśli nie masz pewności, po prostu zapytaj. Jeśli jeszcze nie używa, to ten kurs jest świetnym pierwszym, bezpiecznym krokiem w świat AI.</p></div></details>
+  <details class="wpis" data-acc="nie-usiadzie"><summary>„Jak działa żelazna gwarancja?”</summary>
+    <div class="tresc"><p>Pies zjadł kabel od monitora. Gwiazdy źle się ułożyły. Nie musimy znać powodu zwrotu.</p>
+    <p>Wystarczy, że napiszesz nam maila w ciągu 30 dni od zakupu. Otrzymasz z powrotem pełną kwotę kursu.</p></div></details>
+  <details class="wpis" data-acc="oglupia"><summary>„To tylko nowa forma ściągania. Dziecko się ogłupi.”</summary>
+    <div class="tresc"><p>Powiem wprost: jeśli dziecko wrzuci zadanie do ChataGPT czy Gemini, by dostać gotowy wynik, to tylko się ogłupi. Powtarzamy to w kółko na wszystkich zajęciach stacjonarnych i w kursie online.</p>
+    <p>Zamiast zakazywać (co doskonale wiesz, jak kończy się z nastolatkami), pokazujemy dziecku drogę myślenia zamiast przepisywania.</p></div></details>
+  <details class="wpis" data-acc="myli-sie"><summary>„Tylko czy jest sens się uczyć wykorzystując LLM, który może generować nieprawdę?”</summary>
+    <div class="tresc"><p>Spokojnie, na szczęście są metody, żeby przed takimi halucynacjami się obronić.</p>
+    <p>Wolę, żeby LLM napisał „nie wiem”, niż żeby zmyślił datę Bitwy pod Grunwaldem.</p></div></details>
+  <details class="wpis" data-acc="zakazac"><summary>„Czy to znaczy, że najbezpieczniej jest zakazać Twojemu dziecku samodzielnego używania narzędzi opartych na LLM?”</summary>
+    <div class="tresc"><p>Oczywiście, że nie. Przede wszystkim dlatego, że Twoje dziecko i tak będzie z tych ułatwień korzystać.</p>
+    <p>Z założenia, jeśli ustalicie zasady wspólnie, a następnie się pod nimi podpiszecie, będzie Ci znacznie łatwiej je egzekwować, a Twojemu dziecku będzie po prostu głupio złamać zasady, na które samo się zgodziło.</p>
+    <p>Jeśli chcesz po prostu dać mu zasady do podpisania, to… lepiej mu ich w ogóle nie pokazuj.</p></div></details>
+  <details class="wpis" data-acc="uzaleznienie"><summary>„Czy dziecko się nie uzależni?”</summary>
+    <div class="tresc"><p>Właśnie przeciwnie. Nauczy się sterować AI, a nie być jej niewolnikiem.</p>
+    <p>I dowie się, że LLM to nie przyjaciel i nie terapeuta, tylko narzędzie o konkretnym zastosowaniu.</p></div></details>
+  <details class="wpis" data-acc="nie-znam-sie"><summary>„Nie znam się na komputerach, nie dam rady.”</summary>
+    <div class="tresc"><p>Internet też wydawał się skomplikowany w 2002 roku. Dziś każdy rodzic potrafi używać Google. Nie musisz być programistą. Musisz umieć zadać pytanie przy kolacji: „Skąd Twój asystent to wie?”</p>
+    <p>I zalogować się na konto do nauki dziecka. Tak samo, jak logujesz się do swojego maila. Dostajesz gotowe narzędzia: pytania kontrolne, dostęp do wspólnego konta.</p></div></details>
+  <details class="wpis" data-acc="szkola"><summary>„Szkoła powinna to wytłumaczyć.”</summary>
+    <div class="tresc"><p>Szkoła nigdy nie nadąża za nowościami.</p></div></details>
+  <details class="wpis" data-acc="za-rok"><summary>„Za rok wszystko się zmieni.”</summary>
+    <div class="tresc"><p>Tak, jak internet zmieniał się przez 30 lat.</p>
+    <p>Ale podstawy zostały takie same: sprawdzanie źródeł, krytyczne myślenie, rozpoznawanie manipulacji.</p>
+    <p>Zmieni się wygląd chatów i możliwości, ale zasady ich używania pozostaną niezmienne.</p>
+    <p>Obiecuję bezpłatne aktualizacje kursu, jeśli pojawią się nowe narzędzia lub zagrożenia.</p></div></details>
+  <details class="wpis" data-acc="dostep"><summary>„A jeśli rok to za mało?”</summary>
+    <div class="tresc"><p>Kupując nasz kurs, dostajesz możliwość przedłużania dostępu za cenę utrzymania konta na platformie (50 złotych rocznie).</p></div></details>
+  <p class="hint" style="margin-top:16px">Masz inne pytanie? Napisz na <a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a>, chętnie odpowiemy.</p>
+</section>
+
+</main>
+
+<!-- ══════════ 11. TYLNA OKŁADKA (domknięcie) ══════════ -->
+<section class="tyl" id="offer">
+  <div class="in">
+    <h2 class="olowek"><span>Jeszcze to czytasz?</span></h2>
+    <p class="lead"><b>Twoje dziecko będzie używać AI przez następne 50 lat. Naucz je, jak robić to z głową.</b></p>
+    <p>Jeśli zrobisz to z głową, od początku będzie kojarzyć te narzędzia jako pomoc w nauce, a nie gotową ściągę. Będzie wiedzieć, że halucynacje mogą się zawsze zdarzyć, ale też - jak zminimalizować ich występowanie.</p>
+    <div class="cta-row">
+      <a class="cta" data-cta="domkniecie" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span><small>rok dostępu · 30 dni na zwrot</small></a>
+    </div>
+    <p class="ps"><span class="cena">300 zł</span> · rok dostępu i aktualizacje · 30 dni na zwrot. Płatność online przez Paynow. Wystawiamy faktury.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <p>Fundacja Pięć Plus, ul. Stefana Żeromskiego 25/34, 00-882 Warszawa · KRS 0000720276 · NIP 5223115027</p>
+    <p>Sprzedawca kursu i wystawca faktur (koszyk kursy.piecplus.pl): Apetrus Piotr Starzyński, ul. Perzyńskiego 11A/52, 01-855 Warszawa, NIP 1182227447, REGON 389685611</p>
+    <p><a href="mailto:kontakt@5plus.edu.pl">kontakt@5plus.edu.pl</a> · <a href="https://5plus.edu.pl" rel="noopener">5plus.edu.pl</a></p>
+    <p><a href="https://kursy.piecplus.pl/podstrona/1/regulamin.html" rel="noopener" target="_blank">Regulamin</a> · <a href="https://kursy.piecplus.pl/podstrona/2/polityka-prywatnosci.html" rel="noopener" target="_blank">Polityka prywatności</a> · <button type="button" id="cookieSettings">Ustawienia cookies</button></p>
+  </div>
+</footer>
+
+<div class="bar-cta" id="barCta">
+  <a class="cta" data-cta="sticky" href="https://kursy.piecplus.pl/s/ucz-sie-z-ai.html">Kupuję kurs - <span class="cena">300 zł</span></a>
+</div>
+
+<div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookies" hidden>
+  <p>Niezbędne cookies działają zawsze. Za Twoją zgodą włączamy też Piksel Meta i Microsoft Clarity, żeby mierzyć skuteczność reklam.
+  Administrator danych: Apetrus Piotr Starzyński. Szczegóły w <a href="https://kursy.piecplus.pl/podstrona/2/polityka-prywatnosci.html" rel="noopener" target="_blank">polityce prywatności</a>.</p>
+  <div class="btns">
+    <button type="button" class="yes" data-consent="all">Akceptuję wszystkie</button>
+    <button type="button" data-consent="necessary">Tylko niezbędne</button>
+  </div>
+</div>
+<script>
+(function(){
+  // --- PRZEŁĄCZNIKI (jedno miejsce) ---
+  // CENA zmienia kwotę w przyciskach i pasku. Ręcznie trzeba podmienić też: „niecałe pięć godzin”, „82 groszy” (sekcja #cena),
+  // przypisy 8-9 i meta description/og:description w <head>.
+  var CENA = 300;
+  var MODUL5_YT = '';        // ID filmu albo playlisty (PL…) modułu dla rodzica; pusty = moduł niepubliczny, słowo „bezpłatny” nie pada
+  var PIXEL_ID = '1489569048060450'; // koszyk ucz-sie-z-ai.html (fsid 82) inicjuje ten piksel (fbq.getState() 26.10, ten sam co SUO); Purchase potwierdzić w Menedżerze zdarzeń
+  var CLARITY_ID = 'vjr23eh9gx';
+  var VARIANT = 'odpicowana', HERO = 'test-30-sekund';
+  var PROD = {content_name:'ucz-sie-z-ai', content_ids:['fsid_82'], content_type:'product', value:CENA, currency:'PLN'};
+  var KEY = 'e5p_consent', consent = null, pending = [];
+  var STD = /^(ViewContent|InitiateCheckout|Purchase|Lead|AddToCart)$/;
+  try { consent = localStorage.getItem(KEY); } catch(e){}
+
+  document.querySelectorAll('.cena').forEach(function(el){ el.textContent = CENA + ' zł'; });
+  if (MODUL5_YT) document.documentElement.classList.add('m5');
+
+  // --- Piksel Meta: tylko po zgodzie ---
+  function loadPixel(){
+    if (!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  // --- Microsoft Clarity (ten sam projekt co 5plus.edu.pl): tylko po zgodzie ---
+  function loadClarity(){
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+    try { window.clarity('consentv2', {ad_Storage:'granted', analytics_Storage:'granted'}); window.clarity('set', 'lp_variant', VARIANT); window.clarity('set', 'hero', HERO); } catch(e){}
+  }
+  function send(name, params){ if (window.fbq) try { fbq(STD.test(name) ? 'track' : 'trackCustom', name, params); } catch(e){} }
+  function track(name, params){
+    params = Object.assign({lp_variant:VARIANT, hero:HERO}, params || {});
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({event:name}, params));
+    if (consent === 'all') send(name, params);
+    else if (consent === null) pending.push([name, params]);
+  }
+  function setConsent(v){
+    var prev = consent; consent = v;
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    // wycofanie zgody: Clarity dostaje „denied”, a przeładowanie wyłącza Piksel i Clarity
+    if (prev === 'all' && v !== 'all') { try { window.clarity && clarity('consentv2', {ad_Storage:'denied', analytics_Storage:'denied'}); } catch(e){} location.reload(); return; }
+    banner.hidden = true; updateBar();
+    if (v === 'all') { loadPixel(); loadClarity(); pending.forEach(function(p){ send(p[0], p[1]); }); }
+    pending = [];
+  }
+
+  var banner = document.getElementById('cookies');
+  banner.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); });
+  });
+  document.getElementById('cookieSettings').addEventListener('click', function(){ banner.hidden = false; updateBar(); });
+  if (consent === 'all') { loadPixel(); loadClarity(); }
+  else if (consent === null) banner.hidden = false;
+
+  track('ViewContent', PROD);
+
+  // --- UTM z reklamy przechodzą na koszyk (inna domena) ---
+  var utm = location.search.replace(/^\?/, '').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
+  var paktN = 0;
+  document.querySelectorAll('a[data-cta]').forEach(function(a){
+    if (utm) a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm;
+    a.addEventListener('click', function(e){
+      track('InitiateCheckout', Object.assign({}, PROD, {cta_place:a.getAttribute('data-cta'), pakt:paktN}));
+      // 250 ms, żeby zdarzenie zdążyło wyjść przed przejściem do koszyka (tylko przy zgodzie i Pikselu, zwykłe kliknięcie)
+      if (!e.defaultPrevented && consent === 'all' && window.fbq && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+        e.preventDefault(); var to = a.href; setTimeout(function(){ location.href = to; }, 250);
+      }
+    });
+  });
+
+  // --- które karty i listy lekcji rodzic otwiera ---
+  // karta otwarta w HTML (atrybut open) dostaje „toggle” już przy wczytaniu: tego jednego zdarzenia nie liczymy
+  document.querySelectorAll('details[data-acc]').forEach(function(d){
+    var initOpen = d.open;
+    d.addEventListener('toggle', function(){
+      if (initOpen) { initOpen = false; if (d.open) return; }
+      if (d.open) track('accordion_open', {card:d.getAttribute('data-acc')});
+    });
+  });
+
+  // --- przypisy: numerek prowadzi do źródła i je podświetla (bez zmiany adresu: UTM zostają w pasku) ---
+  document.querySelectorAll('a.cite, a.wroc').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
+      if (a.classList.contains('cite')) {
+        t.classList.add('flash'); setTimeout(function(){ t.classList.remove('flash'); }, 2200);
+        track('przypis', {nr:a.textContent});
+      }
+    });
+  });
+
+  // --- domowy pakt: trzy zasady odhaczone = dwa podpisy (zdarzenie „podpisany” tylko raz) ---
+  var pakt = document.getElementById('pakt'), paktStart = false, paktDone = false;
+  pakt.querySelectorAll('input[data-pakt]').forEach(function(c){
+    c.addEventListener('change', function(){
+      paktN = pakt.querySelectorAll('input[data-pakt]:checked').length;
+      pakt.classList.toggle('podpisany', paktN === 3);
+      if (!paktStart) { paktStart = true; track('pakt', {n:paktN}); }
+      if (paktN === 3 && !paktDone) { paktDone = true; track('pakt_podpisany', {n:3}); }
+    });
+  });
+
+  // --- filmy YouTube: iframe dopiero po kliknięciu (youtube-nocookie) ---
+  function embed(b, id, extra){
+    if (b.querySelector('iframe')) return null;
+    var list = /^PL/.test(id);
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + (list ? 'videoseries?list=' + id + '&' : id + '?') + 'autoplay=1&rel=0' + (extra || '');
+    f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+    f.title = b.getAttribute('aria-label') || 'Film';
+    b.appendChild(f);
+    return f;
+  }
+  document.querySelectorAll('button.yt[data-yt]').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (embed(b, b.getAttribute('data-yt'))) track('video_play', {video:b.getAttribute('data-video')});
+    });
+  });
+
+  // --- moduł dla rodzica: osadzony na stronie (pula piksela), start i połowa ---
+  var m5 = document.getElementById('modul5');
+  if (m5 && MODUL5_YT) {
+    m5.addEventListener('click', function(){
+      var f = embed(m5, MODUL5_YT, '&enablejsapi=1');
+      if (!f) return;
+      f.id = 'modul5-player';
+      track('Modul5Start', {video:'modul-5'});
+      var half = false;
+      function hook(){
+        try {
+          var p = new YT.Player('modul5-player', {events:{onStateChange:function(e){
+            if (e.data !== 1 || half) return;
+            var t = setInterval(function(){
+              var d = p.getDuration && p.getDuration(), c = p.getCurrentTime && p.getCurrentTime();
+              if (d && c / d >= .5 && !half) { half = true; clearInterval(t); track('Modul5Polowa', {video:'modul-5'}); }
+            }, 5000);
+          }}});
+        } catch(e){}
+      }
+      if (window.YT && YT.Player) hook();
+      else { window.onYouTubeIframeAPIReady = hook; var s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s); }
+    });
+  }
+  document.querySelectorAll('a[data-m5]').forEach(function(a){
+    a.addEventListener('click', function(){ track('Modul5Klik', {place:a.getAttribute('data-m5')}); });
+  });
+
+  // --- pasek z przyciskiem na telefonie: od chwili, gdy przycisk z okładki zniknie; nie przy cenie i tylnej okładce, nie razem z banerem ---
+  var bar = document.getElementById('barCta'), heroCta = document.querySelector('a[data-cta="hero"]'),
+      hide = [document.getElementById('cena'), document.getElementById('offer')];
+  function inView(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+  function updateBar(){
+    var on = banner.hidden && heroCta.getBoundingClientRect().bottom < 0 && !hide.some(inView);
+    bar.classList.toggle('on', on);
+  }
+  addEventListener('scroll', updateBar, {passive:true}); addEventListener('resize', updateBar); updateBar();
+})();
+</script>
+</body>
+</html>
