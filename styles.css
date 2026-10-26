@@ -68,7 +68,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 }
 
 /* ============================================================= HERO (home.css) */
-.hero{min-height:auto;padding-top:128px;background:radial-gradient(1100px 600px at 50% -10%, rgba(232,163,61,.07), transparent 60%),linear-gradient(180deg, rgba(22,64,46,0) 72%, rgba(22,64,46,.95) 100%),radial-gradient(900px 700px at 50% 115%, rgba(22,64,46,.9), transparent 70%),var(--las);color:var(--krem);display:grid;place-items:center;text-align:center;position:relative;padding:104px 0 112px}
+.hero{min-height:auto;background:radial-gradient(1100px 600px at 50% -10%, rgba(232,163,61,.07), transparent 60%),linear-gradient(180deg, rgba(22,64,46,0) 72%, rgba(22,64,46,.95) 100%),radial-gradient(900px 700px at 50% 115%, rgba(22,64,46,.9), transparent 70%),var(--las);color:var(--krem);display:grid;place-items:center;text-align:center;position:relative;padding:136px 0 112px}
 .hero-inner{display:grid;justify-items:center;gap:0}
 .hero-mark{width:min(620px,88vw);margin-bottom:20px;overflow:visible}
 @media(max-width:640px){ .hero-mark text{font-size:26px} }
