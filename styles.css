@@ -40,6 +40,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .topnav .wrap{display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--krem);font-weight:900;font-size:1.05rem;letter-spacing:.05em}
 .brand .eq{width:26px;height:26px}
+.brand .brand-logo{height:26px;width:auto;flex:none}
+.brand span{white-space:nowrap}
+@media(max-width:400px){.brand{font-size:.92rem;gap:8px}.brand .brand-logo{height:22px}}
 .nav-links{margin-left:auto;display:flex;gap:26px}
 .nav-links a{color:var(--krem);text-decoration:none;font-weight:700;font-size:.92rem;opacity:.88;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--zloto)}
@@ -65,7 +68,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 }
 
 /* ============================================================= HERO (home.css) */
-.hero{min-height:100svh;background:radial-gradient(1100px 600px at 50% -10%, rgba(232,163,61,.07), transparent 60%),linear-gradient(180deg, rgba(22,64,46,0) 72%, rgba(22,64,46,.95) 100%),radial-gradient(900px 700px at 50% 115%, rgba(22,64,46,.9), transparent 70%),var(--las);color:var(--krem);display:grid;place-items:center;text-align:center;position:relative;padding:104px 0 112px}
+.hero{min-height:auto;background:radial-gradient(1100px 600px at 50% -10%, rgba(232,163,61,.07), transparent 60%),linear-gradient(180deg, rgba(22,64,46,0) 72%, rgba(22,64,46,.95) 100%),radial-gradient(900px 700px at 50% 115%, rgba(22,64,46,.9), transparent 70%),var(--las);color:var(--krem);display:grid;place-items:center;text-align:center;position:relative;padding:104px 0 112px}
 .hero-inner{display:grid;justify-items:center;gap:0}
 .hero-mark{width:min(620px,88vw);margin-bottom:20px;overflow:visible}
 @media(max-width:640px){ .hero-mark text{font-size:26px} }
@@ -384,7 +387,7 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .cookies[hidden]{display:none}
 
 @media(max-width:720px){
-  .hero{min-height:auto;align-items:start;padding:78px 0 34px}
+  .hero{min-height:auto;align-items:start;padding:84px 0 34px}
   .band{padding-block:clamp(36px,6vh,56px)}
   .sec-lead{margin-top:12px}
   #pytania{padding-top:14px}
