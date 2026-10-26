@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Alegreya+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <!--
-  SZYBKIE CZYTANIE ONLINE — WERSJA A „bezpieczna”, copy v2 (2026-10-25).
+  SZYBKIE CZYTANIE ONLINE — WERSJA A „bezpieczna”, copy v2 przebieg 2 (2026-10-26; poprzednia wersja w gicie).
   Szkielet: ~/Kodowanie/Landing 8kl/index.html (v7): CSS i tokeny, cookies z Pikselem i Clarity po zgodzie, track/trackCustom,
   UTM na koszyk, sticky CTA, akordeony <details>. Sześć pasów działów w kolorach z palety LP (bez pomarańczu i terakoty).
   Tekst: vault 02 Fundacja Pięć Plus/kampanie/sc-jesien-2026/10-landing-copy-v2.md (przy każdej sekcji skąd zdania).
@@ -339,6 +339,11 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
 .hprice s{font-size:22px;color:#9ea2b6;font-weight:700;margin-right:6px}
 .hero .trust{margin-top:8px}
 @media(max-width:620px){.guar svg{display:none}.guar{padding:18px}}
+.mech{max-width:760px}
+.mech .road{border-left:4px solid var(--gold);padding:2px 0 2px 18px;margin-top:18px}
+.mech .road p{color:var(--dim)}
+.mech .mech-key{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:19px;line-height:1.45;margin:14px 0 4px}
+.mech .mech-sign{font-weight:700;color:var(--gold-dark);margin:0}
 </style>
 </head>
 <body>
@@ -346,6 +351,7 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
   <div class="wrap">
     <a class="brand" href="#top"><b>5+</b>Szybkie Czytanie Online</a>
     <nav aria-label="Nawigacja strony">
+      <a href="#skupienie">Skupienie</a>
       <a href="#niedowiarki">Dla niedowiarków</a>
       <a href="#co">Co w kursie</a>
       <a href="#kto">Kim jestem</a>
@@ -375,15 +381,16 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
           <a class="cta" data-cta="hero" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>dostęp od razu po zakupie</small></a>
         </div>
         <p class="start"><b>Na start: 15 minut.</b> Rozrusznik czytania.</p>
-        <p class="count">Od listopada 2023 ten kurs kupiło ponad 1 700 osób.<sup>*</sup></p>
+        <p class="count">Od grudnia 2023 ten kurs kupiło ponad 1 700 osób.<sup>*</sup></p>
       </div>
       <div class="hero-photo">
         <img src="assets/droga/krok-0.jpg" width="720" height="479" alt="Piotr Starzyński kartkuje książkę">
       </div>
     </div>
-    <p class="fn"><sup>*</sup>Eksport z platformy kursowej WTL, kurs „Szybkie Czytanie Online”: 1 729 unikalnych adresów kupujących
-    w cenach od 97 do 500 zł, od 24.11.2023 do 20.07.2025, bez transakcji testowych i adresów Fundacji. Liczymy kupujących, nie osoby,
-    które ukończyły kurs.</p>
+    <p class="fn"><sup>*</sup>Eksport z platformy kursowej WTL, kurs „Szybkie Czytanie Online”: 1 711 unikalnych adresów e-mail, które zapłaciły
+    97, 147 albo 244 zł (kurs z Pogotowiem Koncentracji), od 27.12.2023 do 20.07.2025. Bez transakcji testowych, adresów Fundacji i 128 adresów,
+    które płaciły wyłącznie 194 albo 500 zł (oferty z 2024 r., produkt nieustalony). Liczba obejmuje wszystkich kupujących, także tych,
+    którzy kursu nie ukończyli.</p>
   </div>
 </section>
 
@@ -394,27 +401,41 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     <p class="lead">Świat bombarduje Cię lawiną powiadomień, mailingów, wiadomości. Informacji jest coraz więcej, a czasu coraz mniej
     i to się nie zmieni.</p>
     <div class="why">
-      <div><h3>Rozproszenie</h3><p>Atakujący powiadomieniami telefon, wciągający serial, gąszcz spraw na liście do zrobienia.
-        To nie Twoja wina, że nie możesz usiedzieć nad książką.</p></div>
-      <div><h3>Zapominanie</h3><p>„Czytam np. stronę i nie wiem o czym ona jest, muszę przeczytać ponownie”. Też tak masz?
+      <div><h3>Nie mogę się skupić</h3><p>Jak to jest, że na telefonie skupisz się w każdych warunkach, a do książki potrzebujesz ciszy,
+        kominka i miękkiej głowy psa pod ręką? To nie Twoja wina, że nie możesz usiedzieć nad książką.</p></div>
+      <div><h3>Czytam wolno</h3><p>Szkolne czytanie to za mało. To, w jaki sposób teraz czytasz, wystarczyło wprawdzie na wymęczenie lektur,
+        ale zupełnie nie przystaje do współczesnego świata.</p></div>
+      <div><h3>Nie wiem, co czytam</h3><p>„Czytam np. stronę i nie wiem o czym ona jest, muszę przeczytać ponownie”. Też tak masz?
         Musisz wracać i sprawdzać? Przy „wolnym” czytaniu to zupełnie normalne.</p></div>
-      <div><h3>Brak czasu</h3><p>Odpuszczasz książkę, bo masz tylko chwilę.</p></div>
-      <div><h3>Zmęczenie</h3><p>Skoro cały czas pracujesz intelektualnie, zwyczajnie nie chce Ci się sięgać po książkę w wolnym czasie.
-        To również nie jest Twoja wina.</p></div>
+      <div><h3>Nie mam czasu</h3><p>Odpuszczasz książkę, bo masz tylko chwilę. Z doświadczenia pracy w Fundacji wiem, że to, co zniechęca
+        do książek, to zobowiązanie czasowe.</p></div>
+      <div><h3>14 zakładek na potem</h3><p>Masz otwartych 14 zakładek, kilka pobranych ebooków czy artykułów „na potem”.
+        O prawdziwych książkach już nie wspomnę.</p></div>
     </div>
     <p class="bridge">Potrzebujesz technik czytania. Bo założę się, że czytasz dokładnie tak samo jak w szkole.</p>
   </div>
 </section>
 
-<!-- ══════════ 3. STAWKA ══════════ -->
-<section id="stawka">
-  <div class="wrap">
-    <h2>Masz otwartych 14 zakładek, kilka pobranych ebooków czy artykułów „na potem”?</h2>
-    <p>A może są eksperci, których nawet lubisz i chcesz śledzić, ale nie ma czasu? Jeśli tak, to niestety omija Cię najnowsza wiedza
-    z Twojej branży, która (jak każda nowość) szybko się starzeje, eksperci, których śledzisz, a nie czytasz. O prawdziwych książkach
-    już nie wspomnę.</p>
-    <p class="bridge">Wcale nie musi tak być.</p>
-    <p>Możesz czytać tak jak ja i nadrobić zaległości. Nie potrzebujesz do tego żadnych specjalnych zdolności.</p>
+<!-- ══════════ 3. MECHANIZM (G16 + G17) ══════════ -->
+<section id="skupienie">
+  <div class="wrap mech">
+    <h2>Im szybciej czytasz, tym łatwiej Ci się skupić na tekście.</h2>
+    <p>Chcesz więcej czytać. To jasne. Ale trudno Ci się zebrać, a jak już się zbierzesz, to szybko się nudzisz.</p>
+    <p>Może nawet głupio Ci się do tego przyznać. Po latach zbierania się do czytania, odpuszczania i poczucia winy zaczynasz się zastanawiać,
+    czy Ty w ogóle lubisz czytać?</p>
+    <p class="bridge">Lubisz. Tylko w codziennym zgiełku zapominasz, że lubisz.</p>
+    <p>A co jeśli zaczniesz czytać szybciej?</p>
+    <p>Wtedy już na pewno nic nie zrozumiem. Prawda? Prawda?<br>No właśnie nieprawda.</p>
+    <div class="road">
+      <p>Pomyśl o tym, jak o prowadzeniu samochodu. Gdy jedziesz 30 km/h pustą drogą, nudzisz się. Zmieniasz stacje w radiu, wyglądasz
+      przez okno, droga zaczyna się dłużyć.</p>
+      <p>Ale gdy jedziesz 120 km/h na autostradzie, Twoja uwaga musi być całkowita. Jesteś tylko Ty i droga. Skupienie staje się naturalne,
+      a nie wymuszone.</p>
+      <p>Motocykliści, którzy kochają pędzić 250 na godzinę, mówią, że wchodzą w „stan flow”. Dla nas to po prostu pełne skupienie na książce.
+      Z szybkim czytaniem jest identycznie.</p>
+      <p class="mech-key">Kiedy Twój mózg dostaje informacje w tempie, do którego jest przyzwyczajony, przestaje szukać rozpraszaczy.</p>
+      <p class="mech-sign">Piotr Starzyński</p>
+    </div>
   </div>
 </section>
 
@@ -427,7 +448,7 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     że „szybkie czytanie” do tej pory niewiele Ci mówiło i brzmiało jak magia albo oszustwo.</p>
     <p><b>Dlatego u mnie wszystko opiera się na faktach i ćwiczeniach, które działają już po pierwszych 15 minutach kursu.</b></p>
 
-    <h3 class="h3big">Głupoty, które Cię hamują</h3>
+    <h3 class="h3big">3 mity Szybkiego Czytania</h3>
     <div class="myth"><b>Mit: Czytając szybko nic nie zrozumiem i nic nie zapamiętam.</b>
       <p>Mój kurs to nie tylko sztuczki na podkręcenie czytania, kładę ogromny nacisk na rozumienie i zapamiętywanie tekstu.
       Przez cały kurs będziesz sprawdzać zarówno tempo, jak i zrozumienie tekstu.</p></div>
@@ -443,7 +464,7 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
       <div>
         <p>Poza chwaleniem się kursem, daliśmy go do przetestowania sceptykowi szybkiego czytania: znanemu i lubianemu youtuberowi
         Danielowi Muniowskiemu z kanału Strefa Czytacza. Przed rozpoczęciem kursu miał dużo wątpliwości, ale po przejściu kursu zmienił zdanie.</p>
-        <blockquote class="say">„Muszę zwrócić Piotrowi honor (…) tak, to działa, bez żadnej magii.”<cite>Daniel Muniowski, Strefa Czytacza</cite></blockquote>
+        <blockquote class="say">„Muszę zwrócić Piotrowi honor (…) tak, to działa, bez żadnej magii.”<br>„Nie powiem wam, że mam nagle 5 razy przyspieszone tempo czytania, bo nie mam.”<cite>Daniel Muniowski, Strefa Czytacza</cite></blockquote>
       </div>
       <div>
         <button type="button" class="yt" data-yt="lJ5wem5Aykg" data-video="sceptyk" aria-label="Odtwórz recenzję kursu, Strefa Czytacza">
@@ -453,17 +474,16 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
       </div>
     </div>
 
-    <h3 class="h3big">Krótkie lekcje, ćwiczenia na Twojej książce</h3>
+    <h3 class="h3big">5 minut słuchania i drugie tyle na ćwiczenie</h3>
     <div class="cards">
       <div><h3>Kurs nagrany z ekipą filmową</h3>
         <p>(…) chciałem, żeby realizacja kursu była „na bogato”, żeby to nie był kolejny smutny kurs online, na którym poza wyświetlaną
         prezentacją jest smętny prowadzący w rogu ekranu, który mówi w pół godziny coś, co mieści się w dwóch punktach.</p>
         <p>Dlatego wynajęliśmy ekipę filmową, a lekcje to zamknięte całości: przeważnie 5 minut słuchania i drugie tyle na ćwiczenie.
-        To akurat tyle, żeby nauczyć się czegoś nowego i przećwiczyć. Masz gotową notatkę w swoim skrypcie i przygotowane ćwiczenia.</p></div>
+        To akurat tyle, żeby nauczyć się czegoś nowego i przećwiczyć.</p>
+        <p>Masz gotową notatkę w swoim skrypcie i przygotowane ćwiczenia.</p></div>
       <div><h3>Ćwiczysz na tym, co i tak czytasz</h3>
-        <p>Ograniczyłem sztukę dla sztuki, dlatego większość ćwiczeń wykonasz i tak na książce, którą aktualnie czytasz.</p>
-        <p>Projektowałem lekcje w tym kursie tak, żeby można je było robić mimochodem, bo wiem, że szybkie czytanie jest właśnie
-        dla osób zabieganych.</p></div>
+        <p>Ograniczyłem sztukę dla sztuki, dlatego większość ćwiczeń wykonasz i tak na książce, którą aktualnie czytasz.</p></div>
       <div><h3>Odpowiedzi pod lekcjami</h3>
         <p>Jakieś pytania? Możesz zadać je pod każdą z lekcji przez cały kurs. Krótko odpiszę, a jeśli sprawa jest bardziej złożona,
         nagram filmik z omówieniem danej kwestii.</p></div>
@@ -471,6 +491,7 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     <div class="cta-row">
       <a class="cta" data-cta="niedowiarki" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span></a>
     </div>
+    <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
   </div>
 </section>
 
@@ -485,8 +506,8 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
       <li>Zmienisz swoje podejście do czytania dzięki wykorzystaniu prostych technik, takich jak wskaźnik czy metoda fotograficzna</li>
     </ul>
     <div class="note"><b>Naucz się wychwytywać kluczowe słowa i filtrować informacje, żeby od razu wiedzieć, który tekst warto przeczytać.</b>
-    W badaniu Duggana i Payne'a osoby, które miały czas na przeczytanie tylko połowy tekstu i przejrzały go w całości, zapamiętały więcej
-    najważniejszych myśli niż osoby, które przeczytały połowę linijka po linijce. Pamięci szczegółów to nie poprawiło.<sup>*</sup></div>
+    <p style="margin:8px 0 0">W badaniu Duggana i Payne'a osoby, które miały czas na przeczytanie tylko połowy tekstu i przejrzały go w całości, zapamiętały więcej
+    najważniejszych myśli niż osoby, które przeczytały połowę linijka po linijce. Pamięci szczegółów to nie poprawiło.<sup>*</sup></p></div>
     <h3 class="h3big">Twoja droga krok po kroku</h3>
     <p>Sześć działów kursu. Kliknij „Lista lekcji”, żeby zobaczyć, co jest w środku.</p>
     <p class="fn"><sup>*</sup>Duggan G. B., Payne S. J., „Text skimming: the process and effectiveness of foraging through text under time
@@ -500,8 +521,8 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     <div class="head">
       <div>
         <h3>1. Rozrusznik i wprowadzenie</h3>
-        <p class="desc">W pierwszych 15 minutach ze mną przejdziesz kompletną metodę (…). Potem dowiesz się, jak w pełni wykorzystać
-        materiały zawarte w kursie i zmierzysz (tym razem porządnie) swoje obecne tempo czytania.</p>
+        <p class="desc">Pierwsza lekcja to piętnaście minut. Już po niej nauczysz się odpowiednio prowadzić wzrok i lepiej skupiać na tekście.</p>
+        <p class="desc">Potem dowiesz się, jak w pełni wykorzystać materiały zawarte w kursie i zmierzysz (tym razem porządnie) swoje obecne tempo czytania.</p>
       </div>
       <img src="assets/droga/krok-1.jpg" width="686" height="720" loading="lazy" alt="Piotr Starzyński w studiu">
     </div>
@@ -539,7 +560,7 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
       <img src="assets/droga/krok-3.jpg" width="720" height="480" loading="lazy" alt="Piotr Starzyński z książką w kawiarni">
     </div>
     <details class="lessons" data-acc="lekcje-3"><summary>Lista lekcji</summary>
-      <ol><li>Pole liczbowe</li><li>Lewa i prawa półkula mózgu</li><li>Alphabet Game</li></ol>
+      <ol><li>Pole liczbowe</li><li>Alphabet Game</li></ol>
     </details>
   </div>
 </div>
@@ -595,14 +616,17 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     <h2>Ile zajmuje przejście kursu?</h2>
     <div class="why three">
       <div><h3>Na start: 15 minut</h3><p>Rozrusznik czytania.</p></div>
-      <div><h3>Potem reszta kursu</h3><p>A co się stanie po tych 15 minutach? Czas na resztę kursu. Wszystko udało mi się zamknąć
-        w 30 dni, więc jeśli lubisz wyzwania, możesz po prostu przejść przez kurs w miesiąc. Będziesz na to potrzebować około 10 minut dziennie.</p></div>
-      <div><h3>Ile to trwa</h3><p>Rekomenduję przejście całego kursu w miesiąc (wariant ambitny) lub 6 tygodni (na spokojnie).</p></div>
+      <div><h3>Potem reszta kursu</h3><p>Projektowałem lekcje w tym kursie tak, żeby można je było robić mimochodem, bo wiem, że szybkie czytanie
+        jest właśnie dla osób zabieganych.</p>
+        <p style="margin-top:10px">A co się stanie po tych 15 minutach? Czas na resztę kursu. Wszystko udało mi się zamknąć w 30 dni, więc jeśli
+        lubisz wyzwania, możesz po prostu przejść przez kurs w miesiąc. Będziesz na to potrzebować około 10 minut dziennie.</p></div>
+      <div><h3>Ile to trwa</h3><p>Rekomenduję przejście całego kursu w miesiąc (wariant ambitny) lub 6 tygodni (na spokojnie).
+        Dostęp i tak dostajesz na rok, więc możesz dostosować tempo do siebie albo wracać i powtarzać poszczególne sekcje.</p></div>
     </div>
-    <p>Dostęp i tak dostajesz na rok, więc możesz dostosować tempo do siebie albo wracać i powtarzać poszczególne sekcje.</p>
     <div class="cta-row">
       <a class="cta" data-cta="ile" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>roczny dostęp · 30 dni na zwrot</small></a>
     </div>
+    <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
   </div>
 </section>
 
@@ -619,8 +643,7 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
         znaleźć czas na całą lekturę?</p></div>
       <div><h3>Powrót do czytania</h3><p>Zaczniesz (z powrotem) regularnie czytać i odzyskasz przyjemność z czytania.</p></div>
     </div>
-    <p class="note"><b>Nie dla osoby, która szuka sposobu na tysiąc słów na minutę od jutra.</b> Jeden z naszych kursantów napisał to tak:
-    „Oczywiście nie jest to żadna cudowna metoda, która zaraz po zakupie pozwoli wam czytać 10x szybciej”.</p>
+    <p class="note"><b>Nie dla osoby, która szuka sposobu na tysiąc słów na minutę od jutra.</b></p>
   </div>
 </section>
 
@@ -631,25 +654,26 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     <div class="author">
       <div>
         <img src="assets/piotr.webp" width="600" height="405" loading="lazy" alt="Piotr Starzyński, Fundacja Pięć Plus">
-        <p class="meta">Piotr Starzyński<br>Uczę, jak się uczyć, od 2013 roku. Fundacja Pięć Plus od 2017.<br>Akredytacja Erasmus+</p>
+        <p class="meta">Piotr Starzyński<br>Uczę, jak się uczyć, od 2013 roku. Fundacja Pięć Plus od 2017.</p>
       </div>
       <div class="story">
+        <p>Nazywam się Piotr Starzyński. Uczę, jak się uczyć, od 2013 roku, a od 2017 robimy to jako Fundacja Pięć Plus.</p>
         <p>Odkąd pamiętam, uwielbiałem książki. Ponieważ nie udało mi się zostać pisarzem, uznałem, że skoro nie będę ich pisać, to chociaż
         przeczytam ich jak najwięcej.</p>
+        <p class="steps-list" style="margin-bottom:12px">Czy mam obsesję na punkcie czytania?<br>Może malutką…</p>
         <p>Na pierwszy kontakt z szybkim czytaniem zareagowałem mocnym sceptycyzmem. To były czasy boomu na coaching i rzeczy sensowne
         (takie jak mapy myśli czy szybkie czytanie właśnie) były wrzucone do jednego worka z potęgą podświadomości, słuchaniem nagranych braw
         i powtarzaniem sobie „jesteś zwycięzcą”.</p>
+        <p>Głównie po to, żeby sprzedawać nikomu niepotrzebne (i wątpliwej jakości) przepisy na osobisty sukces.</p>
         <p>Na kurs szybkiego czytania poszedłem, bo była na nim też dziewczyna, która mi się podobała. I temu przypadkowi zawdzięczam wszystko,
         co stało się później.</p>
         <p class="steps-list">Niedowierzałem.<br>Spróbowałem.<br>Wsiąkłem.<br>Zacząłem uczyć…<br>Założyłem Fundację.<br>Nagraliśmy kurs Szybkiego Czytania.</p>
-        <p>Uczę, jak się uczyć, od 2013 roku, a od 2017 robimy to jako Fundacja Pięć Plus. W 2019 roku Fundacja uzyskała akredytację Erasmus+.
-        Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026: 10 na 10 w ocenach klientów, z 68 opinii
-        (<a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank">profil</a>).
-        <b>Ten kurs kupiło od listopada 2023 ponad 1 700 osób.</b></p>
+        <p>Fundacja jest laureatem plebiscytu Orły Edukacji 2025 i 2026: 10 na 10 w ocenach klientów, z 68 opinii
+        (<a href="https://orlyedukacji.pl/profile-501525-fundacja-piec-plus" rel="noopener" target="_blank">profil</a>).</p>
         <p>Obecnie pracuję na Uniwersytecie Warszawskim nad doktoratem poświęconym wyzwaniom nauczycieli w polskiej szkole.</p>
       </div>
     </div>
-    <p class="logos-h">Pracowałem dla największych, ale najważniejszy jesteś dla mnie Ty.</p>
+    <p class="logos-h">Pracowałem dla największych.</p>
     <div class="logos">
       <span><img src="assets/loga/allegro.webp" alt="Allegro" loading="lazy"></span>
       <span><img src="assets/loga/rossmann.webp" alt="Rossmann" loading="lazy"></span>
@@ -660,11 +684,10 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
   </div>
 </section>
 
-<!-- ══════════ 8. KOSZT ZAKUPU… I JEGO BRAKU ══════════ -->
+<!-- ══════════ 8. ILE KOSZTUJE ══════════ -->
 <section id="cena">
   <div class="wrap">
-    <h2>Koszt zakupu… i jego braku</h2>
-    <p class="lead">Ile kosztuje kurs Szybkie Czytanie Online i co tracisz, nie decydując się na niego.</p>
+    <h2>Ile kosztuje kurs Szybkie Czytanie Online?</h2>
     <p>(…) w końcu nagrałem kurs online, bo nie byliśmy w stanie logistycznie spiąć dostępnych cenowo warsztatów stacjonarnych.</p>
     <p><b>Płacisz <span class="js-cena">197 zł</span> za rok, czyli <span class="js-dzien">54 grosze</span>. Tyle kosztuje dzień dostępu do naszego kursu.<sup>*</sup></b>
     Kurs szybkiego czytania na żywo w grupie to 787 zł za 16 godzin.<sup>**</sup></p>
@@ -694,17 +717,19 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
       <div>
         <h3>Żelazna gwarancja zwrotu 30 dni</h3>
         <p>Osobiście gwarantuję, że ten kurs działa. Masz żelazną gwarancję zwrotu w ciągu 30 dni. Ty piszesz maila, a ja zwracam pieniądze.
-        <b>100% zwrotu, bez zbędnych pytań i bez progu ukończenia.</b> W ostatnich latach na ponad 3 700 zakupów w naszej Fundacji o zwrot
-        poprosiło 27 osób.<sup>***</sup></p>
+        <b>100% zwrotu, bez zbędnych pytań i bez progu ukończenia.</b></p>
+        <p style="margin-top:10px">Na ponad 3 700 zakupów naszych kursów o zwrot poprosił mniej niż 1 kupujący na 100.<sup>***</sup></p>
         <p class="sign">Piotr Starzyński</p>
       </div>
     </div>
     <div class="cta-row">
       <a class="cta" data-cta="gwarancja" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>30 dni na zwrot</small></a>
     </div>
+    <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
     <p class="fn"><sup>*</sup><span class="js-dzien-fn">197 zł / 365 dni = 0,54 zł.</span><br>
-    <sup>**</sup>Tajemnice Umysłu, kurs grupowy online i stacjonarny, 16 godzin, cennik odczytany 25.10.2026.<br>
-    <sup>***</sup>Wszystkie kursy Fundacji, zwroty wobec liczby zakupów, stan 06.10.2026.</p>
+    <sup>**</sup>Tajemnice Umysłu, kurs grupowy online i stacjonarny, 16 godzin, cennik odczytany 25.10.2026. Najtańsza oferta na żywo w naszym zestawieniu.<br>
+    <sup>***</sup>Skrzynka Fundacji, zgłoszenia zwrotu: 19 wątków i 1 zwrot poza etykietą, wobec ponad 3 700 zakupów. Wszystkie kursy, stan 25.10.2026.
+    Osobnej liczby dla tego kursu nie mamy.</p>
   </div>
 </section>
 
@@ -714,15 +739,16 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
     <h2>Ale nie musisz mi wierzyć na słowo</h2>
     <p>Poniżej znajdziesz kilka opinii o naszym kursie. Jest ich znacznie więcej (…).</p>
     <div class="ops">
-      <div class="op"><b>„Przez te 1-2 miesiące naprawdę trzeba poświęcić 10-15 minut dziennie, bo regularność jest tutaj kluczowa.”</b>
+      <div class="op"><b>„Efekt jest taki, że od stycznia do połowy marca przeczytałem 18 książek.”</b>
         <img src="assets/opinia-01.webp" loading="lazy" alt="Opinia Google: Aleksander Konieczny, 5 gwiazdek"></div>
-      <div class="op"><b>„Rzetelny kurs, pokazujący i ćwiczący szereg sposobów na przyspieszenie czytania (ze zrozumieniem!)”</b>
+      <div class="op"><b>„Oczywiście nie jest to żadna cudowna metoda, która zaraz po zakupie pozwoli wam czytać 10x szybciej, ale (…) rzetelny kurs.”</b>
         <img src="assets/opinia-07.webp" loading="lazy" alt="Opinia Google: Tomasz Kędra, 5 gwiazdek"></div>
-      <div class="op"><b>„Przez to kurs nie "traci" z tego, że jest "online" bo cały czas możemy pisać w razie problemów.”</b>
+      <div class="op"><b>„Pamiętajcie, że nauka szybkiego czytania to głównie praca w domu, a ten kurs ma wszystkie ćwiczenia żeby tę pracę wykonać.”</b>
         <img src="assets/opinia-06.webp" loading="lazy" alt="Opinia Google: Michał Fabiszewski, 5 gwiazdek"></div>
       <div class="op"><b>„Aż chce się po każdej zakończonej lekcji przechodzić do kolejnej.”</b>
         <img src="assets/opinia-05.webp" loading="lazy" alt="Opinia Google: Michal Franka, 5 gwiazdek"></div>
     </div>
+    <p class="relation">Opinie z profilu Fundacji Pięć Plus w Google. Pełne zrzuty pod cytatami.</p>
   </div>
 </section>
 
@@ -730,29 +756,29 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
 <section id="pytania">
   <div class="wrap">
     <h2>Masz pytanie? Może mamy odpowiedź.</h2>
-    <details class="acc" data-acc="cuda"><summary>Kolejny kurs, który obiecuje cuda?</summary>
-      <div class="acc-body"><p>Na tej stronie nie znajdziesz obietnicy „N razy szybciej”. Swoje tempo zmierzysz na początku kursu i w ostatnim teście.
-      Daliśmy kurs do sprawdzenia sceptykowi (film wyżej) i dajemy 30 dni na zwrot.</p></div></details>
+    <details class="acc" data-acc="ile-razy"><summary>Ile razy szybciej będę czytać?</summary>
+      <div class="acc-body"><p>To zależy od tempa na starcie i od tego, ile ćwiczysz. W kursie mierzysz tempo i zrozumienie na początku i na końcu,
+      więc zobaczysz własny wynik.</p></div></details>
     <details class="acc" data-acc="przerwa"><summary>A jak przerwę w połowie?</summary>
       <div class="acc-body"><p>Dostęp do wszystkich materiałów otrzymujesz na cały rok. Kurs zajmuje około miesiąca przy 10 minutach dziennie.
       Wierzymy, że każdy powinien realizować kurs w swoim tempie, a możliwość odświeżenia umiejętności jest bardzo ważna.</p></div></details>
-    <details class="acc" data-acc="trudne-teksty"><summary>Czy to działa na trudne teksty: podręczniki, dokumenty do pracy?</summary>
-      <div class="acc-body"><p>Tak, ale inaczej niż na powieści. W dziale „Zrozumienie i zapamiętywanie” jest osobna lekcja o czytaniu tekstów naukowych.</p></div></details>
     <details class="acc" data-acc="youtube"><summary>Na YouTube są darmowe ćwiczenia. Po co płacić?</summary>
       <div class="acc-body"><p>Ćwiczeń na poprawę czytania są setki, a my wybraliśmy te, które działały na naszych kursantach.</p></div></details>
-    <details class="acc" data-acc="oczy"><summary>Bolą od tego oczy?</summary>
-      <div class="acc-body"><p>W późniejszej części kursu są ćwiczenia na rozluźnianie oka :) A na razie polecam po prostu zamknąć oczy na chwilę
-      i pozwolić im się rozluźnić. I proszę się nie przetrenowywać. To ma być część codziennej dziesięciominutówki dla oczu, nie godzina walki.</p></div></details>
-    <details class="acc" data-acc="dysleksja"><summary>Czy dysleksja jest przeszkodą w odbyciu kursu?</summary>
-      <div class="acc-body"><p>W żadnym wypadku! Dysleksja w żadnym stopniu nie przeszkadza w przejściu kursu.</p></div></details>
-    <details class="acc" data-acc="skrypt"><summary>Czy skrypt trzeba drukować?</summary>
+    <details class="acc" data-acc="audiobooki"><summary>A audiobooki?</summary>
+      <div class="acc-body"><p>Wolę audiobooki. Są znacznie wolniejsze niż samodzielne czytanie, ale pozwalają mi wrzucać książki na czas dojazdów
+      i sprzątania.</p></div></details>
+    <details class="acc" data-acc="skrypt"><summary>Czy trzeba drukować skrypt?</summary>
       <div class="acc-body"><p>Tak. Wydrukowanie skryptu jest niezbędne do kolejnych ćwiczeń i do przejścia całego kursu. Skrypt do całego kursu
       jest pod lekcją „Wprowadzenie”.</p></div></details>
+    <details class="acc" data-acc="oczy"><summary>Czy od ćwiczeń bolą oczy?</summary>
+      <div class="acc-body"><p>W późniejszej części kursu są ćwiczenia na rozluźnianie oka :) A na razie polecam po prostu zamknąć oczy na chwilę
+      i pozwolić im się rozluźnić. Jeśli A4 jest na dziś za szerokie, proszę nie zmniejszać wydruku, tylko odsunąć kartkę dalej od oczu.</p>
+      <p>I proszę się nie przetrenowywać. To ma być część codziennej dziesięciominutówki dla oczu, nie godzina walki.</p></div></details>
+    <details class="acc" data-acc="dysleksja"><summary>Czy dysleksja jest przeszkodą w odbyciu kursu?</summary>
+      <div class="acc-body"><p>W żadnym wypadku! Dysleksja w żadnym stopniu nie przeszkadza w przejściu kursu.</p></div></details>
     <details class="acc" data-acc="dostep"><summary>W jaki sposób otrzymam kurs?</summary>
       <div class="acc-body"><p>Dostęp do kursu odbywa się za pośrednictwem naszej platformy. Po założeniu swojego konta otrzymasz dostęp do wszystkich
       lekcji i skryptu z ćwiczeniami na rozszerzanie pola widzenia.</p></div></details>
-    <details class="acc" data-acc="urzadzenie"><summary>Z jakiego urządzenia?</summary>
-      <div class="acc-body"><p>Z telefonu, tabletu i komputera. Wystarczy internet, nic nie instalujesz.</p></div></details>
     <details class="acc" data-acc="zwrot"><summary>Czy możliwy jest zwrot zakupionego kursu?</summary>
       <div class="acc-body"><p>W ciągu 30 dni od kupna możesz bez konsekwencji zrezygnować z zakupu kursu Szybkie Czytanie Online®. Skontaktuj się
       z nami przez kontakt@5plus.edu.pl, a pieniądze znajdą się z powrotem na Twoim koncie w ciągu 7 dni roboczych.</p></div></details>
@@ -767,9 +793,10 @@ blockquote.say cite{display:block;font:500 15.5px var(--sans);font-style:normal;
   <div class="wrap">
     <h2>Jeszcze to czytasz?</h2>
     <p class="lead">Co z tym wszystkim możesz zrobić?</p>
-    <p>Możesz kupić kurs i sprawdzić, o co to całe zamieszanie. Wystarczy, że dasz mi szansę, a książki, które od lat na Ciebie czekają,
-    będą Ci wdzięczne.</p>
-    <p>Kliknij poniżej i weź się za swoje czytanie. Tym razem na serio.</p>
+    <p>Możesz kupić kurs i sprawdzić, o co to całe zamieszanie. Dzięki żelaznej gwarancji nic nie ryzykujesz, a zyskać możesz umiejętność,
+    która może zmienić całe Twoje życie.</p>
+    <p>Albo przynajmniej wspólnie sprawimy, że wrócisz do regularnego czytania. Nie dostrzegam tu słabych punktów.</p>
+    <p>Kliknij poniżej i weź się za swoje czytanie.</p>
     <p class="koniec js-koniec" hidden>Cena <span class="js-cena">197 zł</span> do <span class="js-koniec-d"></span>.</p>
     <div class="cta-row">
       <a class="cta" data-cta="domkniecie" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs - <span class="js-cena">197 zł</span><small>roczny dostęp · 30 dni na zwrot</small></a>
