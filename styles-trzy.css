@@ -438,3 +438,12 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .hero-play:focus-visible{outline:3px solid #FEAC32;outline-offset:3px}
 .hero-play.is-playing{aspect-ratio:16/9;cursor:default}
 .hero-play.is-playing video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+
+/* zdjęcia z zajęć */
+.foto{margin:clamp(24px,4vw,40px) 0 0}
+.foto img{display:block;width:100%;height:auto;border-radius:var(--r-card);box-shadow:0 14px 34px rgba(18,68,41,.18)}
+.foto figcaption{font-family:'Caveat',cursive;font-weight:600;font-size:1.3rem;color:var(--zloto-deep);margin-top:10px;text-align:center}
+.foto-grid{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,32px);margin-top:clamp(36px,5vh,56px)}
+.foto-grid .foto{margin:0}
+.foto-tall img{aspect-ratio:4/3;object-fit:cover;object-position:50% 12%}
+@media(min-width:800px){.foto-grid{grid-template-columns:1fr 1fr}.foto-grid .foto-wide{grid-column:1/-1}}
