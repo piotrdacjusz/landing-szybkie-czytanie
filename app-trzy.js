@@ -203,12 +203,11 @@
   $('cookieSettings').addEventListener('click', function(){ banner.hidden=false; });
   if (consent==='all'){ loadPixel(); loadClarity(); } else if (consent===null) banner.hidden=false;
 
-  /* ---------- hero: zdjęcie ze stosem książek = maska zwiastuna (YouTube, 99AWIqzCS84) ---------- */
+  /* ---------- hero: zdjęcie ze stosem książek = maska zwiastunu (plik assets/zwiastun.mp4: Trailer_MC 03.2024, bez algorytmów i bez planszy z adresem) ---------- */
   (function(){ var b=document.getElementById('heroPlay'); if(!b) return;
     b.addEventListener('click', function(){ if (b.classList.contains('is-playing')) return;
-      var f=document.createElement('iframe'); f.src='https://www.youtube-nocookie.com/embed/99AWIqzCS84?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.title='Zwiastun kursu Szybkie Czytanie Online'; f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; f.allowFullscreen=true;
-      b.innerHTML=''; b.classList.add('is-playing'); b.appendChild(f); b.removeAttribute('aria-label'); try{ track('hero_trailer_play'); }catch(e){} });
+      var v=document.createElement('video'); v.src='assets/zwiastun.mp4'; v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('title','Zwiastun kursu Szybkie Czytanie Online');
+      b.innerHTML=''; b.classList.add('is-playing'); b.appendChild(v); b.removeAttribute('aria-label'); v.play&&v.play().catch(function(){}); try{ track('hero_trailer_play'); }catch(e){} });
   })();
   track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
   var utm = location.search.replace(/^\?/,'').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
