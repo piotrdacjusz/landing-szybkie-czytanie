@@ -202,6 +202,14 @@
   banner.querySelectorAll('[data-consent]').forEach(function(b){ b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); }); });
   $('cookieSettings').addEventListener('click', function(){ banner.hidden=false; });
   if (consent==='all'){ loadPixel(); loadClarity(); } else if (consent===null) banner.hidden=false;
+
+  /* ---------- hero: zdjęcie ze stosem książek = maska zwiastuna (YouTube, 99AWIqzCS84) ---------- */
+  (function(){ var b=document.getElementById('heroPlay'); if(!b) return;
+    b.addEventListener('click', function(){ if (b.classList.contains('is-playing')) return;
+      var f=document.createElement('iframe'); f.src='https://www.youtube-nocookie.com/embed/99AWIqzCS84?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      f.title='Zwiastun kursu Szybkie Czytanie Online'; f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; f.allowFullscreen=true;
+      b.innerHTML=''; b.classList.add('is-playing'); b.appendChild(f); b.removeAttribute('aria-label'); try{ track('hero_trailer_play'); }catch(e){} });
+  })();
   track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
   var utm = location.search.replace(/^\?/,'').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
   document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = SKLEP + (utm ? '?'+utm : ''); a.addEventListener('click', function(){ track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta')}); }); });

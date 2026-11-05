@@ -428,3 +428,13 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 #sceptyk{background:linear-gradient(180deg,#073462,#0E4379)}
 #glupoty{background:linear-gradient(180deg,#451E3E,#552B4C)}
 #cena{background:linear-gradient(180deg,#552B4C,#451E3E)}
+
+.hero-play{position:relative;display:block;width:100%;padding:0;border:0;background:#000;border-radius:3px;overflow:hidden;cursor:pointer;aspect-ratio:1315/880}
+.hero-play img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.hero-play:hover img{transform:scale(1.03)}
+.hero-play .play-btn{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:#FEAC32;color:#1F2336;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);padding-left:5px;transition:transform .25s ease}
+.hero-play:hover .play-btn{transform:scale(1.08)}
+.hero-play .play-tag{position:absolute;left:12px;bottom:12px;background:rgba(31,35,54,.82);color:#fff;font-weight:700;font-size:.85rem;padding:6px 12px;border-radius:999px}
+.hero-play:focus-visible{outline:3px solid #FEAC32;outline-offset:3px}
+.hero-play.is-playing{aspect-ratio:16/9;cursor:default}
+.hero-play.is-playing iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
