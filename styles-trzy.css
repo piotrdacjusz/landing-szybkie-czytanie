@@ -447,3 +447,4 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .foto-grid .foto{margin:0}
 .foto-tall img{aspect-ratio:4/3;object-fit:cover;object-position:50% 12%}
 @media(min-width:800px){.foto-grid{grid-template-columns:1fr 1fr}.foto-grid .foto-wide{grid-column:1/-1}}
+@media(max-width:600px){.foto img{width:calc(100% + 48px);max-width:none;margin:0 -24px;border-radius:0}}
