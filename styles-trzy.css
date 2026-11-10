@@ -448,3 +448,191 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .foto-tall img{aspect-ratio:4/3;object-fit:cover;object-position:50% 12%}
 @media(min-width:800px){.foto-grid{grid-template-columns:1fr 1fr}.foto-grid .foto-wide{grid-column:1/-1}}
 @media(max-width:600px){.foto img{width:calc(100% + 48px);max-width:none;margin:0 -24px;border-radius:0}}
+
+/* =====================================================================
+   TURA 10.11.2026 — uwagi Piotra (tylko mobile). Pomarańcz #9A5800 wycięty:
+   drobny tekst na jasnym = zieleń, na ciemnym = żółty.
+   ===================================================================== */
+:root{ --cegla2:#124429; --zloto-krem:#073462; --zloto-deep:#124429; --sliwka:#451E3E; --granat:#073462; }
+.brand-biale{filter:brightness(0) invert(1)}
+.nav-links a{white-space:nowrap}
+@media(min-width:721px) and (max-width:1020px){ .nav-links a:nth-child(n+4){display:inline} }
+
+/* hero */
+.hero{padding:96px 0 48px}
+.hero .hero-name{font-size:clamp(2rem,8.4vw,3.4rem);line-height:1.08;max-width:16em;margin:0 auto}
+.hero-film{width:100%;max-width:560px;margin:22px auto 0}
+.hero-film .hero-play{aspect-ratio:1/1;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.hero-film .hero-play.is-playing{aspect-ratio:1/1}
+.hero-film figcaption{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(1.9rem,7.6vw,2.6rem);line-height:1.1;color:var(--zloto);margin-top:14px;transform:rotate(-1.5deg)}
+.hand-head{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(2.1rem,9vw,3rem);line-height:1.05;color:var(--zloto);margin-top:30px;text-wrap:balance}
+.hero .hero-lead{margin-top:14px;font-size:1.12rem}
+.hero .hero-lead+.hero-lead{margin-top:10px}
+
+/* przycisk zakupu — pełna szerokość, bez strzałek */
+.btn-kup{display:block;width:100%;max-width:480px;margin:28px auto 0;text-align:center;background:var(--zloto);color:#1F2336;font-weight:900;font-size:1.15rem;line-height:1.25;padding:18px 20px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 #C47F14, 0 14px 30px rgba(0,0,0,.25);letter-spacing:.01em}
+.btn-kup:active{transform:translateY(3px);box-shadow:0 3px 0 #C47F14}
+.formats .btn-kup,.partners .btn-kup{box-shadow:0 6px 0 #C47F14, 0 14px 26px rgba(18,68,41,.18)}
+
+/* napisy odręczne */
+.hand-title{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(2.3rem,10vw,3.4rem);line-height:1.02;color:var(--zloto);text-wrap:balance;margin-bottom:6px}
+.hand-kicker{font-family:'Caveat',cursive;font-weight:700;font-size:1.75rem;line-height:1.1;color:var(--las);margin-bottom:6px;transform:rotate(-1deg);transform-origin:left}
+.hand-kicker--pod{margin:8px 0 4px;font-size:1.6rem}
+.hand-kicker--jasny{color:var(--zloto)}
+.hand-big{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(2rem,8.6vw,2.8rem);line-height:1.08;color:var(--las);margin-top:22px;text-wrap:balance}
+.hand-cap{font-family:'Caveat',cursive!important;font-weight:700!important;font-size:clamp(1.9rem,8vw,2.6rem)!important;line-height:1.08;color:var(--las)!important;text-align:left!important;padding:0 2px;margin-top:12px!important}
+.hand-cap--m{font-size:clamp(1.5rem,6.2vw,2rem)!important;line-height:1.15}
+.hand-cap--jasny{color:var(--zloto)!important}
+
+/* sekcja „wspólnie powalczymy” */
+.listen .sec-lead{font-size:1.12rem;max-width:none}
+.formula{font-weight:900;font-size:clamp(1.6rem,7vw,2.3rem);color:var(--zloto);margin-top:22px;letter-spacing:-.01em}
+.naucz{display:grid;gap:26px;margin-top:34px}
+.naucz-row{display:grid;grid-template-columns:84px 1fr;gap:16px;align-items:center}
+.naucz-row img{width:84px;height:84px}
+.naucz-row p{font-size:1.12rem;line-height:1.45;color:rgba(255,255,255,.92)}
+.naucz-row b{color:#fff}
+.big-line{font-weight:900;font-size:clamp(1.45rem,6.2vw,2rem);line-height:1.2;margin-top:30px;color:#fff;text-wrap:balance}
+.big-line--zolta{color:var(--zloto);margin-top:12px}
+.big-line--ciemna{color:var(--las)}
+
+/* wskaźnik tempa: dwie podziałki */
+.tuner-edge{height:auto}
+.tuner-svg{height:74px}
+.tuner-lbl{position:absolute;top:50px;font-family:'Lato',sans-serif;font-size:.8rem;font-weight:700;color:var(--las);line-height:1.1;z-index:2}
+.tuner-lbl b{font-size:1.25rem;font-weight:900}
+.tuner-lbl span{display:block;font-family:'Caveat',cursive;font-weight:700;font-size:1.25rem;color:var(--las);margin-top:2px}
+.tuner-lbl--l{left:12px}
+.tuner-lbl--p{right:12px;text-align:right}
+.tuner-edge{padding-bottom:58px;background:#fff}
+
+/* opinie-stopery */
+.stoper-band{background:var(--krem2);padding:34px var(--gut)}
+.stoper-band--sliwka{background:#552B4C}
+.stoper{max-width:560px;margin:0 auto;background:#fff;border-radius:6px;padding:26px 22px 18px;box-shadow:0 14px 34px rgba(18,68,41,.16);transform:rotate(-1.2deg);position:relative}
+.stoper::before{content:"";position:absolute;top:-10px;left:50%;width:90px;height:22px;margin-left:-45px;background:rgba(254,172,50,.55);transform:rotate(2deg)}
+.stoper blockquote{font-size:clamp(1.3rem,5.6vw,1.6rem);line-height:1.35;font-weight:700;color:#1F2336}
+.stoper blockquote::before{content:"„"}
+.stoper blockquote::after{content:"”"}
+.stoper mark{background:linear-gradient(transparent 52%, rgba(254,172,50,.75) 52%);color:inherit;padding:0 2px;font-weight:900}
+.stoper figcaption{margin-top:14px;font-size:.92rem;font-weight:700;color:#4a4f63}
+.stoper .gw{color:#E8A013;letter-spacing:.08em;margin-right:6px}
+
+/* zdjęcia na całą szerokość telefonu */
+.foto-full{margin-top:clamp(24px,4vw,40px)}
+.foto-full img{width:100%;border-radius:var(--r-card)}
+@media(max-width:600px){ .foto-full img{width:calc(100% + 2*var(--gut));max-width:none;margin:0 calc(-1*var(--gut));border-radius:0} }
+.ja-wrap{position:relative}
+.ja-kolko{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@media(max-width:600px){ .ja-kolko{width:calc(100% + 2*var(--gut));left:calc(-1*var(--gut))} }
+.ja-kolko path{fill:none;stroke:#FEAC32;stroke-width:7;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.ja-napis{position:absolute;left:4%;top:4%;font-family:'Caveat',cursive;font-weight:700;font-size:clamp(1.6rem,7vw,2.4rem);color:#FEAC32;text-shadow:0 2px 6px rgba(0,0,0,.7);transform:rotate(-4deg)}
+
+/* loga wyżej */
+.loga-blok{margin-top:clamp(30px,5vh,48px)}
+.loga-h{font-weight:900;font-size:1.25rem;line-height:1.25;color:var(--las);text-wrap:balance}
+.loga-blok .logo-row{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.loga-blok .logo-row .partner{padding:12px 8px}
+.loga-blok .plogo{height:40px}
+.loga-blok .plogo img{max-height:30px}
+.loga-blok .plogo-sn b{font-size:.78rem}
+.loga-blok .partner .plogo.plogo-sn img{height:30px;max-height:30px}
+
+/* tablica: co cię blokuje (kreda na zieleni) */
+.tablica{background:linear-gradient(180deg,#124429,#0F3A23);color:#fff}
+.powody{display:grid;gap:30px;margin-top:26px}
+.powod img{width:112px;height:112px;margin-bottom:8px}
+.powod h3{font-weight:900;font-size:1.4rem;line-height:1.2;color:var(--zloto)}
+.powod p{font-size:1.1rem;margin-top:6px;color:rgba(255,255,255,.92)}
+.tablica .big-line{font-size:clamp(1.25rem,5.4vw,1.7rem)}
+
+/* test tempa */
+#test .notice{margin-top:28px;transform:rotate(1deg)}
+#test .notice::before,#droga .notice::before{background:var(--zloto)}
+.stos-q{font-weight:900;font-size:clamp(1.25rem,5.6vw,1.6rem);line-height:1.08;color:var(--las);text-align:center;margin-top:14px;letter-spacing:-.01em}
+.stos-q--mala{font-family:'Caveat',cursive;font-weight:700;font-size:1.45rem;line-height:1.1}
+
+/* paragon obliczeń */
+.paragon{background:#fff;border-radius:10px;box-shadow:0 14px 34px rgba(18,68,41,.14);padding:8px 18px;margin-top:24px}
+.pr{display:grid;grid-template-columns:1fr auto;grid-template-areas:"l w" "m m";gap:2px 12px;padding:14px 0;border-bottom:1px dashed #C5D3E3;align-items:baseline}
+.pr:last-child{border-bottom:0}
+.pr-l{grid-area:l;font-weight:700;color:#1F2336;font-size:1.02rem}
+.pr-m{grid-area:m;font-size:.95rem;color:#4a4f63;font-variant-numeric:tabular-nums}
+.pr-w{grid-area:w;font-weight:900;font-size:1.25rem;color:var(--las);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pr-suma{border-top:3px solid var(--las);margin-top:4px}
+.pr-suma .pr-w{font-size:1.6rem;color:#073462}
+
+/* droga krok po kroku */
+.route{position:relative;margin-top:22px}
+.route-line{position:absolute;left:19px;top:20px;bottom:0;width:3px;background:repeating-linear-gradient(to bottom,#C5D3E3 0 6px,transparent 6px 14px)}
+.route-line span{position:absolute;left:0;top:0;width:3px;height:0;background:var(--las);border-radius:2px}
+.krok{position:relative;padding-top:6px;margin-bottom:clamp(40px,7vh,64px)}
+.krok:last-child{margin-bottom:0}
+.krok-nr{position:relative;z-index:2;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#fff;border:3px solid #C5D3E3;color:#9aa6b8;font-weight:900;font-size:1.15rem;transition:background .4s,border-color .4s,color .4s}
+.krok.reached .krok-nr{background:var(--las);border-color:var(--las);color:#fff}
+.krok h3{font-weight:900;font-size:1.5rem;line-height:1.15;color:var(--las);margin-top:12px;background:#fff;position:relative;z-index:2}
+.krok-sub{font-family:'Caveat',cursive;font-weight:700;font-size:1.45rem;color:#073462;line-height:1.1;background:#fff;position:relative;z-index:2}
+.krok .foto-full{position:relative;z-index:2;margin-top:14px}
+.krok > p:last-child{font-size:1.06rem;margin-top:14px;background:#fff;position:relative;z-index:2;color:#2E3348}
+.plan--pelny{display:block;max-width:none;padding:20px 22px}
+
+/* głupoty */
+#glupoty .opt .x{color:var(--zloto);font-weight:900}
+.opt .ok{color:var(--zloto)}
+
+/* cena */
+.cena{background:linear-gradient(180deg,#124429,#195237);color:#fff}
+.cena .sec-title{color:#fff}
+.mockup-fig{margin:22px auto 0;max-width:520px}
+.mockup-fig img{width:100%;border-radius:12px;background:#fff}
+.w-pakiecie{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.w-pakiecie li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 13px;font-size:.92rem;font-weight:700;color:#fff;line-height:1.25}
+.bf-karta{background:#fff;color:#1F2336;border-radius:18px;padding:0 20px 22px;margin-top:26px;text-align:center;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.bf-pasek{margin:0 -20px;background:#1F2336;color:var(--zloto);font-weight:900;letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;font-size:1.05rem;padding:12px 0}
+.bf-koniec{font-weight:700;font-size:.95rem;margin-top:16px;color:#4a4f63}
+.licznik{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.licznik div{background:#F1F5F9;border-radius:10px;padding:8px 0 6px}
+.licznik b{display:block;font-weight:900;font-size:1.7rem;line-height:1;font-variant-numeric:tabular-nums;color:#1F2336}
+.licznik span{font-size:.75rem;font-weight:700;color:#4a4f63}
+.omnibus{margin-top:18px;font-size:1.08rem;font-weight:700;background:#FFF4E0;border:2px solid var(--zloto);border-radius:10px;padding:10px 12px}
+.omnibus strong{font-weight:900;font-size:1.15em}
+.ceny{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px}
+.cena-stara-red{font-weight:900;font-size:2rem;color:#C62828;text-decoration:line-through;text-decoration-thickness:3px}
+.cena-rabat{background:#C62828;color:#fff;font-weight:900;font-size:1.2rem;border-radius:8px;padding:4px 10px;transform:rotate(-4deg)}
+.cena-nowa{font-weight:900;font-size:clamp(4.6rem,24vw,6rem);line-height:.95;color:#1B7A3E;letter-spacing:-.03em;margin-top:6px;font-variant-numeric:tabular-nums}
+.cena-nowa small{font-size:.4em;letter-spacing:0}
+.bf-karta .btn-kup{margin-top:18px}
+.bf-bezpiecznie{margin-top:18px;display:grid;gap:12px;text-align:left}
+.gw-zwrot{display:flex;gap:12px;align-items:center;font-size:.98rem;line-height:1.35}
+.gw-zwrot svg{width:40px;height:40px;flex:none;stroke:var(--las);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.platnosci{display:flex;gap:12px;align-items:center;font-size:.95rem;line-height:1.35}
+.platnosci--srodek{justify-content:center;margin-top:18px;color:rgba(255,255,255,.85)}
+.blik{flex:none;display:inline-grid;place-items:center;background:#000;color:#fff;font-weight:900;font-size:1.05rem;letter-spacing:.02em;border-radius:7px;padding:5px 9px 6px;line-height:1;font-family:'Lato',sans-serif}
+.platnosci--srodek .blik{border:1px solid rgba(255,255,255,.4)}
+
+/* opinie pod ceną */
+.opinie-pod{background:var(--krem2)}
+.opinie-pod .stoper+.stoper{margin-top:34px}
+.opinie-pod .stoper:nth-child(even){transform:rotate(1.2deg)}
+.opinie-pod .blog-all{display:block;text-align:center;margin-top:28px;font-size:1.5rem;color:var(--las)}
+
+/* sceptyk, o mnie, faq, domknięcie */
+#sceptyk{background:linear-gradient(180deg,#073462,#0E4379)}
+#o-mnie .autor{margin-top:22px}
+#o-mnie .autor p+p{margin-top:12px}
+.close-call .btn-kup{margin-top:24px}
+
+/* półka z książkami zamiast kopert i equalizera */
+.ksiazki-edge{position:relative;font-size:0;line-height:0;margin:-1px 0;pointer-events:none}
+.ksiazki-edge svg{display:block;width:100%}
+/* poprawki po podglądzie 10.11 */
+.tuner-lbl{top:80px}
+.tuner-edge{padding-bottom:0;height:150px}
+@media(max-width:600px){
+  .foto-ja .ja-wrap{margin:0 calc(-1*var(--gut))}
+  .foto-ja .ja-wrap img{width:100%;margin:0}
+  .ja-kolko{width:100%;left:0}
+}
+#test .notice{padding:26px 16px 22px}
+#test .stos-q{white-space:nowrap;font-size:clamp(.98rem,4.7vw,1.35rem);letter-spacing:-.015em}
+#cena{background:linear-gradient(180deg,#124429,#195237)}
