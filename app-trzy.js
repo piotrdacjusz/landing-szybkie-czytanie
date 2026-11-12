@@ -62,7 +62,7 @@
     function svgBox(H){ var s=E('svg',{viewBox:'0 0 1200 '+H, preserveAspectRatio:'none'}); s.style.width='100%'; s.style.height=H+'px'; s.style.display='block'; return s; }
     function quadFrom1(pts){ var d=''; for(var i=1;i<pts.length;i++){ var a=pts[i-1], b=pts[i]; d+=' Q '+a[0]+' '+a[1]+' '+((a[0]+b[0])/2)+' '+((a[1]+b[1])/2); } var l=pts[pts.length-1]; d+=' L '+l[0]+' '+l[1]; return d; }
     function anim(el,name,dur,phase){ if(REDUCED) return; el.style.animation = name+' '+(+dur).toFixed(2)+'s ease-in-out '+(-phase).toFixed(2)+'s infinite'; }
-    var PALETA = ['#124429','#073462','#451E3E','#FEAC32','#2F6B4C','#DBE9F4','#0E4379','#552B4C','#FFFFFF'];
+    var PALETA = ['#124429','#073462','#FEAC32','#2F6B4C','#DBE9F4','#0E4379','#FFFFFF'];
     function drawBooks(H, gora, dol){
       var s = svgBox(H), r = mulberry32(11), x = 6, SHELF = H - 10;
       s.appendChild(E('rect',{x:-2,y:-2,width:1204,height:H+4,fill:gora}));

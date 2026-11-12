@@ -422,12 +422,12 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .partner .plogo.plogo-sn img{max-height:40px;height:40px;width:auto;flex:none}
 .plogo-sn b{font-weight:900;font-size:.95rem;line-height:1.1;letter-spacing:.02em;color:#1F2336;text-align:left}
 
-/* ==== trzy ciemne kolory z 8 klasy (zielony #124429, granat #073462, śliwka #451E3E) + żółty FEAC32 ==== */
+/* ==== trzy ciemne kolory z 8 klasy (zielony #124429, granat #073462, zostają dwa: zielony i granat) + żółty FEAC32 ==== */
 .nav-cta,.btn-primary,.ctl-play{color:#1F2336}
 .nav-cta:hover,.btn-primary:hover,.ctl-play:hover{background:#E89A1E;color:#1F2336}
 #sceptyk{background:linear-gradient(180deg,#073462,#0E4379)}
-#glupoty{background:linear-gradient(180deg,#451E3E,#552B4C)}
-#cena{background:linear-gradient(180deg,#552B4C,#451E3E)}
+#glupoty{background:linear-gradient(180deg,#073462,#0E4379)}
+#cena{background:linear-gradient(180deg,#124429,#195237)}
 
 .hero-play{position:relative;display:block;width:100%;padding:0;border:0;background:#000;border-radius:3px;overflow:hidden;cursor:pointer;aspect-ratio:1315/880}
 .hero-play img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
@@ -453,7 +453,7 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
    TURA 10.11.2026 — uwagi Piotra (tylko mobile). Pomarańcz #9A5800 wycięty:
    drobny tekst na jasnym = zieleń, na ciemnym = żółty.
    ===================================================================== */
-:root{ --cegla2:#124429; --zloto-krem:#073462; --zloto-deep:#124429; --sliwka:#451E3E; --granat:#073462; }
+:root{ --cegla2:#124429; --zloto-krem:#073462; --zloto-deep:#124429; --sliwka:#073462; --granat:#073462; }
 .brand-biale{filter:brightness(0) invert(1)}
 .nav-links a{white-space:nowrap}
 @media(min-width:721px) and (max-width:1020px){ .nav-links a:nth-child(n+4){display:inline} }
@@ -508,7 +508,6 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 
 /* opinie-stopery */
 .stoper-band{background:var(--krem2);padding:34px var(--gut)}
-.stoper-band--sliwka{background:#552B4C}
 .stoper{max-width:560px;margin:0 auto;background:#fff;border-radius:6px;padding:26px 22px 18px;box-shadow:0 14px 34px rgba(18,68,41,.16);transform:rotate(-1.2deg);position:relative}
 .stoper::before{content:"";position:absolute;top:-10px;left:50%;width:90px;height:22px;margin-left:-45px;background:rgba(254,172,50,.55);transform:rotate(2deg)}
 .stoper blockquote{font-size:clamp(1.3rem,5.6vw,1.6rem);line-height:1.35;font-weight:700;color:#1F2336}
