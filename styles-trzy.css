@@ -636,8 +636,5 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 #test .stos-q{white-space:nowrap;font-size:clamp(.98rem,4.7vw,1.35rem);letter-spacing:-.015em}
 #cena{background:linear-gradient(180deg,#124429,#195237)}
 
-/* 12.11 — układ jak Leadpages 2025: punkty „Jak działa”, czas przed drogą, bonusy w cenie */
-#droga .notice--jak{margin-top:clamp(26px,5vh,40px);transform:rotate(-1deg)}
+/* 12.11 — układ jak Leadpages 2025: „A jak znajdziesz na to czas?” przed drogą */
 #droga .notice--czas{margin-top:clamp(30px,5vh,46px)}
-.bonusy{list-style:none;margin-top:14px;display:grid;gap:7px;color:#fff;font-size:.95rem;line-height:1.35}
-.bonusy li::before{content:"★";color:var(--zloto);margin-right:9px}
