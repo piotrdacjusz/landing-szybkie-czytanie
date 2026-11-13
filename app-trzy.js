@@ -1,7 +1,7 @@
 (function(){
   'use strict';
-  var CENA = 197; /* zł — decyzja Piotra 25.10.2026: 500 przekreślone → 197, najniższa cena z 30 dni = 500 (szybka sprzedaż od 13.10) */
-  var SKLEP = 'https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html';
+  var CENA = 247; /* zł — propozycja 12.11.2026 (D1, czeka na potwierdzenie Piotra): 500 przekreślone → 247, najniższa cena z 30 dni = 500 (szybka sprzedaż od 13.10) */
+  var SKLEP = 'https://kursy.piecplus.pl/s/szybkie-czytanie-black-friday.html';
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var SVGNS = 'http://www.w3.org/2000/svg';
   var $ = function(id){ return document.getElementById(id); };
@@ -30,9 +30,9 @@
     addEventListener('resize', function(){ place(POS[s]); });
   })();
 
-  /* ---------- licznik Black Friday (cena 197 zł do końca BF) ---------- */
+  /* ---------- licznik Black Friday (cena BF do 13.12.2026 21:00) ---------- */
   (function(){
-    var KONIEC = new Date('2026-12-02T23:59:59+01:00').getTime();
+    var KONIEC = new Date('2026-12-13T21:00:00+01:00').getTime();
     var d=$('lkD'), h=$('lkH'), m=$('lkM'), s=$('lkS'); if (!d) return;
     function p2(n){ return (n<10?'0':'')+n; }
     function tick(){ var r = Math.max(0, KONIEC - Date.now()), t = Math.floor(r/1000);
@@ -84,7 +84,7 @@
   })();
 
   /* ---------- zgody, piksel, pomiar (wzorzec z landingu 8 klasy) ---------- */
-  var PIXEL_ID = ''; /* TODO: ID Piksela Meta fundacji. Pusty = piksel się nie ładuje. */
+  var PIXEL_ID = '458793526185383'; /* piksel „Szybkie Czytanie Online” (ten sam co w szybkiej sprzedaży WTL) */
   var CLARITY_ID = 'vjr23eh9gx';
   var KEY = 'sc_consent', consent = null, pending = [];
   try { consent = localStorage.getItem(KEY); } catch(e){}
