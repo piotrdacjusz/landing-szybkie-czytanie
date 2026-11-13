@@ -848,3 +848,7 @@ img.filar-ik{width:124px;height:124px;object-fit:contain}
 .pyt-tekst .pyt-strzalka{position:absolute;right:0;top:-44px;bottom:6px;left:auto;width:40px;height:auto;fill:none;stroke:#FEAC32;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
 .pyt-tekst .pyt-strzalka path{vector-effect:non-scaling-stroke}
 @media(min-width:760px){ .pyt-tekst .pyt-strzalka{display:none} .pyt-tekst{padding-right:0} }
+/* głupoty: bez przekreślenia, twarze z naklejek w pomarańczowej obwódce (uwaga Piotra 13.11) */
+#glupoty .gl-mit,#glupoty .gl:not([open]) .gl-mit{text-decoration:none}
+#glupoty .gl summary{grid-template-columns:76px minmax(0,1fr) 22px}
+.gl-foto{width:76px;height:76px;border:4px solid #F29100;background:#DBE9F4}
