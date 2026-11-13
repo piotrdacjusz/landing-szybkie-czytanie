@@ -835,3 +835,7 @@ img.filar-ik{width:124px;height:124px;object-fit:contain}
 .przypis{position:relative;margin:18px auto 0;padding-top:10px;max-width:30em;font-size:.86rem;line-height:1.4;font-weight:700;color:#fff;text-align:center}
 .przypis::before{content:"";position:absolute;left:50%;top:0;width:56px;height:2px;margin-left:-28px;background:var(--zloto);border-radius:2px}
 .loga-pod{width:max-content;max-width:76%;margin-left:auto;margin-right:0}
+/* zamyślony Piotr (naklejka z rolek) nad ramką „Krótko mówiąc” */
+.obl-piotr{position:relative;z-index:1;width:min(56%,230px);margin:16px auto -14px}
+.obl-piotr img{display:block;width:100%;height:auto;filter:drop-shadow(0 8px 14px rgba(18,68,41,.25))}
+.obl-piotr + .krotko{position:relative;z-index:2;margin-top:0}
