@@ -787,7 +787,7 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 @media(min-width:640px){ .mockup-duzy{width:100%;max-width:600px;margin:10px auto 0} }
 /* czytanie bioniczne w hero: pogrubione początki słów (pomysł Piotra 13.11) */
 .bion{font-weight:400;color:#fff;-webkit-text-stroke:.12px #fff}
-.bion b{font-weight:900;color:#fff;-webkit-text-stroke:.75px #fff;letter-spacing:.012em}
+.bion b{font-weight:900;color:#fff;-webkit-text-stroke:.3px #fff}
 .bion span{text-wrap:balance}
 /* telefon: węższe marginesy boczne, nagłówek hero na całą szerokość (uwaga Piotra 13.11) */
 @media(max-width:720px){
