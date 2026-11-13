@@ -772,3 +772,12 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 #glupoty .gl-body p:first-child{margin-top:14px}
 #glupoty .gl:not([open]) .gl-mit{text-decoration:line-through;text-decoration-color:var(--zloto);text-decoration-thickness:3px}
 @media(max-width:720px){ .hero .hero-inner .hero-name{font-size:min(5.6vw,1.9rem);line-height:1.18;max-width:none} }
+/* nawigacja na telefonie: logo bez ściskania, mniejszy hamburger (uwaga Piotra 13.11) */
+.brand{flex:none}
+.brand .brand-logo{max-width:none}
+@media(max-width:720px){
+  .nav-cta{padding:8px 13px}
+  .nav-burger{width:32px;height:40px}
+  .nav-burger span{width:18px}
+}
+@media(max-width:350px){ .brand .brand-logo{height:24px} .nav-cta{font-size:.78rem;padding:7px 10px} }
