@@ -718,3 +718,57 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 #glupoty .opt .ok{display:inline-flex;gap:8px;align-items:center;background:var(--zloto);color:#1F2336;border-radius:999px;padding:6px 12px;font-size:.95rem;margin-top:12px}
 #glupoty .opt .ok::before{content:"\2713";font-weight:900}
 @media(min-width:760px){ #glupoty .opts{grid-template-columns:1fr 1fr} }
+
+/* ===== poprawki Piotra 13.11.2026, tura 2 ===== */
+/* hero: nagłówek w dwóch liniach na telefonie, podpis mniejszy i biały, podtytuł żółty drukiem */
+@media(max-width:720px){ .hero-name{font-size:clamp(1.3rem,6.1vw,1.9rem);line-height:1.15;max-width:none} }
+.hero-film figcaption{color:#fff;font-size:clamp(1.55rem,6.4vw,2.1rem)}
+.hero-sub{font-weight:900;font-size:clamp(1.3rem,5.6vw,1.9rem);line-height:1.2;color:var(--zloto);margin-top:26px;text-wrap:balance;text-align:center}
+.hero-lead--linie{margin-top:14px;text-align:center}
+.hero-lead--linie span{display:block}
+.hero-lead--linie span+span{margin-top:6px}
+/* 3 filary */
+.co-moge{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(2.1rem,9vw,3rem);line-height:1.05;color:#fff;margin-top:30px;transform:rotate(-1.5deg);transform-origin:left}
+.filary-h{font-weight:900;font-size:clamp(1.5rem,6.6vw,2.1rem);line-height:1.15;color:var(--zloto);margin-top:6px}
+.filary{display:grid;gap:34px;margin-top:22px}
+.filar{display:grid;justify-items:center;text-align:center}
+.filar-ik{width:auto;height:150px;max-width:100%;fill:none;stroke:#fff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.filar-ik--oko{width:100%;height:auto;stroke-width:.9}
+.filar h4{font-weight:900;font-size:clamp(1.35rem,5.8vw,1.75rem);line-height:1.2;color:#fff;margin-top:12px;text-wrap:balance}
+.filar h4 span{color:var(--zloto)}
+.filar p{font-size:1rem;line-height:1.45;color:rgba(255,255,255,.85);margin-top:6px;max-width:34ch}
+@media(min-width:760px){ .filary{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start} .filar-ik--oko{width:auto;height:150px} }
+/* bio: mniejsze napisy odręczne */
+.hand-cap--pod{font-size:clamp(1.5rem,6.4vw,2rem)!important}
+.hand-cap--pod + .hand-big{font-size:clamp(1.5rem,6.4vw,2rem)}
+.loga-h--hand{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(1.6rem,6.8vw,2.1rem);line-height:1.1;transform:rotate(-1deg);transform-origin:left}
+.slot-gpw{margin:0;aspect-ratio:2/1;overflow:hidden;border-radius:var(--r-card);box-shadow:0 14px 34px rgba(18,68,41,.18)}
+.slot-gpw img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
+/* droga: większe zdjęcia, falista linia rysowana skryptem */
+.krok-foto{width:min(82%,300px)}
+.route-line{left:0;width:44px;background:none}
+.route-line span{display:none}
+.route-line svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.route-line .fala{fill:none;stroke:#9FB4CC;stroke-width:3;stroke-linecap:round;stroke-dasharray:1 9}
+.route-line .fala-postep{fill:none;stroke:var(--zloto);stroke-width:4;stroke-linecap:round}
+.route-line .fala-kropka{fill:var(--zloto);stroke:rgba(254,172,50,.3);stroke-width:8}
+/* pytania: kadr z prawdziwej lekcji */
+.pyt-foto{margin:0}
+.pyt-foto img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #C5D3E3}
+/* głupoty rozwijane */
+#glupoty .opts{gap:12px}
+#glupoty details.gl{padding:0;overflow:hidden}
+#glupoty .gl summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px minmax(0,1fr) 22px;gap:14px;align-items:center;padding:14px 16px}
+#glupoty .gl summary::-webkit-details-marker{display:none}
+.gl-foto{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--zloto);display:block}
+.gl-tyt{display:grid;gap:3px;min-width:0}
+#glupoty .gl-nr{display:block;font-weight:900;font-size:.72rem!important;letter-spacing:.16em;text-transform:uppercase;color:var(--zloto)!important}
+#glupoty .gl-mit{display:block;font-size:clamp(1.45rem,6.2vw,1.9rem);margin-top:0}
+.gl-plus{position:relative;width:22px;height:22px}
+.gl-plus::before,.gl-plus::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:3px;margin:-1.5px 0 0 -9px;background:var(--zloto);border-radius:2px;transition:transform .25s}
+.gl-plus::after{transform:rotate(90deg)}
+.gl[open] .gl-plus::after{transform:rotate(0)}
+#glupoty .gl-body{padding:2px 18px 20px;border-top:1px dashed rgba(255,255,255,.25)}
+#glupoty .gl-body p:first-child{margin-top:14px}
+#glupoty .gl:not([open]) .gl-mit{text-decoration:line-through;text-decoration-color:var(--zloto);text-decoration-thickness:3px}
+@media(max-width:720px){ .hero .hero-inner .hero-name{font-size:min(5.6vw,1.9rem);line-height:1.18;max-width:none} }

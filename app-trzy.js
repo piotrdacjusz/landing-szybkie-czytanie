@@ -53,6 +53,28 @@
     addEventListener('scroll', onScroll, {passive:true}); onScroll();
   })();
 
+  /* ---------- trasa: falista linia zamiast prostej kreski ---------- */
+  (function(){
+    var route = $('route'), box = route && route.querySelector('.route-line'); if (!box) return;
+    var svg = document.createElementNS(SVGNS,'svg'), tlo = document.createElementNS(SVGNS,'path'), post = document.createElementNS(SVGNS,'path'), kropka = document.createElementNS(SVGNS,'circle');
+    tlo.setAttribute('class','fala'); post.setAttribute('class','fala-postep'); kropka.setAttribute('class','fala-kropka'); kropka.setAttribute('r','6');
+    svg.appendChild(tlo); svg.appendChild(post); svg.appendChild(kropka); box.appendChild(svg);
+    var dl = 0;
+    function buduj(){
+      var hgt = box.getBoundingClientRect().height, d = 'M21 0', y = 0, strona = 1, krok = 70;
+      while (y < hgt) { var ny = Math.min(hgt, y + krok); d += ' Q ' + (21 + strona*13) + ' ' + ((y+ny)/2).toFixed(1) + ' 21 ' + ny.toFixed(1); y = ny; strona = -strona; }
+      tlo.setAttribute('d', d); post.setAttribute('d', d); dl = post.getTotalLength();
+      post.style.strokeDasharray = dl + ' ' + dl; rysuj();
+    }
+    function rysuj(){
+      var r = route.getBoundingClientRect(), anchor = innerHeight*0.6, p = Math.max(0, Math.min(1, (anchor - r.top) / r.height));
+      post.style.strokeDashoffset = (dl*(1-p)).toFixed(1);
+      var pt = post.getPointAtLength(dl*p); kropka.setAttribute('cx', pt.x.toFixed(1)); kropka.setAttribute('cy', pt.y.toFixed(1));
+    }
+    buduj(); addEventListener('scroll', rysuj, {passive:true}); addEventListener('resize', buduj); addEventListener('load', buduj);
+    route.addEventListener('toggle', function(){ setTimeout(buduj, 60); }, true);
+  })();
+
   /* ---------- krawędzie: półka z książkami (zamiast kopert i equalizera) + park ---------- */
   (function buildEdges(){
     var COL = { las:'#124429', las2:'#195237', krem:'#FFFFFF', krem2:'#DBE9F4', cegla:'#FEAC32', zloto:'#FEAC32', grafit:'#1F2336' };
