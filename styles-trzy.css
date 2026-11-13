@@ -788,3 +788,4 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 /* czytanie bioniczne w hero: pogrubione początki słów (pomysł Piotra 13.11) */
 .bion{font-weight:400;color:rgba(255,255,255,.82)}
 .bion b{font-weight:900;color:#fff}
+.bion span{text-wrap:balance}
