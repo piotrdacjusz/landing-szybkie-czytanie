@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   var CENA = 247; /* zł — propozycja 12.11.2026 (D1, czeka na potwierdzenie Piotra): 500 przekreślone → 247, najniższa cena z 30 dni = 500 (szybka sprzedaż od 13.10) */
-  var SKLEP = 'https://kursy.piecplus.pl/s/szybkie-czytanie-black-friday.html';
+  var SKLEP = 'https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html';
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var SVGNS = 'http://www.w3.org/2000/svg';
   var $ = function(id){ return document.getElementById(id); };
