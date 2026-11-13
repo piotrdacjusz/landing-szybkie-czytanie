@@ -781,3 +781,7 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
   .nav-burger span{width:18px}
 }
 @media(max-width:350px){ .brand .brand-logo{height:24px} .nav-cta{font-size:.78rem;padding:7px 10px} }
+/* mockup produktu bez tła, na całą szerokość telefonu (plik Piotra z Canvy, 13.11) */
+.mockup-duzy{background:none;padding:0;box-shadow:none;transform:none;border-radius:0;max-width:none;width:calc(100% + 2*var(--gut));margin:6px calc(-1*var(--gut)) -8px}
+.mockup-duzy img{aspect-ratio:auto;object-fit:contain;border-radius:0;background:none;filter:drop-shadow(0 18px 28px rgba(0,0,0,.4))}
+@media(min-width:640px){ .mockup-duzy{width:100%;max-width:600px;margin:10px auto 0} }
