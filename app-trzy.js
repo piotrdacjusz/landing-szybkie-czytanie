@@ -151,7 +151,7 @@
         if (ost < s.length) f.appendChild(document.createTextNode(s.slice(ost))); n.parentNode.replaceChild(f, n); });
       el.classList.add('bion-auto');
     }
-    document.querySelectorAll('#czytanie .sec-lead, .filar p, #sceptyk .sec-lead, #glupoty .gl-body p').forEach(przerob);
+    /* decyzja Piotra 13.11: czytanie bioniczne tylko w trzech zdaniach hero (wpisane w HTML); tu nic nie przerabiamy */
   })();
 
   /* ---------- przycisk w nawigacji: obrys dopasowany do pigułki ---------- */

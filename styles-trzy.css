@@ -852,3 +852,5 @@ img.filar-ik{width:124px;height:124px;object-fit:contain}
 #glupoty .gl-mit,#glupoty .gl:not([open]) .gl-mit{text-decoration:none}
 #glupoty .gl summary{grid-template-columns:76px minmax(0,1fr) 22px}
 .gl-foto{width:76px;height:76px;border:4px solid #F29100;background:#DBE9F4}
+/* biały tekst podstawowy na ciemnym tle: pełna biel i lekkie wzmocnienie kreski, bez czytania bionicznego (Piotr 13.11) */
+#czytanie .sec-lead,.filar p,#sceptyk .sec-lead,#glupoty .gl-body p,.w-pakiecie span{color:#fff;-webkit-text-stroke:.25px #fff}
