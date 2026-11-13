@@ -107,6 +107,8 @@
       var v=document.createElement('video'); v.src='assets/lawka-jesien.mp4'; v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('title','Szybkie Czytanie Online: stos książek na ławce');
       b.innerHTML=''; b.classList.add('is-playing'); b.appendChild(v); b.removeAttribute('aria-label'); v.play&&v.play().catch(function(){}); try{ track('hero_film_play'); }catch(e){} });
   })();
+  /* ---------- przycisk w nawigacji: obrys dopasowany do pigułki ---------- */
+  (function(){ var c=document.querySelector('.nav-cta'), r=c&&c.querySelector('.obrys rect'); if(!r) return; function fit(){ r.setAttribute('rx', Math.max(1, c.offsetHeight/2)); } fit(); addEventListener('resize', fit); })();
   track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
   var utm = location.search.replace(/^\?/,'').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
   document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = SKLEP + (utm ? '?'+utm : ''); a.addEventListener('click', function(){ track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta')}); }); });
