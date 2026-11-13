@@ -789,3 +789,8 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .bion{font-weight:400;color:#fff;-webkit-text-stroke:.4px #fff}
 .bion b{font-weight:900;color:#fff;-webkit-text-stroke:0}
 .bion span{text-wrap:balance}
+/* telefon: węższe marginesy boczne, nagłówek hero na całą szerokość (uwaga Piotra 13.11) */
+@media(max-width:720px){
+  :root{--gut:14px}
+  .hero .hero-inner .hero-name{font-size:min(7.9vw,2.6rem);line-height:1.12;letter-spacing:-.015em}
+}
