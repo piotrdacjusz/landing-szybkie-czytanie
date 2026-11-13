@@ -841,3 +841,10 @@ img.filar-ik{width:124px;height:124px;object-fit:contain}
 .obl-piotr + .krotko{position:relative;z-index:2;margin-top:0}
 /* dopisek pod logotypami: wyśrodkowany, w dwóch liniach */
 .loga-pod{width:auto;max-width:none;margin:16px auto 0;text-align:center;transform:rotate(-1deg);transform-origin:center;text-wrap:balance}
+/* pytania: napis na kadrze i strzałka od tekstu do zdjęcia (uwaga Piotra 13.11) */
+.pyt-foto{position:relative}
+.pyt-napis{position:absolute;left:4%;top:5%;max-width:46%;font-family:'Caveat',cursive;font-weight:700;font-size:clamp(1.5rem,6.6vw,2.1rem);line-height:.98;color:#FEAC32;text-shadow:0 1px 0 rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.45);transform:rotate(-5deg);transform-origin:left top;margin:0;text-align:left}
+.pyt-tekst{position:relative;padding-right:46px}
+.pyt-tekst .pyt-strzalka{position:absolute;right:0;top:-44px;bottom:6px;left:auto;width:40px;height:auto;fill:none;stroke:#FEAC32;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.pyt-tekst .pyt-strzalka path{vector-effect:non-scaling-stroke}
+@media(min-width:760px){ .pyt-tekst .pyt-strzalka{display:none} .pyt-tekst{padding-right:0} }
