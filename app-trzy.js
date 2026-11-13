@@ -70,6 +70,15 @@
       var r = route.getBoundingClientRect(), anchor = innerHeight*0.6, p = Math.max(0, Math.min(1, (anchor - r.top) / r.height));
       post.style.strokeDashoffset = (dl*(1-p)).toFixed(1);
       var pt = post.getPointAtLength(dl*p); kropka.setAttribute('cx', pt.x.toFixed(1)); kropka.setAttribute('cy', pt.y.toFixed(1));
+      if (p >= 0.995 && !koniec) { koniec = true; fajerwerki(pt.x, pt.y, 46); setTimeout(function(){ fajerwerki(pt.x, pt.y, 78); }, 260); }
+      if (p < 0.9) koniec = false;
+    }
+    var koniec = false, KOLORY = ['#FEAC32','#3D8BD9','#2F6B4C','#C62828','#FEAC32','#073462'];
+    function fajerwerki(x, y, zasieg){ if (REDUCED) return;
+      for (var i = 0; i < 18; i++) { var s = document.createElement('i'); s.className = 'iskra'; var kat = i/18*Math.PI*2 + Math.random()*.3, r = zasieg*(.6 + Math.random()*.6);
+        s.style.left = x + 'px'; s.style.top = y + 'px'; s.style.background = KOLORY[i % KOLORY.length];
+        s.style.setProperty('--dx', (Math.cos(kat)*r).toFixed(1) + 'px'); s.style.setProperty('--dy', (Math.sin(kat)*r).toFixed(1) + 'px');
+        box.appendChild(s); (function(n){ setTimeout(function(){ n.remove(); }, 1150); })(s); }
     }
     buduj(); addEventListener('scroll', rysuj, {passive:true}); addEventListener('resize', buduj); addEventListener('load', buduj);
     route.addEventListener('toggle', function(){ setTimeout(buduj, 60); }, true);
@@ -129,6 +138,22 @@
       var v=document.createElement('video'); v.src='assets/lawka-jesien.mp4'; v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('title','Szybkie Czytanie Online: stos książek na ławce');
       b.innerHTML=''; b.classList.add('is-playing'); b.appendChild(v); b.removeAttribute('aria-label'); v.play&&v.play().catch(function(){}); try{ track('hero_film_play'); }catch(e){} });
   })();
+  /* ---------- czytanie bioniczne w białym tekście podstawowym ---------- */
+  (function(){
+    var RE = /[0-9A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]+/g;
+    function ile(w){ var n = w.length; if (/^[0-9]+$/.test(w)) return n; return n <= 3 ? 1 : n <= 5 ? 2 : n <= 8 ? 3 : 4; }
+    function przerob(el){
+      if (el.classList.contains('bion-auto') || el.classList.contains('bion')) return;
+      var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), wezly = [], t;
+      while ((t = w.nextNode())) { var r = t.parentNode; if (r && /^(B|STRONG|A|SCRIPT|STYLE)$/.test(r.nodeName)) continue; if (t.nodeValue.trim()) wezly.push(t); }
+      wezly.forEach(function(n){ var f = document.createDocumentFragment(), s = n.nodeValue, ost = 0, m; RE.lastIndex = 0;
+        while ((m = RE.exec(s))) { if (m.index > ost) f.appendChild(document.createTextNode(s.slice(ost, m.index))); var k = ile(m[0]), bb = document.createElement('b'); bb.textContent = m[0].slice(0, k); f.appendChild(bb); if (k < m[0].length) f.appendChild(document.createTextNode(m[0].slice(k))); ost = m.index + m[0].length; }
+        if (ost < s.length) f.appendChild(document.createTextNode(s.slice(ost))); n.parentNode.replaceChild(f, n); });
+      el.classList.add('bion-auto');
+    }
+    document.querySelectorAll('#czytanie .sec-lead, .filar p, #sceptyk .sec-lead, #glupoty .gl-body p, .w-pakiecie span').forEach(przerob);
+  })();
+
   /* ---------- przycisk w nawigacji: obrys dopasowany do pigułki ---------- */
   (function(){ var c=document.querySelector('.nav-cta'), r=c&&c.querySelector('.obrys rect'); if(!r) return; function fit(){ r.setAttribute('rx', Math.max(1, c.offsetHeight/2)); } fit(); addEventListener('resize', fit); })();
   track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
