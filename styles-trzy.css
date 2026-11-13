@@ -839,3 +839,5 @@ img.filar-ik{width:124px;height:124px;object-fit:contain}
 .obl-piotr{position:relative;z-index:1;width:min(56%,230px);margin:16px auto -14px}
 .obl-piotr img{display:block;width:100%;height:auto;filter:drop-shadow(0 8px 14px rgba(18,68,41,.25))}
 .obl-piotr + .krotko{position:relative;z-index:2;margin-top:0}
+/* dopisek pod logotypami: wyśrodkowany, w dwóch liniach */
+.loga-pod{width:auto;max-width:none;margin:16px auto 0;text-align:center;transform:rotate(-1deg);transform-origin:center;text-wrap:balance}
