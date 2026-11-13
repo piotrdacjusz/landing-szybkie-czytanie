@@ -786,6 +786,6 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .mockup-duzy img{aspect-ratio:auto;object-fit:contain;border-radius:0;background:none;filter:drop-shadow(0 18px 28px rgba(0,0,0,.4))}
 @media(min-width:640px){ .mockup-duzy{width:100%;max-width:600px;margin:10px auto 0} }
 /* czytanie bioniczne w hero: pogrubione początki słów (pomysł Piotra 13.11) */
-.bion{font-weight:400;color:rgba(255,255,255,.96);-webkit-text-stroke:.45px currentColor}
+.bion{font-weight:400;color:rgba(255,255,255,.96);-webkit-text-stroke:.3px currentColor}
 .bion b{font-weight:900;color:#fff;-webkit-text-stroke:0}
 .bion span{text-wrap:balance}
