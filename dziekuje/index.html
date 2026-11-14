@@ -40,5 +40,11 @@ footer a{color:#fff}
   <a class="btn" href="https://kursy.piecplus.pl/">Przechodzę do kursu</a>
   <footer>Fundacja Pięć Plus · <a href="https://5plus.edu.pl">5plus.edu.pl</a></footer>
 </main>
+<script>
+/* Clarity na stronie podziękowania: tylko gdy gość zgodził się na ciasteczka na landingu (sc_consent=all). Oznacza sesję jako zakończoną zakupem. Piksela Mety tu nie ma celowo: zakup wysyła platforma. */
+(function(){ var z=null; try{ z=localStorage.getItem('sc_consent'); }catch(e){} if(z!=='all') return;
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vjr23eh9gx");
+window.clarity('set','zakup','sc-bf26'); window.clarity('event','zakup-sc'); })();
+</script>
 </body>
 </html>
