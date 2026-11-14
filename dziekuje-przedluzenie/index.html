@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Strona podziękowania po przedłużeniu dostępu do Szybkiego Czytania Online (szybkie sprzedaże WTL nr 53 i 74). Układ jak strona podziękowania BF (dziekuje/index.html): zdjęcie, puenta, list, przycisk. Zdarzenie Purchase wysyła WTL, tu go nie dublujemy. -->
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dziękuję! Wracasz do Szybkiego Czytania | Fundacja Pięć Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#124429;color:#fff;font:400 18px/1.55 Lato,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+main{max-width:560px;margin:0 auto;padding:30px 22px 56px;position:relative}
+.foto{margin:0 0 20px;transform:rotate(-1.6deg);animation:uklon 2.4s ease-in-out .5s 1}
+.foto img{display:block;width:100%;height:auto;border:7px solid #fff;border-bottom-width:8px;border-radius:14px;box-shadow:0 16px 34px rgba(0,0,0,.35)}
+@keyframes uklon{0%,100%{transform:rotate(-1.6deg)}30%,55%{transform:rotate(-5deg) translateY(6px)}80%{transform:rotate(-1.6deg)}}
+.puenta{background:#FEAC32;color:#1F2336;border-radius:16px;padding:18px 20px 20px;margin:0 0 16px;font-family:Caveat,cursive;font-weight:700;font-size:1.95rem;line-height:1.08;text-wrap:balance;transform:rotate(1deg);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.list{background:#fff;color:#1F2336;border-radius:16px;padding:22px 20px 20px;box-shadow:0 14px 30px rgba(0,0,0,.25);font-size:1.02rem}
+.list h1{font-family:Caveat,cursive;font-weight:700;font-size:2.15rem;line-height:1.02;color:#124429;margin:0 0 14px;text-wrap:balance;transform:rotate(-1.5deg);transform-origin:left bottom}
+.list h1 u{text-decoration:none;background:linear-gradient(100deg,rgba(254,172,50,0) 1%,rgba(254,172,50,.95) 4%,rgba(254,172,50,.8) 50%,rgba(254,172,50,.93) 95%,rgba(254,172,50,0) 99%) no-repeat 0 96%/100% 7px;padding:0 2px 2px}
+.list p{margin:0 0 12px}
+.podpis{font-weight:700;margin:0 0 4px!important}
+.btn{display:block;margin:20px 0 0;text-align:center;background:#FEAC32;color:#1F2336;font-weight:900;font-size:1.15rem;padding:18px 20px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 #C47F14,0 10px 22px rgba(0,0,0,.18)}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #C47F14}
+footer{margin:34px 0 0;font-size:.85rem;color:#DBE9F4;text-align:center}
+footer a{color:#fff}
+.konf{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.konf i{position:absolute;top:-16px;width:9px;height:15px;border-radius:2px;opacity:.95;animation:spad linear forwards}
+@keyframes spad{to{transform:translateY(105vh) rotate(720deg);opacity:.85}}
+</style>
+</head>
+<body>
+<div class="konf" aria-hidden="true"></div>
+<main>
+  <figure class="foto"><img src="piotr-ksiazka.webp" alt="Uśmiechnięty Piotr Starzyński z otwartą książką" width="1000" height="667"></figure>
+  <p class="puenta">Kto zaczął, zrobił połowę.</p>
+  <div class="list">
+    <h1>Dziękuję Ci za zaufanie i&nbsp;<u>kłaniam się nisko.</u></h1>
+    <p>Szanuję to, że chcesz odświeżyć przyjaźń z czytaniem i dajesz jej drugą szansę.</p>
+    <p>Czas ucieka okropnie szybko. Chciałbym umożliwić Ci bezstresowe dokończenie kursu.</p>
+    <p>10 minut dziennie przez cały tydzień to znacznie więcej niż godzina raz na pięć dni.</p>
+    <p>Sięgnij w końcu po supermoc, która będzie pracować dla Ciebie przez całe życie!</p>
+    <p class="podpis">Piotr Dacjusz Starzyński</p>
+    <a class="btn" href="https://kursy.piecplus.pl/">Wracam do kursu</a>
+  </div>
+  <footer>Fundacja Pięć Plus · <a href="https://5plus.edu.pl">5plus.edu.pl</a></footer>
+</main>
+<script>
+/* Konfetti: jeden krótki wybuch po wejściu na stronę. */
+(function(){ var k=document.querySelector('.konf'), b=['#FEAC32','#ffffff','#DBE9F4','#f08c0a','#7fd1a0'];
+for(var i=0;i<46;i++){ var e=document.createElement('i'); e.style.left=(Math.random()*100)+'%'; e.style.background=b[i%b.length]; e.style.animationDuration=(2.2+Math.random()*2.2)+'s'; e.style.animationDelay=(Math.random()*.9)+'s'; e.style.transform='rotate('+(Math.random()*360)+'deg)'; k.appendChild(e); }
+setTimeout(function(){ k.remove(); }, 6000); })();
+/* Clarity na stronie podziękowania: tylko gdy gość zgodził się na ciasteczka na landingu (sc_consent=all). Oznacza sesję jako zakończoną zakupem. Piksela Mety tu nie ma celowo: zakup wysyła platforma. */
+(function(){ var z=null; try{ z=localStorage.getItem('sc_consent'); }catch(e){} if(z!=='all') return;
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vjr23eh9gx");
+window.clarity('set','zakup','sc-przedluzenie'); window.clarity('event','zakup-sc-przedluzenie'); })();
+</script>
+</body>
+</html>
