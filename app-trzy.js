@@ -74,7 +74,7 @@
       if (p < 0.9) koniec = false;
     }
     var koniec = false, KOLORY = ['#FEAC32','#3D8BD9','#2F6B4C','#C62828','#FEAC32','#073462'];
-    function fajerwerki(x, y, zasieg){ if (REDUCED) return;
+    function fajerwerki(x, y, zasieg){ /* krótki błysk na końcu trasy pokazujemy zawsze, także przy ograniczonym ruchu (decyzja Piotra 14.11.2026) */
       for (var i = 0; i < 18; i++) { var s = document.createElement('i'); s.className = 'iskra'; var kat = i/18*Math.PI*2 + Math.random()*.3, r = zasieg*(.6 + Math.random()*.6);
         s.style.left = x + 'px'; s.style.top = y + 'px'; s.style.background = KOLORY[i % KOLORY.length];
         s.style.setProperty('--dx', (Math.cos(kat)*r).toFixed(1) + 'px'); s.style.setProperty('--dy', (Math.sin(kat)*r).toFixed(1) + 'px');
@@ -155,7 +155,14 @@
   })();
 
   /* ---------- przycisk w nawigacji: obrys dopasowany do pigułki ---------- */
-  (function(){ var c=document.querySelector('.nav-cta'), r=c&&c.querySelector('.obrys rect'); if(!r) return; function fit(){ r.setAttribute('rx', Math.max(1, c.offsetHeight/2)); } fit(); addEventListener('resize', fit); })();
+  (function(){ var c=document.querySelector('.nav-cta'), r=c&&c.querySelector('.obrys rect'); if(!r) return; var an=null;
+    /* kropka obiega obrys: długości liczone w pikselach i animacja z JS, bez pathLength (Safari) i niezależnie od ustawienia ograniczenia ruchu (decyzja Piotra 14.11.2026) */
+    function fit(){ var h=c.offsetHeight, w=c.offsetWidth; if(!h||!w) return; var rx=Math.max(1,h/2); r.setAttribute('rx', rx); r.removeAttribute('pathLength');
+      var P=0; try{ P=r.getTotalLength(); }catch(e){} if(!P) P=2*(w-2*rx)+2*(h-2*rx)+2*Math.PI*rx; var k=Math.max(6, P*0.025);
+      r.style.strokeDasharray=k.toFixed(1)+' '+(P-k).toFixed(1); r.style.strokeDashoffset=P.toFixed(1);
+      if(an){ try{ an.cancel(); }catch(e){} an=null; }
+      if(r.animate) an=r.animate([{strokeDashoffset:P,opacity:0,offset:0},{strokeDashoffset:P*0.867,opacity:1,offset:.04},{strokeDashoffset:0,opacity:1,offset:.34},{strokeDashoffset:0,opacity:0,offset:.38},{strokeDashoffset:0,opacity:0,offset:1}],{duration:6500,iterations:Infinity,delay:1500,easing:'linear'}); }
+    fit(); addEventListener('resize', fit); addEventListener('load', fit); })();
   track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
   var utm = location.search.replace(/^\?/,'').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
   document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = SKLEP + (utm ? '?'+utm : ''); a.addEventListener('click', function(){ track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta')}); }); });
