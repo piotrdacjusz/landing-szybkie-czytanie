@@ -56,7 +56,10 @@ setTimeout(function(){ k.remove(); }, 6000); })();
 /* Clarity na stronie podziękowania: tylko gdy gość zgodził się na ciasteczka na landingu (sc_consent=all). Oznacza sesję jako zakończoną zakupem. Piksela Mety tu nie ma celowo: zakup wysyła platforma. */
 (function(){ var z=null; try{ z=localStorage.getItem('sc_consent'); }catch(e){} if(z!=='all') return;
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vjr23eh9gx");
-window.clarity('set','zakup','sc-bf26'); window.clarity('event','zakup-sc'); })();
+window.clarity('set','zakup','sc-bf26'); window.clarity('event','zakup-sc');
+/* źródło wejścia zapamiętane na landingu (po zgodzie): znacznik w Clarity i wpis w logu serwera (zrodlo.txt), bez danych osobowych */
+var s=null; try{ s=localStorage.getItem('sc_zrodlo'); }catch(e){} s=s||'brak'; window.clarity('set','zrodlo',s);
+try{ fetch('zrodlo.txt?z='+encodeURIComponent(s),{cache:'no-store',keepalive:true}).catch(function(){}); }catch(e){} })();
 </script>
 </body>
 </html>

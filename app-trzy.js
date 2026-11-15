@@ -127,10 +127,17 @@
   function send(n,p){ if (window.fbq) try { fbq(STD.test(n)?'track':'trackCustom', n, p); } catch(e){} }
   function track(n,p){ p=p||{}; (window.dataLayer=window.dataLayer||[]).push(Object.assign({event:n},p)); if (consent==='all') send(n,p); else if (consent===null) pending.push([n,p]); }
   var banner = $('cookies');
-  function setConsent(v){ consent=v; try{ localStorage.setItem(KEY,v); }catch(e){} banner.hidden=true; if(v==='all'){ loadPixel(); loadClarity(); pending.forEach(function(p){ send(p[0],p[1]); }); } pending=[]; }
+  function setConsent(v){ consent=v; try{ localStorage.setItem(KEY,v); }catch(e){} banner.hidden=true; if(v==='all'){ loadPixel(); loadClarity(); zapiszZrodlo(); pending.forEach(function(p){ send(p[0],p[1]); }); } else { try{ localStorage.removeItem('sc_zrodlo'); }catch(e){} } pending=[]; }
   banner.querySelectorAll('[data-consent]').forEach(function(b){ b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); }); });
   $('cookieSettings').addEventListener('click', function(){ banner.hidden=false; });
-  if (consent==='all'){ loadPixel(); loadClarity(); } else if (consent===null) banner.hidden=false;
+  /* źródło wejścia (15.11.2026): zapamiętane tylko po zgodzie na ciasteczka; strona podziękowania zgłasza je po zakupie, żeby odróżnić zakupy z reklam od ruchu własnego */
+  function zrodlo(){ var q={}, z='wprost', h=''; location.search.replace(/^\?/,'').split('&').forEach(function(p){ var i=p.indexOf('='); if(i>0) try{ q[p.slice(0,i)]=decodeURIComponent(p.slice(i+1)); }catch(e){} });
+    if (q.utm_source) z=[q.utm_source, q.utm_medium||'-', q.utm_campaign||'-'].join('/');
+    else if (q.fbclid) z='fbclid';
+    else { try{ h=new URL(document.referrer).hostname; }catch(e){} if (h && h!==location.hostname && h!=='kursy.piecplus.pl') z='ref:'+h; }
+    return z.toLowerCase().replace(/[^a-z0-9.:\/_]+/g,'-').slice(0,70); }
+  function zapiszZrodlo(){ try{ var z=zrodlo(), s=localStorage.getItem('sc_zrodlo'), t=s?s.split(' > '):[]; if (z==='wprost' && t.length) return; if (t[t.length-1]!==z) t.push(z); localStorage.setItem('sc_zrodlo', t.slice(-4).join(' > ')); }catch(e){} }
+  if (consent==='all'){ loadPixel(); loadClarity(); zapiszZrodlo(); } else if (consent===null) banner.hidden=false;
 
   /* ---------- hero: film z ławki (jesień 2025, „Dla przyjemności”) ---------- */
   (function(){ var b=document.getElementById('heroPlay'); if(!b) return;
