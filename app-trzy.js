@@ -127,7 +127,7 @@
   function send(n,p){ if (window.fbq) try { fbq(STD.test(n)?'track':'trackCustom', n, p); } catch(e){} }
   function track(n,p){ p=p||{}; (window.dataLayer=window.dataLayer||[]).push(Object.assign({event:n},p)); if (consent==='all') send(n,p); else if (consent===null) pending.push([n,p]); }
   var banner = $('cookies');
-  function setConsent(v){ consent=v; try{ localStorage.setItem(KEY,v); }catch(e){} banner.hidden=true; if(v==='all'){ loadPixel(); loadClarity(); zapiszZrodlo(); pending.forEach(function(p){ send(p[0],p[1]); }); } else { try{ localStorage.removeItem('sc_zrodlo'); }catch(e){} } pending=[]; }
+  function setConsent(v){ consent=v; try{ localStorage.setItem(KEY,v); }catch(e){} banner.hidden=true; ustawLinki(); if(v==='all'){ loadPixel(); loadClarity(); zapiszZrodlo(); pending.forEach(function(p){ send(p[0],p[1]); }); } else { try{ localStorage.removeItem('sc_zrodlo'); }catch(e){} } pending=[]; }
   banner.querySelectorAll('[data-consent]').forEach(function(b){ b.addEventListener('click', function(){ setConsent(b.getAttribute('data-consent')); }); });
   $('cookieSettings').addEventListener('click', function(){ banner.hidden=false; });
   /* źródło wejścia (15.11.2026): zapamiętane tylko po zgodzie na ciasteczka; strona podziękowania zgłasza je po zakupie, żeby odróżnić zakupy z reklam od ruchu własnego */
@@ -172,6 +172,9 @@
     fit(); addEventListener('resize', fit); addEventListener('load', fit); })();
   track('ViewContent', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN'});
   var utm = location.search.replace(/^\?/,'').split('&').filter(function(p){ return /^(utm_|fbclid=)/.test(p); }).join('&');
-  document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = SKLEP + (utm ? '?'+utm : ''); a.addEventListener('click', function(){ track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta')}); }); });
+  /* wybór w sprawie ciasteczek jedzie do koszyka (16.11.2026, decyzja Piotra): platforma zapisuje go u siebie i nie pyta drugi raz */
+  function ustawLinki(){ var z = consent==='all' ? 'zgoda=all' : (consent==='necessary' ? 'zgoda=none' : ''), q = [utm, z].filter(Boolean).join('&'); document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href = SKLEP + (q ? '?'+q : ''); }); }
+  ustawLinki();
+  document.querySelectorAll('a[data-cta]').forEach(function(a){ a.addEventListener('click', function(){ track('InitiateCheckout', {content_name:'szybkie-czytanie-online', value:CENA, currency:'PLN', cta_place:a.getAttribute('data-cta')}); }); });
   document.querySelectorAll('details[data-acc]').forEach(function(d){ d.addEventListener('toggle', function(){ if (d.open) track('accordion_open', {card:d.getAttribute('data-acc')||d.id}); }); });
 })();
