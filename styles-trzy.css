@@ -387,6 +387,10 @@ footer .flist a:hover,footer .flist button:hover{color:var(--zloto)}
 .cookies button{flex:1 1 160px;font:700 .95rem 'Lato',system-ui,sans-serif;padding:11px 14px;border-radius:var(--r-pill);border:2px solid var(--las);background:#fff;color:var(--las)}
 .cookies button.yes{background:var(--las);color:var(--krem)}
 .cookies[hidden]{display:none}
+/* tło pod okienkiem ciasteczek: przyciemnia i rozmywa stronę do czasu wyboru (decyzja Piotra 16.11.2026) */
+.ck-tlo{position:fixed;inset:0;z-index:99;background:rgba(10,28,18,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);touch-action:none}
+.ck-tlo[hidden]{display:none}
+html.ck-open,html.ck-open body{overflow:hidden}
 
 @media(max-width:720px){
   .hero{min-height:auto;align-items:start;padding:84px 0 34px}
