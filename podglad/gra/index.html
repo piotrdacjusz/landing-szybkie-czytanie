@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Szybkie Czytanie Online — sprawdź swoje tempo | Fundacja Pięć Plus</title>
+<!-- Landing-gra do testu A/B z landingiem BF (pomysł Piotra 17.11.2026): bez przewijania, etapy jak w grze,
+     ludzik skacze po stosach książek. Pierwsza wersja grywalna, bez piksela i Clarity (dojdą przed testem, po akcepcie). -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--zielen:#124429;--zielen2:#195237;--zloto:#FEAC32;--granat:#073462;--atrament:#1F2336;--krem:#fefbf7;--czerwien:#C62828}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+body{background:radial-gradient(900px 500px at 50% -10%,rgba(254,172,50,.10),transparent 60%),var(--zielen);color:#fff;font-family:Lato,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+.gra{position:fixed;inset:0;display:flex;flex-direction:column;padding:max(12px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+.gora{display:flex;align-items:center;justify-content:space-between;height:40px;flex:none}
+.gora img{height:26px;width:auto;filter:brightness(0) invert(1)}
+.krok{font-weight:900;font-size:.8rem;letter-spacing:.18em;color:var(--zloto);text-transform:uppercase}
+.scena{flex:1;min-height:0;position:relative}
+.ekran{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;opacity:0;pointer-events:none;transform:translateX(30px);transition:opacity .35s,transform .35s;max-width:560px;margin:0 auto}
+.ekran.on{opacity:1;pointer-events:auto;transform:none}
+.ekran.wyj{opacity:0;transform:translateX(-30px)}
+h1,h2{font-weight:900;line-height:1.12;text-wrap:balance}
+h1{font-size:clamp(1.7rem,7.4vw,2.6rem)}
+h2{font-size:clamp(1.35rem,6vw,2rem)}
+.reka{font-family:Caveat,cursive;font-size:clamp(1.5rem,6.6vw,2.1rem);color:var(--zloto);line-height:1.05}
+.lead{font-size:1.05rem;line-height:1.45;color:rgba(255,255,255,.9);text-wrap:balance}
+.btn{appearance:none;border:0;cursor:pointer;background:var(--zloto);color:var(--granat);font:900 1.15rem/1.15 Lato,sans-serif;padding:16px 30px;border-radius:999px;box-shadow:0 6px 0 #c9821a;min-width:220px;text-decoration:none;display:inline-block}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #c9821a}
+.btn.jasny{background:#fff;box-shadow:0 6px 0 #c9c9c9}
+.link{color:#fff;opacity:.8;font-weight:700;text-decoration:underline;background:none;border:0;font-size:.95rem;cursor:pointer}
+.slowa span{display:inline-block;opacity:0;transform:translateY(14px) scale(.9);transition:opacity .3s,transform .3s}
+.slowa span.on{opacity:1;transform:none}
+.karta{background:#fff;color:var(--atrament);border-radius:20px;padding:18px 18px;text-align:left;box-shadow:0 18px 40px rgba(0,0,0,.3);width:100%}
+.tekst{font-size:clamp(.98rem,4.3vw,1.12rem);line-height:1.5}
+.odp{display:flex;flex-direction:column;gap:10px;width:100%}
+.odp button{appearance:none;border:2px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);color:#fff;font:700 1.02rem/1.25 Lato,sans-serif;padding:13px 14px;border-radius:14px;text-align:left;cursor:pointer}
+.odp button.dobrze{background:#2e7d32;border-color:#2e7d32}
+.odp button.zle{background:var(--czerwien);border-color:var(--czerwien)}
+.wynik{font-weight:900;font-size:clamp(3rem,16vw,5rem);line-height:1;color:var(--zloto)}
+.wynik small{font-size:.32em;color:#fff;display:block;margin-top:6px;font-weight:700}
+/* pole widzenia */
+.pole{position:relative;width:100%;height:120px}
+.pole .kropka{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--zloto)}
+.pole .w{position:absolute;top:50%;transform:translate(-50%,-50%);font-weight:900;font-size:1.35rem;opacity:0}
+.pole .w.on{opacity:1}
+/* metronom */
+.metro span{border-radius:4px;transition:background .08s}
+.metro span.akt{background:var(--zloto)}
+.pasek-czasu{width:100%;height:8px;border-radius:9px;background:rgba(255,255,255,.18);overflow:hidden}
+.pasek-czasu i{display:block;height:100%;width:0;background:var(--zloto)}
+/* bohater */
+.bohater{font-family:Caveat,cursive;font-size:clamp(2.2rem,10vw,3rem);color:var(--zloto);line-height:1}
+/* oferta */
+.oferta{background:#fff;color:var(--atrament);border-radius:20px;overflow:hidden;width:100%;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.oferta .bf{background:var(--atrament);color:var(--zloto);font-weight:900;letter-spacing:.3em;text-indent:.3em;font-size:.9rem;padding:9px 0}
+.oferta .ceny{display:flex;justify-content:center;align-items:center;gap:12px;padding:12px 10px 0}
+.oferta s{font-weight:900;font-size:1.3rem;color:var(--czerwien);text-decoration-thickness:3px}
+.oferta .rb{background:var(--czerwien);color:#fff;font-weight:900;border-radius:8px;padding:3px 9px;transform:rotate(-4deg)}
+.oferta .nowa{font-weight:900;font-size:3.2rem;line-height:1}.oferta .nowa small{font-size:1.3rem}
+.oferta .lk{font-size:.88rem;font-weight:700;color:#4a4f63;padding:4px 10px 14px;font-variant-numeric:tabular-nums}
+/* tor ze stosami i ludzik */
+.tor{flex:none;height:118px;position:relative;margin:0 calc(-1*max(16px,env(safe-area-inset-left)));padding-bottom:env(safe-area-inset-bottom)}
+.tor svg{position:absolute;left:0;right:0;bottom:env(safe-area-inset-bottom);width:100%;height:118px}
+.ludzik{transition:transform .7s cubic-bezier(.3,.7,.4,1)}
+.ludzik .cialo{animation:bujanie 1.6s ease-in-out infinite;transform-origin:50% 100%}
+.ludzik.skok .cialo{animation:skok .7s ease-out}
+@keyframes bujanie{50%{transform:translateY(-3px)}}
+@keyframes skok{0%{transform:translateY(0)}40%{transform:translateY(-46px) rotate(-8deg)}100%{transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.ekran,.slowa span{transition:none}.ludzik .cialo{animation:none}}
+@media (max-height:640px){.tor{height:84px}.tor svg{height:84px}.karta{padding:12px 14px}.tekst{font-size:.94rem;line-height:1.42}}
+</style>
+</head>
+<body>
+<div class="gra">
+  <div class="gora"><img src="https://5plus.edu.pl/szybkie-czytanie-black-friday/assets/logo-5plus-zloto.webp" alt="Fundacja Pięć Plus" width="423" height="116"><span class="krok" id="krok">Start</span></div>
+  <div class="scena" id="scena">
+
+    <section class="ekran on" data-e="0">
+      <h1 class="slowa" id="haslo">40% ludzi przeczyta w życiu mniej niż 60 książek.</h1>
+      <p class="reka" id="haslo2" style="opacity:0;transition:opacity .5s">Sprawdźmy, ile przeczytasz Ty.</p>
+      <button class="btn" id="graj" style="opacity:0;transition:opacity .5s">Gramy</button>
+      <p class="lead" style="font-size:.9rem;opacity:.75">5 krótkich wyzwań · ok. 3 minuty</p>
+    </section>
+
+    <section class="ekran" data-e="1">
+      <h2>Wyzwanie 1: Twoje tempo</h2>
+      <p class="lead">Przeczytaj krótki tekst tak, jak czytasz na co dzień. Nie spiesz się, na końcu jest jedno pytanie.</p>
+      <button class="btn" id="startTempo">Start, mierzę czas</button>
+    </section>
+
+    <section class="ekran" data-e="2">
+      <div class="karta tekst" id="tekst1"></div>
+      <button class="btn" id="stopTempo">Przeczytane</button>
+    </section>
+
+    <section class="ekran" data-e="3">
+      <h2 id="pyt1">Co według tekstu najbardziej spowalnia czytanie?</h2>
+      <div class="odp" id="odp1"></div>
+    </section>
+
+    <section class="ekran" data-e="4">
+      <p class="krok">Twoje tempo</p>
+      <div class="wynik" id="wpm">0<small>słów na minutę</small></div>
+      <p class="lead" id="wpmOpis"></p>
+      <button class="btn" data-dalej="5">Dalej: pole widzenia</button>
+    </section>
+
+    <section class="ekran" data-e="5">
+      <h2>Wyzwanie 2: pole widzenia</h2>
+      <p class="lead">Patrz na żółtą kropkę. Na ułamek sekundy błysną trzy słowa. Złap to, które było <b>z lewej</b>.</p>
+      <div class="pole" id="pole"><div class="kropka"></div><span class="w" id="wL"></span><span class="w" id="wS"></span><span class="w" id="wP"></span></div>
+      <div class="odp" id="odp2" style="flex-direction:row;flex-wrap:wrap;justify-content:center"></div>
+      <button class="btn" id="startPole">Błyskaj</button>
+      <p class="krok" id="poleLicz" style="min-height:1em"></p>
+    </section>
+
+    <section class="ekran" data-e="6">
+      <h2>Wyzwanie 3: metronom</h2>
+      <p class="lead" id="metroOpis"></p>
+      <div class="karta tekst metro" id="metro"></div>
+      <div class="pasek-czasu"><i id="metroCzas"></i></div>
+      <button class="btn" id="startMetro">Prowadź mój wzrok</button>
+    </section>
+
+    <section class="ekran" data-e="7">
+      <h2>Dało się?</h2>
+      <p class="lead" id="metroWynik"></p>
+      <div class="odp" style="max-width:340px"><button data-dalej="8">Tak, nadążam</button><button data-dalej="8">Prawie, ale coś zostało</button></div>
+    </section>
+
+    <section class="ekran" data-e="8">
+      <h2 id="qPyt"></h2>
+      <div class="odp" id="qOdp"></div>
+      <p class="krok" id="qLicz"></p>
+    </section>
+
+    <section class="ekran" data-e="9">
+      <p class="krok">Twój typ czytelnika</p>
+      <div class="bohater" id="bohater"></div>
+      <p class="lead" id="bohaterOpis"></p>
+      <button class="btn" data-dalej="10">Pokaż mój wynik</button>
+    </section>
+
+    <section class="ekran" data-e="10">
+      <p class="lead" id="final1"></p>
+      <div class="oferta">
+        <div class="bf">BLACK FRIDAY</div>
+        <div class="ceny"><s>500 zł</s><span class="rb">−51%</span><span class="nowa">247<small> zł</small></span></div>
+        <div class="lk">Cena kończy się za <b id="licznik">…</b></div>
+      </div>
+      <a class="btn" id="kup" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Czytaj więcej</a>
+      <a class="link" id="naLanding" href="https://5plus.edu.pl/szybkie-czytanie-black-friday/">Najpierw chcę poczytać o kursie</a>
+    </section>
+  </div>
+
+  <div class="tor" aria-hidden="true">
+    <svg viewBox="0 0 400 118" preserveAspectRatio="xMidYMax meet" id="torSvg"></svg>
+  </div>
+</div>
+
+<script>
+(function(){
+  var d=document, $=function(id){return d.getElementById(id)};
+  var S={wpm:0,pole:0,typ:{}};
+  var TEKST='Większość dorosłych czyta w tempie, którego nauczyła się w podstawówce, przesuwając palcem po linijkach i czytając na głos. Potem przestaliśmy czytać na głos, ale w głowie dalej słyszymy każde słowo. Ten wewnętrzny lektor najbardziej spowalnia czytanie. Oko potrafi objąć kilka słów naraz, a mózg rozumie je szybciej, niż zdążymy je wymówić. Wystarczy kilka ćwiczeń, żeby wzrok przestał skakać po pojedynczych wyrazach i zaczął łapać całe grupy słów. Po kwadransie takiej gimnastyki większość osób czyta dwa razy szybciej i rozumie tyle samo. Po miesiącu regularnych ćwiczeń nowe tempo zostaje na stałe, a książki przestają się kurzyć na półce.';
+  var METRO='Czytanie to nie wyścig, tylko sposób patrzenia. Kiedy wzrok idzie równo za wskaźnikiem, przestaje się cofać i wracać do tych samych słów. Każdy powrót to stracona sekunda, a w całej książce takich sekund są tysiące. Wskaźnik i metronom uczą oko rytmu, a rytm daje spokój i skupienie.';
+  var SLOWA=[['kot','dom','las'],['mapa','okno','chleb'],['rower','zegar','burza'],['książka','herbata','ogród'],['podróż','latarnia','miasto']];
+  var BOH={
+    S:['Sherlock Holmes','Czytasz, żeby rozwiązać zagadkę, i nie odpuszczasz do ostatniej strony. Szybkie czytanie da Ci więcej zagadek w tym samym czasie.'],
+    A:['Ania z Zielonego Wzgórza','Czytasz sercem: dla ludzi, emocji i świata, w który można wejść. Szybciej znaczy u Ciebie więcej takich światów w roku.'],
+    R:['Robinson Crusoe','Czytasz po konkret: poradnik, reportaż, coś, co od razu wykorzystasz. Kurs da Ci technikę przeglądania i wyłapywania słów kluczy.'],
+    M:['Mały Książę','Czytasz rzadko, ale uważnie, i wracasz do tego, co ważne. Kurs pomoże Ci zapamiętać więcej z każdej przeczytanej strony.']
+  };
+  var QUIZ=[
+    ['Weekend z książką. Co bierzesz?',[['Kryminał, który wciąga od pierwszej strony','S'],['Powieść o ludziach i emocjach','A'],['Reportaż albo dobry poradnik','R'],['Coś krótkiego, do czego się wraca','M']]],
+    ['Kiedy czytasz najczęściej?',[['Wieczorem, aż do rozwiązania','S'],['W łóżku, z herbatą','A'],['W drodze, w przerwach','R'],['Rzadko, ale wtedy naprawdę uważnie','M']]],
+    ['Co Cię najbardziej wkurza w czytaniu?',[['Że gubię wątek','S'],['Że zasypiam po trzech stronach','A'],['Że nie mam na to czasu','R'],['Że po tygodniu niewiele pamiętam','M']]]
+  ];
+
+  /* ---------- tor ze stosami książek i ludzik ---------- */
+  var KOL=['#E8784A','#FEAC32','#2E8B57','#3B6FB6','#C62828','#F2E3C6','#8E5BA8'];
+  var STOSY=6, svg=$('torSvg'), xs=[], hs=[];
+  (function rysuj(){
+    var out='<rect x="0" y="112" width="400" height="6" fill="rgba(0,0,0,.25)"/>';
+    for(var i=0;i<STOSY;i++){
+      var x=28+i*(344/(STOSY-1)), n=2+i, y=112;
+      xs.push(x);
+      for(var k=0;k<n;k++){ var h=7, w=40-(k%3)*4, c=KOL[(i*3+k)%KOL.length]; y-=h+1;
+        out+='<rect x="'+(x-w/2+((k%2)?2:-2))+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="1.5" fill="'+c+'"/><rect x="'+(x-w/2+((k%2)?2:-2)+3)+'" y="'+(y+3)+'" width="'+(w-6)+'" height="1" fill="rgba(0,0,0,.18)"/>'; }
+      hs.push(y);
+    }
+    out+='<g class="ludzik" id="ludzik"><g class="cialo">'+
+      '<circle cx="0" cy="-34" r="7" fill="#fff"/>'+
+      '<line x1="0" y1="-27" x2="0" y2="-12" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>'+
+      '<line x1="0" y1="-23" x2="-8" y2="-16" stroke="#fff" stroke-width="3" stroke-linecap="round"/>'+
+      '<line x1="0" y1="-23" x2="8" y2="-30" stroke="#fff" stroke-width="3" stroke-linecap="round"/>'+
+      '<rect x="6" y="-38" width="9" height="7" rx="1" fill="#FEAC32" transform="rotate(-20 10 -34)"/>'+
+      '<line x1="0" y1="-12" x2="-6" y2="0" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>'+
+      '<line x1="0" y1="-12" x2="6" y2="0" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>'+
+      '</g></g>';
+    svg.innerHTML=out;
+  })();
+  var ludz=$('ludzik'), poz=-1;
+  function naStos(i){ i=Math.min(i,STOSY-1); if(i===poz) return; poz=i;
+    ludz.setAttribute('transform','translate('+xs[i]+' '+hs[i]+')');
+    ludz.classList.remove('skok'); void ludz.getBoundingClientRect(); ludz.classList.add('skok'); }
+  naStos(0);
+
+  /* ---------- ekrany ---------- */
+  var obecny=0, ETYK={0:'Start',1:'1 / 5',2:'1 / 5',3:'1 / 5',4:'1 / 5',5:'2 / 5',6:'3 / 5',7:'3 / 5',8:'4 / 5',9:'4 / 5',10:'5 / 5'};
+  var STOS={0:0,1:0,4:1,5:1,7:2,8:2,9:3,10:5};
+  function idz(n){
+    var a=d.querySelector('.ekran[data-e="'+obecny+'"]'), b=d.querySelector('.ekran[data-e="'+n+'"]');
+    a.classList.remove('on'); a.classList.add('wyj'); setTimeout(function(){a.classList.remove('wyj')},400);
+    b.classList.add('on'); obecny=n; $('krok').textContent=ETYK[n]||'';
+    if(STOS[n]!=null) naStos(STOS[n]);
+    if(WEJSCIE[n]) WEJSCIE[n]();
+  }
+  d.addEventListener('click',function(e){ var t=e.target.closest('[data-dalej]'); if(t) idz(+t.getAttribute('data-dalej')); });
+
+  /* start: słowa pojawiają się po kolei */
+  (function(){ var h=$('haslo'); h.innerHTML=h.textContent.split(' ').map(function(w){return '<span>'+w+'</span>'}).join(' ');
+    var sp=h.querySelectorAll('span'); sp.forEach(function(s,i){ setTimeout(function(){s.classList.add('on')},250+i*180); });
+    setTimeout(function(){ $('haslo2').style.opacity=1 }, 250+sp.length*180+200);
+    setTimeout(function(){ $('graj').style.opacity=1 }, 250+sp.length*180+700); })();
+  $('graj').onclick=function(){ idz(1) };
+
+  /* wyzwanie 1: tempo */
+  var t0=0;
+  $('tekst1').textContent=TEKST;
+  $('startTempo').onclick=function(){ idz(2); t0=performance.now(); };
+  $('stopTempo').onclick=function(){
+    var min=(performance.now()-t0)/60000, slow=TEKST.split(/\s+/).length;
+    S.wpm=Math.max(60,Math.min(900,Math.round(slow/min))); idz(3); };
+  (function(){ var odp=[['Wewnętrzny lektor, który słyszymy w głowie',1],['Za mała czcionka w książkach',0],['Czytanie wieczorem, przy zmęczeniu',0]], box=$('odp1');
+    odp.forEach(function(o){ var b=d.createElement('button'); b.textContent=o[0]; b.onclick=function(){
+      b.classList.add(o[1]?'dobrze':'zle'); S.zrozumienie=!!o[1];
+      setTimeout(function(){ idz(4) },650); }; box.appendChild(b); }); })();
+
+  var WEJSCIE={
+    4:function(){ var el=$('wpm'), k=0, cel=S.wpm, st=performance.now();
+      (function anim(){ var p=Math.min(1,(performance.now()-st)/900); el.firstChild.nodeValue=Math.round(cel*p); if(p<1) requestAnimationFrame(anim); })();
+      var ks=ksiazki(cel);
+      $('wpmOpis').innerHTML=(S.zrozumienie?'I tekst zrozumiany. ':'Pytanie poszło nie tak, ale to też da się wyćwiczyć. ')+
+        'W tym tempie, czytając 20 minut dziennie, przeczytasz ok. <b>'+ks+'</b> książek w roku.'; },
+    6:function(){ var t=Math.max(250,Math.round(S.wpm*1.5)); S.metroTempo=t;
+      $('metroOpis').innerHTML='Teraz poprowadzę Twój wzrok w tempie <b>'+t+' słów na minutę</b>, półtora raza szybciej niż Twoje. Patrz tylko na żółte podświetlenie.';
+      $('metro').innerHTML=METRO.split(' ').map(function(w){return '<span>'+w+'</span>'}).join(' '); }
+  };
+  function ksiazki(wpm){ return Math.max(1,Math.round(wpm*20*365/60000)); }
+
+  /* wyzwanie 2: pole widzenia */
+  var runda=0, trafione=0;
+  $('startPole').onclick=function(){ $('startPole').style.display='none'; rundaPola(); };
+  function rundaPola(){
+    var trio=SLOWA[runda], roz=16+runda*7; $('odp2').innerHTML=''; $('poleLicz').textContent='Runda '+(runda+1)+' z '+SLOWA.length;
+    $('wL').textContent=trio[0]; $('wS').textContent=trio[1]; $('wP').textContent=trio[2];
+    $('wL').style.left=(50-roz)+'%'; $('wS').style.left='50%'; $('wP').style.left=(50+roz)+'%';
+    setTimeout(function(){
+      ['wL','wS','wP'].forEach(function(i){$(i).classList.add('on')});
+      setTimeout(function(){ ['wL','wS','wP'].forEach(function(i){$(i).classList.remove('on')}); pytajPole(trio); }, 260);
+    }, 700);
+  }
+  function pytajPole(trio){
+    var inne=SLOWA[(runda+2)%SLOWA.length], opcje=[trio[0],trio[2],inne[0]].sort(function(){return Math.random()-.5});
+    opcje.forEach(function(o){ var b=d.createElement('button'); b.textContent=o; b.style.flex='1 1 30%'; b.style.textAlign='center';
+      b.onclick=function(){ var ok=o===trio[0]; b.classList.add(ok?'dobrze':'zle'); if(ok) trafione++;
+        [].forEach.call($('odp2').children,function(x){x.disabled=true});
+        setTimeout(function(){ runda++; if(runda<SLOWA.length) rundaPola(); else koniecPola(); },550); };
+      $('odp2').appendChild(b); });
+  }
+  function koniecPola(){ S.pole=trafione; $('odp2').innerHTML='';
+    $('poleLicz').textContent='';
+    var p=d.createElement('p'); p.className='lead';
+    p.innerHTML='<b>'+trafione+' z '+SLOWA.length+'</b>. '+(trafione>=4?'Szerokie pole widzenia, oko łapie słowa z boku.':'Oko łapie środek, boki uciekają. Tego uczy pierwsza część kursu.');
+    $('odp2').appendChild(p);
+    var b=d.createElement('button'); b.className='btn'; b.textContent='Dalej: metronom'; b.setAttribute('data-dalej','6'); b.style.marginTop='6px';
+    $('odp2').parentNode.insertBefore(b,$('poleLicz')); naStos(2);
+  }
+
+  /* wyzwanie 3: metronom */
+  $('startMetro').onclick=function(){ var btn=this; btn.style.visibility='hidden';
+    var sp=$('metro').querySelectorAll('span'), ms=60000/S.metroTempo, i=0, n=sp.length;
+    (function krok(){ if(i>0) sp[i-1].classList.remove('akt'); if(i>=n){
+        $('metroWynik').innerHTML='Ten fragment przeszedł w tempie <b>'+S.metroTempo+'</b> słów na minutę. Dokładnie tak działa wskaźnik z kursu: oko przestaje się cofać.';
+        setTimeout(function(){ idz(7) },400); return; }
+      sp[i].classList.add('akt'); $('metroCzas').style.width=((i+1)/n*100)+'%'; i++; setTimeout(krok,ms); })();
+  };
+
+  /* wyzwanie 4: bohater literacki */
+  var q=0;
+  function pokazPytanie(){ var p=QUIZ[q]; $('qPyt').textContent=p[0]; $('qLicz').textContent='Pytanie '+(q+1)+' z '+QUIZ.length; var box=$('qOdp'); box.innerHTML='';
+    p[1].forEach(function(o){ var b=d.createElement('button'); b.textContent=o[0]; b.onclick=function(){ S.typ[o[1]]=(S.typ[o[1]]||0)+1; q++; if(q<QUIZ.length) pokazPytanie(); else wynikTypu(); }; box.appendChild(b); }); }
+  WEJSCIE[8]=function(){ q=0; S.typ={}; pokazPytanie(); };
+  function wynikTypu(){ var best='S',m=-1; ['S','A','R','M'].forEach(function(k){ if((S.typ[k]||0)>m){m=S.typ[k]||0;best=k} });
+    $('bohater').textContent=BOH[best][0]; $('bohaterOpis').textContent=BOH[best][1]; idz(9); }
+
+  /* finał */
+  WEJSCIE[10]=function(){ var a=ksiazki(S.wpm), b=ksiazki(S.wpm*2);
+    $('final1').innerHTML='Dziś: <b>'+S.wpm+'</b> słów na minutę, ok. <b>'+a+'</b> książek w roku.<br>Po kursie, przy tych samych 20 minutach dziennie: ok. <b>'+b+'</b>.';
+    var q=location.search; if(q){ $('kup').href+=q; $('naLanding').href+=q; } };
+  var KONIEC=new Date('2026-12-13T21:00:00+01:00').getTime(), z=function(x){return(x<10?'0':'')+x};
+  setInterval(function(){ var r=Math.max(0,Math.floor((KONIEC-Date.now())/1000)); $('licznik').textContent=Math.floor(r/86400)+' dni '+z(Math.floor(r%86400/3600))+':'+z(Math.floor(r%3600/60))+':'+z(r%60); },1000);
+})();
+</script>
+</body>
+</html>
