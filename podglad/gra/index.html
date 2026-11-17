@@ -235,7 +235,7 @@ h2{font-size:clamp(1.35rem,6vw,2rem)}
   $('stopTempo').onclick=function(){
     var min=(performance.now()-t0)/60000, slow=TEKST.split(/\s+/).length;
     S.wpm=Math.max(60,Math.min(900,Math.round(slow/min))); idz(3); };
-  (function(){ var odp=[['Wewnętrzny lektor, który słyszymy w głowie',1],['Za mała czcionka w książkach',0],['Czytanie wieczorem, przy zmęczeniu',0]], box=$('odp1');
+  (function(){ var odp=[['Wewnętrzny lektor, który słyszymy w głowie',1],['Za mała czcionka w książkach',0],['Czytanie wieczorem, przy zmęczeniu',0]].sort(function(){return Math.random()-.5}), box=$('odp1');
     odp.forEach(function(o){ var b=d.createElement('button'); b.textContent=o[0]; b.onclick=function(){
       b.classList.add(o[1]?'dobrze':'zle'); S.zrozumienie=!!o[1];
       setTimeout(function(){ idz(4) },650); }; box.appendChild(b); }); })();
