@@ -24,6 +24,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles-trzy.css?v=1711a">
+<style id="cena-w-hero">/* cena Black Friday w hero nad pierwszym przyciskiem (decyzja Piotra 17.11.2026) */
+[hidden]{display:none!important}
+.hero-cena{margin:22px auto 4px;text-align:center;line-height:1.15}
+.hero-cena .hc-o{font-weight:900;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;font-size:.8rem;color:#FEAC32}
+.hero-cena .hc-c{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px}
+.hero-cena .hc-s{position:relative;font-size:1.25rem;font-weight:700;color:rgba(255,255,255,.75);white-space:nowrap}
+.hero-cena .hc-s:after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:3px;background:#FEAC32;border-radius:2px;transform:rotate(-7deg)}
+.hero-cena .hc-p{font-weight:900;font-size:3rem;line-height:1;color:#FEAC32;white-space:nowrap}
+.hero-cena .hc-p small{font-size:1.4rem}
+.hero-cena .hc-r{background:#fff;color:#073462;font-weight:900;font-size:1.05rem;padding:4px 11px;border-radius:999px;transform:rotate(-4deg);white-space:nowrap}
+.hero-cena .hc-l{margin-top:8px;font-size:.92rem;font-weight:700;color:rgba(255,255,255,.85);font-variant-numeric:tabular-nums}
+.hero-cena .hc-l b{color:#fff}
+</style>
 </head>
 <body>
 <div class="sr-only" id="sr-live" aria-live="polite"></div>
@@ -63,18 +76,20 @@
     <h2 class="hero-sub">Od 13 lat uczę, jak czytać i rozumieć więcej</h2>
     <p class="hero-lead hero-lead--linie bion" aria-label="Zaraz Ci udowodnię, że potrafisz tak czytać. W 15 minut ze mną przyspieszysz czytanie dwukrotnie. Za miesiąc będziesz czytać tak szybko jak ja."><span aria-hidden="true"><b>Za</b>raz <b>C</b>i <b>udow</b>odnię, <b>ż</b>e <b>potr</b>afisz <b>t</b>ak <b>czy</b>tać.</span><span aria-hidden="true"><b>W</b> <b>15</b> <b>mi</b>nut <b>z</b>e <b>m</b>ną <b>przy</b>spieszysz <b>czy</b>tanie <b>dwuk</b>rotnie.</span><span aria-hidden="true"><b>Z</b>a <b>mie</b>siąc <b>będ</b>ziesz <b>czy</b>tać <b>t</b>ak <b>szy</b>bko <b>j</b>ak <b>j</b>a.</span></p>
     <p class="przypis">Gratulacje! Pierwsza lekcja za Tobą – pogrubianie początków słów ułatwia prowadzenie wzroku.</p>
+    <div class="hero-cena"><div class="hc-o">Black Friday</div><div class="hc-c"><span class="hc-s">500 zł</span><span class="hc-p">247<small> zł</small></span><span class="hc-r">−51%</span></div><div class="hc-l">Cena kończy się za <b id="hcLicznik">26 dni</b></div></div>
+    <script>(function(){var K=new Date('2026-12-13T21:00:00+01:00').getTime(),e=document.getElementById('hcLicznik'),z=function(x){return(x<10?'0':'')+x};function t(){var r=Math.max(0,Math.floor((K-Date.now())/1000));e.textContent=Math.floor(r/86400)+' dni '+z(Math.floor(r%86400/3600))+':'+z(Math.floor(r%3600/60))+':'+z(r%60)}t();setInterval(t,1000)})();</script>
     <a class="btn-kup" data-cta="hero" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Wiem wszystko,<br>kupuję kurs!</a>
   </div>
 </section>
 
 <!-- opinia-stoper zaraz po hero (jak na Leadpages 2025) -->
-<div class="stoper-band"><figure class="stoper"><blockquote>Efekt jest taki, że od stycznia do połowy marca <mark>przeczytałem 18 książek</mark> i 52 książki w roku nie będą raczej stanowić wyzwania.</blockquote><figcaption><span class="gw">★★★★★</span> Aleksander Konieczny, opinia w Google</figcaption></figure></div>
+<!-- ukryte 17.11.2026 (Piotr) --><div class="stoper-band" hidden><figure class="stoper"><blockquote>Efekt jest taki, że od stycznia do połowy marca <mark>przeczytałem 18 książek</mark> i 52 książki w roku nie będą raczej stanowić wyzwania.</blockquote><figcaption><span class="gw">★★★★★</span> Aleksander Konieczny, opinia w Google</figcaption></figure></div>
 
 <!-- ============================================================ 2. WSPÓLNIE POWALCZYMY -->
 <section class="listen band dark-zone" id="czytanie" aria-label="Wspólnie powalczymy o Twoje czytanie">
   <div class="wrap">
-    <h2 class="hand-title">Wspólnie powalczymy o Twoje czytanie</h2>
-    <p class="sec-lead">Chcesz czytać, ale nie masz na to przestrzeni. Świat bombarduje Cię lawiną powiadomień, mailingów, wiadomości. Informacji jest coraz więcej, a czasu coraz mniej i to się nie zmieni. Szkolne czytanie wystarczyło wprawdzie na wymęczenie lektur, ale zupełnie nie przystaje do tempa współczesnego świata.</p>
+    <h2 class="hand-title" hidden>Wspólnie powalczymy o Twoje czytanie</h2>
+    <p class="sec-lead" hidden>Chcesz czytać, ale nie masz na to przestrzeni. Świat bombarduje Cię lawiną powiadomień, mailingów, wiadomości. Informacji jest coraz więcej, a czasu coraz mniej i to się nie zmieni. Szkolne czytanie wystarczyło wprawdzie na wymęczenie lektur, ale zupełnie nie przystaje do tempa współczesnego świata.</p>
     <p class="formula">Czytanie = czas + skupienie</p>
     <p class="co-moge">To co mogę zrobić?</p>
     <h3 class="filary-h">3 filary szybkiego czytania</h3>
