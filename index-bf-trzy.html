@@ -24,6 +24,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles-trzy.css?v=1711a">
+<style id="poprawki-1811">/* uwagi Piotra 18.11.2026 */
+.krotko-t{font-weight:500}.krotko-t b{font-weight:900}
+#opinie .stoper{padding:20px 18px 14px}
+#opinie .stoper blockquote{font-size:clamp(1.05rem,4.5vw,1.25rem);line-height:1.35}
+#opinie .stoper figcaption{margin-top:10px;font-size:.85rem}
+#opinie .stoper+.stoper{margin-top:24px}
+.ig-kom{max-width:560px;margin:26px auto 0;background:#fff;border-radius:6px;padding:14px 14px 12px;box-shadow:0 14px 34px rgba(18,68,41,.16);transform:rotate(1.2deg);display:grid;grid-template-columns:40px minmax(0,1fr) 16px;gap:10px;align-items:start}
+.ig-av{width:40px;height:40px;border-radius:50%;display:block}
+.ig-tresc p{font-size:clamp(1.02rem,4.4vw,1.15rem);line-height:1.35;color:#1F2336}
+.ig-tresc b{font-weight:900;margin-right:4px}
+.ig-meta{display:block;margin-top:6px;font-size:.8rem;color:#737373;font-weight:700}
+.ig-serce{color:#E0245E;font-size:1.1rem;line-height:1;margin-top:4px}
+#glupoty .gl summary{grid-template-columns:48px minmax(0,1fr) 18px;gap:12px;padding:12px 12px 12px 14px}
+#glupoty .gl-foto{width:48px;height:48px;border-width:3px}
+#glupoty .gl-nr{white-space:nowrap;letter-spacing:.1em}
+#glupoty .gl-mit{font-size:clamp(1.3rem,5.6vw,1.7rem);line-height:1.1}
+#glupoty .gl-plus{width:18px;height:18px}
+@media(min-width:760px){#glupoty .gl summary{grid-template-columns:72px minmax(0,1fr) 22px}#glupoty .gl-foto{width:72px;height:72px}}
+</style>
 <style id="cena-w-hero">/* cena Black Friday w hero nad pierwszym przyciskiem (decyzja Piotra 17.11.2026) */
 [hidden]{display:none!important}
 @media (max-width:600px){.hero-film figcaption{font-size:6.2vw;white-space:nowrap}} /* hasło z „Ty” w jednej linii (Piotr 17.11) */
@@ -126,7 +145,7 @@
     </div>
     </details>
     <figure class="obl-piotr"><img src="assets/piotr-zamyslony.webp" width="640" height="539" alt="Piotr Starzyński zamyślony, z pięścią przy ustach" loading="lazy"></figure>
-    <div class="krotko"><p class="krotko-h">Krótko mówiąc</p><p class="krotko-t">po kursie nie tylko będziesz w stanie przeczytać 60 książek w tydzień, ale zostanie Ci jeszcze 8,5 godziny dziennie na spacer, jedzenie i sen.</p></div>
+    <div class="krotko"><p class="krotko-h">Krótko mówiąc</p><p class="krotko-t"><b>po kursie nie tylko będziesz w stanie przeczytać 60 książek w tydzień,</b> ale zostanie Ci jeszcze 8,5 godziny dziennie na spacer, jedzenie i sen.</p></div>
   </div>
 </section>
 
@@ -136,8 +155,6 @@
   <div class="wrap">
     <h2 class="hand-title" hidden>Wspólnie powalczymy o Twoje czytanie</h2>
     <p class="sec-lead" hidden>Chcesz czytać, ale nie masz na to przestrzeni. Świat bombarduje Cię lawiną powiadomień, mailingów, wiadomości. Informacji jest coraz więcej, a czasu coraz mniej i to się nie zmieni. Szkolne czytanie wystarczyło wprawdzie na wymęczenie lektur, ale zupełnie nie przystaje do tempa współczesnego świata.</p>
-    <p class="formula">Czytanie = czas + skupienie</p>
-    <p class="co-moge">To co mogę zrobić?</p>
     <div class="kwadrans-rzad"><p class="big-line">Po kwadransie kursu przyspieszysz swoje czytanie dwukrotnie.</p><svg class="kwadrans" viewBox="0 0 100 100" aria-hidden="true"><path class="kw-pole" d="M50 50 L50 9 A41 41 0 0 1 91 50 Z"/><path class="kw-obwod" d="M50 8 C 74 7, 93 26, 92 50 C 92 74, 73 93, 50 92 C 26 92, 7 73, 8 50 C 8 27, 26 9, 52 8"/><path d="M50 50 L50 17 M50 50 L82 50"/><path d="M50 3v7M97 50h-7M50 97v-7M3 50h7"/></svg></div>
     <p class="big-line big-line--zolta">Na koniec zamiast jednej książki będziesz czytać pięć.</p>
   </div>
@@ -191,10 +208,9 @@
 <!-- ============================================================ 6b. NIE MUSISZ MI WIERZYĆ NA SŁOWO + SCEPTYK (kolejność Leadpages 2025) -->
 <section class="opinie-pod band" id="opinie" aria-label="Opinie kursantów">
   <div class="wrap">
-    <figure class="stoper"><blockquote>Umiejętności nabyte w trakcie <mark>przydają się też w pracy zawodowej</mark>. Całość zajęć prowadzona profesjonalnie i w bardzo miłej atmosferze. Gdybym mógł, dałbym 10 gwiazdek.</blockquote><figcaption><span class="gw">★★★★★</span> Grzegorz Mróz, opinia w Google</figcaption></figure>
     <figure class="stoper"><blockquote>Kurs dodatkowo jest bardzo przyjemny, <mark>aż chce się po każdej zakończonej lekcji przechodzić do kolejnej</mark>.</blockquote><figcaption><span class="gw">★★★★★</span> Michal Franka, opinia w Google</figcaption></figure>
     <figure class="stoper"><blockquote>Dzięki tym zajęciom <mark>książki już nie będą się kurzyć na półce</mark>.</blockquote><figcaption><span class="gw">★★★★★</span> Renata Woś, opinia w Google</figcaption></figure>
-    <figure class="koment-ig"><img src="assets/komentarz-ulson1000.webp" width="697" height="162" alt="Komentarz ulson1000 na Instagramie: Przerobiłam kurs i gorąco wszystkim polecam! Czytam zdecydowanie szybciej a przy dalszych ćwiczeniach jeszcze znacząco można ten czas skrócić" loading="lazy"></figure>
+    <figure class="ig-kom" aria-label="Komentarz na Instagramie"><img class="ig-av" src="assets/ulson-avatar.webp" width="48" height="48" alt="" loading="lazy"><div class="ig-tresc"><p><b>ulson1000</b> Przerobiłam kurs i gorąco wszystkim polecam! 🙂 czytam zdecydowanie szybciej a przy dalszych ćwiczeniach jeszcze znacząco można ten czas skrócić</p><span class="ig-meta">Instagram · 1 polubienie</span></div><span class="ig-serce" aria-hidden="true">♥</span></figure>
   </div>
 </section>
 
@@ -298,9 +314,9 @@
 </section>
 
 <!-- ============================================================ 7. JAK DZIAŁA (po drodze, Piotr 18.11) -->
-<section class="formats band" id="jak" aria-label="Jak działa Szybkie Czytanie Online?">
+<section class="formats band" id="jak" aria-label="Czy dam radę się tego nauczyć?">
   <div class="wrap">
-    <h2 class="sec-title">Jak działa Szybkie Czytanie Online?</h2>
+    <h2 class="sec-title">Czy dam radę się tego nauczyć?</h2>
     <figure class="foto foto-full"><img src="assets/zajecia-biuro-szkola-letnia.webp" alt="Uczniowie ćwiczą w biurze Fundacji Pięć Plus podczas Szkoły Letniej" loading="lazy"><figcaption class="hand-cap hand-cap--m">Jeśli ósmoklasiści są w stanie nauczyć się ze mną szybkiego czytania w 4 godziny, <span class="podkr">to Ty też.</span></figcaption></figure>
 
     <aside class="notice notice--czas" aria-label="A jak znajdziesz na to czas?">
@@ -333,8 +349,8 @@
 <!-- ============================================================ 9b. GŁUPOTY, KTÓRE CIĘ HAMUJĄ (pod ceną, decyzja Piotra 13.11) -->
 <section class="story-call band dark-zone" id="glupoty" aria-label="Głupoty, które Cię hamują">
   <div class="wrap">
-    <p class="hand-kicker hand-kicker--jasny">Wahasz się?<span class="kicker-biala">Być może to przez którąś z</span></p>
-    <h2 class="sec-title">Głupot, które Cię hamują</h2>
+    <p class="hand-kicker hand-kicker--jasny">Wahasz się?</p>
+    <h2 class="sec-title">Być może to przez którąś z głupot, które Cię hamują</h2>
     <div class="opts">
       <details class="opt gl">
         <summary><img class="gl-foto" src="assets/gl-1.webp" width="240" height="240" alt="Piotr łapie się za głowę" loading="lazy"><span class="gl-tyt"><span class="gl-nr">Głupota nr 1</span><span class="gl-mit">Czytając szybko nic nie zrozumiem i nic nie zapamiętam</span></span><span class="gl-plus" aria-hidden="true"></span></summary>
