@@ -71,6 +71,18 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 #sceptyk .koment-ig figcaption,#sceptyk .hand-cap{white-space:nowrap;font-size:clamp(1.3rem,6.2vw,1.8rem)!important}
 .stoper figcaption{white-space:nowrap}
 .stoper blockquote{font-size:clamp(1.08rem,4.7vw,1.3rem)}
+/* tura 3 uwag Piotra 18.11 */
+.hand-cap--pod,.hand-cap--pod + .hand-big,.loga-h--hand{font-size:clamp(1.5rem,6.5vw,2rem)!important;max-width:none!important;width:auto!important;text-wrap:pretty}
+.hand-cap--pod{white-space:nowrap}
+#opinie .stoper,#opinie .ig-kom{margin-top:24px}
+#opinie .wrap>:first-child{margin-top:0}
+.reka-h{max-width:none!important;white-space:nowrap;font-size:min(calc((100vw - 34px) / 13.4),2.6rem)!important}
+.hand-cap--pod{font-size:min(calc((100vw - 34px) / 11.8),2.6rem)!important}
+.hand-cap--pod + .hand-big{font-size:min(calc((100vw - 34px) / 13.3),2.6rem)!important}
+.loga-h--hand{white-space:nowrap;font-size:min(calc((100vw - 34px) / 13.6),2.6rem)!important}
+.pyt-tekst{padding-right:0}
+#glupoty{background:linear-gradient(180deg,#6A2142,#56192F)}
+
 
 @media(min-width:760px){#glupoty .gl summary{grid-template-columns:72px minmax(0,1fr) 22px}#glupoty .gl-foto{width:72px;height:72px}}
 </style>
@@ -213,9 +225,9 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 <section class="formats band" id="dlaczego" aria-label="Wiem, dlaczego tu jesteś">
   <div class="wrap">
     <figure class="foto foto-full"><img src="assets/droga2/piotr-lawka.webp" width="1200" height="800" alt="Piotr Starzyński uśmiecha się na ławce w parku, z kartkami na kolanach" loading="lazy"></figure>
-    <p class="sec-lead">Nazywam się Piotr Starzyński, nauczyłem już 67 500 osób, jak czytać regularnie, szybko i w skupieniu. Zajmuję się tym tematem od 13 lat i jestem przewodniczącym polskiego WABA League (Światowej Ligi Sportów Umysłowych) oraz złotym medalistą na międzynarodowych zawodach w czytaniu.</p>
+    <p class="sec-lead">Nazywam się Piotr Starzyński, a kurs szybkiego czytania, który nagrałem, ukończyło ponad 12,5 tysiąca osób. Zajmuję się tym tematem od 13 lat i jestem przewodniczącym polskiego WABA League oraz złotym medalistą na międzynarodowych zawodach w czytaniu.</p>
     <p class="hand-cap hand-cap--pod">I dlatego wiem, dlaczego tu jesteś.</p>
-    <p class="hand-big">Chcesz czytać więcej, szybciej i w pełnym skupieniu.</p>
+    <p class="hand-big">Chcesz czytać więcej, szybciej<br>i w pełnym skupieniu.</p>
 
     <div class="loga-blok">
       <p class="loga-h loga-h--hand">I chociaż pracowałem dla największych,</p>
@@ -242,10 +254,9 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
     <figure class="stoper"><blockquote>Kurs dodatkowo jest bardzo przyjemny, <mark>aż chce się po każdej zakończonej lekcji przechodzić do kolejnej</mark>.</blockquote><figcaption><span class="gw">★★★★★</span> Michal Franka</figcaption></figure>
     <figure class="stoper"><blockquote>Dzięki tym zajęciom <mark>książki już nie będą się kurzyć na półce</mark>.</blockquote><figcaption><span class="gw">★★★★★</span> Renata Woś</figcaption></figure>
     <figure class="ig-kom" aria-label="Komentarz na Instagramie"><img class="ig-av" src="assets/ulson-avatar.webp" width="48" height="48" alt="" loading="lazy"><div class="ig-tresc"><p><b>ulson1000</b> Przerobiłam kurs i gorąco wszystkim polecam! 🙂 czytam zdecydowanie szybciej a przy dalszych ćwiczeniach jeszcze znacząco można ten czas skrócić</p><span class="ig-meta">Instagram · 1 polubienie</span></div><span class="ig-serce" aria-hidden="true">♥</span></figure>
+    <figure class="stoper"><blockquote>Kupiłem kurs na promocji i szczerze to gdybym wiedział o jego zawartości, to <mark>śmiało zapłaciłbym pełną cenę</mark>.</blockquote><figcaption><span class="gw">★★★★★</span> Michał Fabiszewski</figcaption></figure>
   </div>
 </section>
-
-<div class="stoper-band"><figure class="stoper"><blockquote>Kupiłem kurs na promocji i szczerze to gdybym wiedział o jego zawartości, to <mark>śmiało zapłaciłbym pełną cenę</mark>.</blockquote><figcaption><span class="gw">★★★★★</span> Michał Fabiszewski</figcaption></figure></div>
 
 <!-- ============================================================ 9. CENA -->
 <section class="cena band dark-zone" id="cena" aria-label="Ile kosztuje kurs Szybkie Czytanie Online?">
@@ -338,8 +349,8 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
     </div>
 
     <div class="pyt">
-      <figure class="pyt-foto"><img src="assets/pytania-qa.png" width="550" height="389" alt="Kadr z lekcji: pytanie kursanta o ćwiczenia na rozszerzanie pola widzenia i Piotr, który na nie odpowiada w nagraniu" loading="lazy"><figcaption class="pyt-napis">to jeden z takich filmików</figcaption></figure>
-      <div class="pyt-tekst"><p><strong>Masz pytanie?</strong> Nagram filmik z odpowiedzią.</p><svg class="pyt-strzalka" viewBox="0 0 44 200" preserveAspectRatio="none" aria-hidden="true"><path d="M22 196 C 40 150, 4 90, 24 14"/><path d="M10 34 L 24 12 L 38 32"/></svg></div>
+      <figure class="pyt-foto"><img src="assets/pytania-qa.png" width="550" height="389" alt="Kadr z lekcji: pytanie kursanta o ćwiczenia na rozszerzanie pola widzenia i Piotr, który na nie odpowiada w nagraniu" loading="lazy"></figure>
+      <div class="pyt-tekst"><p><strong>Masz pytanie?</strong> Nagram filmik z odpowiedzią.</p></div>
     </div>
   </div>
 </section>
@@ -375,7 +386,7 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 </section>
 
 <!-- krawędź „półka z książkami” -->
-<div class="ksiazki-edge" data-gora="#195237" data-dol="#073462" aria-hidden="true"></div>
+<div class="ksiazki-edge" data-gora="#0E4379" data-dol="#6A2142" aria-hidden="true"></div>
 
 <!-- ============================================================ 9b. GŁUPOTY, KTÓRE CIĘ HAMUJĄ (pod ceną, decyzja Piotra 13.11) -->
 <section class="story-call band dark-zone" id="glupoty" aria-label="Głupoty, które Cię hamują">
