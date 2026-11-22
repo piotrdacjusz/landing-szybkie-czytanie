@@ -106,6 +106,8 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 .hero-cena .hc-r{background:#fff;color:#073462;font-weight:900;font-size:1.05rem;padding:4px 11px;border-radius:999px;transform:rotate(-4deg);white-space:nowrap}
 .hero-cena .hc-l{margin-top:8px;font-size:.92rem;font-weight:700;color:rgba(255,255,255,.85);font-variant-numeric:tabular-nums}
 .hero-cena .hc-l b{color:#fff}
+.hero-cena .hc-w{margin-top:6px;font-size:.85rem;font-weight:700;color:rgba(255,255,255,.85);text-wrap:balance}
+.bf-dostep{margin-top:10px;font-size:.95rem;font-weight:700;color:#4a4f63}
 </style>
 </head>
 <body>
@@ -146,7 +148,7 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
     <h2 class="hero-sub">Od 13 lat uczę, jak czytać i rozumieć więcej</h2>
     <p class="hero-lead hero-lead--linie bion" aria-label="Zaraz Ci udowodnię, że potrafisz tak czytać. W 15 minut ze mną przyspieszysz czytanie dwukrotnie. Za miesiąc będziesz czytać tak szybko jak ja."><span aria-hidden="true"><b>Za</b>raz <b>C</b>i <b>ud</b>owodnię, <b>ż</b>e <b>po</b>trafisz <b>t</b>ak <b>czy</b>tać.</span><span aria-hidden="true"><b>W</b> <b>1</b>5 <b>mi</b>nut <b>z</b>e <b>m</b>ną <b>przy</b>spieszysz <b>czy</b>tanie <b>dwu</b>krotnie.</span><span aria-hidden="true"><b>Z</b>a <b>mie</b>siąc <b>bę</b>dziesz <b>czy</b>tać <b>t</b>ak <b>szy</b>bko <b>j</b>ak <b>j</b>a.</span></p>
     <p class="przypis">Gratulacje! Pierwsza lekcja za Tobą – pogrubianie początków słów ułatwia prowadzenie wzroku.</p>
-    <div class="hero-cena"><div class="hc-o">Black Friday</div><div class="hc-c"><span class="hc-s">500 zł</span><span class="hc-p">247<small> zł</small></span><span class="hc-r">−51%</span></div><div class="hc-l">Cena kończy się za <b id="hcLicznik">26 dni</b></div></div>
+    <div class="hero-cena"><div class="hc-o">Black Friday</div><div class="hc-c"><span class="hc-s">500 zł</span><span class="hc-p">247<small> zł</small></span><span class="hc-r">−51%</span></div><div class="hc-l">Cena kończy się 13.12 o 21:00, za <b id="hcLicznik">26 dni</b></div><div class="hc-w">Dostęp na rok · około miesiąca po 15 minut dziennie · 30 dni na zwrot</div></div>
     <script>(function(){var K=new Date('2026-12-13T21:00:00+01:00').getTime(),e=document.getElementById('hcLicznik'),z=function(x){return(x<10?'0':'')+x};function t(){var r=Math.max(0,Math.floor((K-Date.now())/1000));e.textContent=Math.floor(r/86400)+' dni '+z(Math.floor(r%86400/3600))+':'+z(Math.floor(r%3600/60))+':'+z(r%60)}t();setInterval(t,1000)})();</script>
     <a class="btn-kup" data-cta="hero" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Wiem wszystko,<br>kupuję kurs!</a>
   </div>
@@ -282,7 +284,7 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
     <!-- Cena: propozycja 12.11.2026 — 500 zł przekreślone, 247 zł; Omnibus: najniższa cena z 30 dni = 500 zł (szybka sprzedaż od 13.10) -->
     <div class="bf-karta">
       <p class="bf-pasek">Black Friday</p>
-      <p class="bf-koniec">Cena Black Friday kończy się za</p>
+      <p class="bf-koniec">Cena Black Friday kończy się 13.12 o 21:00, za</p>
       <div class="licznik" id="licznik" aria-live="off">
         <div><b id="lkD">0</b><span>dni</span></div>
         <div><b id="lkH">00</b><span>godz.</span></div>
@@ -296,6 +298,7 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
       </div>
       <div class="cena-nowa">247<small> zł</small></div>
       <a class="btn-kup" data-cta="cena" href="https://kursy.piecplus.pl/s/szybkieczytanieonline2025.html">Kupuję kurs</a>
+      <p class="bf-dostep">Dostęp na cały rok, od razu po zakupie.</p>
       <div class="bf-bezpiecznie">
         <p class="gw-zwrot"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l10 4v8c0 7-4.5 11.5-10 14C10.5 26.5 6 22 6 15V7z"/><path d="M11 16l3.5 3.5L21 13"/></svg><span><strong>Żelazna gwarancja zwrotu: 30 dni.</strong> Nie podoba Ci się, oddajemy pieniądze.</span></p>
         <p class="platnosci"><span class="blik" aria-label="BLIK">blik</span><span>Płatność BLIKIEM, przelewem lub kartą. Wystawiamy faktury.</span></p>
@@ -510,6 +513,6 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 <script id="bez-wdow">/* bez wdów i sierotek (Piotr 18.11): ostatnie dwa słowa akapitu i jednoliterowe spójniki sklejone twardą spacją */
 (function(){var Q='p,li,blockquote,figcaption,h1,h2,h3,h4,summary span,.krotko-t';function f(){document.querySelectorAll(Q).forEach(function(e){if(e.closest('nav,footer,.tuner-edge'))return;var w=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),n,ost=null;while(n=w.nextNode()){n.nodeValue=n.nodeValue.replace(/(^|[\s\u00A0(„])([aiouwzAIOUWZ]) /g,'$1$2\u00A0');if(/\S/.test(n.nodeValue))ost=n}if(ost&&e.textContent.trim().split(/\s+/).length>3){ost.nodeValue=ost.nodeValue.replace(/ (\S+\s*)$/,'\u00A0$1')}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f()})();</script>
 <script id="clarity-wersja">/* Piotr 18.11: wersja landingu jako znacznik w Clarity (filtr „wersja_landingu”), żeby porównać stary i nowy landing w jednym projekcie. Clarity nie ładuje, czeka na zgodę z banera. v1 = sesje do 18.11 16:21 (bez znacznika), v2-1811 = od ok. 18:40, v3-1811 = 23:26–ok. 23:50 bez zdjęć, v4-1811 = zdjęcia trasy w rozwinięciach (krok 0 otwarty), mniejsze zdjęcie w „Więcej o mnie”. */
-(function(){var n=0,t=setInterval(function(){if(typeof window.clarity==='function'){try{window.clarity('set','wersja_landingu','v4-1811')}catch(e){}clearInterval(t)}else if(++n>360)clearInterval(t)},500)})();</script>
+(function(){var n=0,t=setInterval(function(){if(typeof window.clarity==='function'){try{window.clarity('set','wersja_landingu','v5-2211')}catch(e){}clearInterval(t)}else if(++n>360)clearInterval(t)},500)})();</script>
 </body>
 </html>
