@@ -30,9 +30,9 @@
     addEventListener('resize', function(){ place(POS[s]); });
   })();
 
-  /* ---------- licznik Black Friday (cena BF do 13.12.2026 21:00) ---------- */
+  /* ---------- licznik Black Friday (cena BF do 30.11.2026 21:00) ---------- */
   (function(){
-    var KONIEC = new Date('2026-12-13T21:00:00+01:00').getTime();
+    var KONIEC = new Date('2026-11-30T21:00:00+01:00').getTime();
     var d=$('lkD'), h=$('lkH'), m=$('lkM'), s=$('lkS'); if (!d) return;
     function p2(n){ return (n<10?'0':'')+n; }
     function tick(){ var r = Math.max(0, KONIEC - Date.now()), t = Math.floor(r/1000);
