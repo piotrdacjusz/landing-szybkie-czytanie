@@ -161,20 +161,180 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
   <div class="wrap">
     <p class="hand-kicker">Pamiętasz stos książek na początku strony?</p>
     <h2 class="sec-title">Sprawdźmy, czy miałem rację.</h2>
-    <p class="sec-lead">Otwórz filmik i sprawdź swoje tempo.</p>
-    <div class="video-frame" style="margin-top:20px">
-      <iframe src="https://www.youtube-nocookie.com/embed/8WkXBZ-DTpw?rel=0&modestbranding=1&playsinline=1" title="Test prędkości czytania" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <p class="sec-lead">Kliknij start i przeczytaj krótki tekst. Zmierzę Twoje tempo. Całość zajmie mniej niż minutę.</p>
+
+    <!-- v9: test tempa na stronie zamiast filmu (pomysł Piotra 24.11.2026); film: youtube 8WkXBZ-DTpw -->
+    <style>
+    .tt{margin-top:22px;background:#fff;border-radius:var(--r-card,16px);box-shadow:0 18px 40px rgba(18,68,41,.16);border-top:6px solid var(--las);padding:18px 18px 22px;max-width:620px;scroll-margin-top:84px}
+    .tt-top{display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--las)}
+    .tt-krok{color:#7D8A99;letter-spacing:.08em}
+    .tt-e[hidden]{display:none!important}
+    .tt-e{margin-top:14px;animation:ttIn .35s ease both}
+    @keyframes ttIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    .tt-txt{position:relative;font-size:1.06rem;line-height:1.62;color:var(--grafit);background:#F6F9FC;border-radius:12px;padding:16px 16px}
+    .tt-txt.mgla>p{filter:blur(6px);user-select:none}
+    .tt-txt>p{transition:filter .35s}
+    .tt-nak{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:10px;text-align:center;padding:16px}
+    .tt-nak .tt-nota{font-weight:700;color:var(--grafit);background:rgba(255,255,255,.92);border-radius:10px;padding:8px 12px;max-width:30ch;line-height:1.4}
+    .tt .btn{border:0;cursor:pointer;font-family:inherit;justify-content:center}
+    .tt-dol{display:flex;justify-content:center;margin-top:16px}
+    .tt-pyt{font-weight:900;font-size:1.15rem;line-height:1.3;color:var(--las)}
+    .tt-odp{display:grid;gap:10px;margin-top:14px}
+    .tt-odp button{font:inherit;font-weight:700;text-align:left;color:var(--grafit);background:#fff;border:2px solid #C5D3E3;border-radius:12px;padding:13px 14px;min-height:48px;cursor:pointer}
+    .tt-odp button.ok{border-color:var(--mech);background:#E7F2EC}
+    .tt-odp button.zle{border-color:#C62828;background:#FBEAEA}
+    .tt-odp button:disabled{cursor:default}
+    .tt-wyn{text-align:center}
+    .tt-liczba{font-weight:900;font-size:clamp(3rem,15vw,4.2rem);line-height:1;color:var(--las);letter-spacing:-.02em}
+    .tt-jedn{font-weight:700;color:#5B6878;margin-top:4px}
+    .tt-pasy{display:grid;gap:8px;margin-top:18px;text-align:left}
+    .tt-pas{display:grid;grid-template-columns:6.4em 1fr 3.2em;align-items:center;gap:8px;font-size:.88rem;font-weight:700;color:#5B6878}
+    .tt-pas i{display:block;height:12px;border-radius:6px;background:#C5D3E3;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+    .tt-pas.ty i{background:var(--zloto)}
+    .tt-pas.wz i{background:var(--mech)}
+    .tt-pas b{text-align:right;color:var(--grafit)}
+    .tt-opis{margin-top:16px;line-height:1.5;color:var(--grafit)}
+    .tt-opis b{color:var(--las)}
+    .tt-ost{margin-top:12px;font-size:.9rem;color:#7D8A99;text-align:center}
+    .tt-ost button{font:inherit;color:var(--las);text-decoration:underline;background:none;border:0;cursor:pointer;padding:6px}
+    .tt-pro span{color:#A3AFBD;transition:color .15s}
+    .tt-pro span.za{color:var(--grafit)}
+    .tt-pro span.tu{color:var(--grafit);transition:none;background:rgba(254,172,50,.55);border-radius:4px;box-shadow:0 0 0 2px rgba(254,172,50,.55)}
+    #test .notice li .tt-v{color:var(--las)}
+    @media (prefers-reduced-motion:reduce){.tt-e{animation:none}.tt-pas i{transition:none}}
+    </style>
+
+    <div class="tt" id="tt" aria-live="polite">
+      <div class="tt-top"><span>Test tempa czytania</span><span class="tt-krok" id="ttKrok">Krok 1 z 2</span></div>
+
+      <div class="tt-e" data-e="start">
+        <div class="tt-txt mgla" id="ttTxt1"><p></p>
+          <div class="tt-nak" id="ttNak"><p class="tt-nota">Czytaj tak jak zawsze. Na końcu jedno pytanie.</p><button class="btn btn-primary" type="button" id="ttStart">Start, mierzę czas</button></div>
+        </div>
+        <div class="tt-dol" hidden id="ttStopBox"><button class="btn btn-las" type="button" id="ttStop">Przeczytane</button></div>
+        <p class="tt-ost" hidden id="ttZaSzybko">Tak szybko się nie da czytać ze zrozumieniem. Kliknij start i spróbuj jeszcze raz.</p>
+      </div>
+
+      <div class="tt-e" data-e="pyt1" hidden>
+        <p class="tt-pyt">Co według tekstu najbardziej spowalnia czytanie?</p>
+        <div class="tt-odp" data-pyt="1"></div>
+      </div>
+
+      <div class="tt-e tt-wyn" data-e="wyn1" hidden>
+        <div class="tt-liczba" id="ttWpm">0</div>
+        <div class="tt-jedn">słów na minutę</div>
+        <div class="tt-pasy">
+          <div class="tt-pas"><span>Średnia</span><i data-w="126"></i><b>126</b></div>
+          <div class="tt-pas ty"><span>Ty</span><i data-w="0" id="ttPasTy"></i><b id="ttPasTyL">0</b></div>
+        </div>
+        <p class="tt-opis" id="ttOpis1"></p>
+        <div class="tt-dol"><button class="btn btn-primary" type="button" id="ttDalej">Teraz szybciej. Poprowadzę Twój wzrok</button></div>
+      </div>
+
+      <div class="tt-e" data-e="pro" hidden>
+        <p class="tt-opis" id="ttProOpis" style="margin-top:0"></p>
+        <div class="tt-txt tt-pro" id="ttTxt2" style="margin-top:12px"></div>
+        <div class="tt-dol" id="ttProBox"><button class="btn btn-las" type="button" id="ttPro">Prowadź mój wzrok</button></div>
+      </div>
+
+      <div class="tt-e" data-e="pyt2" hidden>
+        <p class="tt-pyt">Co robi wzrok, który idzie równo za wskaźnikiem?</p>
+        <div class="tt-odp" data-pyt="2"></div>
+      </div>
+
+      <div class="tt-e tt-wyn" data-e="wyn2" hidden>
+        <div class="tt-liczba" id="ttWpm2">0</div>
+        <div class="tt-jedn">słów na minutę z prowadzeniem wzroku</div>
+        <div class="tt-pasy">
+          <div class="tt-pas"><span>Średnia</span><i data-w="126"></i><b>126</b></div>
+          <div class="tt-pas ty"><span>Ty</span><i data-w="0" class="ttPasTy2"></i><b class="ttPasTy2L">0</b></div>
+          <div class="tt-pas wz"><span>Z wzrokiem</span><i data-w="0" id="ttPasWz"></i><b id="ttPasWzL">0</b></div>
+        </div>
+        <p class="tt-opis" id="ttOpis2"></p>
+        <p class="tt-ost"><button type="button" id="ttZnowu">Zrób test jeszcze raz</button></p>
+      </div>
     </div>
+
     <aside class="notice" aria-label="Wynik">
-      <p class="notice-h">Gratulacje</p>
+      <p class="notice-h" id="ttNh">Twój wynik</p>
       <ul>
-        <li style="--sa:var(--mech)"><span class="dotmark" aria-hidden="true"></span>Średnia czytania to 126 słów na minutę.</li>
-        <li style="--sa:#073462"><span class="dotmark" aria-hidden="true"></span>Wiem, że Twoje tempo było wyższe.</li>
-        <li style="--sa:#073462"><span class="dotmark" aria-hidden="true"></span>Udało Ci się przyspieszyć tempo.</li>
-        <li style="--sa:var(--las)"><span class="dotmark" aria-hidden="true"></span>Udało Ci się zrozumieć, co czytasz.</li>
+        <li style="--sa:var(--mech)"><span class="dotmark" aria-hidden="true"></span><span>Średnia czytania to 126 słów na minutę.</span></li>
+        <li style="--sa:#073462"><span class="dotmark" aria-hidden="true"></span><span id="ttN1">Twoje tempo: <span class="tt-v">zrób test powyżej</span></span></li>
+        <li style="--sa:#073462"><span class="dotmark" aria-hidden="true"></span><span id="ttN2">Z prowadzeniem wzroku: <span class="tt-v">krok 2 testu</span></span></li>
+        <li style="--sa:var(--las)"><span class="dotmark" aria-hidden="true"></span><span id="ttN3">Zrozumienie: <span class="tt-v">dwa pytania w teście</span></span></li>
       </ul>
       <p class="stos-q">A jak to się ma do stosu książek?</p>
     </aside>
+
+    <script>
+    (function(){
+      var d=document,$=function(i){return d.getElementById(i)},box=$('tt');
+      var T1='Większość dorosłych czyta w tempie wyniesionym z podstawówki. Przestaliśmy czytać na głos, ale w głowie dalej słyszymy każde słowo. Ten wewnętrzny lektor najbardziej spowalnia czytanie. Oko potrafi objąć kilka słów naraz, a mózg rozumie je szybciej, niż zdążymy je wymówić. Wystarczy kilka ćwiczeń, żeby wzrok zaczął łapać całe grupy słów.';
+      var T2='Czytanie to nie wyścig, tylko sposób patrzenia. Kiedy wzrok idzie równo za wskaźnikiem, przestaje się cofać i wracać do tych samych słów. Każdy powrót to stracona sekunda, a w całej książce takich sekund są tysiące. Wskaźnik uczy oko rytmu, a rytm daje spokój i skupienie. Dlatego w kursie zaczynamy właśnie od prowadzenia wzroku, zanim przejdziemy do szerszego pola widzenia.';
+      var P={1:[['Wewnętrzny lektor, którego słyszymy w głowie',1],['Za mała czcionka w książkach',0],['Czytanie wieczorem, przy zmęczeniu',0]],
+             2:[['Przestaje się cofać do tych samych słów',1],['Czyta każde słowo na głos',0],['Skacze po pojedynczych literach',0]]};
+      var KS=68250, S={wpm:0,wz:0,ok:0}, t0=0, slow1=T1.split(/\s+/).length;
+      function cl(){try{if(typeof window.clarity==='function')window.clarity.apply(null,arguments)}catch(e){}}
+      function ksiazki(w){return Math.max(1,Math.round(w*20*365/KS))}
+      function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')}
+      function pokaz(e,krok){
+        box.querySelectorAll('.tt-e').forEach(function(x){x.hidden=x.getAttribute('data-e')!==e});
+        if(krok)$('ttKrok').textContent=krok;
+        var r=box.getBoundingClientRect(); if(r.top<0||r.top>innerHeight*.4)box.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      function licz(el,cel){var st=performance.now();(function a(){var p=Math.min(1,(performance.now()-st)/900);el.textContent=fmt(Math.round(cel*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(a)})()}
+      function pasy(scope){var m=0;scope.querySelectorAll('.tt-pas i').forEach(function(i){m=Math.max(m,+i.getAttribute('data-w'))});
+        requestAnimationFrame(function(){scope.querySelectorAll('.tt-pas i').forEach(function(i){i.style.width=(100*(+i.getAttribute('data-w'))/m)+'%'})})}
+      function odpowiedzi(n,po){
+        var b=box.querySelector('[data-pyt="'+n+'"]');b.innerHTML='';
+        P[n].slice().sort(function(){return Math.random()-.5}).forEach(function(o){
+          var x=d.createElement('button');x.type='button';x.textContent=o[0];
+          x.onclick=function(){b.querySelectorAll('button').forEach(function(y){y.disabled=true});x.classList.add(o[1]?'ok':'zle');
+            if(o[1])S.ok++;else b.querySelectorAll('button').forEach(function(y){P[n].forEach(function(q){if(q[1]&&q[0]===y.textContent)y.classList.add('ok')})});
+            setTimeout(po,o[1]?600:1100)};
+          b.appendChild(x)});
+      }
+      $('ttTxt1').querySelector('p').textContent=T1;
+      $('ttStart').onclick=function(){
+        $('ttTxt1').classList.remove('mgla');$('ttNak').hidden=true;$('ttStopBox').hidden=false;$('ttZaSzybko').hidden=true;
+        box.scrollIntoView({behavior:'smooth',block:'start'});t0=performance.now();cl('event','test_start')};
+      $('ttStop').onclick=function(){
+        var s=(performance.now()-t0)/1000,w=Math.round(slow1/(s/60));
+        if(s<6||w>1200){$('ttTxt1').classList.add('mgla');$('ttNak').hidden=false;$('ttStopBox').hidden=true;$('ttZaSzybko').hidden=false;cl('event','test_za_szybko');return}
+        S.wpm=Math.max(60,Math.min(900,w));odpowiedzi(1,wynik1);pokaz('pyt1');cl('event','test_przeczytane')};
+      function wynik1(){
+        pokaz('wyn1','Krok 1 z 2');
+        var w=S.wpm,sc=box.querySelector('[data-e="wyn1"]');licz($('ttWpm'),w);
+        $('ttPasTy').setAttribute('data-w',w);$('ttPasTyL').textContent=fmt(w);pasy(sc);
+        var por=w>140?'To więcej niż średnia. ':w<112?'To trochę mniej niż średnia, i to jest dobra wiadomość: tu najłatwiej o duży skok. ':'To mniej więcej średnia. ';
+        $('ttOpis1').innerHTML=por+'Czytając 20 minut dziennie w tym tempie, przeczytasz około <b>'+ksiazki(w)+' książek w roku</b>.';
+        $('ttN1').innerHTML='Twoje tempo: <span class="tt-v">'+fmt(w)+' słów na minutę</span>';
+        cl('event','test_wynik');cl('set','tempo_test',w<126?'<126':w<200?'126-199':w<300?'200-299':'300+')}
+      $('ttDalej').onclick=function(){
+        S.wz=Math.min(1000,Math.max(250,Math.round(S.wpm*1.5)));
+        $('ttProOpis').innerHTML='Poprowadzę Twój wzrok w tempie <b>'+fmt(S.wz)+' słów na minutę</b>, półtora raza szybciej niż Twoje. Patrz tylko na żółte podświetlenie i nie wracaj wzrokiem.';
+        $('ttTxt2').innerHTML=T2.split(' ').map(function(x){return '<span>'+x+'</span>'}).join(' ');
+        $('ttProBox').hidden=false;pokaz('pro','Krok 2 z 2')};
+      $('ttPro').onclick=function(){
+        $('ttProBox').hidden=true;cl('event','test_prowadzenie');
+        var sp=$('ttTxt2').querySelectorAll('span'),G=3,ms=G*60000/S.wz,i=0;
+        (function krok(){
+          for(var k=0;k<sp.length;k++){sp[k].className=k<i?'za':(k<i+G?'tu':'')}
+          if(i>=sp.length){setTimeout(function(){odpowiedzi(2,wynik2);pokaz('pyt2')},500);return}
+          i+=G;setTimeout(krok,ms)})()};
+      function wynik2(){
+        pokaz('wyn2');var sc=box.querySelector('[data-e="wyn2"]'),w=S.wz;licz($('ttWpm2'),w);
+        sc.querySelector('.ttPasTy2').setAttribute('data-w',S.wpm);sc.querySelector('.ttPasTy2L').textContent=fmt(S.wpm);
+        $('ttPasWz').setAttribute('data-w',w);$('ttPasWzL').textContent=fmt(w);pasy(sc);
+        $('ttOpis2').innerHTML=(S.ok===2?'Oba pytania trafione, więc zrozumienie zostało na miejscu. ':S.ok===1?'Jedno pytanie z dwóch trafione. Zrozumienie też się ćwiczy. ':'Pytania tym razem nie wyszły. Zrozumienie też się ćwiczy. ')+
+          'Wystarczyło poprowadzić wzrok. Z takim tempem 20 minut dziennie to już około <b>'+ksiazki(w)+' książek w roku</b>, a to dopiero pierwsza technika z kursu.';
+        $('ttN2').innerHTML='Z prowadzeniem wzroku: <span class="tt-v">'+fmt(w)+' słów na minutę</span>';
+        $('ttN3').innerHTML='Zrozumienie: <span class="tt-v">'+S.ok+' z 2 pytań</span>';
+        $('ttNh').textContent='Gratulacje';
+        cl('event','test_koniec')}
+      $('ttZnowu').onclick=function(){S={wpm:0,wz:0,ok:0};$('ttTxt1').classList.add('mgla');$('ttNak').hidden=false;$('ttStopBox').hidden=true;pokaz('start','Krok 1 z 2')};
+    })();
+    </script>
   </div>
 </section>
 
@@ -512,6 +672,6 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 <script id="bez-wdow">/* bez wdów i sierotek (Piotr 18.11): ostatnie dwa słowa akapitu i jednoliterowe spójniki sklejone twardą spacją */
 (function(){var Q='p,li,blockquote,figcaption,h1,h2,h3,h4,summary span,.krotko-t';function f(){document.querySelectorAll(Q).forEach(function(e){if(e.closest('nav,footer,.tuner-edge'))return;var w=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),n,ost=null;while(n=w.nextNode()){n.nodeValue=n.nodeValue.replace(/(^|[\s\u00A0(„])([aiouwzAIOUWZ]) /g,'$1$2\u00A0');if(/\S/.test(n.nodeValue))ost=n}if(ost&&e.textContent.trim().split(/\s+/).length>3){ost.nodeValue=ost.nodeValue.replace(/ (\S+\s*)$/,'\u00A0$1')}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f()})();</script>
 <script id="clarity-wersja">/* Piotr 18.11: wersja landingu jako znacznik w Clarity (filtr „wersja_landingu”), żeby porównać stary i nowy landing w jednym projekcie. Clarity nie ładuje, czeka na zgodę z banera. v1 = sesje do 18.11 16:21 (bez znacznika), v2-1811 = od ok. 18:40, v3-1811 = 23:26–ok. 23:50 bez zdjęć, v4-1811 = zdjęcia trasy w rozwinięciach (krok 0 otwarty), mniejsze zdjęcie w „Więcej o mnie”. */
-(function(){var n=0,t=setInterval(function(){if(typeof window.clarity==='function'){try{window.clarity('set','wersja_landingu','v7-2411')}catch(e){}clearInterval(t)}else if(++n>360)clearInterval(t)},500)})();</script>
+(function(){var n=0,t=setInterval(function(){if(typeof window.clarity==='function'){try{window.clarity('set','wersja_landingu','v9-2511')}catch(e){}clearInterval(t)}else if(++n>360)clearInterval(t)},500)})();</script>
 </body>
 </html>

@@ -163,7 +163,7 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
   <div class="wrap">
     <p class="hand-kicker">Pamiętasz stos książek na początku strony?</p>
     <h2 class="sec-title">Sprawdźmy, czy miałem rację.</h2>
-    <p class="sec-lead">Kliknij start i przeczytaj krótki tekst. Zmierzę Twoje tempo. Całość zajmie około minuty.</p>
+    <p class="sec-lead">Kliknij start i przeczytaj krótki tekst. Zmierzę Twoje tempo. Całość zajmie mniej niż minutę.</p>
 
     <!-- v9: test tempa na stronie zamiast filmu (pomysł Piotra 24.11.2026); film: youtube 8WkXBZ-DTpw -->
     <style>
@@ -271,7 +271,7 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
     <script>
     (function(){
       var d=document,$=function(i){return d.getElementById(i)},box=$('tt');
-      var T1='Większość dorosłych czyta w tempie, którego nauczyła się w podstawówce, przesuwając palcem po linijkach i czytając na głos. Potem przestaliśmy czytać na głos, ale w głowie dalej słyszymy każde słowo. Ten wewnętrzny lektor najbardziej spowalnia czytanie. Oko potrafi objąć kilka słów naraz, a mózg rozumie je szybciej, niż zdążymy je wymówić. Wystarczy kilka ćwiczeń, żeby wzrok przestał skakać po pojedynczych wyrazach i zaczął łapać całe grupy słów. Wtedy tempo rośnie, a zrozumienie zostaje, i książki przestają się kurzyć na półce.';
+      var T1='Większość dorosłych czyta w tempie wyniesionym z podstawówki. Przestaliśmy czytać na głos, ale w głowie dalej słyszymy każde słowo. Ten wewnętrzny lektor najbardziej spowalnia czytanie. Oko potrafi objąć kilka słów naraz, a mózg rozumie je szybciej, niż zdążymy je wymówić. Wystarczy kilka ćwiczeń, żeby wzrok zaczął łapać całe grupy słów.';
       var T2='Czytanie to nie wyścig, tylko sposób patrzenia. Kiedy wzrok idzie równo za wskaźnikiem, przestaje się cofać i wracać do tych samych słów. Każdy powrót to stracona sekunda, a w całej książce takich sekund są tysiące. Wskaźnik uczy oko rytmu, a rytm daje spokój i skupienie. Dlatego w kursie zaczynamy właśnie od prowadzenia wzroku, zanim przejdziemy do szerszego pola widzenia.';
       var P={1:[['Wewnętrzny lektor, którego słyszymy w głowie',1],['Za mała czcionka w książkach',0],['Czytanie wieczorem, przy zmęczeniu',0]],
              2:[['Przestaje się cofać do tych samych słów',1],['Czyta każde słowo na głos',0],['Skacze po pojedynczych literach',0]]};
@@ -674,6 +674,6 @@ p,li,blockquote,figcaption,h3,.gl-mit{text-wrap:pretty}
 <script id="bez-wdow">/* bez wdów i sierotek (Piotr 18.11): ostatnie dwa słowa akapitu i jednoliterowe spójniki sklejone twardą spacją */
 (function(){var Q='p,li,blockquote,figcaption,h1,h2,h3,h4,summary span,.krotko-t';function f(){document.querySelectorAll(Q).forEach(function(e){if(e.closest('nav,footer,.tuner-edge'))return;var w=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),n,ost=null;while(n=w.nextNode()){n.nodeValue=n.nodeValue.replace(/(^|[\s\u00A0(„])([aiouwzAIOUWZ]) /g,'$1$2\u00A0');if(/\S/.test(n.nodeValue))ost=n}if(ost&&e.textContent.trim().split(/\s+/).length>3){ost.nodeValue=ost.nodeValue.replace(/ (\S+\s*)$/,'\u00A0$1')}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f()})();</script>
 <script id="clarity-wersja">/* Piotr 18.11: wersja landingu jako znacznik w Clarity (filtr „wersja_landingu”), żeby porównać stary i nowy landing w jednym projekcie. Clarity nie ładuje, czeka na zgodę z banera. v1 = sesje do 18.11 16:21 (bez znacznika), v2-1811 = od ok. 18:40, v3-1811 = 23:26–ok. 23:50 bez zdjęć, v4-1811 = zdjęcia trasy w rozwinięciach (krok 0 otwarty), mniejsze zdjęcie w „Więcej o mnie”. */
-(function(){var n=0,t=setInterval(function(){if(typeof window.clarity==='function'){try{window.clarity('set','wersja_landingu','v9-test-podglad')}catch(e){}clearInterval(t)}else if(++n>360)clearInterval(t)},500)})();</script>
+(function(){var n=0,t=setInterval(function(){if(typeof window.clarity==='function'){try{window.clarity('set','wersja_landingu','v9-2511')}catch(e){}clearInterval(t)}else if(++n>360)clearInterval(t)},500)})();</script>
 </body>
 </html>
